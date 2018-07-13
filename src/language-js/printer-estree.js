@@ -1207,6 +1207,7 @@ function printPathNoParens(path, options, print, args) {
 
         content = group(
           concat([
+            hardline,
             leftBrace,
             comments.printDanglingComments(path, options),
             softline,
@@ -1216,6 +1217,7 @@ function printPathNoParens(path, options, print, args) {
         );
       } else {
         content = concat([
+          hardline,
           leftBrace,
           indent(
             concat([options.bracketSpacing ? line : softline, concat(props)])
@@ -2045,6 +2047,7 @@ function printPathNoParens(path, options, print, args) {
       }
 
       return concat([
+        hardline,
         "{",
         n.body.length > 0
           ? indent(

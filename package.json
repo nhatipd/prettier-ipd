@@ -1,6 +1,6 @@
 {
   "name": "prettier-ipd",
-  "version": "1.13.7",
+  "version": "1.0.1",
   "description": "IPD - Prettier is an opinionated code formatter",
   "bin": {
     "prettier": "./bin/prettier.js"
