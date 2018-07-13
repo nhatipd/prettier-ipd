@@ -1,13 +1,13 @@
 {
-  "name": "prettier",
+  "name": "prettier-ipd",
   "version": "1.13.7",
-  "description": "Prettier is an opinionated code formatter",
+  "description": "IPD - Prettier is an opinionated code formatter",
   "bin": {
     "prettier": "./bin/prettier.js"
   },
-  "repository": "prettier/prettier",
+  "repository": "nhatipd/prettier-ipd",
   "homepage": "https://prettier.io",
-  "author": "James Long",
+  "author": "Nhat Tran",
   "license": "MIT",
   "main": "./index.js",
   "engines": {
