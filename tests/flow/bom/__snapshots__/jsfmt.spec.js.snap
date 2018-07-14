@@ -123,27 +123,36 @@ a.delete("xx"); // correct
 a.delete(3); // incorrect
 
 // keys
-for (let x: string of a.keys()) {
+for (let x: string of a.keys())
+{
 } // correct
-for (let x: number of a.keys()) {
+for (let x: number of a.keys())
+{
 } // incorrect
 
 // values
-for (let x: string | File of a.values()) {
+for (let x: string | File of a.values())
+{
 } // correct
-for (let x: string | File | Blob of a.values()) {
+for (let x: string | File | Blob of a.values())
+{
 } // incorrect
 
 // entries
-for (let [x, y]: [string, string | File] of a.entries()) {
+for (let [x, y]: [string, string | File] of a.entries())
+{
 } // correct
-for (let [x, y]: [string, string | File | Blob] of a.entries()) {
+for (let [x, y]: [string, string | File | Blob] of a.entries())
+{
 } // incorrect
-for (let [x, y]: [number, string] of a.entries()) {
+for (let [x, y]: [number, string] of a.entries())
+{
 } // incorrect
-for (let [x, y]: [string, number] of a.entries()) {
+for (let [x, y]: [string, number] of a.entries())
+{
 } // incorrect
-for (let [x, y]: [number, number] of a.entries()) {
+for (let [x, y]: [number, number] of a.entries())
+{
 } // incorrect
 
 `;
@@ -182,10 +191,8 @@ o.disconnect(); // correct
 /* @flow */
 
 // constructor
-function callback(
-  arr: Array<MutationRecord>,
-  observer: MutationObserver
-): void {
+function callback(arr: Array<MutationRecord>, observer: MutationObserver): void
+{
   return;
 }
 const o: MutationObserver = new MutationObserver(callback); // correct

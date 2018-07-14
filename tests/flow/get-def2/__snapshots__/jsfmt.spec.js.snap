@@ -86,10 +86,12 @@ class C {
 }
 
 class D extends C {
-  foo() {
+  foo()
+  {
     this.override();
   }
-  bar() {
+  bar()
+  {
     this.override;
   }
   override() {}

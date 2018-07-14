@@ -57,35 +57,45 @@ function foo() {
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const envSpecific = {
-  domain: do {
+  domain: do
+  {
     if (env === "production") "https://abc.mno.com/";
     else if (env === "development") "http://localhost:4000";
   }
 };
 
-let x = do {
+let x = do
+{
   let tmp = f();
   tmp * tmp + 1;
 };
 
-let x = do {
-  if (foo()) {
+let x = do
+{
+  if (foo())
+  {
     f();
-  } else if (bar()) {
+  } else if (bar())
+  {
     g();
-  } else {
+  } else
+  {
     h();
   }
 };
 
-function foo() {
+function foo()
+{
   return (
     <nav>
       <Home />
-      {do {
-        if (loggedIn) {
+      {do
+      {
+        if (loggedIn)
+        {
           <LogoutButton />;
-        } else {
+        } else
+        {
           <LoginButton />;
         }
       }}
@@ -98,7 +108,8 @@ function foo() {
 1 + do {};
 () => do {};
 
-(do {
+(do
+{
   switch (0) {
     case 0:
       "foo";
@@ -107,9 +118,11 @@ function foo() {
   }
 });
 
-() => do {
+() => do
+{
   var obj = { foo: "bar", bar: "foo" };
-  for (var key in obj) {
+  for (var key in obj)
+  {
     obj[key];
   }
 };

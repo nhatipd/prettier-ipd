@@ -508,7 +508,8 @@ x = (
   </div>
 );
 
-function DiffOverview(props) {
+function DiffOverview(props)
+{
   const { source, target, since } = props;
   return (
     <div>

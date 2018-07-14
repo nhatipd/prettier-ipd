@@ -60,7 +60,8 @@ var a2 = (x: mixed): %checks (x !== null) => x !== null;
 
 // Cannot declare predicate with a function body is present.
 
-function f5(x: mixed): %checks(x !== null) {
+function f5(x: mixed): %checks(x !== null)
+{
   return x !== null;
 }
 
@@ -105,7 +106,8 @@ declare function f3(x: mixed): boolean %checks(x !== null);
 
 declare function f4(x: mixed): boolean %checks(x !== null);
 
-function f7(x: mixed): %checks {
+function f7(x: mixed): %checks
+{
   return x !== null;
 }
 

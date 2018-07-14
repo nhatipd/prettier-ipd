@@ -9,11 +9,13 @@ function bar(x: Error & {type:number}): number {
     return x.type;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function foo(x: $All<Error, { type: number }>): number {
+function foo(x: $All<Error, { type: number }>): number
+{
   return x.type;
 }
 
-function bar(x: Error & { type: number }): number {
+function bar(x: Error & { type: number }): number
+{
   return x.type;
 }
 
@@ -86,7 +88,8 @@ type DuplexStreamOptions = ReadableStreamOptions &
     writableObjectMode?: boolean
   };
 
-function hasObjectMode_bad(options: DuplexStreamOptions): boolean {
+function hasObjectMode_bad(options: DuplexStreamOptions): boolean
+{
   return (
     options.objectMode ||
     options.readableObjectMode ||
@@ -94,7 +97,8 @@ function hasObjectMode_bad(options: DuplexStreamOptions): boolean {
   ); // error, undefined ~> boolean
 }
 
-function hasObjectMode_ok(options: DuplexStreamOptions): boolean {
+function hasObjectMode_ok(options: DuplexStreamOptions): boolean
+{
   return !!(
     options.objectMode ||
     options.readableObjectMode ||

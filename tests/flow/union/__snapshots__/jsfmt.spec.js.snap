@@ -55,7 +55,8 @@ export type Select = {
 export class Query {
   _select: Array<Select> = [];
 
-  select(expr: ArithmeticExpression): this {
+  select(expr: ArithmeticExpression): this
+  {
     this._select.push({
       expression: expr,
       alias: ""
@@ -116,7 +117,8 @@ class C {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class C {
   x: ?number | string;
-  constructor() {
+  constructor()
+  {
     this.x = null;
   }
 }
@@ -138,7 +140,8 @@ class C {}
 
 class D {
   content: string | C;
-  copyContent(content: C): string | C {
+  copyContent(content: C): string | C
+  {
     this.content = content;
     return this.content;
   }
@@ -193,13 +196,16 @@ var p = new Promise(function(resolve, reject) {
         return str.toFixed();
     });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var p = new Promise(function(resolve, reject) {
+var p = new Promise(function(resolve, reject)
+{
   resolve(5);
 })
-  .then(function(num) {
+  .then(function(num)
+  {
     return num.toFixed();
   })
-  .then(function(str) {
+  .then(function(str)
+  {
     // This should fail because str is string, not number
     return str.toFixed();
   });
@@ -285,7 +291,8 @@ class Tag_ {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class Tag {
-  constructor() {
+  constructor()
+  {
     var a1: Array<Tag | string> = [];
     var a2: Array<Tag | string> = a1;
   }
@@ -293,7 +300,8 @@ class Tag {
 
 type Node = Tag_ | string;
 class Tag_ {
-  constructor() {
+  constructor()
+  {
     var a1: Array<Node> = [new Tag_()];
     var a2: Array<Node> = a1;
   }
@@ -455,7 +463,8 @@ foo(y);
 // type Bar = (() => C) | (() => string);
 type Bar = () => C | string; // workaround
 
-function f() {
+function f()
+{
   return "";
 }
 function bar(x: Bar) {}
@@ -537,7 +546,8 @@ bar(0);
 
 class C {}
 class D {}
-function CD(b) {
+function CD(b)
+{
   var E = b ? C : D;
   var c: C = new E(); // error, since E could be D, and D is not a subtype of C
   function qux(e: E) {} // this annotation is an error: is it C, or is it D?
@@ -549,7 +559,8 @@ declare class F {
   foo(x: number): void;
   foo(x: string): void;
 }
-function corge(b) {
+function corge(b)
+{
   var x = b ? "" : 0;
   new F().foo(x);
 }
@@ -5600,7 +5611,8 @@ type Data = {
 class SecurityCheckupTypedLogger {
   _data: Data;
 
-  setError(value: ErrorCode) {
+  setError(value: ErrorCode)
+  {
     this._data["error"] = value;
   }
 
@@ -5610,7 +5622,8 @@ class SecurityCheckupTypedLogger {
   // e.g. (base type, list in decl order, set). Of course we could do
   // something quick to get the union size off the Ocaml call stack,
   // but not sure it's worth doing that before the real solution.
-  ohThatsNotSoGood() {
+  ohThatsNotSoGood()
+  {
     ("": ErrorCode); // also, error pos omits this line completely
   }
 }

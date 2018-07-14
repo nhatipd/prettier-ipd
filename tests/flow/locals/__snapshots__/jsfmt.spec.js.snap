@@ -62,7 +62,8 @@ function for_of_scope(xs: number[]) {
   (b : string); // error: number ~> string
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function switch_scope(x: mixed) {
+function switch_scope(x: mixed)
+{
   let a = "";
   let b = "";
   switch (x) {
@@ -75,13 +76,16 @@ function switch_scope(x: mixed) {
   (b: string); // error: number ~> string
 }
 
-function try_scope_finally() {
+function try_scope_finally()
+{
   let a;
   let b;
-  try {
+  try
+  {
     a = "";
     b = "";
-  } finally {
+  } finally
+  {
     let a;
     a = 0; // doesn't add lower bound to outer a
     b = 0;
@@ -90,10 +94,12 @@ function try_scope_finally() {
   (b: string); // error: number ~> string
 }
 
-function for_scope() {
+function for_scope()
+{
   let a = "";
   let b = "";
-  for (let a; ; ) {
+  for (let a; ; )
+  {
     a = 0; // doesn't add lower bound to outer a
     b = 0;
   }
@@ -101,10 +107,12 @@ function for_scope() {
   (b: string); // error: number ~> string
 }
 
-function for_in_scope(o: Object) {
+function for_in_scope(o: Object)
+{
   let a = 0;
   let b = 0;
-  for (let a in o) {
+  for (let a in o)
+  {
     a = ""; // doesn't add lower bound to outer a
     b = "";
   }
@@ -112,10 +120,12 @@ function for_in_scope(o: Object) {
   (b: number); // error: string ~> number
 }
 
-function for_of_scope(xs: number[]) {
+function for_of_scope(xs: number[])
+{
   let a = "";
   let b = "";
-  for (let a of xs) {
+  for (let a of xs)
+  {
     a = 0; // doesn't add lower bound to outer a
     b = 0;
   }
@@ -157,18 +167,23 @@ var x: number = 1;
 
 function foo(p: boolean) {}
 
-function sorry(really: boolean) {
-  if (really) {
+function sorry(really: boolean)
+{
+  if (really)
+  {
     var x: number | string = 1337;
-  } else {
+  } else
+  {
     var x: boolean = true;
   }
   foo(x);
 }
 
-function foo0(b: boolean): number {
+function foo0(b: boolean): number
+{
   var x = 0;
-  if (b) {
+  if (b)
+  {
     var x = ""; // error: string ~> number
   }
   return x;

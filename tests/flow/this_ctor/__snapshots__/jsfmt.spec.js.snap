@@ -20,13 +20,16 @@ var a3: A = a2.clone();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class A {
   n: number;
-  constructor(n: number) {
+  constructor(n: number)
+  {
     this.n = n;
   }
-  clone(): A {
+  clone(): A
+  {
     return new this.constructor(this.n);
   }
-  badClone(): number {
+  badClone(): number
+  {
     return new this.constructor(this.n); // Error A ~> number
   }
 }

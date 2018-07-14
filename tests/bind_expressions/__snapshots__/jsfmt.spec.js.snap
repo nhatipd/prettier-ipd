@@ -59,12 +59,14 @@ class X {
   }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class X {
-  constructor() {
+  constructor()
+  {
     this.testLongNameMethodAndSomethingElseLallala =
       ::this.testLongNameMethodAndSomethingElseLallala;
   }
 
-  testLongNameMethodAndSomethingElseLallala() {
+  testLongNameMethodAndSomethingElseLallala()
+  {
     return true;
   }
 }
@@ -82,12 +84,14 @@ class X {
   }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class X {
-  constructor() {
+  constructor()
+  {
     this.testLongNameMethodAndSomethingElseLallala =
       ::this.testLongNameMethodAndSomethingElseLallala
   }
 
-  testLongNameMethodAndSomethingElseLallala() {
+  testLongNameMethodAndSomethingElseLallala()
+  {
     return true
   }
 }
@@ -120,7 +124,8 @@ import { map } from "rxjs/operator/map";
 import { throttle } from "rxjs/operator/throttle";
 import { takeUntil } from "rxjs/operator/takeUntil";
 
-function test(observable) {
+function test(observable)
+{
   return observable
     ::filter(data => data.someTest)
     ::throttle(() =>
@@ -159,7 +164,8 @@ import { map } from "rxjs/operator/map"
 import { throttle } from "rxjs/operator/throttle"
 import { takeUntil } from "rxjs/operator/takeUntil"
 
-function test(observable) {
+function test(observable)
+{
   return observable
     ::filter(data => data.someTest)
     ::throttle(() =>
@@ -183,11 +189,13 @@ class X {
   }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class X {
-  constructor() {
+  constructor()
+  {
     this.shortMethod = ::this.shortMethod;
   }
 
-  shortMethod() {
+  shortMethod()
+  {
     return true;
   }
 }
@@ -205,11 +213,13 @@ class X {
   }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class X {
-  constructor() {
+  constructor()
+  {
     this.shortMethod = ::this.shortMethod
   }
 
-  shortMethod() {
+  shortMethod()
+  {
     return true
   }
 }

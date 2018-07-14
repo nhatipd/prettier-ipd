@@ -662,7 +662,8 @@ class G {
 
 // check indentation
 
-if (true) {
+if (true)
+{
   x
   ;(() => {})()
 }
@@ -1005,7 +1006,8 @@ class G {
 
 // check indentation
 
-if (true) {
+if (true)
+{
   x;
   (() => {})();
 }
@@ -1348,7 +1350,8 @@ class G {
 
 // check indentation
 
-if (true) {
+if (true)
+{
   x
   ;(() => {})()
 }

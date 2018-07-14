@@ -955,7 +955,10 @@ function printPathNoParens(path, options, print, args) {
         return "{}";
       }
 
-      parts.push("{");
+      parts.push(
+        parent.type !== "ArrowFunctionExpression" ? hardline : "",
+        "{"
+      );
 
       // Babel 6
       if (hasDirectives) {

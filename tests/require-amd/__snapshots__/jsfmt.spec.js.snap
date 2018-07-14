@@ -44,16 +44,8 @@ require([
   "some_project/triangle",
   "some_project/circle",
   "some_project/star"
-], function(
-  $,
-  Context,
-  EventLogger,
-  Square,
-  Rectangle,
-  Triangle,
-  Circle,
-  Star
-) {
+], function($, Context, EventLogger, Square, Rectangle, Triangle, Circle, Star)
+{
   console.log("some code");
 });
 
@@ -66,16 +58,8 @@ define([
   "some_project/triangle",
   "some_project/circle",
   "some_project/star"
-], function(
-  $,
-  Context,
-  EventLogger,
-  Square,
-  Rectangle,
-  Triangle,
-  Circle,
-  Star
-) {
+], function($, Context, EventLogger, Square, Rectangle, Triangle, Circle, Star)
+{
   console.log("some code");
 });
 

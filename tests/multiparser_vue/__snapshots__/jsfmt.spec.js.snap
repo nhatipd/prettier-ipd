@@ -19,7 +19,8 @@ export default {
 <script lang="ts">
 export default {
   computed: {
-    foo(): string {
+    foo(): string
+    {
       return "foo";
     }
   }
@@ -41,11 +42,13 @@ export default {
 import { VNode } from "vue";
 export default {
   computed: {
-    foo(): string {
+    foo(): string
+    {
       return "foo";
     }
   },
-  render(h): VNode {
+  render(h): VNode
+  {
     return <div>{this.foo}</div>;
   }
 };
@@ -125,7 +128,8 @@ p { font-size : 2em ; text-align : center ; }
 
 <script>
 module.exports = {
-  data: function() {
+  data: function()
+  {
     return {
       greeting: "Hello"
     };

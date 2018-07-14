@@ -25,23 +25,28 @@ module m2 {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 namespace m2 {
-  function fn() {
+  function fn()
+  {
     return 1;
   }
-  export function exports() {
+  export function exports()
+  {
     return 1;
   }
-  export function require() {
+  export function require()
+  {
     return "require";
   }
 }
 
 namespace m2 {
-  export function exports() {
+  export function exports()
+  {
     return 1;
   }
 
-  export function require() {
+  export function require()
+  {
     return "require";
   }
 }

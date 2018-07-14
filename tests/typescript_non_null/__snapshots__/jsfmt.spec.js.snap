@@ -48,11 +48,13 @@ function* g() {
 (a || b)![tokenKey];
 (void 0)!;
 
-async function f() {
+async function f()
+{
   return (await foo())!;
 }
 
-function* g() {
+function* g()
+{
   return (yield* foo())!;
 }
 

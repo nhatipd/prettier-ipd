@@ -95,7 +95,8 @@ function takes_string(_: string) {}
 var global_x = "hello";
 
 function global_f() {}
-function global_g() {
+function global_g()
+{
   global_x = 42;
 }
 
@@ -110,11 +111,13 @@ global_x = 42; // shouldn't pollute linear refinement
 // local write from function
 //
 
-function local_func() {
+function local_func()
+{
   var local_x = "hello";
 
   function local_f() {}
-  function local_g() {
+  function local_g()
+  {
     local_x = 42;
   }
 
@@ -134,7 +137,8 @@ var global_y = "hello";
 
 var global_o = {
   f: function() {},
-  g: function() {
+  g: function()
+  {
     global_y = 42;
   }
 };
@@ -150,12 +154,14 @@ global_y = 42; // shouldn't pollute linear refinement
 // local write from method
 //
 
-function local_meth() {
+function local_meth()
+{
   var local_y = "hello";
 
   var local_o = {
     f: function() {},
-    g: function() {
+    g: function()
+    {
       local_y = 42;
     }
   };
@@ -191,12 +197,15 @@ function example(b: bool): number {
 // from sam, https://github.com/facebook/flow/issues/780
 // call to f() within if should properly havoc x.
 //
-function example(b: boolean): number {
+function example(b: boolean): number
+{
   var x = 0;
-  function f() {
+  function f()
+  {
     x = "";
   }
-  if (b) {
+  if (b)
+  {
     f();
   }
   return x; // error, string ~/~> number (return type anno) TODO
@@ -261,9 +270,11 @@ call_me();
 // global, anybody can call it at any time
 var call_me: () => void = () => {};
 
-function g(x: ?number) {
+function g(x: ?number)
+{
   const const_x = x;
-  if (const_x) {
+  if (const_x)
+  {
     // ok: if const_x is truthy here, it's truthy everywhere
     call_me = () => {
       var y: number = const_x;
@@ -271,7 +282,8 @@ function g(x: ?number) {
   }
 
   var var_x = x;
-  if (var_x) {
+  if (var_x)
+  {
     // error: var_x might no longer be truthy when call_me is called
     call_me = () => {
       var y: number = var_x;
@@ -280,32 +292,39 @@ function g(x: ?number) {
   var_x = null;
 }
 
-function h(x: number | string | boolean) {
+function h(x: number | string | boolean)
+{
   const const_x = x;
-  if (typeof const_x == "number") {
+  if (typeof const_x == "number")
+  {
     call_me = () => {
       var y: number = const_x;
     }; // ok
-  } else if (typeof const_x == "string") {
+  } else if (typeof const_x == "string")
+  {
     call_me = () => {
       var y: string = const_x;
     }; // ok
-  } else if (typeof const_x == "boolean") {
+  } else if (typeof const_x == "boolean")
+  {
     call_me = () => {
       var y: boolean = const_x;
     }; // ok
   }
 
   var var_x = x;
-  if (typeof var_x == "number") {
+  if (typeof var_x == "number")
+  {
     call_me = () => {
       var y: number = var_x;
     }; // error
-  } else if (typeof var_x == "string") {
+  } else if (typeof var_x == "string")
+  {
     call_me = () => {
       var y: string = var_x;
     }; // error
-  } else if (typeof var_x == "boolean") {
+  } else if (typeof var_x == "boolean")
+  {
     call_me = () => {
       var y: boolean = var_x;
     }; // error

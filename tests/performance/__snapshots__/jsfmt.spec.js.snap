@@ -31,20 +31,34 @@ someObject.someFunction().then(function() {
   });
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-someObject.someFunction().then(function() {
-  return someObject.someFunction().then(function() {
-    return someObject.someFunction().then(function() {
-      return someObject.someFunction().then(function() {
-        return someObject.someFunction().then(function() {
-          return someObject.someFunction().then(function() {
-            return someObject.someFunction().then(function() {
-              return someObject.someFunction().then(function() {
-                return someObject.someFunction().then(function() {
-                  return someObject.someFunction().then(function() {
-                    return someObject.someFunction().then(function() {
-                      return someObject.someFunction().then(function() {
-                        return someObject.someFunction().then(function() {
-                          return someObject.someFunction().then(function() {
+someObject.someFunction().then(function()
+{
+  return someObject.someFunction().then(function()
+  {
+    return someObject.someFunction().then(function()
+    {
+      return someObject.someFunction().then(function()
+      {
+        return someObject.someFunction().then(function()
+        {
+          return someObject.someFunction().then(function()
+          {
+            return someObject.someFunction().then(function()
+            {
+              return someObject.someFunction().then(function()
+              {
+                return someObject.someFunction().then(function()
+                {
+                  return someObject.someFunction().then(function()
+                  {
+                    return someObject.someFunction().then(function()
+                    {
+                      return someObject.someFunction().then(function()
+                      {
+                        return someObject.someFunction().then(function()
+                        {
+                          return someObject.someFunction().then(function()
+                          {
                             anotherFunction();
                           });
                         });
@@ -151,7 +165,8 @@ tap.test("RecordImport.advance", (t) => {
 tap.test("RecordImport.advance", t => {
   const checkStates = (batches, states) => {
     t.equal(batches.length, states.length);
-    for (const batch of batches) {
+    for (const batch of batches)
+    {
       t.equal(batch.state, states.shift());
       t.ok(batch.getCurState().name(i18n));
     }
@@ -175,7 +190,8 @@ tap.test("RecordImport.advance", t => {
     batch.setResults([fs.createReadStream(dataFile)], err => {
       t.error(err, "Error should be empty.");
       t.equal(batch.results.length, 6, "Check number of results");
-      for (const result of batch.results) {
+      for (const result of batch.results)
+      {
         t.equal(result.result, "unknown");
         t.ok(result.data);
         t.equal(result.data.lang, "en");

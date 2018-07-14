@@ -13,9 +13,11 @@ class A {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class A {
-  method() {
+  method()
+  {
     var x = 1;
-    while (typeof x == "number" || typeof x == "string") {
+    while (typeof x == "number" || typeof x == "string")
+    {
       x = x + 1;
       if (true) x = "";
     }
@@ -38,9 +40,11 @@ class A {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class A {
-    method() {
+    method()
+    {
         var x = 1;
-        while (typeof x == "number" || typeof x == "string") {
+        while (typeof x == "number" || typeof x == "string")
+        {
             x = x + 1;
             if (true) x = "";
         }
@@ -65,10 +69,13 @@ function a() {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const c = () => {};
 
-function a() {
-  return function b() {
+function a()
+{
+  return function b()
+  {
     return () => {
-      return function() {
+      return function()
+      {
         return c;
       };
     };
@@ -92,10 +99,13 @@ function a() {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const c = () => {};
 
-function a() {
-    return function b() {
+function a()
+{
+    return function b()
+    {
         return () => {
-            return function() {
+            return function()
+            {
                 return c;
             };
         };

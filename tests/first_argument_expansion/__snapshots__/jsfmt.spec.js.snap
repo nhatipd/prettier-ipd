@@ -93,11 +93,13 @@ func((args) => {
   execute(args);
 }, result => result && console.log("success"))
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-setTimeout(function() {
+setTimeout(function()
+{
   thing();
 }, 500);
 
-["a", "b", "c"].reduce(function(item, thing) {
+["a", "b", "c"].reduce(function(item, thing)
+{
   return thing + " " + item;
 }, "letters:");
 
@@ -105,7 +107,8 @@ func(() => {
   thing();
 }, identifier);
 
-func(function() {
+func(function()
+{
   thing();
 }, this.props.timeout * 1000);
 
@@ -136,11 +139,13 @@ compose(
   b => b * b
 );
 
-somthing.reduce(function(item, thing) {
+somthing.reduce(function(item, thing)
+{
   return (thing.blah = item);
 }, {});
 
-somthing.reduce(function(item, thing) {
+somthing.reduce(function(item, thing)
+{
   return thing.push(item);
 }, []);
 
@@ -154,7 +159,8 @@ reallyLongLongLongLongLongLongLongLongLongLongLongLongLongLongMethod(
 // Don't do the rest of these
 
 func(
-  function() {
+  function()
+  {
     thing();
   },
   true,
@@ -191,14 +197,16 @@ renderThing(
 
 setTimeout(
   // Something
-  function() {
+  function()
+  {
     thing();
   },
   500
 );
 
 setTimeout(
-  /* blip */ function() {
+  /* blip */ function()
+  {
     thing();
   },
   500

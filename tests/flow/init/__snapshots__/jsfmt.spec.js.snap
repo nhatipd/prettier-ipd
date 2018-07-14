@@ -53,43 +53,55 @@ function _for_of(arr: Array<number>) {
  * @flow
  */
 
-function _if(b: () => boolean) {
-  if (b()) {
+function _if(b: () => boolean)
+{
+  if (b())
+  {
     var f = function() {};
   }
   f(); // error, possibly undefined
 }
 
-function _while(b: () => boolean) {
-  while (b()) {
+function _while(b: () => boolean)
+{
+  while (b())
+  {
     var f = function() {};
   }
   f(); // error, possibly undefined
 }
 
-function _do_while(b: () => boolean) {
-  do {
+function _do_while(b: () => boolean)
+{
+  do
+  {
     var f = function() {};
   } while (b());
   f(); // ok
 }
 
-function _for(n: number) {
-  for (var i = 0; i < n; i++) {
+function _for(n: number)
+{
+  for (var i = 0; i < n; i++)
+  {
     var f = function() {};
   }
   f(); // error, possibly undefined
 }
 
-function _for_in(obj: Object) {
-  for (var p in obj) {
+function _for_in(obj: Object)
+{
+  for (var p in obj)
+  {
     var f = function() {};
   }
   f(); // error, possibly undefined
 }
 
-function _for_of(arr: Array<number>) {
-  for (var x of arr) {
+function _for_of(arr: Array<number>)
+{
+  for (var x of arr)
+  {
     var f = function() {};
   }
   f(); // error, possibly undefined
@@ -374,83 +386,103 @@ function for_in_post_init() {
  */
 
 // deferred init on annotated vars is ok
-function linear_deferred_init() {
+function linear_deferred_init()
+{
   var x: number;
   x = 0;
   var y: number = x;
 }
 
 // ...but use of var before init gives undefined
-function linear_pre_init() {
+function linear_pre_init()
+{
   var x: number;
   var y: number = x; // error
 }
 
 // local use of annotated vars in an if is ok
-function if_scoped_init(b) {
-  if (b) {
+function if_scoped_init(b)
+{
+  if (b)
+  {
     var x: number = 0;
     var y: number = x;
   }
 }
 
 // but not across if/else
-function if_else_partial_init(b) {
-  if (b) {
+function if_else_partial_init(b)
+{
+  if (b)
+  {
     var x: number = 0;
-  } else {
+  } else
+  {
     var y: number = x; // error
   }
 }
 
 // use of var before if gives undefined
-function if_pre_init(b) {
+function if_pre_init(b)
+{
   var y: number = x; // error
-  if (b) {
+  if (b)
+  {
     var x: number = 0;
   }
 }
 
 // ...and after
-function if_partial_post_init(b) {
-  if (b) {
+function if_partial_post_init(b)
+{
+  if (b)
+  {
     var x: number = 0;
   }
   var y: number = x; // error
 }
 
 // ...unless both branches have initialized
-function if_post_init(b) {
-  if (b) {
+function if_post_init(b)
+{
+  if (b)
+  {
     var x: number = 0;
-  } else {
+  } else
+  {
     var x: number = 1;
   }
   var y: number = x;
 }
 
 // use of var after partial init (non-exhaustive if) gives undefined
-function if_partial_post_init(b) {
+function if_partial_post_init(b)
+{
   var x: number;
-  if (b) {
+  if (b)
+  {
     x = 0;
   }
   var y: number = x; // error, possibly uninitialized
 }
 
 // use of var after guaranteed init (exhaustive if) is ok
-function if_post_init(b) {
+function if_post_init(b)
+{
   var x: number;
-  if (b) {
+  if (b)
+  {
     x = 0;
-  } else {
+  } else
+  {
     x = 1;
   }
   var y: number = x;
 }
 
 // use of var after partial init (non-exhaustive switch) gives undefined
-function switch_partial_post_init(i) {
+function switch_partial_post_init(i)
+{
   var x: number;
   switch (i) {
     case 0:
@@ -464,7 +496,8 @@ function switch_partial_post_init(i) {
 }
 
 // use of var after guaranteed init (exhaustive switch) is ok
-function switch_post_init(i) {
+function switch_post_init(i)
+{
   var x: number;
   switch (i) {
     case 0:
@@ -480,7 +513,8 @@ function switch_post_init(i) {
 }
 
 // local use of annotated var in switch is ok
-function switch_scoped_init_1(i) {
+function switch_scoped_init_1(i)
+{
   switch (i) {
     case 0:
       var x: number = 0;
@@ -489,7 +523,8 @@ function switch_scoped_init_1(i) {
 }
 
 // ...but use of var before switch gives undefined
-function switch_scoped_init_2(i) {
+function switch_scoped_init_2(i)
+{
   var y: number = x; // error
   switch (i) {
     case 0:
@@ -498,7 +533,8 @@ function switch_scoped_init_2(i) {
 }
 
 // ...and after
-function switch_scoped_init_3(i) {
+function switch_scoped_init_3(i)
+{
   switch (i) {
     case 0:
       var x: number = 0;
@@ -507,7 +543,8 @@ function switch_scoped_init_3(i) {
 }
 
 // ...and in a fallthrough case without initialization
-function switch_scoped_init_4(i) {
+function switch_scoped_init_4(i)
+{
   switch (i) {
     case 0:
       var x: number = 0;
@@ -517,120 +554,150 @@ function switch_scoped_init_4(i) {
 }
 
 // local use of annotated var in while is ok
-function while_scoped_init(b) {
-  while (b) {
+function while_scoped_init(b)
+{
+  while (b)
+  {
     var x: number = 0;
     var y: number = x;
   }
 }
 
 // ...but use of var before while gives undefined
-function while_pre_init(b) {
+function while_pre_init(b)
+{
   var y: number = x; // error
-  while (b) {
+  while (b)
+  {
     var x: number = 0;
   }
 }
 
 // ...and after
-function while_post_init(b) {
-  while (b) {
+function while_post_init(b)
+{
+  while (b)
+  {
     var x: number = 0;
   }
   var y: number = x; // error
 }
 
 // local use of annotated var in do-while is ok
-function do_while_scoped_init(b) {
-  do {
+function do_while_scoped_init(b)
+{
+  do
+  {
     var x: number = 0;
     var y: number = x;
   } while (b);
 }
 
 // ...but use before do-while gives undefined
-function do_while_pre_init(b) {
+function do_while_pre_init(b)
+{
   var y: number = x; // error
-  do {
+  do
+  {
     var x: number = 0;
   } while (b);
 }
 
 // after is ok, because loop is guaranteed to run
-function do_while_post_init(b) {
-  do {
+function do_while_post_init(b)
+{
+  do
+  {
     var x: number = 0;
   } while (b);
   var y: number = x;
 }
 
 // local use of annotated var in for is ok
-function for_scoped_init(b) {
-  for (; b; ) {
+function for_scoped_init(b)
+{
+  for (; b; )
+  {
     var x: number = 0;
     var y: number = x;
   }
 }
 
 // ...but use before for gives undefined
-function for_pre_init(b) {
+function for_pre_init(b)
+{
   var y: number = x; // error
-  for (; b; ) {
+  for (; b; )
+  {
     var x: number = 0;
   }
 }
 
 // ...and after
-function for_post_init(b) {
-  for (; b; ) {
+function for_post_init(b)
+{
+  for (; b; )
+  {
     var x: number = 0;
   }
   var y: number = x; // error
 }
 
 // local use of annotated var in for-in is ok
-function for_in_scoped_init() {
-  for (var p in { a: 1, b: 2 }) {
+function for_in_scoped_init()
+{
+  for (var p in { a: 1, b: 2 })
+  {
     var x: number = 0;
     var y: number = x;
   }
 }
 
 // ...but use before while gives undefined
-function for_in_pre_init() {
+function for_in_pre_init()
+{
   var y: number = x; // error
-  for (var p in { a: 1, b: 2 }) {
+  for (var p in { a: 1, b: 2 })
+  {
     var x: number = 0;
   }
 }
 
 // ...and after
-function for_in_post_init() {
-  for (var p in { a: 1, b: 2 }) {
+function for_in_post_init()
+{
+  for (var p in { a: 1, b: 2 })
+  {
     var x: number = 0;
   }
   var y: number = x; // error
 }
 
 // local use of annotated var in for-of is ok
-function for_of_scoped_init() {
-  for (var x of [1, 2, 3]) {
+function for_of_scoped_init()
+{
+  for (var x of [1, 2, 3])
+  {
     var x: number = 0;
     var y: number = x;
   }
 }
 
 // ...but use before while gives undefined
-function for_in_pre_init() {
+function for_in_pre_init()
+{
   var y: number = x; // error
-  for (var x of [1, 2, 3]) {
+  for (var x of [1, 2, 3])
+  {
     var x: number = 0;
   }
 }
 
 // ...and after
-function for_in_post_init() {
-  for (var x of [1, 2, 3]) {
+function for_in_post_init()
+{
+  for (var x of [1, 2, 3])
+  {
     var x: number = 0;
   }
   var y: number = x; // error
@@ -803,14 +870,16 @@ function sub_closure_init_reference() {
  */
 
 // deferred init on annotated lets is ok
-function linear_deferred_init() {
+function linear_deferred_init()
+{
   let x: number;
   x = 0;
   let y: number = x;
 }
 
 // use of let before init gives undefined
-function linear_pre_init() {
+function linear_pre_init()
+{
   let x: number;
   let y: ?number = x; // ok
   let z: number = x; // error
@@ -819,32 +888,39 @@ function linear_pre_init() {
 }
 
 // self-references in let bindings are not ok
-function self_init() {
+function self_init()
+{
   let x = x; // 'x' not initialized!
 }
 
 // use of let after partial init (non-exhaustive if) gives undefined
-function if_partial_post_init(b) {
+function if_partial_post_init(b)
+{
   let x: number;
-  if (b) {
+  if (b)
+  {
     x = 0;
   }
   var y: number = x; // error, possibly uninitialized
 }
 
 // use of let after guaranteed init (exhaustive if) is ok
-function if_post_init(b) {
+function if_post_init(b)
+{
   let x: number;
-  if (b) {
+  if (b)
+  {
     x = 0;
-  } else {
+  } else
+  {
     x = 1;
   }
   var y: number = x;
 }
 
 // use of let after partial init (non-exhaustive switch) gives undefined
-function switch_partial_post_init(i) {
+function switch_partial_post_init(i)
+{
   let x: number;
   switch (i) {
     case 0:
@@ -858,7 +934,8 @@ function switch_partial_post_init(i) {
 }
 
 // use of let after guaranteed init (exhaustive switch) is ok
-function switch_post_init(i) {
+function switch_post_init(i)
+{
   let x: number;
   switch (i) {
     case 0:
@@ -874,7 +951,8 @@ function switch_post_init(i) {
 }
 
 // use in a switch after a skipped decl is an error
-function switch_scoped_init_2(i) {
+function switch_scoped_init_2(i)
+{
   switch (i) {
     case 0:
       let x: number;
@@ -884,43 +962,52 @@ function switch_scoped_init_2(i) {
 }
 
 // while leaves it possibly uninitialized
-function while_post_init(b) {
+function while_post_init(b)
+{
   let x: number;
-  while (b) {
+  while (b)
+  {
     x = 0;
   }
   var y: number = x; // error
 }
 
 // do-while is ok, because loop is guaranteed to run at least once
-function do_while_post_init(b) {
+function do_while_post_init(b)
+{
   let x: number;
-  do {
+  do
+  {
     x = 0;
   } while (b);
   var y: number = x; // ok
 }
 
 // for-in leaves it possibly uninitialized
-function for_in_post_init() {
+function for_in_post_init()
+{
   var x: number;
-  for (var p in {}) {
+  for (var p in {})
+  {
     x = 0;
   }
   var y: number = x; // error
 }
 
 // for-of leaves it possibly uninitialized
-function for_of_post_init() {
+function for_of_post_init()
+{
   var x: number;
-  for (var x of []) {
+  for (var x of [])
+  {
     x = 0;
   }
   var y: number = x; // error
 }
 
 // use of let after guaranteed init (exhaustive switch + throw) is ok
-function switch_post_init2(i): number {
+function switch_post_init2(i): number
+{
   let bar;
   switch (i) {
     case 1:
@@ -933,7 +1020,8 @@ function switch_post_init2(i): number {
 }
 
 // use of let after guaranteed init (exhaustive switch + throw) is ok
-function switch_post_init2(i): number {
+function switch_post_init2(i): number
+{
   let bar;
   switch (i) {
     case 1:
@@ -946,11 +1034,14 @@ function switch_post_init2(i): number {
 }
 
 // reference of a let-binding is permitted in a sub-closure within the init expr
-function sub_closure_init_reference() {
-  let x = function() {
+function sub_closure_init_reference()
+{
+  let x = function()
+  {
     return x;
   };
-  const y = function() {
+  const y = function()
+  {
     return y;
   };
 

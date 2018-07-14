@@ -32,11 +32,13 @@ let [x, y] = [1, 2];
  * returns EmptyT.
  */
 export const X = {
-  returnsATuple: function(): [number, number] {
+  returnsATuple: function(): [number, number]
+  {
     return [1, 2];
   },
 
-  test: function() {
+  test: function()
+  {
     let [a, b] = this.returnsATuple();
   }
 };
@@ -83,13 +85,15 @@ const b = {
 };
 
 const c = {
-  m<T>(x: T): T {
+  m<T>(x: T): T
+  {
     return x;
   }
 };
 
 const d = {
-  m: function<T>(x: T): T {
+  m: function<T>(x: T): T
+  {
     return x;
   }
 };
@@ -130,7 +134,8 @@ class C<X> {}
 var cn: C<number> = new C();
 cn;
 
-function foo() {
+function foo()
+{
   return C;
 }
 var D = foo();
@@ -183,7 +188,8 @@ let tests = [
 /* @flow */
 
 let tests = [
-  function() {
+  function()
+  {
     let x = {};
     Object.defineProperty(x, "foo", { value: "" });
   }
@@ -210,17 +216,20 @@ function qux(x?) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-function foo(x?: string) {
+function foo(x?: string)
+{
   return x;
 }
 
 foo();
 
-function bar(obj: { x?: string }) {
+function bar(obj: { x?: string })
+{
   return obj.x;
 }
 
-function qux(x?) {
+function qux(x?)
+{
   return x;
 }
 
@@ -237,11 +246,14 @@ if (Array.isArray(x)) {}
 /* @flow */
 
 let x = 0;
-if (x == null) {
+if (x == null)
+{
 }
-if (x == undefined) {
+if (x == undefined)
+{
 }
-if (Array.isArray(x)) {
+if (Array.isArray(x))
+{
 }
 
 `;
@@ -306,7 +318,8 @@ try {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-try {
+try
+{
   throw "foo";
 } catch (e) {}
 

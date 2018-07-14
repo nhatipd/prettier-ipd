@@ -24,10 +24,13 @@ function bar(x: boolean) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function foo(x: boolean) {
+function foo(x: boolean)
+{
   var ii = 10;
-  while (ii-- >= 0) {
-    if (x) {
+  while (ii-- >= 0)
+  {
+    if (x)
+    {
       continue;
     }
     return;
@@ -35,9 +38,11 @@ function foo(x: boolean) {
   //console.log('this is still reachable');
 }
 
-function bar(x: boolean) {
+function bar(x: boolean)
+{
   var ii = 0;
-  while (ii > 0) {
+  while (ii > 0)
+  {
     return;
   }
   //console.log('this is still reachable');
@@ -59,13 +64,15 @@ while (node) {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class C {
-  m() {
+  m()
+  {
     return new C();
   }
 }
 function blah() {}
 var node: ?C = new C();
-while (node) {
+while (node)
+{
   var parent = node.m();
   var cloneable: C = node;
   blah();

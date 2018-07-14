@@ -43,7 +43,8 @@ export default (() => {})();
 (() => {})()\`\`;
 (() => {})\`\`;
 new (() => {})();
-if ((() => {}) ? 1 : 0) {
+if ((() => {}) ? 1 : 0)
+{
 }
 let f = () => ({}());
 let a = () => ({} instanceof a);
@@ -119,7 +120,8 @@ export default (() => {})();
 (() => {})()\`\`;
 (() => {})\`\`;
 new (() => {})();
-if ((() => {}) ? 1 : 0) {
+if ((() => {}) ? 1 : 0)
+{
 }
 let f = () => ({}());
 let a = () => ({} instanceof a);
@@ -275,7 +277,8 @@ runtimeAgent.getProperties(
   }
 );
 
-function render() {
+function render()
+{
   return (
     <View>
       <Image
@@ -291,7 +294,8 @@ function render() {
   );
 }
 
-function render() {
+function render()
+{
   return (
     <View>
       <Image
@@ -307,7 +311,8 @@ function render() {
   );
 }
 
-function render() {
+function render()
+{
   return (
     <View>
       <Image
@@ -327,7 +332,8 @@ jest.mock(
   "../SearchSource",
   () =>
     class {
-      findMatchingTests(pattern) {
+      findMatchingTests(pattern)
+      {
         return { paths: [] };
       }
     }
@@ -448,7 +454,8 @@ runtimeAgent.getProperties(
   }
 );
 
-function render() {
+function render()
+{
   return (
     <View>
       <Image
@@ -464,7 +471,8 @@ function render() {
   );
 }
 
-function render() {
+function render()
+{
   return (
     <View>
       <Image
@@ -480,7 +488,8 @@ function render() {
   );
 }
 
-function render() {
+function render()
+{
   return (
     <View>
       <Image
@@ -500,7 +509,8 @@ jest.mock(
   "../SearchSource",
   () =>
     class {
-      findMatchingTests(pattern) {
+      findMatchingTests(pattern)
+      {
         return { paths: [] };
       }
     }

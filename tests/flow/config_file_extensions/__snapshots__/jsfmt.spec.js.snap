@@ -17,7 +17,8 @@ foo('Hello, world!');
  * @flow
  */
 
-function foo(x) {
+function foo(x)
+{
   var a: number = "asdf";
   return x * 10;
 }

@@ -25,7 +25,8 @@ module.exports = foo;
  */
 var _ = require("underscore");
 
-function foo(): string {
+function foo(): string
+{
   return _.foo();
 }
 

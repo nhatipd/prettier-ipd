@@ -15,7 +15,8 @@ declare module ModuleAliasFoo {
  * @flow
  */
 
-declare module ModuleAliasFoo {
+declare module ModuleAliasFoo
+{
   declare type baz = number;
   declare type toz = string;
   declare function foo(bar: baz): toz;
@@ -44,7 +45,8 @@ declare module 'foo' {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-declare module "foo" {
+declare module "foo"
+{
   declare class A {
     toz: number;
   }

@@ -94,35 +94,43 @@ export default {
     index: Number,
     rootPath: String
   },
-  data() {
+  data()
+  {
     return {
       showDetail: false,
       detailIssue: Store.detail
     };
   },
   computed: {
-    issueDetailVisible() {
+    issueDetailVisible()
+    {
       return (
         this.detailIssue.issue && this.detailIssue.issue.id === this.issue.id
       );
     }
   },
   methods: {
-    mouseDown() {
+    mouseDown()
+    {
       this.showDetail = true;
     },
-    mouseMove() {
+    mouseMove()
+    {
       this.showDetail = false;
     },
-    showIssue(e) {
+    showIssue(e)
+    {
       if (e.target.classList.contains("js-no-trigger")) return;
 
-      if (this.showDetail) {
+      if (this.showDetail)
+      {
         this.showDetail = false;
 
-        if (Store.detail.issue && Store.detail.issue.id === this.issue.id) {
+        if (Store.detail.issue && Store.detail.issue.id === this.issue.id)
+        {
           eventHub.$emit("clearDetailIssue");
-        } else {
+        } else
+        {
           eventHub.$emit("newDetailIssue", this.issue);
           Store.detail.list = this.list;
         }
@@ -245,35 +253,43 @@ export default {
     index: Number,
     rootPath: String,
   },
-  data() {
+  data()
+  {
     return {
       showDetail: false,
       detailIssue: Store.detail,
     };
   },
   computed: {
-    issueDetailVisible() {
+    issueDetailVisible()
+    {
       return (
         this.detailIssue.issue && this.detailIssue.issue.id === this.issue.id
       );
     },
   },
   methods: {
-    mouseDown() {
+    mouseDown()
+    {
       this.showDetail = true;
     },
-    mouseMove() {
+    mouseMove()
+    {
       this.showDetail = false;
     },
-    showIssue(e) {
+    showIssue(e)
+    {
       if (e.target.classList.contains("js-no-trigger")) return;
 
-      if (this.showDetail) {
+      if (this.showDetail)
+      {
         this.showDetail = false;
 
-        if (Store.detail.issue && Store.detail.issue.id === this.issue.id) {
+        if (Store.detail.issue && Store.detail.issue.id === this.issue.id)
+        {
           eventHub.$emit("clearDetailIssue");
-        } else {
+        } else
+        {
           eventHub.$emit("newDetailIssue", this.issue);
           Store.detail.list = this.list;
         }

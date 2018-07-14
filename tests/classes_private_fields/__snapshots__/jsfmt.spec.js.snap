@@ -57,30 +57,37 @@ class Point {
   #x = 1;
   #y = 2;
 
-  constructor(x = 0, y = 0) {
+  constructor(x = 0, y = 0)
+  {
     this.#x = +x;
     this.#y = +y;
   }
 
-  get x() {
+  get x()
+  {
     return this.#x;
   }
-  set x(value) {
+  set x(value)
+  {
     this.#x = +value;
   }
 
-  get y() {
+  get y()
+  {
     return this.#y;
   }
-  set y(value) {
+  set y(value)
+  {
     this.#y = +value;
   }
 
-  equals(p) {
+  equals(p)
+  {
     return this.#x === p.#x && this.#y === p.#y;
   }
 
-  toString() {
+  toString()
+  {
     return \`Point<\${this.#x},\${this.#y}>\`;
   }
 }
@@ -144,30 +151,37 @@ class Point {
   #x = 1
   #y = 2
 
-  constructor(x = 0, y = 0) {
+  constructor(x = 0, y = 0)
+  {
     this.#x = +x
     this.#y = +y
   }
 
-  get x() {
+  get x()
+  {
     return this.#x
   }
-  set x(value) {
+  set x(value)
+  {
     this.#x = +value
   }
 
-  get y() {
+  get y()
+  {
     return this.#y
   }
-  set y(value) {
+  set y(value)
+  {
     this.#y = +value
   }
 
-  equals(p) {
+  equals(p)
+  {
     return this.#x === p.#x && this.#y === p.#y
   }
 
-  toString() {
+  toString()
+  {
     return \`Point<\${this.#x},\${this.#y}>\`
   }
 }

@@ -24,12 +24,14 @@ interface IFoo extends IFooPrototype {
 exports.Foo2 = (Foo: Class<IFoo>);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Foo is a class-like function
-function Foo() {
+function Foo()
+{
   this.x = 0; // constructs objects with property x
 }
 Foo.y = 0; // has static property y
 Foo.prototype = {
-  m() {
+  m()
+  {
     return 0;
   }
 };

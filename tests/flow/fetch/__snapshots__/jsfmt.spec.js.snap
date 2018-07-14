@@ -106,11 +106,13 @@ const f: Headers = e.append("Content-Type", "image/jpeg"); // not correct
 const g: string = e.get("Content-Type"); // correct
 const h: number = e.get("Content-Type"); // not correct
 
-for (let v of e) {
+for (let v of e)
+{
   const [i, j]: [string, string] = v; // correct
 }
 
-for (let v of e.entries()) {
+for (let v of e.entries())
+{
   const [i, j]: [string, string] = v; // correct
 }
 
@@ -400,11 +402,13 @@ const f: URLSearchParams = e.append("key1", "value1"); // not correct
 const g: string = e.get("key1"); // correct
 const h: number = e.get("key1"); // not correct
 
-for (let v of e) {
+for (let v of e)
+{
   const [i, j]: [string, string] = v; // correct
 }
 
-for (let v of e.entries()) {
+for (let v of e.entries())
+{
   const [i, j]: [string, string] = v; // correct
 }
 

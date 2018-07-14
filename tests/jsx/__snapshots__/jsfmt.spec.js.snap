@@ -77,7 +77,8 @@ exports[`attr-comments.js - flow-verify 1`] = `
 <Component
   propFn={
     // comment
-    function(arg) {
+    function(arg)
+    {
       fn(arg);
     }
   }
@@ -547,7 +548,8 @@ exports[`expression.js - flow-verify 1`] = `
 </Something>;
 
 <Something>
-  {function() {
+  {function()
+  {
     return (
       <SomethingElse>
         <span />
@@ -992,11 +994,13 @@ const BreakingArrowExpressionWBody = () => {
   );
 };
 
-const NonBreakingFunction = function() {
+const NonBreakingFunction = function()
+{
   return <div />;
 };
 
-const BreakingFunction = function() {
+const BreakingFunction = function()
+{
   return (
     <div>
       <div>bla bla bla</div>
@@ -1005,13 +1009,15 @@ const BreakingFunction = function() {
 };
 
 class NonBreakingClass extends React.component {
-  render() {
+  render()
+  {
     return <div />;
   }
 }
 
 class BreakingClass extends React.component {
-  render() {
+  render()
+  {
     return (
       <div>
         <div>bla bla bla</div>

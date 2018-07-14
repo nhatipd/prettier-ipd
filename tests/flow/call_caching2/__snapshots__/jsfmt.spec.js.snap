@@ -9,7 +9,8 @@ function Foo(items: ?Iterable<number>) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-function Foo(items: ?Iterable<number>) {
+function Foo(items: ?Iterable<number>)
+{
   Iterable(items || []).size;
 }
 

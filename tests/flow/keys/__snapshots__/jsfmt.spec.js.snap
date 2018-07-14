@@ -49,9 +49,11 @@ function testKeysOfOtherObj(str: string, lit: 'hi') {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function testKeysOfObject(str: string, lit: "hi") {
+function testKeysOfObject(str: string, lit: "hi")
+{
   (str: $Keys<Object>); // Any string should be fine
-  if (str) {
+  if (str)
+  {
     (str: $Keys<Object>); // No error, truthy string should be fine
   }
   ("hi": $Keys<Object>); // String literal should be fine
@@ -60,9 +62,11 @@ function testKeysOfObject(str: string, lit: "hi") {
 }
 
 type StrDict = { [key: string]: mixed };
-function testKeysOfStrDict(str: string, lit: "hi") {
+function testKeysOfStrDict(str: string, lit: "hi")
+{
   (str: $Keys<StrDict>); // Any string should be fine
-  if (str) {
+  if (str)
+  {
     (str: $Keys<StrDict>); // No error, truthy string should be fine
   }
   ("hi": $Keys<StrDict>); // String literal should be fine
@@ -71,9 +75,11 @@ function testKeysOfStrDict(str: string, lit: "hi") {
 }
 
 type StrLitDict = { [key: "hi"]: mixed };
-function testKeysOfStrLitDict(str: string, lit: "hi") {
+function testKeysOfStrLitDict(str: string, lit: "hi")
+{
   (str: $Keys<StrLitDict>); // Error: Not all strings are allowed
-  if (str) {
+  if (str)
+  {
     (str: $Keys<StrLitDict>); // Error: Not all truthy strings are allowed
   }
   ("hi": $Keys<StrLitDict>); // The right string literal is allowed
@@ -83,9 +89,11 @@ function testKeysOfStrLitDict(str: string, lit: "hi") {
 }
 
 type ObjLit = { hi: mixed };
-function testKeysOfOtherObj(str: string, lit: "hi") {
+function testKeysOfOtherObj(str: string, lit: "hi")
+{
   (str: $Keys<ObjLit>); // Error: string -> keys of ObjLit
-  if (str) {
+  if (str)
+  {
     (str: $Keys<ObjLit>); // Error: truthy string -> keys of ObjLit
   }
   ("hi": $Keys<ObjLit>); // String literal should be fine

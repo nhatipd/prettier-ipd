@@ -74,7 +74,8 @@ A.qux = function(x: string) {}; // error?
 class B extends A {
   static x: string; // error?
   static foo(x: string) {} // error?
-  static main() {
+  static main()
+  {
     B.x = 0; // error
     B.x = "";
     B.foo(0); // error
@@ -83,11 +84,13 @@ class B extends A {
     B.bar(0); // error
     B.qux(0); // error
   }
-  static create(): A {
+  static create(): A
+  {
     return new this();
   }
 
-  static badCreate(): number {
+  static badCreate(): number
+  {
     return new this(); // error B ~> number
   }
 }
@@ -95,13 +98,15 @@ class B extends A {
 class C<X> {
   static x: X;
   static bar(x: X) {}
-  static create(): C<*> {
+  static create(): C<*>
+  {
     return new this();
   }
 }
 
 class D extends C<string> {
-  static main() {
+  static main()
+  {
     D.foo(0); // error?
 
     D.bar(0);
@@ -114,7 +119,8 @@ var d: C<*> = D.create();
 
 class E {
   static x: number;
-  static foo(): string {
+  static foo(): string
+  {
     this.bar(); // error
     return this.x; // error
   }

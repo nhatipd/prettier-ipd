@@ -9,7 +9,8 @@ export function foo(): AImplementation { return new AImplementation(); }
 /* @flow */
 
 class AImplementation {}
-export function foo(): AImplementation {
+export function foo(): AImplementation
+{
   return new AImplementation();
 }
 

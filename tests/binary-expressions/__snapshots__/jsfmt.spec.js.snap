@@ -15,7 +15,8 @@ function f() {
   )
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function f() {
+function f()
+{
   const appEntitys = getAppEntitys(loadObject).filter(
     entity =>
       entity &&
@@ -25,7 +26,8 @@ function f() {
   );
 }
 
-function f() {
+function f()
+{
   const appEntitys = getAppEntitys(loadObject).map(
     entity =>
       entity &&
@@ -123,24 +125,25 @@ if (this.hasPlugin("dynamicImports") && this.lookahead().type === tt.parenLeft.r
 if (VeryVeryVeryVeryVeryVeryVeryVeryLong === VeryVeryVeryVeryVeryVeryVeryVeryLong) {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if (this.hasPlugin("dynamicImports") && this.lookahead().type) {
+if (this.hasPlugin("dynamicImports") && this.lookahead().type)
+{
 }
 
-if (
-  this.hasPlugin("dynamicImports") &&
-  this.lookahead().type === tt.parenLeft
-) {
+if (this.hasPlugin("dynamicImports") && this.lookahead().type === tt.parenLeft)
+{
 }
 
 if (
   this.hasPlugin("dynamicImports") &&
   this.lookahead().type === tt.parenLeft.right
-) {
+)
+{
 }
 
 if (
   VeryVeryVeryVeryVeryVeryVeryVeryLong === VeryVeryVeryVeryVeryVeryVeryVeryLong
-) {
+)
+{
 }
 
 `;
@@ -507,21 +510,24 @@ function foo() {
     : false;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function foo() {
+function foo()
+{
   return (
     this.hasPlugin("dynamicImports") &&
     this.lookahead().type === tt.parenLeft.right
   );
 }
 
-function foo() {
+function foo()
+{
   return this.hasPlugin("dynamicImports") &&
     this.lookahead().type === tt.parenLeft.right
     ? true
     : false;
 }
 
-function foo() {
+function foo()
+{
   return this.calculate().compute().first.numberOfThings >
     this.calculate().compute().last.numberOfThings
     ? true

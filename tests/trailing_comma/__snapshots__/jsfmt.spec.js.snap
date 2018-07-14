@@ -25,7 +25,8 @@ function send_single_email(
   subject,
   html,
   reply_to
-) {
+)
+{
   send_single_email_implementation(
     app,
     email_id,
@@ -64,7 +65,8 @@ function send_single_email(
   subject,
   html,
   reply_to,
-) {
+)
+{
   send_single_email_implementation(
     app,
     email_id,
@@ -103,7 +105,8 @@ function send_single_email(
   subject,
   html,
   reply_to
-) {
+)
+{
   send_single_email_implementation(
     app,
     email_id,
@@ -521,21 +524,25 @@ function supersupersupersuperLongF(
   supersupersupersuperLongA,
   supersupersupersuperLongB
   // Comment
-) {
+)
+{
   a;
 }
 function supersupersupersuperLongF(
   supersupersupersuperLongA,
   supersupersupersuperLongB
   // Comment
-) {
+)
+{
   a;
 }
 
-this.getAttribute(function(s) /*string*/ {
+this.getAttribute(function(s) /*string*/
+{
   console.log();
 });
-this.getAttribute(function(s) /*string*/ {
+this.getAttribute(function(s) /*string*/
+{
   console.log();
 });
 
@@ -612,21 +619,25 @@ function supersupersupersuperLongF(
   supersupersupersuperLongA,
   supersupersupersuperLongB,
   // Comment
-) {
+)
+{
   a;
 }
 function supersupersupersuperLongF(
   supersupersupersuperLongA,
   supersupersupersuperLongB,
   // Comment
-) {
+)
+{
   a;
 }
 
-this.getAttribute(function(s) /*string*/ {
+this.getAttribute(function(s) /*string*/
+{
   console.log();
 });
-this.getAttribute(function(s) /*string*/ {
+this.getAttribute(function(s) /*string*/
+{
   console.log();
 });
 
@@ -703,21 +714,25 @@ function supersupersupersuperLongF(
   supersupersupersuperLongA,
   supersupersupersuperLongB
   // Comment
-) {
+)
+{
   a;
 }
 function supersupersupersuperLongF(
   supersupersupersuperLongA,
   supersupersupersuperLongB
   // Comment
-) {
+)
+{
   a;
 }
 
-this.getAttribute(function(s) /*string*/ {
+this.getAttribute(function(s) /*string*/
+{
   console.log();
 });
-this.getAttribute(function(s) /*string*/ {
+this.getAttribute(function(s) /*string*/
+{
   console.log();
 });
 

@@ -28,7 +28,8 @@ const TestComponent = ({ children, ...props }) => (
   </div>
 );
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function SomeComponent(props) {
+function SomeComponent(props)
+{
   // Create styles as if you're calling css and the class will be applied to the component
   return (
     <div
@@ -132,11 +133,14 @@ x = \`mdl-textfield mdl-js-textfield \${className} \${
   content.length > 0 ? "is-dirty" : ""
 } combo-box__input\`;
 
-function testing() {
+function testing()
+{
   const p = {};
   // faking some tabs since I can't paste my real code in
-  if (true) {
-    if (false) {
+  if (true)
+  {
+    if (false)
+    {
       return \`\${
         process.env.OPENID_URL
       }/something/something/something?\${Object.keys(p)

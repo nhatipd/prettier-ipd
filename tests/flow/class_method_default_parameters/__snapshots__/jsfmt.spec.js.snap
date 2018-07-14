@@ -26,19 +26,23 @@ class A {
 class A {
   b: string;
 
-  c(d = this.b) {
+  c(d = this.b)
+  {
     // ok - can use \`this\` in function default parameter values
   }
 
-  e() {
+  e()
+  {
     return this.b;
   }
 
-  f(g = this.e()) {
+  f(g = this.e())
+  {
     // ok - can use \`this\` in function default parameter values
   }
 
-  h(i: number = this.b) {
+  h(i: number = this.b)
+  {
     // error
   }
 }

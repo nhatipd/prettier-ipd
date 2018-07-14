@@ -11,8 +11,10 @@ function a() {
   }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function a() {
-  function b() {
+function a()
+{
+  function b()
+  {
     queryThenMutateDOM(() => {
       title = SomeThing.call(
         root,
@@ -289,7 +291,8 @@ angular.module('AngularAppModule')
   // Hello, I am comment.
   .constant('API_URL', 'http://localhost:8080/api');
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function f() {
+function f()
+{
   return (
     observableFromSubscribeFunction()
       // Debounce manually rather than using editor.onDidStopChanging so that the debounce time is
@@ -562,7 +565,8 @@ function f() {
   );
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export default function theFunction(action$, store) {
+export default function theFunction(action$, store)
+{
   return action$.ofType(THE_ACTION).switchMap(action =>
     Observable.webSocket({
       url: THE_URL,
@@ -579,7 +583,8 @@ export default function theFunction(action$, store) {
   );
 }
 
-function f() {
+function f()
+{
   return this._getWorker(workerOptions)({
     filePath,
     hasteImplModulePath: this._options.hasteImplModulePath
@@ -588,7 +593,8 @@ function f() {
     fileMetadata[H.VISITED] = 1;
     const metadataId = metadata.id;
     const metadataModule = metadata.module;
-    if (metadataId && metadataModule) {
+    if (metadataId && metadataModule)
+    {
       fileMetadata[H.ID] = metadataId;
       setModule(metadataId, metadataModule);
     }
@@ -719,10 +725,14 @@ wrapper.find('SomewhatLongNodeName').prop('longPropFunctionName')('argument', 's
   doSomething();
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if (testConfig.ENABLE_ONLINE_TESTS === "true") {
-  describe("POST /users/me/pet", function() {
-    it("saves pet", function() {
-      function assert(pet) {
+if (testConfig.ENABLE_ONLINE_TESTS === "true")
+{
+  describe("POST /users/me/pet", function()
+  {
+    it("saves pet", function()
+    {
+      function assert(pet)
+      {
         expect(pet)
           .to.have.property("OwnerAddress")
           .that.deep.equals({
@@ -741,14 +751,16 @@ if (testConfig.ENABLE_ONLINE_TESTS === "true") {
 wrapper
   .find("SomewhatLongNodeName")
   .prop("longPropFunctionName")()
-  .then(function() {
+  .then(function()
+  {
     doSomething();
   });
 
 wrapper
   .find("SomewhatLongNodeName")
   .prop("longPropFunctionName")("argument")
-  .then(function() {
+  .then(function()
+  {
     doSomething();
   });
 
@@ -758,7 +770,8 @@ wrapper
     "longPropFunctionName",
     "second argument that pushes this group past 80 characters"
   )("argument")
-  .then(function() {
+  .then(function()
+  {
     doSomething();
   });
 
@@ -768,7 +781,8 @@ wrapper
     "argument",
     "second argument that pushes this group past 80 characters"
   )
-  .then(function() {
+  .then(function()
+  {
     doSomething();
   });
 

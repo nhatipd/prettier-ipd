@@ -49,21 +49,24 @@ class E<T extends Date> {
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class C {
   constructor(x);
-  constructor(x = 1) {
+  constructor(x = 1)
+  {
     var y = x;
   }
 }
 
 class D<T> {
   constructor(x);
-  constructor(x: T = null) {
+  constructor(x: T = null)
+  {
     var y = x;
   }
 }
 
 class E<T extends Date> {
   constructor(x);
-  constructor(x: T = null) {
+  constructor(x: T = null)
+  {
     var y = x;
   }
 }
@@ -93,21 +96,24 @@ class E<T extends Date> {
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class C {
   constructor(x);
-  constructor(public x: string = 1) {
+  constructor(public x: string = 1)
+  {
     var y = x;
   }
 }
 
 class D<T, U> {
   constructor(x: T, y: U);
-  constructor(x: T = 1, public y: U = x) {
+  constructor(x: T = 1, public y: U = x)
+  {
     var z = x;
   }
 }
 
 class E<T extends Date> {
   constructor(x);
-  constructor(x: T = new Date()) {
+  constructor(x: T = new Date())
+  {
     var y = x;
   }
 }
@@ -339,13 +345,15 @@ class E extends D {
 // Tests that readonly parameter properties behave like regular readonly properties
 
 class A {
-  constructor(readonly x: number) {
+  constructor(readonly x: number)
+  {
     this.x = 0;
   }
 }
 
 class B extends A {
-  constructor(x: number) {
+  constructor(x: number)
+  {
     super(x);
     // Fails, x is readonly
     this.x = 1;
@@ -355,21 +363,24 @@ class B extends A {
 class C extends A {
   // This is the usual behavior of readonly properties:
   // if one is redeclared in a base class, then it can be assigned to.
-  constructor(readonly x: number) {
+  constructor(readonly x: number)
+  {
     super(x);
     this.x = 1;
   }
 }
 
 class D {
-  constructor(private readonly x: number) {
+  constructor(private readonly x: number)
+  {
     this.x = 0;
   }
 }
 
 // Fails, can't redeclare readonly property
 class E extends D {
-  constructor(readonly x: number) {
+  constructor(readonly x: number)
+  {
     super(x);
     this.x = 1;
   }

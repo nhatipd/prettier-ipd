@@ -22,7 +22,8 @@ var a = new Map();
 a.delete("foobar");
 
 var b = undefined;
-if (undefined) {
+if (undefined)
+{
 }
 
 `;

@@ -32,11 +32,13 @@ function parseTimeframe(line: string): { begin: number; end: number } {
     };
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function parseTimestamp(timestamp: string): number {
+function parseTimestamp(timestamp: string): number
+{
   return 0;
 }
 
-function parseCounter(line: string): number {
+function parseCounter(line: string): number
+{
   return 0;
 }
 
@@ -47,7 +49,8 @@ function parseGroup(
   begin: number,
   end: number,
   text: string
-} {
+}
+{
   var counter = parseCounter(lines[0]);
   var timeframe = parseTimeframe(lines[1]);
   return {
@@ -57,7 +60,8 @@ function parseGroup(
   };
 }
 
-function parseTimeframe(line: string): { begin: number, end: number } {
+function parseTimeframe(line: string): { begin: number, end: number }
+{
   var timestamps = line.split("-->");
   return {
     begin: parseTimestamp(timestamps[0].trim()),
@@ -82,7 +86,8 @@ foo({foo: 42});
  * @flow
  */
 
-function foo(o) {
+function foo(o)
+{
   bar({ ...o });
 }
 function bar(_: { foo: number }) {}
@@ -185,7 +190,8 @@ declare function map<Tv, TNext>(
 function test(
   x: { kind: ?string },
   kinds: { [key: string]: string }
-): Array<{ kind: ?string }> {
+): Array<{ kind: ?string }>
+{
   return map(kinds, value => {
     (value: string); // OK
     return {
@@ -235,7 +241,8 @@ p = { ...p, abc: "def" };
 var q = {
   foo: "bar"
 };
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 10; i++)
+{
   q = { ...q };
 }
 (q: { foo: string });
@@ -255,7 +262,8 @@ let tests = [
 // @flow
 
 let tests = [
-  function(x: Object) {
+  function(x: Object)
+  {
     ({ ...x }: Object);
     ({ ...x }: void); // error, Object
   }

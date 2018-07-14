@@ -7,7 +7,8 @@ function ehllooo () {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // hi l<|>ol
-function ehllooo() {
+function ehllooo()
+{
   const hi = "hi";
 }
 
@@ -52,7 +53,8 @@ const y = 5;
 exports[`cursor-0.js - babylon-verify 1`] = `
 (function() {return        <|> 15})()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(function() {
+(function()
+{
   return <|>15;
 })();
 
@@ -61,7 +63,8 @@ exports[`cursor-0.js - babylon-verify 1`] = `
 exports[`cursor-1.js - babylon-verify 1`] = `
 (function(){return        <|>15})()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(function() {
+(function()
+{
   return <|>15;
 })();
 

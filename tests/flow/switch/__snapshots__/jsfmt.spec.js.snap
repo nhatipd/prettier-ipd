@@ -30,7 +30,8 @@ function baz(x): number {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function foo(x): number {
+function foo(x): number
+{
   switch (x) {
     case 0:
     case 1:
@@ -40,7 +41,8 @@ function foo(x): number {
   }
 }
 
-function bar(x) {
+function bar(x)
+{
   switch (x) {
     case 0:
       break;
@@ -50,7 +52,8 @@ function bar(x) {
   1;
 }
 
-function baz(x): number {
+function baz(x): number
+{
   switch (x) {
     case 0:
       break;
@@ -99,7 +102,8 @@ function qux(b) {
 /**
  * @flow
  */
-function foo(): number {
+function foo(): number
+{
   switch ("foo") {
     case "foo":
       return 1;
@@ -107,7 +111,8 @@ function foo(): number {
   return 2;
 }
 
-function bar() {
+function bar()
+{
   switch ("bar") {
     case "bar":
       break;
@@ -116,7 +121,8 @@ function bar() {
   }
 }
 
-function qux(b) {
+function qux(b)
+{
   var x = b ? 0 : "";
   switch ("qux") {
     case "":
@@ -180,7 +186,8 @@ function baz(x: mixed): number {
 /**
  * @flow
  */
-function foo(x: mixed): string {
+function foo(x: mixed): string
+{
   var a = "";
   var b = "";
 
@@ -200,7 +207,8 @@ function foo(x: mixed): string {
   return b; // error, number ~/> string
 }
 
-function baz(x: mixed): number {
+function baz(x: mixed): number
+{
   var a = "";
   var b = "";
 
@@ -313,7 +321,8 @@ function baz(x): number {
  * trailing cases are allowed - spot checks that we handle them as usual
  * @flow
  */
-function f1(i) {
+function f1(i)
+{
   var x;
 
   switch (i) {
@@ -334,7 +343,8 @@ function f1(i) {
   var y: number = x; // error, number | string ~/> number
 }
 
-function f2(i) {
+function f2(i)
+{
   var x;
 
   switch (i) {
@@ -350,7 +360,8 @@ function f2(i) {
   var y: number = x; // error, number | uninitialized ~/> number
 }
 
-function f3(i) {
+function f3(i)
+{
   var x;
 
   switch (i) {
@@ -365,7 +376,8 @@ function f3(i) {
   var y: number = x; // no error
 }
 
-function foo(x): number {
+function foo(x): number
+{
   switch (x) {
     case 0:
     default:
@@ -375,7 +387,8 @@ function foo(x): number {
   }
 }
 
-function bar(x) {
+function bar(x)
+{
   switch (x) {
     default:
       return;
@@ -385,7 +398,8 @@ function bar(x) {
   1;
 }
 
-function baz(x): number {
+function baz(x): number
+{
   switch (x) {
     case 0:
       break;

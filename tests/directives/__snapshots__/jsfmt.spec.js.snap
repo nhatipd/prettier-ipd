@@ -153,22 +153,26 @@ function f() {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "use strict";
 
-function fn() {
+function fn()
+{
   "use strict";
 }
 
-function f() {
+function f()
+{
   "ngInject";
   Object.assign(this, { $log, $uibModal });
 }
 
-function f() {
+function f()
+{
   "ngInject";
 
   Object.assign(this, { $log, $uibModal });
 }
 
-function f() {
+function f()
+{
   "ngInject";
 
   Object.assign(this, { $log, $uibModal });

@@ -11,7 +11,8 @@ abstract class A {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 abstract class A {
   abstract get a();
-  abstract get aa() {
+  abstract get aa()
+  {
     return 1;
   }
   abstract set b(x: string);
@@ -27,7 +28,8 @@ class abstract {
 
 new abstract;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class abstract {
-  foo() {
+  foo()
+  {
     return 1;
   }
 }
@@ -189,11 +191,13 @@ NewB(B);~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class A {}
 abstract class B extends A {}
 
-function NewA(Factory: typeof A) {
+function NewA(Factory: typeof A)
+{
   return new A();
 }
 
-function NewB(Factory: typeof B) {
+function NewB(Factory: typeof B)
+{
   return new B();
 }
 
@@ -245,7 +249,8 @@ class C<T> extends A {}
 class D extends A {}
 
 class E<T> extends A {
-  foo() {
+  foo()
+  {
     return this.t;
   }
 }
@@ -255,7 +260,8 @@ class F<T> extends A {
 }
 
 class G<T> extends A {
-  foo() {
+  foo()
+  {
     return this.t;
   }
   bar(t: T) {}
@@ -438,7 +444,8 @@ class H {
 class A {}
 
 abstract class B {
-  foo(): number {
+  foo(): number
+  {
     return this.bar();
   }
   abstract bar(): number;
@@ -450,7 +457,8 @@ var BB: typeof B = B;
 var AA: typeof A = BB;
 new AA();
 
-function constructB(Factory: typeof B) {
+function constructB(Factory: typeof B)
+{
   new Factory();
 }
 
@@ -465,14 +473,16 @@ class C extends B {}
 abstract class D extends B {}
 
 class E extends B {
-  bar() {
+  bar()
+  {
     return 1;
   }
 }
 
 abstract class F extends B {
   abstract foo(): number;
-  bar() {
+  bar()
+  {
     return 2;
   }
 }
@@ -743,38 +753,46 @@ abstract class BB extends AA {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class A {
-  foo() {
+  foo()
+  {
     return 1;
   }
 }
 
 abstract class B extends A {
   abstract foo();
-  bar() {
+  bar()
+  {
     super.foo();
   }
-  baz() {
+  baz()
+  {
     return this.foo;
   }
 }
 
 class C extends B {
-  foo() {
+  foo()
+  {
     return 2;
   }
-  qux() {
+  qux()
+  {
     return super.foo() || super.foo;
   }
-  norf() {
+  norf()
+  {
     return super.bar();
   }
 }
 
 class AA {
-  foo() {
+  foo()
+  {
     return 1;
   }
-  bar() {
+  bar()
+  {
     return this.foo();
   }
 }
@@ -808,7 +826,8 @@ abstract class A {
 }
 
 class B extends A {
-  foo() {
+  foo()
+  {
     return 1;
   }
 }

@@ -82,6 +82,7 @@ class A /* a */ extends B {}
 
 class x {
   focus() // do nothing
+
   {
     // do nothing
   }

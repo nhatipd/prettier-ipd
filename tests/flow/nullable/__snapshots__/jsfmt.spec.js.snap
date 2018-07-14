@@ -35,11 +35,13 @@ if (x != null) {
 
 var array_of_nullable: Array<?number> = [null, 3];
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function foo(): string {
+function foo(): string
+{
   return null;
 }
 
-function bar(): ?string {
+function bar(): ?string
+{
   return null;
 }
 
@@ -51,10 +53,12 @@ var x = bar(); // x: ?string
 if (x != null) qux(x); // x: ?string | null
 if (x != null) corge(x); // x: ?string | null
 
-function grault() {
+function grault()
+{
   x = null;
 }
-if (x != null) {
+if (x != null)
+{
   grault();
   qux(x);
 }

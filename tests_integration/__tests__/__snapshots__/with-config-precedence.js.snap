@@ -24,7 +24,8 @@ exports[`CLI --stdin-filepath works with --config-precedence prefer-file (write)
 exports[`CLI overrides are still applied when no config is found with --config-precedence file-override (stderr) 1`] = `""`;
 
 exports[`CLI overrides are still applied when no config is found with --config-precedence file-override (stdout) 1`] = `
-"function noConfigJs() {
+"function noConfigJs()
+{
       console.log(\\"no-config/file.js should have no semicolons\\")
 }
 "
@@ -35,7 +36,8 @@ exports[`CLI overrides are still applied when no config is found with --config-p
 exports[`CLI overrides gets applied when no config exists with --config-precedence prefer-file (stderr) 1`] = `""`;
 
 exports[`CLI overrides gets applied when no config exists with --config-precedence prefer-file (stdout) 1`] = `
-"function noConfigJs() {
+"function noConfigJs()
+{
        console.log(
               \\"no-config/file.js should have no semicolons\\"
        );
@@ -48,7 +50,8 @@ exports[`CLI overrides gets applied when no config exists with --config-preceden
 exports[`CLI overrides gets ignored when config exists with --config-precedence prefer-file (stderr) 1`] = `""`;
 
 exports[`CLI overrides gets ignored when config exists with --config-precedence prefer-file (stdout) 1`] = `
-"function js() {
+"function js()
+{
         console.log(\\"js/file.js should have tab width 8 (1 if CLI)\\");
 }
 \\"use strict\\";
@@ -64,7 +67,8 @@ exports[`CLI overrides gets ignored when config exists with --config-precedence 
 exports[`CLI overrides take lower precedence with --config-precedence file-override (stderr) 1`] = `""`;
 
 exports[`CLI overrides take lower precedence with --config-precedence file-override (stdout) 1`] = `
-"function js() {
+"function js()
+{
         console.log(\\"js/file.js should have tab width 8 (1 if CLI)\\");
 }
 \\"use strict\\";
@@ -80,22 +84,26 @@ exports[`CLI overrides take lower precedence with --config-precedence file-overr
 exports[`CLI overrides take precedence with --config-precedence cli-override (stderr) 1`] = `""`;
 
 exports[`CLI overrides take precedence with --config-precedence cli-override (stdout) 1`] = `
-"function f() {
+"function f()
+{
 	console.log(
 		\\"should have tab width 8\\"
 	)
 }
-function f() {
+function f()
+{
   console.log(
     \\"should have space width 2\\"
   )
 }
-function f() {
+function f()
+{
         console.log(
                 \\"should have space width 8\\"
         )
 }
-function f() {
+function f()
+{
   console.log(
     \\"should have space width 2 despite ../.editorconfig specifying 8, because ./.hg is present\\"
   )
@@ -109,7 +117,8 @@ console.log(
 console.log(
   \\"jest/Component.test.js should have semi\\"
 );
-function js() {
+function js()
+{
         console.log(
                 \\"js/file.js should have tab width 8 (1 if CLI)\\"
         );
@@ -119,17 +128,20 @@ function js() {
 module.exports = {
         tabWidth: 8
 };
-function noConfigJs() {
+function noConfigJs()
+{
   console.log(
     \\"no-config/file.js should have no semicolons\\"
   )
 }
-function packageJs() {
+function packageJs()
+{
    console.log(
       \\"package/file.js should have tab width 3\\"
    );
 }
-function rcJson() {
+function rcJson()
+{
   console.log.apply(
     null,
     [
@@ -139,7 +151,8 @@ function rcJson() {
     ],
   );
 }
-function rcYaml() {
+function rcYaml()
+{
   console.log.apply(
     null,
     [
@@ -157,22 +170,26 @@ exports[`CLI overrides take precedence with --config-precedence cli-override (wr
 exports[`CLI overrides take precedence without --config-precedence (stderr) 1`] = `""`;
 
 exports[`CLI overrides take precedence without --config-precedence (stdout) 1`] = `
-"function f() {
+"function f()
+{
 	console.log(
 		\\"should have tab width 8\\"
 	)
 }
-function f() {
+function f()
+{
   console.log(
     \\"should have space width 2\\"
   )
 }
-function f() {
+function f()
+{
         console.log(
                 \\"should have space width 8\\"
         )
 }
-function f() {
+function f()
+{
   console.log(
     \\"should have space width 2 despite ../.editorconfig specifying 8, because ./.hg is present\\"
   )
@@ -186,7 +203,8 @@ console.log(
 console.log(
   \\"jest/Component.test.js should have semi\\"
 );
-function js() {
+function js()
+{
         console.log(
                 \\"js/file.js should have tab width 8 (1 if CLI)\\"
         );
@@ -196,17 +214,20 @@ function js() {
 module.exports = {
         tabWidth: 8
 };
-function noConfigJs() {
+function noConfigJs()
+{
   console.log(
     \\"no-config/file.js should have no semicolons\\"
   )
 }
-function packageJs() {
+function packageJs()
+{
    console.log(
       \\"package/file.js should have tab width 3\\"
    );
 }
-function rcJson() {
+function rcJson()
+{
   console.log.apply(
     null,
     [
@@ -216,7 +237,8 @@ function rcJson() {
     ],
   );
 }
-function rcYaml() {
+function rcYaml()
+{
   console.log.apply(
     null,
     [

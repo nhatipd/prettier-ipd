@@ -162,7 +162,8 @@ x.b = 1;
 // T7810506
 class A {
   x: { a: number, b?: string };
-  foo() {
+  foo()
+  {
     // Something similar should happen here, but doesn't: the problem is
     // made explicit by adding generics (see test3_failure.js introduced by
     // D2747512). There is a race between writing b on the object literal
@@ -211,7 +212,8 @@ class A<O: {x: { a: number, b?: string}}> {
 
 class A<O: { x: { a: number, b?: string } }> {
   o: O;
-  foo() {
+  foo()
+  {
     this.o.x = { a: 123 };
     this.o.x.b = "hello"; // this is a spurious error (see test3.js for details)
   }

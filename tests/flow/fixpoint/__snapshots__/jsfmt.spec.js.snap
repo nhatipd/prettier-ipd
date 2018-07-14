@@ -34,19 +34,25 @@ module.exports = {fn: fix};
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @providesModule Fun */
 
-function eq(x: number, y: number) {
+function eq(x: number, y: number)
+{
   return true;
 }
-function sub(x: number, y: number) {
+function sub(x: number, y: number)
+{
   return 0;
 }
-function mul(x: number, y: number) {
+function mul(x: number, y: number)
+{
   return 0;
 }
 
-function fix(fold) {
-  var delta = function(delta) {
-    return fold(function(x) {
+function fix(fold)
+{
+  var delta = function(delta)
+  {
+    return fold(function(x)
+    {
       var eta = delta(delta);
       return eta(x);
     });
@@ -54,10 +60,14 @@ function fix(fold) {
   return delta(delta);
 }
 
-function mk_factorial() {
-  return fix(function(factorial) {
-    return function(n) {
-      if (eq(n, 1)) {
+function mk_factorial()
+{
+  return fix(function(factorial)
+  {
+    return function(n)
+    {
+      if (eq(n, 1))
+      {
         return 1;
       }
       return mul(factorial(sub(n, 1)), n);
@@ -97,21 +107,27 @@ module.exports = Y;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @providesModule Ycombinator */
 
-function Y(f) {
-  function g(x) {
+function Y(f)
+{
+  function g(x)
+  {
     return f(x(x));
   }
   g(g);
 }
 
-function func1(f) {
-  function fix_f(x: number): number {
+function func1(f)
+{
+  function fix_f(x: number): number
+  {
     return f(x);
   }
   return fix_f;
 }
-function func2(f) {
-  function fix_f(x: string): string {
+function func2(f)
+{
+  function fix_f(x: string): string
+  {
     return f(x);
   }
   return fix_f;

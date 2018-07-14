@@ -13,13 +13,15 @@ var x: number = C.bar();
 var y: number = C.foo();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class B {
-  static foo(): string {
+  static foo(): string
+  {
     return "";
   }
 }
 
 class C extends B {
-  static bar(): string {
+  static bar(): string
+  {
     return "";
   }
 }

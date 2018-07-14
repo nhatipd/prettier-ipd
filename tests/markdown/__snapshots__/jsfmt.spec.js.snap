@@ -1501,7 +1501,8 @@ Prettier's built-in parsers are exposed as properties on the \`parsers\` argumen
 
 \`\`\`js
 prettier.format("lodash ( )", {
-  parser(text, { babylon }) {
+  parser(text, { babylon })
+  {
     const ast = babylon(text);
     ast.program.body[0].expression.callee.name = "_";
     return ast;
@@ -3472,7 +3473,8 @@ Prettier's built-in parsers are exposed as properties on the \`parsers\` argumen
 
 \`\`\`js
 prettier.format('lodash ( )', {
-  parser(text, { babylon }) {
+  parser(text, { babylon })
+  {
     const ast = babylon(text);
     ast.program.body[0].expression.callee.name = '_';
     return ast;

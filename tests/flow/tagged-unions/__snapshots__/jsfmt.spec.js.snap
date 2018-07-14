@@ -47,21 +47,27 @@ class Bar {
 
 type Foobar = Foo | Bar;
 
-function foobar(x: Foobar): string {
-  if (x.type === "foo") {
+function foobar(x: Foobar): string
+{
+  if (x.type === "foo")
+  {
     return foo(x);
-  } else if (x.type === "bar") {
+  } else if (x.type === "bar")
+  {
     return bar(x);
-  } else {
+  } else
+  {
     return "unknown";
   }
 }
 
-function foo(x: Foo): string {
+function foo(x: Foo): string
+{
   return x.foo;
 }
 
-function bar(x: Bar): string {
+function bar(x: Bar): string
+{
   return x.bar;
 }
 
@@ -118,7 +124,8 @@ const data: IData = {
   kind: "system"
 };
 
-if (data.kind === "user") {
+if (data.kind === "user")
+{
   (data: ISystemData);
 }
 
@@ -175,7 +182,8 @@ const data: IData = {
   kind: "system"
 };
 
-if (data.kind === "system") {
+if (data.kind === "system")
+{
   (data: ISystemData);
 }
 
@@ -240,7 +248,8 @@ const data: Data = {
   kind: "system"
 };
 
-if (data.kind === "user") {
+if (data.kind === "user")
+{
   (data: SystemData);
 }
 
@@ -305,7 +314,8 @@ const data: Data = {
   kind: "system"
 };
 
-if (data.kind === "system") {
+if (data.kind === "system")
+{
   (data: SystemData);
 }
 

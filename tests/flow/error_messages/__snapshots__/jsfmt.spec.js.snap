@@ -3,7 +3,8 @@
 exports[`errors.js - flow-verify 1`] = `
 if (typeof define === 'function' && define.amd) { }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if (typeof define === "function" && define.amd) {
+if (typeof define === "function" && define.amd)
+{
 }
 
 `;

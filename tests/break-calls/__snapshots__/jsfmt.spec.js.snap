@@ -62,7 +62,8 @@ deepCopyAndAsyncMapLeavesC(
   { valueMapper, overwriteExistingKeys }
 );
 
-function someFunction(url) {
+function someFunction(url)
+{
   return get(url).then(
     json => dispatch(success(json)),
     error => dispatch(failed(error))

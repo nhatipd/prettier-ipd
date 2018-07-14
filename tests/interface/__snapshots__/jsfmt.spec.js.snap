@@ -43,7 +43,8 @@ declare module X {
   declare interface Y { x: number; }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare module X {
+declare module X
+{
   declare interface Y { x: number }
 }
 

@@ -95,12 +95,14 @@ loop: for (;;) {
   continue loop /* comment */;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-for (;;) {
+for (;;)
+{
   break; /* comment */
   continue; /* comment */
 }
 
-loop: for (;;) {
+loop: for (;;)
+{
   break /* comment */ loop;
   break loop /* comment */;
   continue /* comment */ loop;
@@ -171,7 +173,8 @@ let assignment = /** @type {string} */ (getValue());
 
 functionCall(1 + /** @type {string} */ (value), /** @type {!Foo} */ ({}));
 
-function returnValue() {
+function returnValue()
+{
   return /** @type {!Array.<string>} */ (["hello", "you"]);
 }
 
@@ -202,7 +205,8 @@ var x = {
 var x = [
   /* dangling */
 ];
-function x() {
+function x()
+{
   /* dangling */
 }
 declare class Foo extends Qux<string> {
@@ -503,7 +507,8 @@ else if (15) // comment
 /* comment */ // comment
 true
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if (1) {
+if (1)
+{
   // comment
   false;
 }
@@ -516,29 +521,34 @@ else if (3)
   // existing comment
   true;
 // okay?
-else if (4) {
+else if (4)
+{
   // empty with existing comment
 }
 // comment
-else {
+else
+{
 }
 
 if (5)
   // comment
   true;
 
-if (6) {
+if (6)
+{
   // comment
   true;
 } else if (7)
   // comment
   true;
 // comment
-else {
+else
+{
   true;
 }
 
-if (8) {
+if (8)
+{
   // comment
   // comment
   true;
@@ -548,11 +558,13 @@ if (8) {
   true;
 // comment
 // comment
-else {
+else
+{
   true;
 }
 
-if (10) {
+if (10)
+{
   /* comment */ // comment
   true;
 } else if (11)
@@ -564,11 +576,13 @@ else if (12)
 else if (13)
   /* comment */ /* comment */ // comment
   true;
-/* comment */ else {
+/* comment */ else
+{
   true;
 }
 
-if (14) {
+if (14)
+{
   // comment
   /* comment */
   // comment
@@ -783,15 +797,18 @@ Observable.of(process)
 />;
 
 // Comments disappear in empty blocks
-if (1) {
+if (1)
+{
   // Comment
 }
 
 // Comments trigger invalid JavaScript in-between else if
-if (1) {
+if (1)
+{
 }
 // Comment
-else {
+else
+{
 }
 
 // The comment makes the line break in a weird way
@@ -1158,7 +1175,8 @@ class X {
 function f(
   a: number
   // some comment here
-): number {
+): number
+{
   return a + 1;
 }
 
@@ -1240,18 +1258,21 @@ function name() {
   // func3()
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function f() {
+function f()
+{
   a;
   /* eslint-disable */
 }
 
-function f() {
+function f()
+{
   a;
 
   /* eslint-disable */
 }
 
-function name() {
+function name()
+{
   // comment1
   func1();
 
@@ -1387,39 +1408,45 @@ function inlineComment() {
   ) || 42
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function jsx() {
+function jsx()
+{
   return (
     // Comment
     <div />
   );
 }
 
-function unary() {
+function unary()
+{
   return (
     // Comment
     !!x
   );
 }
 
-function numericLiteralNoParen() {
+function numericLiteralNoParen()
+{
   return 1337; // Comment
 }
 
-function logical() {
+function logical()
+{
   return (
     // Reason for 42
     42 && 84
   );
 }
 
-function binary() {
+function binary()
+{
   return (
     // Reason for 42
     42 * 84
   );
 }
 
-function binaryInBinaryLeft() {
+function binaryInBinaryLeft()
+{
   return (
     // Reason for 42
     42 *
@@ -1428,7 +1455,8 @@ function binaryInBinaryLeft() {
   );
 }
 
-function binaryInBinaryRight() {
+function binaryInBinaryRight()
+{
   return (
     // Reason for 42
     42 +
@@ -1436,7 +1464,8 @@ function binaryInBinaryRight() {
   );
 }
 
-function conditional() {
+function conditional()
+{
   return (
     // Reason for 42
     42
@@ -1445,7 +1474,8 @@ function conditional() {
   );
 }
 
-function binaryInConditional() {
+function binaryInConditional()
+{
   return (
     // Reason for 42
     42 * 3
@@ -1454,28 +1484,32 @@ function binaryInConditional() {
   );
 }
 
-function call() {
+function call()
+{
   return (
     // Reason for a
     a()
   );
 }
 
-function memberInside() {
+function memberInside()
+{
   return (
     // Reason for a.b
     a.b.c
   );
 }
 
-function memberOutside() {
+function memberOutside()
+{
   return (
     // Reason for a
     a.b.c
   );
 }
 
-function memberInAndOutWithCalls() {
+function memberInAndOutWithCalls()
+{
   return (
     aFunction
       .b// Reason for a
@@ -1484,7 +1518,8 @@ function memberInAndOutWithCalls() {
   );
 }
 
-function excessiveEverything() {
+function excessiveEverything()
+{
   return (
     // Reason for stuff
     a.b() * 3 + 4 ? ((a\`hi\`, 1) ? 1 : 1) : 1
@@ -1499,21 +1534,24 @@ function excessiveEverything() {
 //   ), b
 // }
 
-function sequenceExpressionInside() {
+function sequenceExpressionInside()
+{
   return (
     // Reason for a
     a, b
   );
 }
 
-function taggedTemplate() {
+function taggedTemplate()
+{
   return (
     // Reason for a
     a\`b\`
   );
 }
 
-function inlineComment() {
+function inlineComment()
+{
   return /* hi */ 42 || 42;
 }
 
@@ -1588,11 +1626,13 @@ switch (foo) {
 }
 
 switch (foo) {
-  case "bar": {
+  case "bar":
+  {
     doThing();
   } //comment
 
-  case "baz": {
+  case "baz":
+  {
     doThing();
   } //comment
 }
@@ -1715,12 +1755,15 @@ finally // comment 6
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // comment 1
-try {
+try
+{
   // comment 2
-} catch (e) {
+} catch (e)
+{
   // comment 3
   // comment 4
-} finally { // comment 6
+} finally  // comment 6
+{
   // comment 5
   // comment 7
 }

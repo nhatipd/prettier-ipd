@@ -25,7 +25,8 @@ function f() {
     !filePath.endsWith(\`.\${SNAPSHOT_EXTENSION}\`);
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function f() {
+function f()
+{
   return (
     property.isIdentifier() &&
     FUNCTIONS[property.node.name] &&
@@ -78,11 +79,13 @@ fn(function f() {
   );
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function f() {
+function f()
+{
   return /* a */;
 }
 
-function x() {
+function x()
+{
   return (
     func2
       //comment
@@ -90,7 +93,8 @@ function x() {
   );
 }
 
-function f() {
+function f()
+{
   return (
     foo
       // comment
@@ -98,7 +102,8 @@ function f() {
   );
 }
 
-fn(function f() {
+fn(function f()
+{
   return (
     foo
       // comment

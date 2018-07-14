@@ -38,14 +38,17 @@ class Bar {
  */
 
 var f = {
-  get a() {
+  get a()
+  {
     return 4;
   },
-  set b(x: number) {
+  set b(x: number)
+  {
     this.c = x;
   },
   c: 10,
-  get ["d"]() {
+  get ["d"]()
+  {
     return "foo";
   },
   set ["d"](x: number) {}
@@ -64,14 +67,17 @@ declare class Foo {
 }
 
 class Bar {
-  get a() {
+  get a()
+  {
     return 4;
   }
-  set b(x: number) {
+  set b(x: number)
+  {
     this.c = x;
   }
   c: number;
-  get ["d"]() {
+  get ["d"]()
+  {
     return "foo";
   }
   set ["d"](x: number) {}

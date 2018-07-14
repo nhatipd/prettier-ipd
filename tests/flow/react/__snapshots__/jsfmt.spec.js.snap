@@ -18,7 +18,8 @@ module.exports = AudienceInsightsContainer;
  */
 var React = require("react");
 var AudienceInsightsContainer = React.createClass({
-  renderComponent(AudienceInsights: ReactClass<*>) {
+  renderComponent(AudienceInsights: ReactClass<*>)
+  {
     return <AudienceInsights />;
   }
 });
@@ -208,7 +209,8 @@ import React from "react";
 const A = React.createClass({
   mixins: [{ propTypes: { foo: React.PropTypes.string.isRequired } }],
   propTypes: { bar: React.PropTypes.number.isRequired },
-  m() {
+  m()
+  {
     (this.props.foo: empty); // error: string ~> empty
     (this.props.bar: empty); // error: number ~> empty
   }
@@ -216,19 +218,23 @@ const A = React.createClass({
 
 const B = React.createClass({
   p: "",
-  m() {
+  m()
+  {
     this.p = 0; // error: number ~> string
   },
-  mm() {
+  mm()
+  {
     this.m.apply(null); // OK: this.m is autobound, so \`this.p\` will always be found
   }
 });
 
 const C = React.createClass({
-  getInitialState(): Object {
+  getInitialState(): Object
+  {
     return { foo: 0 };
   },
-  m() {
+  m()
+  {
     this.state.foo; // OK: state is unknown
   }
 });
@@ -236,35 +242,42 @@ const C = React.createClass({
 const D = React.createClass({
   mixins: [
     {
-      getInitialState(): Object {
+      getInitialState(): Object
+      {
         return { foo: 0 };
       }
     }
   ],
-  getInitialState() {
+  getInitialState()
+  {
     return { bar: 0 };
   },
-  m() {
+  m()
+  {
     this.state.foo; // OK: state is unknown (due to unknown mixin)
   }
 });
 
 const E = React.createClass({
   foo: 0,
-  m() {
+  m()
+  {
     (this.foo: string); // error: number ~> string
   },
-  mm() {
+  mm()
+  {
     var props: { m(): void } = { m: this.m };
     props.m(); // OK: this.m is autobound, so \`this.foo\` will always be found
   }
 });
 
 const F = React.createClass({
-  getInitialState(): { [string]: mixed } {
+  getInitialState(): { [string]: mixed }
+  {
     return { foo: 0 };
   },
-  m() {
+  m()
+  {
     this.state.foo;
     this.state.bar;
   }
@@ -274,7 +287,8 @@ const G = React.createClass({
   mixins: [],
   autobind: true,
   statics: {},
-  m() {
+  m()
+  {
     (this.mixins: mixed); // error: property \`mixins\` not found
     (this.autobind: mixed); // error: property \`autobind\` not found
     (this.statics: mixed); // error: property \`statics\` not found
@@ -283,7 +297,8 @@ const G = React.createClass({
 
 const H = React.createClass({
   statics: { q: 0 },
-  getDefaultProps() {
+  getDefaultProps()
+  {
     (this.q: empty); // error: number ~> empty
     return {};
   }
@@ -291,7 +306,8 @@ const H = React.createClass({
 
 const I = React.createClass({
   propTypes: ({}: { [string]: any }),
-  m() {
+  m()
+  {
     (this.props.foo: empty); // OK
   }
 });
@@ -299,17 +315,20 @@ const I = React.createClass({
 const J = React.createClass({
   mixins: [
     {
-      getInitialState() {
+      getInitialState()
+      {
         return this.constructor.calculateState();
       }
     }
   ],
   statics: {
-    calculateState() {
+    calculateState()
+    {
       return { foo: 0 };
     }
   },
-  m() {
+  m()
+  {
     (this.state.foo: empty); // number ~> empty
   }
 });
@@ -318,15 +337,18 @@ const K = React.createClass({
   propTypes: {
     foo: React.PropTypes.string.isRequired
   },
-  getInitialState() {
+  getInitialState()
+  {
     this.mm(); // cause error in mm below
     return this.props;
   },
-  m() {
+  m()
+  {
     (this.props.foo: empty); // string ~> empty
     (this.state.foo: empty); // string ~> empty
   },
-  mm() {
+  mm()
+  {
     this.state.foo; // error: property fo not found (called by getInitialState)
   }
 });
@@ -335,44 +357,52 @@ const L = React.createClass({
   propTypes: {
     foo: React.PropTypes.string.isRequired
   },
-  getInitialState() {
+  getInitialState()
+  {
     return { bar: 0 };
   },
-  componentWillMount() {
+  componentWillMount()
+  {
     (this.props.foo: empty); // string ~> empty
     return 0; // number ~> void
   },
-  componentDidMount() {
+  componentDidMount()
+  {
     (this.props.foo: empty); // string ~> empty
     return 0; // number ~> void
   },
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps)
+  {
     (this.props.foo: empty); // string ~> empty
     (nextProps.foo: empty); // string ~> empty
     return 0; // number ~> void
   },
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState)
+  {
     (this.props.foo: empty); // string ~> empty
     (this.state.bar: empty); // number ~> empty
     (nextProps.foo: empty); // string ~> empty
     (nextState.bar: empty); // number ~> empty
     return 0; // number ~> bool
   },
-  componentWillUpdate(nextProps, nextState) {
+  componentWillUpdate(nextProps, nextState)
+  {
     (this.props.foo: empty); // string ~> empty
     (this.state.bar: empty); // number ~> empty
     (nextProps.foo: empty); // string ~> empty
     (nextState.bar: empty); // number ~> empty
     return 0; // number ~> void
   },
-  componentDidUpdate(nextProps, nextState) {
+  componentDidUpdate(nextProps, nextState)
+  {
     (this.props.foo: empty); // string ~> empty
     (this.state.bar: empty); // number ~> empty
     (nextProps.foo: empty); // string ~> empty
     (nextState.bar: empty); // number ~> empty
     return 0; // number ~> void
   },
-  componentWillUnmount() {
+  componentWillUnmount()
+  {
     (this.props.foo: empty); // string ~> empty
     (this.state.bar: empty); // number ~> empty
     return 0; // number ~> void
@@ -476,49 +506,60 @@ import React from "react";
 
 // initial state = None
 React.createClass({
-  f() {
+  f()
+  {
     this.setState({ q: 0 });
   },
-  g() {
+  g()
+  {
     (this.state.q: empty); // number ~> empty
   }
 });
 
 // initial state = Some (exact & sealed) [lit]
 React.createClass({
-  getInitialState() {
+  getInitialState()
+  {
     return { p: 0 };
   },
-  f() {
+  f()
+  {
     this.setState({ q: 0 });
   },
-  g() {
+  g()
+  {
     (this.state.q: empty); // number ~> empty
   }
 });
 
 // initial state = Some (exact & sealed) [annot]
 React.createClass({
-  getInitialState(): {| p: number |} {
+  getInitialState(): {| p: number |}
+  {
     return { p: 0 };
   },
-  f() {
+  f()
+  {
     this.setState({ q: 0 });
   },
-  g() {
+  g()
+  {
     (this.state.q: empty); // number ~> empty
   }
 });
 
 // initial state = Some (inexact & sealed) [annot]
 React.createClass({
-  getInitialState(): { p: number } {
+  getInitialState(): { p: number }
+  {
     return { p: 0 };
   },
-  f() {
+  f()
+  {
     this.setState({ q: 0 }); // property \`q\` not found
   },
-  g() {
+  g()
+  {
     (this.state.q: empty); // property \`q\` not found
   }
 });
@@ -527,18 +568,22 @@ React.createClass({
 React.createClass({
   mixins: [
     {
-      getInitialState() {
+      getInitialState()
+      {
         return { foo: 0 };
       }
     }
   ],
-  getInitialState() {
+  getInitialState()
+  {
     return { bar: 0 };
   },
-  f() {
+  f()
+  {
     this.setState({ baz: 0 });
   },
-  g() {
+  g()
+  {
     (this.state.baz: empty); // number ~> empty
   }
 });
@@ -547,18 +592,22 @@ React.createClass({
 React.createClass({
   mixins: [
     {
-      getInitialState(): { foo: number } {
+      getInitialState(): { foo: number }
+      {
         return { foo: 0 };
       }
     }
   ],
-  getInitialState() {
+  getInitialState()
+  {
     return { bar: 0 };
   },
-  f() {
+  f()
+  {
     this.setState({ baz: 0 }); // property \`baz\`  not found
   },
-  g() {
+  g()
+  {
     (this.state.baz: empty); // property \`baz\` not found
   }
 });
@@ -701,7 +750,8 @@ import React from "react";
 class Bar extends React.Component {}
 
 class Foo extends React.Component {
-  render() {
+  render()
+  {
     const Cmp = Math.random() < 0.5 ? "div" : Bar;
     return <Cmp />;
   }
@@ -740,13 +790,15 @@ class Bar extends React.Component {
   props: {
     test: number
   };
-  render() {
+  render()
+  {
     return <div>{this.props.test}</div>;
   }
 }
 
 class Foo extends React.Component {
-  render() {
+  render()
+  {
     const Cmp = Math.random() < 0.5 ? "div" : Bar;
     return <Cmp />;
   }
@@ -963,7 +1015,8 @@ const React = require("react");
 // Custom validator must match \`ReactPropsCheckType\`
 var Example = React.createClass({
   propTypes: {
-    foo(props, propName, componentName, href) {
+    foo(props, propName, componentName, href)
+    {
       (props: empty); // ok: props is \`any\`
       (propName: empty); // error: propName is a string
       (componentName: empty); // error: componentName is a string
@@ -1105,7 +1158,8 @@ var PolyExample = React.createClass({
   propTypes: {
     x: React.PropTypes.instanceOf(Poly).isRequired
   },
-  m() {
+  m()
+  {
     (this.props.x.x: empty); // OK, T instantiated to \`any\`
   }
 });
@@ -1121,7 +1175,8 @@ var PolyDefaultExample = React.createClass({
   propTypes: {
     x: React.PropTypes.instanceOf(PolyDefault).isRequired
   },
-  m() {
+  m()
+  {
     (this.props.x.x: empty); // OK, T instantiated to \`any\`
   }
 });
@@ -1178,7 +1233,8 @@ var Foo = React.createClass({
  */
 var React = require("react");
 var Foo = React.createClass({
-  getID(): string {
+  getID(): string
+  {
     // So this would have been an error in 0.21.0 if we didn't make this.props
     // Object
     switch (this.props.name) {
@@ -1189,7 +1245,8 @@ var Foo = React.createClass({
     }
   },
 
-  render() {
+  render()
+  {
     // But this never errored
     return <div id={this.props.name} />;
   }
@@ -1617,10 +1674,13 @@ var Example = React.createClass({
       React.PropTypes.number
     ]).isRequired
   },
-  render() {
-    if (typeof this.props.prop === "string") {
+  render()
+  {
+    if (typeof this.props.prop === "string")
+    {
       return <div>{this.props.prop}</div>;
-    } else {
+    } else
+    {
       return <div>{this.props.prop.toFixed(2)}</div>;
     }
   }
@@ -1763,11 +1823,13 @@ React.createClass({
     }).isRequired
   },
 
-  f() {
+  f()
+  {
     (this.props.foo.baz: string);
   },
 
-  g() {
+  g()
+  {
     this.props.foo.baz = 0;
   }
 });
@@ -1776,7 +1838,8 @@ React.createClass({
   propTypes: {
     foo: React.PropTypes.shape(({}: { [string]: any })).isRequired
   },
-  f() {
+  f()
+  {
     (this.props.foo.bar: empty); // OK
   }
 });
@@ -1884,11 +1947,13 @@ React.createClass({
     foo: React.PropTypes.string.isRequired
   },
 
-  f() {
+  f()
+  {
     (this.props.baz: string);
   },
 
-  g() {
+  g()
+  {
     this.props.baz = 0;
   }
 });

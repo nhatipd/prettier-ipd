@@ -37,13 +37,15 @@ var HelloLocal = React.createClass({
     name: React.PropTypes.string.isRequired
   },
 
-  render: function(): React.Element<*> {
+  render: function(): React.Element<*>
+  {
     return <div>{this.props.name}</div>;
   }
 });
 
 var Callsite = React.createClass({
-  render: function(): React.Element<*> {
+  render: function(): React.Element<*>
+  {
     return (
       <div>
         <Hello />
@@ -81,7 +83,8 @@ var Hello = React.createClass({
     name: React.PropTypes.string.isRequired
   },
 
-  render: function(): React.Element<*> {
+  render: function(): React.Element<*>
+  {
     return <div>{this.props.name}</div>;
   }
 });
@@ -127,13 +130,15 @@ class HelloLocal extends React.Component<void, { name: string }, void> {
   propTypes = {
     name: React.PropTypes.string.isRequired
   };
-  render(): React.Element<*> {
+  render(): React.Element<*>
+  {
     return <div>{this.props.name}</div>;
   }
 }
 
 class Callsite extends React.Component<void, {}, void> {
-  render(): React.Element<*> {
+  render(): React.Element<*>
+  {
     return (
       <div>
         <Hello />
@@ -173,7 +178,8 @@ class Hello extends React.Component<void, { name: string }, void> {
     name: React.PropTypes.string.isRequired
   };
 
-  render(): React.Element<*> {
+  render(): React.Element<*>
+  {
     return <div>{this.props.name}</div>;
   }
 }
@@ -219,13 +225,15 @@ type Props = { name: string };
 class HelloLocal extends React.Component<void, Props, void> {
   props: Props;
 
-  render(): React.Element<*> {
+  render(): React.Element<*>
+  {
     return <div>{this.props.name}</div>;
   }
 }
 
 class Callsite extends React.Component<void, Props, void> {
-  render(): React.Element<*> {
+  render(): React.Element<*>
+  {
     return (
       <div>
         <Hello />
@@ -265,7 +273,8 @@ class Hello extends React.Component<{}, Props, void> {
   props: Props;
   static defaultProps: {};
 
-  render(): React.Element<*> {
+  render(): React.Element<*>
+  {
     return <div>{this.props.name}</div>;
   }
 }

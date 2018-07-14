@@ -17,7 +17,8 @@ export default function searchUsers(action$) {
     );
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export default function searchUsers(action$) {
+export default function searchUsers(action$)
+{
   return action$
     .ofType(ActionTypes.SEARCHED_USERS)
     .map(action => action.payload.query)
@@ -51,7 +52,8 @@ export default class AddAssetHtmlPlugin {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export default class AddAssetHtmlPlugin {
-  apply(compiler: WebpackCompilerType) {
+  apply(compiler: WebpackCompilerType)
+  {
     compiler.plugin("compilation", (compilation: WebpackCompilationType) => {
       compilation.plugin(
         "html-webpack-plugin-before-html",
@@ -220,7 +222,8 @@ exports.examples = [
     render: withGraphQLQuery("node(1234567890){image{uri}}", function(
       container,
       data
-    ) {
+    )
+    {
       return (
         <div>
           <InlineBlock>
@@ -251,23 +254,28 @@ someReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReal
 (function webpackUniversalModuleDefinition() {})(this, function(
   __WEBPACK_EXTERNAL_MODULE_85__,
   __WEBPACK_EXTERNAL_MODULE_115__
-) {
-  return /******/ (function(modules) {
+)
+{
+  return /******/ (function(modules)
+  {
     // webpackBootstrap
     /******/
   })(
     /************************************************************************/
     /******/ [
       /* 0 */
-      /***/ function(module, exports, __webpack_require__) {
+      /***/ function(module, exports, __webpack_require__)
+      {
         /***/
       },
       /* 1 */
-      /***/ function(module, exports, __webpack_require__) {
+      /***/ function(module, exports, __webpack_require__)
+      {
         /***/
       },
       /* 2 */
-      /***/ function(module, exports, __webpack_require__) {
+      /***/ function(module, exports, __webpack_require__)
+      {
         /***/
       }
       /******/
@@ -513,7 +521,8 @@ foo(
   ) => {}
 );
 
-const contentTypes = function(tile, singleSelection) {
+const contentTypes = function(tile, singleSelection)
+{
   return compute(function contentTypesContentTypes(
     tile,
     searchString = "",
@@ -521,7 +530,8 @@ const contentTypes = function(tile, singleSelection) {
     contentTypesArray = [],
     selectedGroup,
     singleSelection
-  ) {
+  )
+  {
     selectedGroup = (tile.state && tile.state.group) || selectedGroup;
   });
 };

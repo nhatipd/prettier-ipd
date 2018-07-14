@@ -113,7 +113,8 @@ function foo() {
   output.set(new FakeUint8Array(), 0); // matches one of the overloads of set
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function foo() {
+function foo()
+{
   var output = new FakeUint8Array();
   output.set(new FakeUint8Array(), 0); // matches one of the overloads of set
 }
@@ -192,7 +193,8 @@ function foo<U> (x: $Either<Array<U>,U>): Array<U> { return []; }
 var x1:number = foo(0)[0];
 var x2:string = foo([""])[0];
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function foo<U>(x: $Either<Array<U>, U>): Array<U> {
+function foo<U>(x: $Either<Array<U>, U>): Array<U>
+{
   return [];
 }
 

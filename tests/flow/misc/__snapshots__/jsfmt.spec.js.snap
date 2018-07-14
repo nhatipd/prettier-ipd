@@ -53,11 +53,13 @@ module.exports = B;
 
 var A = require("A").cls;
 
-function B() {
+function B()
+{
   this.b = "...";
 }
 
-function f(): number {
+function f(): number
+{
   return this.b;
 }
 
@@ -89,7 +91,8 @@ module.exports = C;
 var B = require("B");
 var f = require("A").fn;
 
-function C() {
+function C()
+{
   var o = new B();
   f(o.b);
   f(o.s);
@@ -120,7 +123,8 @@ module.exports = "D for dummy";
 
 var f = require("A").fn;
 
-function g(): string {
+function g(): string
+{
   return this.i;
 }
 
@@ -166,12 +170,14 @@ function foo(x: Array<number>): string {
   return x.length;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function fn2(x) {
+function fn2(x)
+{
   return x.length * 4;
 }
 fn2({ length: "hi" });
 
-function foo(x: Array<number>): string {
+function foo(x: Array<number>): string
+{
   return x.length;
 }
 

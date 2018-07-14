@@ -13,11 +13,13 @@ function filterOutSmall (arr: Array<?number>): Array<?number> {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function filterOutVoids<T>(arr: Array<?T>): Array<T> {
+function filterOutVoids<T>(arr: Array<?T>): Array<T>
+{
   return arr.filter(Boolean);
 }
 
-function filterOutSmall(arr: Array<?number>): Array<?number> {
+function filterOutSmall(arr: Array<?number>): Array<?number>
+{
   return arr.filter(num => num && num > 10);
 }
 
@@ -42,12 +44,15 @@ console.log(filteredItems);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function filterItems(items: Array<string | number>): Array<string | number> {
+function filterItems(items: Array<string | number>): Array<string | number>
+{
   return items
     .map(item => {
-      if (typeof item === "string") {
+      if (typeof item === "string")
+      {
         return item.length > 2 ? item : null;
-      } else {
+      } else
+      {
         return item * 10;
       }
     })

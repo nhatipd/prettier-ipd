@@ -24,7 +24,8 @@ interface Interface {
 }
 import type { ObjectType } from "./test";
 
-function subtypeCheck(x: Interface): ObjectType {
+function subtypeCheck(x: Interface): ObjectType
+{
   return x;
 }
 
@@ -51,7 +52,8 @@ export type ObjectType = {
   +m: () => void
 };
 
-function methodCaller(x: ObjectType) {
+function methodCaller(x: ObjectType)
+{
   x.m();
 }
 
@@ -80,7 +82,8 @@ b.f(); // error, property \`p\` not found
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function f() {
+function f()
+{
   return this.p;
 }
 
@@ -120,18 +123,21 @@ qux({ f: foo });  // error, since \`this\` is used non-trivially in \`foo\`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function foo() {
+function foo()
+{
   this.m();
 }
 
-function bar(f: () => void) {
+function bar(f: () => void)
+{
   f(); // passing global object as \`this\`
   ({ f }.f()); // passing container object as \`this\`
 }
 
 bar(foo); // error, since \`this\` is used non-trivially in \`foo\`
 
-function qux(o: { f: () => void }) {
+function qux(o: { f: () => void })
+{
   o.f(); // passing o as \`this\`
 }
 

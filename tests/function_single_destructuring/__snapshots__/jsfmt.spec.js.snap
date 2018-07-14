@@ -38,7 +38,8 @@ function excludeFirstFiveResults([
   fourth,
   fifth,
   ...rest
-]) {
+])
+{
   return rest;
 }
 
@@ -49,7 +50,8 @@ function excludeFirstFiveResults([
   fourth,
   fifth,
   ...rest
-] = DEFAULT_FIVE_RESULTS) {
+] = DEFAULT_FIVE_RESULTS)
+{
   return rest;
 }
 
@@ -62,7 +64,8 @@ function excludeFirstFiveResults(
     fifthResult,
     ...rest
   ] = [1, 2, 3, 4, 5]
-) {
+)
+{
   return rest;
 }
 
@@ -73,7 +76,8 @@ function excludeFirstFiveResults([
   fourth,
   fifth,
   ...rest
-]: Result[]) {
+]: Result[])
+{
   return rest;
 }
 
@@ -96,7 +100,8 @@ class A {
     fourth,
     fifth,
     ...restOfResults
-  ]) {
+  ])
+  {
     return restOfResults;
   }
 }
@@ -235,7 +240,8 @@ function StatelessFunctionalComponent({
   searchFilters,
   title,
   items
-}) {
+})
+{
   return <div />;
 }
 
@@ -248,7 +254,8 @@ function StatelessFunctionalComponent({
   searchFilters = null,
   title = "",
   items = []
-} = {}) {
+} = {})
+{
   return <div />;
 }
 
@@ -265,7 +272,8 @@ function StatelessFunctionalComponent(
   } = {
     isActive: true
   }
-) {
+)
+{
   return <div />;
 }
 
@@ -278,7 +286,8 @@ function StatelessFunctionalComponent({
   searchFilters,
   title,
   items
-}: MyType | null | void) {
+}: MyType | null | void)
+{
   return <div />;
 }
 
@@ -314,7 +323,8 @@ class C {
     searchFilters,
     title,
     items
-  }) {
+  })
+  {
     return <div />;
   }
 }

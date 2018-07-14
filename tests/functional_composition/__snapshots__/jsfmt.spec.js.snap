@@ -74,7 +74,8 @@ someObj.someMethod(this.field.compose(a, b));
 
 // filter out Super
 class A extends B {
-  compose() {
+  compose()
+  {
     super.compose(sortBy(x => x), flatten);
   }
 }

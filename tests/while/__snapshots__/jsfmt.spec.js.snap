@@ -21,7 +21,8 @@ if (
   someVeryLongStringB &&
   someVeryLongStringC &&
   someVeryLongStringD
-) {
+)
+{
 }
 while (
   someVeryLongStringA &&
@@ -43,7 +44,8 @@ if (
     someVeryLongArgC,
     someVeryLongArgD
   )
-) {
+)
+{
 }
 while (
   someVeryLongFunc(

@@ -14,7 +14,8 @@ const Thing = class Thing {
 // issue #1191
 
 const Thing = class Thing {
-  zark() {
+  zark()
+  {
     this.x = 123; // error: property not found (must be declared)
   }
 };
@@ -101,13 +102,15 @@ class B extends A {
 // covariance checks on this type in invariant positions
 
 class Invariant {
-  out_object(): { _: this } {
+  out_object(): { _: this }
+  {
     return { _: this };
   }
   in_object(_: { _: this }) {}
   inout_object: { _: this };
 
-  out_array(): Array<this> {
+  out_array(): Array<this>
+  {
     return [this];
   }
   in_array(_: Array<this>) {}
@@ -118,21 +121,24 @@ class Invariant {
 
 class Misc {
   // Set<X> has invariant X
-  out_set(): Set<this> {
+  out_set(): Set<this>
+  {
     return new Set().add(this);
   }
   in_set(_: Set<this>) {}
   inout_set: Set<this>;
 
   // Promise<X> has covariant X
-  async out_promise(): Promise<this> {
+  async out_promise(): Promise<this>
+  {
     return this;
   }
   in_promise(_: Promise<this>) {}
   inout_promise: Promise<this>;
 
   // Generator<X,Y,Z> has covariant X, covariant Y, contravariant Z
-  *out_generator(): Generator<this, this, this> {
+  *out_generator(): Generator<this, this, this>
+  {
     yield this;
     return this;
   }
@@ -157,22 +163,27 @@ export class A2<X> {
 export class A3<X> extends A2<X> {}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export class A1 {
-  foo(): this {
+  foo(): this
+  {
     return this;
   }
-  bar(): this {
+  bar(): this
+  {
     return this;
   }
 }
 
 export class A2<X> {
-  foo(): this {
+  foo(): this
+  {
     return this;
   }
-  bar(): this {
+  bar(): this
+  {
     return this;
   }
-  qux(x: X): X {
+  qux(x: X): X
+  {
     return x;
   }
 }
@@ -192,7 +203,8 @@ class ImplicitNumber extends Implicit { arg: number; }
 (new ImplicitNumber().val: string) // error: number ~> string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class Generic<X> {
-  clone(): Generic<X> {
+  clone(): Generic<X>
+  {
     return this;
   }
 }
@@ -240,7 +252,8 @@ import type { A2 } from "./export";
 import { A3 } from "./export";
 
 class B1 extends A1 {
-  foo(): B1 {
+  foo(): B1
+  {
     return new B1();
   } // error
 }
@@ -248,7 +261,8 @@ class B1 extends A1 {
 (new B1().bar(): B1); // OK
 
 class B3<X> extends A3<X> {
-  foo(): B3<X> {
+  foo(): B3<X>
+  {
     return new B3();
   } // error
 }
@@ -276,14 +290,17 @@ interface I { xs: Array<this> }
 interface J { f(): J }
 class C {
   xs: Array<C>;
-  f(): C {
+  f(): C
+  {
     return this;
   }
 }
-function foo(c: C): I {
+function foo(c: C): I
+{
   return c;
 }
-function bar(c: C): J {
+function bar(c: C): J
+{
   return c;
 }
 
@@ -307,7 +324,8 @@ class C {
 var MiniImmutable = require("mini-immutable");
 class C {
   map: MiniImmutable.OrderedMap<number, string>;
-  update() {
+  update()
+  {
     this.map = this.map.set(0, "");
   }
 }
@@ -323,14 +341,17 @@ class A {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class A {
-  foo() {
+  foo()
+  {
     return this;
   } // return of foo is not annotated to get around
   // substituting this below
-  bar(): this {
+  bar(): this
+  {
     return new A().foo();
   } // same as returning : A, so error
-  qux(): this {
+  qux(): this
+  {
     return this.bar();
   } // OK (don't cascade errors)
 }
@@ -359,7 +380,8 @@ class B extends A { } // inherits statics method too, with \`this\` bound to the
 // supporting \`this\` type in statics
 
 class A {
-  static make(): this {
+  static make(): this
+  {
     // factory method, whose return type \`this\` (still)
     // describes instances of A or subclasses of A: the
     // meaning of the \`this\` type is not changed simply by
@@ -452,17 +474,21 @@ class InheritOverride2 extends Override2 { }
 // Examples without \`this\` types (compare with examples below)
 
 class Base {
-  foo() {
+  foo()
+  {
     return this;
   }
-  qux() {
+  qux()
+  {
     return new Base();
   }
 
-  bar() {
+  bar()
+  {
     return this;
   }
-  bar_caller() {
+  bar_caller()
+  {
     return this.bar();
   }
 }
@@ -470,14 +496,17 @@ class Base {
 class Inherit extends Base {}
 
 class Override extends Base {
-  foo() {
+  foo()
+  {
     return this;
   } // OK
-  qux() {
+  qux()
+  {
     return this;
   } // OK, too
 
-  bar() {
+  bar()
+  {
     return new Override();
   } // OK (cf. error below)
 }
@@ -497,17 +526,21 @@ class InheritOverride extends Override {}
 // Examples with \`this\` types (compare with examples above)
 
 class Base2 {
-  foo(): this {
+  foo(): this
+  {
     return this;
   }
-  qux(): Base2 {
+  qux(): Base2
+  {
     return new Base2();
   }
 
-  bar(): this {
+  bar(): this
+  {
     return this;
   }
-  bar_caller(): this {
+  bar_caller(): this
+  {
     return this.bar();
   }
 
@@ -518,14 +551,17 @@ class Base2 {
 class Inherit2 extends Base2 {}
 
 class Override2 extends Base2 {
-  foo(): this {
+  foo(): this
+  {
     return this;
   } // OK
-  qux(): this {
+  qux(): this
+  {
     return this;
   } // OK, too
 
-  bar(): Override2 {
+  bar(): Override2
+  {
     return new Override2();
   } // error (cf. OK above)
   // see exploit below

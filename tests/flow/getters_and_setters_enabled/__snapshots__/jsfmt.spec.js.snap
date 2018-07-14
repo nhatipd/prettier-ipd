@@ -67,44 +67,53 @@ foo.propOverriddenWithSetter = 123; // Error number ~> string
 var z: number = 123;
 
 class Foo {
-  get goodGetterNoAnnotation() {
+  get goodGetterNoAnnotation()
+  {
     return 4;
   }
-  get goodGetterWithAnnotation(): number {
+  get goodGetterWithAnnotation(): number
+  {
     return 4;
   }
 
-  set goodSetterNoAnnotation(x) {
+  set goodSetterNoAnnotation(x)
+  {
     z = x;
   }
-  set goodSetterWithAnnotation(x: number) {
+  set goodSetterWithAnnotation(x: number)
+  {
     z = x;
   }
 
-  get propWithMatchingGetterAndSetter(): number {
+  get propWithMatchingGetterAndSetter(): number
+  {
     return 4;
   }
   set propWithMatchingGetterAndSetter(x: number) {}
 
   // The getter and setter need not have the same type - no error
-  get propWithSubtypingGetterAndSetter(): ?number {
+  get propWithSubtypingGetterAndSetter(): ?number
+  {
     return 4;
   }
   set propWithSubtypingGetterAndSetter(x: number) {}
 
   // The getter and setter need not have the same type - no error
   set propWithSubtypingGetterAndSetterReordered(x: number) {}
-  get propWithSubtypingGetterAndSetterReordered(): ?number {
+  get propWithSubtypingGetterAndSetterReordered(): ?number
+  {
     return 4;
   }
 
-  get propWithMismatchingGetterAndSetter(): number {
+  get propWithMismatchingGetterAndSetter(): number
+  {
     return 4;
   }
   set propWithMismatchingGetterAndSetter(x: string) {} // doesn't match getter (OK)
 
   propOverriddenWithGetter: number;
-  get propOverriddenWithGetter() {
+  get propOverriddenWithGetter()
+  {
     return "hello";
   }
 
@@ -112,7 +121,8 @@ class Foo {
   set propOverriddenWithSetter(x: string) {}
 
   set [z](x: string) {}
-  get [z](): string {
+  get [z](): string
+  {
     return string;
   }
 }
@@ -316,48 +326,58 @@ class B extends A {}
 class C extends A {}
 
 var obj = {
-  get goodGetterNoAnnotation() {
+  get goodGetterNoAnnotation()
+  {
     return 4;
   },
-  get goodGetterWithAnnotation(): number {
+  get goodGetterWithAnnotation(): number
+  {
     return 4;
   },
 
-  set goodSetterNoAnnotation(x) {
+  set goodSetterNoAnnotation(x)
+  {
     z = x;
   },
-  set goodSetterWithAnnotation(x: number) {
+  set goodSetterWithAnnotation(x: number)
+  {
     z = x;
   },
 
-  get propWithMatchingGetterAndSetter(): number {
+  get propWithMatchingGetterAndSetter(): number
+  {
     return 4;
   },
   set propWithMatchingGetterAndSetter(x: number) {},
 
   // The getter and setter need not have the same type
-  get propWithSubtypingGetterAndSetter(): ?number {
+  get propWithSubtypingGetterAndSetter(): ?number
+  {
     return 4;
   }, // OK
   set propWithSubtypingGetterAndSetter(x: number) {},
 
   set propWithSubtypingGetterAndSetterReordered(x: number) {}, // OK
-  get propWithSubtypingGetterAndSetterReordered(): ?number {
+  get propWithSubtypingGetterAndSetterReordered(): ?number
+  {
     return 4;
   },
 
-  get exampleOfOrderOfGetterAndSetter(): A {
+  get exampleOfOrderOfGetterAndSetter(): A
+  {
     return new A();
   },
   set exampleOfOrderOfGetterAndSetter(x: B) {},
 
   set exampleOfOrderOfGetterAndSetterReordered(x: B) {},
-  get exampleOfOrderOfGetterAndSetterReordered(): A {
+  get exampleOfOrderOfGetterAndSetterReordered(): A
+  {
     return new A();
   },
 
   set [z](x: string) {},
-  get [z](): string {
+  get [z](): string
+  {
     return string;
   }
 };
@@ -475,7 +495,8 @@ type T = {
   get exampleOfOrderOfGetterAndSetterReordered(): A
 };
 
-function test(obj: T) {
+function test(obj: T)
+{
   // Test getting properties with getters
   var testGetterNoError2: number = obj.goodGetterWithAnnotation;
 
@@ -529,10 +550,12 @@ import React from "react";
 
 const Example = React.createClass({
   propTypes: {
-    get a() {
+    get a()
+    {
       return React.PropTypes.number.isRequired;
     },
-    set b(x: number) {
+    set b(x: number)
+    {
       this.c = x;
     },
     c: React.PropTypes.string
@@ -632,23 +655,28 @@ class Base {
   x: B;
   +pos: B;
   -neg: B;
-  get get(): B {
+  get get(): B
+  {
     return this.x;
   }
-  set set(value: B): void {
+  set set(value: B): void
+  {
     this.x = value;
   }
-  get getset(): B {
+  get getset(): B
+  {
     return this.x;
   }
-  set getset(value: B): void {
+  set getset(value: B): void
+  {
     this.x = value;
   }
 }
 
 (class extends Base {
   // error: getter incompatible with read/write property
-  get x(): B {
+  get x(): B
+  {
     return b;
   }
 });
@@ -660,7 +688,8 @@ class Base {
 
 (class extends Base {
   // ok: get/set co/contra with read/write property, resp.
-  get x(): C {
+  get x(): C
+  {
     return c;
   }
   set x(value: A): void {}
@@ -673,14 +702,16 @@ class Base {
 
 (class extends Base {
   // ok: getter covariant with read-only property
-  get pos(): C {
+  get pos(): C
+  {
     return c;
   }
 });
 
 (class extends Base {
   // error: getter incompatible with write-only property
-  get neg(): B {
+  get neg(): B
+  {
     return b;
   }
 });

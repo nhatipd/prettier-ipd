@@ -101,7 +101,8 @@ push(
   </td>
 );
 
-function f() {
+function f()
+{
   return (
     // prettier-ignore
     /* $FlowFixMe(>=0.53.0) */

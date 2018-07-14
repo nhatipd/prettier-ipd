@@ -45,7 +45,8 @@ let newScore =
   |> (_ => subtract(2, _))
   |> (_ => boundScore(0, 100, _));
 
-function createPerson(attrs) {
+function createPerson(attrs)
+{
   attrs
     |> bounded("age", 1, 100)
     |> format("name", /^[a-z]$/i)

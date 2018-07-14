@@ -138,7 +138,8 @@ function default_expr_scope({a, b = a}) {}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function obj_prop_fun({ p: { q = 0 } = { q: true } } = { p: { q: "" } }) {
+function obj_prop_fun({ p: { q = 0 } = { q: true } } = { p: { q: "" } })
+{
   // errors:
   // * number  ~> void, from default on _.p.q
   // * boolean ~> void, from default on _.p
@@ -151,7 +152,8 @@ obj_prop_fun({}); // ok
 obj_prop_fun({ p: {} }); // ok
 obj_prop_fun({ p: { q: null } }); // ok, provides add'l lower bound
 
-function obj_prop_var(o = { p: { q: "" } }) {
+function obj_prop_var(o = { p: { q: "" } })
+{
   var { p: { q = 0 } = { q: true } } = o;
   // errors:
   // * number  ~> void, from default on o.p.q
@@ -165,9 +167,8 @@ obj_prop_var({}); // ok
 obj_prop_var({ p: {} }); // ok
 obj_prop_var({ p: { q: null } }); // ok, provides add'l lower bound
 
-function obj_rest(
-  { p: { q, ...o } = { q: 0, r: 0 } } = { p: { q: 0, r: "" } }
-) {
+function obj_rest({ p: { q, ...o } = { q: 0, r: 0 } } = { p: { q: 0, r: "" } })
+{
   // errors:
   // * number  ~> void, from default on _.p
   // * string  ~> void, from default on _
@@ -187,7 +188,8 @@ function obj_prop_annot(
   } = {
     p: 0 // error: number ~> string
   }
-) {
+)
+{
   (p: void); // error: string ~> void
 }
 
@@ -205,7 +207,8 @@ function obj_rest_err({ ...o } = 0) {} // error: expected object instead of numb
 function arr_elem_err([x] = null) {} // error: element 0 cannot be accessed on null
 function arr_rest_err([...a] = null) {} // error: expected array instead of null
 
-function gen<T>(x: T, { p = x }: { p: T }): T {
+function gen<T>(x: T, { p = x }: { p: T }): T
+{
   return p;
 }
 
@@ -310,7 +313,8 @@ var obj;
 ({ n: obj.x } = { n: 3 });
 [obj.x] = ["foo"];
 
-function foo({ p, z: [r] }) {
+function foo({ p, z: [r] })
+{
   a = p;
   b = z;
   c = r;
@@ -319,7 +323,8 @@ foo({ p: 0, z: [1, 2] });
 
 [a, , b, ...c] = [0, 1, true, 3];
 
-function bar({ x, ...z }) {
+function bar({ x, ...z })
+{
   var o: { x: string, y: number } = z;
 }
 bar({ x: "", y: 0 });
@@ -334,12 +339,14 @@ corge({ b: 0 });
 
 var { n }: { n: number } = { n: "" };
 
-function test() {
+function test()
+{
   var { foo } = { bar: 123 }; // error on foo
   var { bar, baz } = { bar: 123 }; // error on baz
 }
 
-function test() {
+function test()
+{
   var x = { foo: "abc", bar: 123 };
   var { foo, ...rest } = x;
   (x.baz: string); // error, baz doesn't exist
@@ -430,22 +437,26 @@ function tup_pattern2<X>([proj]: Proj<X>) {} // proj: X
 
 function rest_pattern<X>(...r: X[]) {} // r: X[]
 
-function obj_rest_pattern<X>({ _, ...o }: { _: any, x: X }) {
+function obj_rest_pattern<X>({ _, ...o }: { _: any, x: X })
+{
   // o: { x: X }
   o.x;
 }
 type ObjRest<X> = { _: any, x: X };
-function obj_rest_pattern<X>({ _, ...o }: ObjRest<X>) {
+function obj_rest_pattern<X>({ _, ...o }: ObjRest<X>)
+{
   // o: { x: X }
   o.x;
 }
 
-function arr_rest_pattern<X>([_, ...a]: [any, X]) {
+function arr_rest_pattern<X>([_, ...a]: [any, X])
+{
   // a: [X]
   a[0];
 }
 type ArrRest<X> = [any, X];
-function arr_rest_pattern<X>([_, ...a]: ArrRest<X>) {
+function arr_rest_pattern<X>([_, ...a]: ArrRest<X>)
+{
   // a: [X]
   a[0];
 }
@@ -511,8 +522,10 @@ class UndefinedValue extends Value { }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-function _([argArray]: Array<Value>) {
-  if (argArray instanceof NullValue || argArray instanceof UndefinedValue) {
+function _([argArray]: Array<Value>)
+{
+  if (argArray instanceof NullValue || argArray instanceof UndefinedValue)
+  {
   }
 }
 
@@ -554,7 +567,8 @@ var { x } = {
   x: { foo: "foo" }
 };
 
-function bar() {
+function bar()
+{
   x.bar;
 }
 

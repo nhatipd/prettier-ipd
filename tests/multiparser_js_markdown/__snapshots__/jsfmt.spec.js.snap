@@ -25,7 +25,8 @@ md\`
 This line shouldn't be indented at all in the resulting output.
 \`;
 
-if (true) {
+if (true)
+{
   md\`
 text1
 
@@ -116,7 +117,8 @@ export default function ReadMe() {
     \`;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export default function ReadMe() {
+export default function ReadMe()
+{
   return md\`
     ## Why Prettier?
 

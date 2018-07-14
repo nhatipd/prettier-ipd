@@ -28,21 +28,27 @@ function h(x: number): string {
  * @flow
  */
 
-function f(): number {
+function f(): number
+{
   throw new Error(); // OK to not return
 }
 
-function g(a: ?string) {
-  if (a == null) {
+function g(a: ?string)
+{
+  if (a == null)
+  {
     throw new Error();
   }
   return a * 1; // a is not null
 }
 
-function h(x: number): string {
-  if (x) {
+function h(x: number): string
+{
+  if (x)
+  {
     return "foo";
-  } else {
+  } else
+  {
     throw new Error();
   }
 }

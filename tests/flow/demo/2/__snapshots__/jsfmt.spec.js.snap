@@ -25,20 +25,24 @@ module.exports = A;
 
 class A {
   x: number; // instance field declaration
-  constructor(x) {
+  constructor(x)
+  {
     this.x = x;
   }
 
-  getX() {
+  getX()
+  {
     return this.x;
   }
 
-  onLoad(callback) {
+  onLoad(callback)
+  {
     return callback(this.getX());
   }
 }
 
-function callback(x: string) {
+function callback(x: string)
+{
   return x.length;
 }
 

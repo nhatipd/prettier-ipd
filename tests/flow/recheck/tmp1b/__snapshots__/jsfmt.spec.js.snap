@@ -14,10 +14,12 @@ module.exports = { C, D };
 // @flow
 
 import { C, E } from "./b0";
-function foo() {
+function foo()
+{
   return C;
 }
-function bar() {
+function bar()
+{
   return E;
 }
 let X = bar();

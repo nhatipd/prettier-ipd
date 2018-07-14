@@ -6,6 +6,7 @@ exports[`comment.js - flow-verify 1`] = `
   for (;;) {}
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 {
   // goto emulation
   inf_leave: for (;;) {}

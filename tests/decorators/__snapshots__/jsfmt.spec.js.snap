@@ -111,17 +111,20 @@ class OrderLine {
   @observable price: number = 0;
   @observable amount: number = 1;
 
-  constructor(price) {
+  constructor(price)
+  {
     this.price = price;
   }
 
   @computed
-  get total() {
+  get total()
+  {
     return this.price * this.amount;
   }
 
   @action.bound
-  setPrice(price) {
+  setPrice(price)
+  {
     this.price = price;
   }
 }

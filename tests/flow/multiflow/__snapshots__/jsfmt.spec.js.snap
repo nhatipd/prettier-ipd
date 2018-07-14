@@ -47,11 +47,13 @@ applyType(withRest, ['hi', 123, false]); // Error - too many args
 function apply<Args: $ReadOnlyArray<mixed>, Ret>(
   fn: (...Args) => Ret,
   args: Args
-): Ret {
+): Ret
+{
   return fn(...args);
 }
 
-function noRest(x: "hi", y: 123): true {
+function noRest(x: "hi", y: 123): true
+{
   return true;
 }
 apply(noRest, ["hi", 123]); // No error
@@ -60,7 +62,8 @@ apply(noRest, ["hi"]); // Error - too few args
 apply(noRest, ["hi", 123, false]); // No error - too many args is fine
 
 // withRest behaves the same as noRest except you can't pass too many args in
-function withRest(...rest: ["hi", 123]): true {
+function withRest(...rest: ["hi", 123]): true
+{
   return true;
 }
 apply(withRest, ["hi", 123]); // No error
@@ -74,7 +77,8 @@ declare var applyType: <Args: $ReadOnlyArray<mixed>, Ret>(
   args: Args
 ) => Ret;
 
-function noRest(x: "hi", y: 123): true {
+function noRest(x: "hi", y: 123): true
+{
   return true;
 }
 applyType(noRest, ["hi", 123]); // No error
@@ -83,7 +87,8 @@ applyType(noRest, ["hi"]); // Error - too few args
 applyType(noRest, ["hi", 123, false]); // No error - too many args is fine
 
 // withRest behaves the same as noRest except you can't pass too many args in
-function withRest(...rest: ["hi", 123]): true {
+function withRest(...rest: ["hi", 123]): true
+{
   return true;
 }
 applyType(withRest, ["hi", 123]); // No error
@@ -122,12 +127,14 @@ class A {
 }
 
 class B extends A {
-  f(...args) {
+  f(...args)
+  {
     this.f(...args);
   }
 }
 
-function foo(...args) {
+function foo(...args)
+{
   foo(1, ...args);
 }
 foo(123);

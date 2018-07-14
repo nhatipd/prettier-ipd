@@ -11,7 +11,8 @@ module.exports = foo;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-function foo(x: number): string {
+function foo(x: number): string
+{
   return 5;
 }
 
@@ -86,10 +87,12 @@ module.exports = { C, D };
 // @flow
 
 import { C, E } from "./b0";
-function foo() {
+function foo()
+{
   return C;
 }
-function bar() {
+function bar()
+{
   return E;
 }
 let X = foo();
@@ -149,7 +152,8 @@ export function bar(props: { x: number }) {
 
 import { foo } from "./c1";
 
-export function bar(props: { x: number }) {
+export function bar(props: { x: number })
+{
   foo({ x: 0 });
 }
 

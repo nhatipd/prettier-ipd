@@ -57,7 +57,8 @@ const UserComponent = function({
   organisation: {
     address: { street: orgStreetAddress, postcode: orgPostcode }
   }
-}) {
+})
+{
   return;
 };
 
@@ -68,19 +69,23 @@ const {
   d: { e }
 } = someObject;
 
-try {
+try
+{
   // code
-} catch ({ data: { message } }) {
+} catch ({ data: { message } })
+{
   // code
 }
 
-try {
+try
+{
   // code
 } catch ({
   data: {
     message: { errors }
   }
-}) {
+})
+{
   // code
 }
 

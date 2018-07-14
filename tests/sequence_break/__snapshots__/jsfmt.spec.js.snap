@@ -20,7 +20,8 @@ const f = (argument1, argument2, argument3) => (
   doSomethingWithArgument(argument2),
   argument1
 );
-(function() {
+(function()
+{
   return (
     aLongIdentifierName,
     aLongIdentifierName,
@@ -50,27 +51,32 @@ for (
 ) {}
 (a = b
   ? c
-  : function() {
+  : function()
+    {
       return 0;
     }),
   (a = b
     ? c
-    : function() {
+    : function()
+      {
         return 0;
       }),
   (a = b
     ? c
-    : function() {
+    : function()
+      {
         return 0;
       }),
   (a = b
     ? c
-    : function() {
+    : function()
+      {
         return 0;
       }),
   (a = b
     ? c
-    : function() {
+    : function()
+      {
         return 0;
       });
 

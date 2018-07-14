@@ -4,7 +4,8 @@ exports[`classInsideBlock.ts - typescript-verify 1`] = `
 function foo() {
     class C { }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function foo() {
+function foo()
+{
   class C {}
 }
 

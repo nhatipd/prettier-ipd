@@ -71,7 +71,8 @@ const response = {
   intent: 'lights',
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function a() {
+function a()
+{
   // prettier-ignore
   var fnString =
     '"' + this.USE + ' ' + this.STRICT + '";\\n' +
@@ -96,7 +97,8 @@ function a() {
             "gross-formatting",
   };
 
-  function giveMeSome() {
+  function giveMeSome()
+  {
     a(  a  ); // prettier-ignore
     // shouldn't I return something?  :shrug:
   }
@@ -126,7 +128,8 @@ function a() {
   // Incorrectly indented on purpose
   function f</* prettier-ignore */ T    :    B>(
     a : Array  <   number   > // prettier-ignore
-  ) {
+  )
+  {
     call(
       f(         1          )
       // prettier-ignore

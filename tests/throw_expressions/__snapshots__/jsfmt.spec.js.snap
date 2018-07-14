@@ -25,7 +25,8 @@ lint(ast, {
   with: () => throw new Error("avoid using 'with' statements.")
 });
 
-function getEncoder(encoding) {
+function getEncoder(encoding)
+{
   const encoder =
     encoding === "utf8"
       ? new UTF8Encoder()
@@ -37,10 +38,12 @@ function getEncoder(encoding) {
 }
 
 class Product {
-  get id() {
+  get id()
+  {
     return this._id;
   }
-  set id(value) {
+  set id(value)
+  {
     this._id = value || throw new Error("Invalid value");
   }
 }

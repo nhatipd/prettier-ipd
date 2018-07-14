@@ -3,7 +3,8 @@
 exports[`argument-name-clash.js - babylon-verify 1`] = `
 function f(a,a){return a}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function f(a, a) {
+function f(a, a)
+{
   return a;
 }
 
@@ -24,7 +25,8 @@ var package = require("../package");
 /**
  * My amazing comment
  */
-function myFunction() {
+function myFunction()
+{
   return "StringGainz";
 }
 

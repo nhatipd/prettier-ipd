@@ -24,10 +24,14 @@ function foo() {
  * the presence of an abnormal, would sometimes kind of leak. It would hit an
  * abnormal. It was weird.
  */
-function foo() {
-  try {
-  } catch (error) {
-    if (error.foo === 4) {
+function foo()
+{
+  try
+  {
+  } catch (error)
+  {
+    if (error.foo === 4)
+    {
       throw error;
     }
   }
@@ -201,69 +205,91 @@ function f(b) {
 function might_throw() {}
 
 // local use of annotated var within try is ok
-function f() {
-  try {
+function f()
+{
+  try
+  {
     var x: number = 0;
     var y: number = x;
   } catch (e) {}
 }
 
 // and within catch
-function f() {
-  try {
-  } catch (e) {
+function f()
+{
+  try
+  {
+  } catch (e)
+  {
     var x: number = 0;
     var y: number = x;
   }
 }
 
 // but not across try/catch
-function f() {
-  try {
+function f()
+{
+  try
+  {
     might_throw();
     var x: number = 0;
-  } catch (e) {
+  } catch (e)
+  {
     var y: number = x; // error
   }
 }
 
 // or try/finally
-function f() {
-  try {
+function f()
+{
+  try
+  {
     might_throw();
     var x: number = 0;
-  } finally {
+  } finally
+  {
     var y: number = x; // error
   }
 }
 
 // or catch/finally
-function f() {
-  try {
-  } catch (e) {
+function f()
+{
+  try
+  {
+  } catch (e)
+  {
     var x: number = 0;
-  } finally {
+  } finally
+  {
     var y: number = x; // error
   }
 }
 
 // or try/catch/finally if init doesn't dominate
-function f() {
-  try {
+function f()
+{
+  try
+  {
     var x: number = 0;
-  } catch (e) {
+  } catch (e)
+  {
     might_throw();
     var x: number = 0;
-  } finally {
+  } finally
+  {
     var y: number = x; // error
   }
 }
 
 // post-use ok because init dominates here
-function f() {
-  try {
+function f()
+{
+  try
+  {
     var x: number = 0;
-  } catch (e) {
+  } catch (e)
+  {
     might_throw(); // ...but if so, suffix is not reached
     var x: number = 0;
   }
@@ -271,10 +297,14 @@ function f() {
 }
 
 // and here
-function f() {
-  try {
-  } catch (e) {
-  } finally {
+function f()
+{
+  try
+  {
+  } catch (e)
+  {
+  } finally
+  {
     might_throw(); // ...but if so, suffix is not reached
     var x: number = 0;
   }
@@ -282,11 +312,15 @@ function f() {
 }
 
 // and here
-function f() {
-  try {
+function f()
+{
+  try
+  {
     var x: number;
-  } catch (e) {
-  } finally {
+  } catch (e)
+  {
+  } finally
+  {
     might_throw(); // ...but if so, suffix is not reached
     x = 0;
   }
@@ -294,11 +328,15 @@ function f() {
 }
 
 // and here, thank you JS for the wonder that is hoisting
-function f() {
-  try {
-  } catch (e) {
+function f()
+{
+  try
+  {
+  } catch (e)
+  {
     var x: number;
-  } finally {
+  } finally
+  {
     might_throw(); // ...but if so, suffix is not reached
     x = 0;
   }
@@ -306,35 +344,45 @@ function f() {
 }
 
 // error if used prior to init
-function f() {
+function f()
+{
   var y: number = x; // error
-  try {
+  try
+  {
     var x: number = 0;
   } catch (e) {}
 }
 
 // another non-dominated post
-function f() {
-  try {
+function f()
+{
+  try
+  {
     var x: number = 0;
   } catch (e) {}
   var y: number = x; // error
 }
 
 // ditto
-function f() {
-  try {
-  } catch (e) {
+function f()
+{
+  try
+  {
+  } catch (e)
+  {
     var x: number = 0;
   }
   var y: number = x; // error
 }
 
 // ditto
-function f(b) {
-  try {
+function f(b)
+{
+  try
+  {
     var x: number;
-    if (b) {
+    if (b)
+    {
       throw new Error();
     }
     x = 0;
@@ -415,61 +463,81 @@ function corge(): string {
  * @flow
  */
 
-function foo(x: ?number): string {
-  try {
-  } catch (e) {
+function foo(x: ?number): string
+{
+  try
+  {
+  } catch (e)
+  {
     return "bar";
   }
   console.log();
   return "foo";
 }
 
-function bar(): string {
-  try {
+function bar(): string
+{
+  try
+  {
     return "foo";
-  } catch (e) {
+  } catch (e)
+  {
     return "bar";
   }
 }
 
-function baz(): string {
-  try {
+function baz(): string
+{
+  try
+  {
     throw new Error("foo");
-  } catch (e) {
+  } catch (e)
+  {
     return "foo";
   }
   return "bar"; // unreachable
 }
 
-function qux(): string {
-  try {
+function qux(): string
+{
+  try
+  {
     throw new Error("foo");
   } catch (e) {}
   console.log();
   return "bar";
 }
 
-function quux(): string {
-  try {
+function quux(): string
+{
+  try
+  {
     return qux();
   } catch (e) {}
   return "bar";
 }
 
-function bliffl(): string {
-  try {
+function bliffl(): string
+{
+  try
+  {
     throw new Error("foo");
-  } catch (e) {
+  } catch (e)
+  {
     return "foo";
-  } finally {
+  } finally
+  {
     return "bar";
   }
 }
 
-function corge(): string {
-  try {
+function corge(): string
+{
+  try
+  {
     return "foo";
-  } catch (e) {
+  } catch (e)
+  {
     throw new Error("bar");
   }
   bar(); // unreachable
@@ -526,15 +594,19 @@ function qux() {
  * @flow
  */
 
-function foo() {
+function foo()
+{
   var x = 0;
   var y;
-  try {
+  try
+  {
     x = "";
-  } catch (e) {
+  } catch (e)
+  {
     x = false;
     throw -1;
-  } finally {
+  } finally
+  {
     y = {};
   }
   // here via [try; finally] only.
@@ -542,25 +614,32 @@ function foo() {
   y(); // object ~/> function call (no uninitialized error)
 }
 
-function bar(response) {
+function bar(response)
+{
   var payload;
-  try {
+  try
+  {
     payload = JSON.parse(response);
-  } catch (e) {
+  } catch (e)
+  {
     throw new Error("...");
   }
   // here via [try] only.
-  if (payload.error) {
+  if (payload.error)
+  {
     // ok
     // ...
   }
 }
 
-function qux() {
+function qux()
+{
   var x = 5;
-  try {
+  try
+  {
     throw -1;
-  } finally {
+  } finally
+  {
   }
   x(); // unreachable
 }

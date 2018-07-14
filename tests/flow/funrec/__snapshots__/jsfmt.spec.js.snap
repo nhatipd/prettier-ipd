@@ -8,11 +8,14 @@ function foo() {
     };
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function bar(x) {
+function bar(x)
+{
   return x;
 }
-function foo() {
-  return function bound() {
+function foo()
+{
+  return function bound()
+  {
     return bar(bound);
   };
 }

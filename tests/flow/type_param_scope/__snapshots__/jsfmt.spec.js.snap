@@ -11,7 +11,8 @@ class C<T> {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class C<T> {
-  a<A>(x: T, a: A) {
+  a<A>(x: T, a: A)
+  {
     this.b(x); // ok
     this.b(a); // error: A ~> incompatible instance of T
   }
@@ -35,8 +36,10 @@ function f<T>(a:T) {
 }
 f(0); // ok
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function f<T>(a: T) {
-  function g<U>(b: U, c: T = a) {
+function f<T>(a: T)
+{
+  function g<U>(b: U, c: T = a)
+  {
     function h(d: U = b) {}
     h(); // ok
     h(b); // ok
@@ -111,16 +114,19 @@ class H<T> {
 
 class A<T> {
   x: T;
-  constructor(x: T) {
+  constructor(x: T)
+  {
     this.x = x;
   }
-  m<T>(x: T): A<T> {
+  m<T>(x: T): A<T>
+  {
     return new A(x);
   }
 }
 
 class B<T> extends A<T> {
-  m<T>(x: T): B<T> {
+  m<T>(x: T): B<T>
+  {
     return new B(x);
   }
 }
@@ -145,10 +151,12 @@ declare class F<T> extends E<T> {
 
 class G<T> {
   x: T;
-  constructor(x: T) {
+  constructor(x: T)
+  {
     this.x = x;
   }
-  m<T: T>(x: T): G<T> {
+  m<T: T>(x: T): G<T>
+  {
     return new G(x);
   } // T-as-bound is G's T
 }
@@ -162,7 +170,8 @@ g.m(true); // err, bool ~> number|string
 
 class H<T> {
   x: T;
-  m<T>(x: T) {
+  m<T>(x: T)
+  {
     this.x = x; // err, m's T != H's T
   }
 }

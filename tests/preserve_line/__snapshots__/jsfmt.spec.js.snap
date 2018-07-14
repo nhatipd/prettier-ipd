@@ -290,7 +290,8 @@ foo(
   ["A, B"],
 
   /* function here */
-  function doSomething() {
+  function doSomething()
+  {
     return true;
   }
 );
@@ -382,30 +383,35 @@ function a() {
   return a;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function a() {
+function a()
+{
   const a = 5; // comment
 
   return a;
 }
 
-function a() {
+function a()
+{
   const a = 5; /* comment */
 
   return a;
 }
 
-function a() {
+function a()
+{
   const a = 5; /* comment */ /* comment */
 
   return a;
 }
 
-function a() {
+function a()
+{
   const a = 5; /* comment */ /* comment */ // comment
   return a;
 }
 
-function a() {
+function a()
+{
   const a = 5; /* comment */ /* comment */ // comment
 
   return a;

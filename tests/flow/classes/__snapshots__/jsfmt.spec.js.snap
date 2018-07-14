@@ -180,7 +180,8 @@ var alias1: Alias = new _Alias(); // error: bad pun
 var alias2: Alias = _Alias.factory(); // error: bad pun
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var Bar = class Foo {
-  static factory(): Foo {
+  static factory(): Foo
+  {
     // OK: Foo is a type in this scope
     return new Foo(); // OK: Foo is a runtime binding in this scope
   }
@@ -204,7 +205,8 @@ var anon: Anon = new Anon();
 
 class Alias {}
 var _Alias = class Alias {
-  static factory(): Alias {
+  static factory(): Alias
+  {
     return new Alias();
   }
 };

@@ -241,7 +241,8 @@ import type { TypedNode } from "./ast";
 
 function getBinaryOp(
   op: "plus" | "minus" | "divide" | "multiply"
-): "+" | "-" | "*" | "/" {
+): "+" | "-" | "*" | "/"
+{
   switch (op) {
     case "plus":
       return "+";
@@ -256,7 +257,8 @@ function getBinaryOp(
   }
 }
 
-export function emitExpression(node: TypedNode): t.Expression {
+export function emitExpression(node: TypedNode): t.Expression
+{
   switch (node.exprNodeType) {
     case "string_literal": // FALLTHROUGH
     case "number":
@@ -267,18 +269,21 @@ export function emitExpression(node: TypedNode): t.Expression {
         b.identifier(node.name),
         false
       );
-    case "binary_op": {
+    case "binary_op":
+    {
       const lhs = emitExpression(node.lhs);
       const rhs = emitExpression(node.rhs);
 
       const op = getBinaryOp(node.binaryOp);
       return b.binaryExpression(op, lhs, rhs);
     }
-    case "unary_minus": {
+    case "unary_minus":
+    {
       const operand = emitExpression(node.op);
       return b.unaryExpression("-", operand, true);
     }
-    case "function_invocation": {
+    case "function_invocation":
+    {
       const callee = b.memberExpression(
         b.identifier("fns"),
         b.identifier(node.name),

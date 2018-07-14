@@ -20,14 +20,17 @@ function g() {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var a = ["..."];
-var b = a.map(function(x) {
+var b = a.map(function(x)
+{
   return 0;
 });
 var c: string = b[0]; // error: number !~> string
 
 var array = [];
-function f() {
-  array = array.map(function() {
+function f()
+{
+  array = array.map(function()
+  {
     return "...";
   });
   var x: number = array[0]; // error: string !~> number
@@ -35,8 +38,10 @@ function f() {
 
 var Foo = require("./genericfoo");
 var foo = new Foo();
-function g() {
-  var foo1 = foo.map(function() {
+function g()
+{
+  var foo1 = foo.map(function()
+  {
     return "...";
   });
   var x: number = foo1.get(); // error: string !~> number
@@ -58,14 +63,17 @@ module.exports = Foo;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class Foo<T> {
   x: T;
-  self(): Foo<T> {
+  self(): Foo<T>
+  {
     return this;
   }
-  map<U>(callbackfn: () => U): Foo<U> {
+  map<U>(callbackfn: () => U): Foo<U>
+  {
     return new Foo();
   }
   set(x: T): void {}
-  get(): T {
+  get(): T
+  {
     return this.x;
   }
 }

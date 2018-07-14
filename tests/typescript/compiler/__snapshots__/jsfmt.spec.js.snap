@@ -44,7 +44,8 @@ async function f() {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @target: es6
-async function f() {
+async function f()
+{
   <number>await 0;
   typeof (await 0);
   void (await 0);
@@ -136,10 +137,12 @@ declare class Point {
 var p_cast = <Point>{
   x: 0,
   y: 0,
-  add: function(dx, dy) {
+  add: function(dx, dy)
+  {
     return new Point(this.x + dx, this.y + dy);
   },
-  mult: function(p) {
+  mult: function(p)
+  {
     return p;
   }
 };
@@ -432,10 +435,12 @@ function foo(global: number) {
 let obj = {
     global: "123"
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function a() {
+function a()
+{
   let global = 1;
 }
-function b() {
+function b()
+{
   class global {}
 }
 
@@ -680,7 +685,8 @@ module m2 {
 namespace m1 {
   export namespace m1_M1_public {
     export class c1 {}
-    export function f1() {
+    export function f1()
+    {
       return new c1();
     }
     export var v1 = c1;
@@ -689,7 +695,8 @@ namespace m1 {
 
   namespace m1_M2_private {
     export class c1 {}
-    export function f1() {
+    export function f1()
+    {
       return new c1();
     }
     export var v1 = c1;
@@ -760,7 +767,8 @@ namespace m1 {
 
 namespace glo_M1_public {
   export class c1 {}
-  export function f1() {
+  export function f1()
+  {
     return new c1();
   }
   export var v1 = c1;

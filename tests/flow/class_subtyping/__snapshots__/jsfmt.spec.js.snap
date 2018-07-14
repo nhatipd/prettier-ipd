@@ -77,7 +77,8 @@ type O = { f: number };
 foo((new C(): C<O>), { f_: 0 });
 
 class D extends C<O> {
-  bar() {
+  bar()
+  {
     this.x;
   }
 }

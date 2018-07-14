@@ -26,7 +26,8 @@ import type T from "T";
 export default class {
   p: T;
 
-  constructor() {
+  constructor()
+  {
     this.p = 0;
   }
 }

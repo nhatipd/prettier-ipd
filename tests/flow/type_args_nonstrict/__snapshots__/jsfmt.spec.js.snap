@@ -90,7 +90,8 @@ var num_array:Array<number> = singleton(0); // ok, type arg inferred
 
 class MyClass<T> {
   x: T;
-  constructor(x: T) {
+  constructor(x: T)
+  {
     this.x = x;
   }
 }
@@ -102,7 +103,8 @@ var c: MyClass = new MyClass(0); // no error
 class MyClass2<T, U = string> {
   x: T;
   y: U;
-  constructor(x: T, y: U) {
+  constructor(x: T, y: U)
+  {
     this.x = x;
     this.y = y;
   }
@@ -138,14 +140,16 @@ interface MySubinterface extends MyInterface {
 class MySubclass extends MyClass {
   // ok, type arg inferred
   y: number;
-  constructor(y: number) {
+  constructor(y: number)
+  {
     super(y);
   }
 }
 
 // no arity error in call of polymorphic function
 
-function singleton<T>(x: T): Array<T> {
+function singleton<T>(x: T): Array<T>
+{
   return [x];
 }
 

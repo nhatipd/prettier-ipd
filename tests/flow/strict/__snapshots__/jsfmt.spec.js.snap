@@ -14,11 +14,13 @@ module.exports = B;
 var A = require("./unknown_class");
 
 class B extends A {
-  foo(x: A): A {
+  foo(x: A): A
+  {
     return x;
   }
   bar(x) {}
-  qux<X, Y>(x: X, y: Y): X {
+  qux<X, Y>(x: X, y: Y): X
+  {
     return x;
   }
 }
@@ -49,7 +51,8 @@ module.exports = f;
 // progressively annotate:
 
 //function f(x) { return x; }
-function f(x: number) {
+function f(x: number)
+{
   return x;
 }
 //function f(x:number):string { return x; }

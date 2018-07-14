@@ -542,7 +542,8 @@ class Foo {
   static selfTyped: Foo;
   static selfTypedInit = new Foo();
 
-  constructor() {
+  constructor()
+  {
     var someVar = "asdf";
   }
 }

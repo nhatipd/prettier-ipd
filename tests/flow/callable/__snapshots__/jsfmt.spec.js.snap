@@ -17,7 +17,8 @@ type F = {
   p?: string
 };
 
-function f(x) {
+function f(x)
+{
   return x.length;
 }
 

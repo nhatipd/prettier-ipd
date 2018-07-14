@@ -41,14 +41,16 @@ function alwaysFalsy(x: boolean): false {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function veryOptimistic(isThisAwesome: true): boolean {
+function veryOptimistic(isThisAwesome: true): boolean
+{
   return isThisAwesome;
 }
 
 var x: boolean = veryOptimistic(true);
 var y: boolean = veryOptimistic(false); // error
 
-function veryPessimistic(isThisAwesome: true): boolean {
+function veryPessimistic(isThisAwesome: true): boolean
+{
   return !isThisAwesome; // test bool conversion
 }
 
@@ -57,10 +59,13 @@ var y: boolean = veryPessimistic(false); // error
 
 type MyOwnBooleanLOL = true | false;
 
-function bar(x: MyOwnBooleanLOL): false {
-  if (x) {
+function bar(x: MyOwnBooleanLOL): false
+{
+  if (x)
+  {
     return x;
-  } else {
+  } else
+  {
     return !x;
   }
 }
@@ -69,10 +74,13 @@ bar(true);
 bar(false);
 bar(1); // error
 
-function alwaysFalsy(x: boolean): false {
-  if (x) {
+function alwaysFalsy(x: boolean): false
+{
+  if (x)
+  {
     return !x;
-  } else {
+  } else
+  {
     return x;
   }
 }
@@ -106,7 +114,8 @@ sort((x, y) => -1);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function highlander(howMany: 1): number {
+function highlander(howMany: 1): number
+{
   return howMany; // there can be only one!
 }
 
@@ -115,7 +124,8 @@ highlander(2); // error
 
 type Foo = 1 | 2;
 
-function bar(num: Foo): number {
+function bar(num: Foo): number
+{
   return num + 1;
 }
 

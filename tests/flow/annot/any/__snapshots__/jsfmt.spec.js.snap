@@ -16,7 +16,8 @@ type T = any;
 export default class {
   p: T;
 
-  constructor() {
+  constructor()
+  {
     this.p = 0;
   }
 }

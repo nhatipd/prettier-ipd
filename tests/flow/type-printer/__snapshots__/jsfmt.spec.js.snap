@@ -35,7 +35,8 @@ module.exports = printBinaryExpression;
 
 import type { BinaryExpression } from "./types";
 
-function printBinaryExpression(node: BinaryExpression) {
+function printBinaryExpression(node: BinaryExpression)
+{
   console.log(node);
 }
 

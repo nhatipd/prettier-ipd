@@ -42,13 +42,16 @@ class A {
   _property1: number;
   static _sProperty: number;
 
-  constructor() {
+  constructor()
+  {
     this._property1 = 5;
   }
-  _method1(): number {
+  _method1(): number
+  {
     return 1;
   }
-  static _sMethod(): string {
+  static _sMethod(): string
+  {
     return "some string";
   }
 }
@@ -58,14 +61,17 @@ class B extends A {
   _property1: string;
   static _sProperty: string;
 
-  constructor() {
+  constructor()
+  {
     super();
     this._property1 = "another string";
   }
-  _method1(): string {
+  _method1(): string
+  {
     return "yet another string";
   }
-  static _sMethod(): number {
+  static _sMethod(): number
+  {
     return 23;
   }
 }

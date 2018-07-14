@@ -33,8 +33,10 @@ function f2<T extends Date, U extends Date>() {
 // inner type parameters shadow outer ones of the same name
 // no errors expected
 
-function f<T extends Date>() {
-  function g<T extends Number>() {
+function f<T extends Date>()
+{
+  function g<T extends Number>()
+  {
     var x: T;
     x.toFixed();
   }
@@ -42,8 +44,10 @@ function f<T extends Date>() {
   x.getDate();
 }
 
-function f2<T extends Date, U extends Date>() {
-  function g<T extends Number, U extends Number>() {
+function f2<T extends Date, U extends Date>()
+{
+  function g<T extends Number, U extends Number>()
+  {
     var x: U;
     x.toFixed();
   }
@@ -104,24 +108,28 @@ class C2<T extends Date, U extends Date> {
 // no errors expected
 
 class C<T extends Date> {
-  g<T extends Number>() {
+  g<T extends Number>()
+  {
     var x: T;
     x.toFixed();
   }
 
-  h() {
+  h()
+  {
     var x: T;
     x.getDate();
   }
 }
 
 class C2<T extends Date, U extends Date> {
-  g<T extends Number, U extends Number>() {
+  g<T extends Number, U extends Number>()
+  {
     var x: U;
     x.toFixed();
   }
 
-  h() {
+  h()
+  {
     var x: U;
     x.getDate();
   }
@@ -186,9 +194,12 @@ function foo<T, U>(x: T, y: U) {
     }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function foo<T, U>(x: T, y: U) {
-  function bar<V>(z: V) {
-    function baz<W>(a: W) {
+function foo<T, U>(x: T, y: U)
+{
+  function bar<V>(z: V)
+  {
+    function baz<W>(a: W)
+    {
       var c: T;
       var d: U;
       var e: V;

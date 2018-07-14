@@ -13,13 +13,16 @@ module.exports = Bar;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function Bar(x: number) {
+function Bar(x: number)
+{
   this.x = x;
 }
-Bar.prototype.getX = function() {
+Bar.prototype.getX = function()
+{
   return this.x;
 };
-Bar.prototype.getY = function(): string {
+Bar.prototype.getY = function(): string
+{
   return this.y;
 };
 
@@ -47,7 +50,8 @@ function Foo() {}
 var o = new Foo();
 var x: number = o.x;
 
-Foo.prototype.m = function() {
+Foo.prototype.m = function()
+{
   return this.x;
 };
 
@@ -55,7 +59,8 @@ var y: number = o.m();
 o.x = "...";
 
 Foo.prototype = {
-  m: function() {
+  m: function()
+  {
     return false;
   }
 };

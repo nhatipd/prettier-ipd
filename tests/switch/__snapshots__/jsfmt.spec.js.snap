@@ -40,12 +40,14 @@ switch (true) {
 }
 
 switch (x) {
-  case x: {
+  case x:
+  {
   }
 
   // other
 
-  case y: {
+  case y:
+  {
   }
 }
 
@@ -169,7 +171,8 @@ switch (x) {
 
 switch (a) {
   case b:
-    if (1) {
+    if (1)
+    {
     }
     c;
 }
@@ -202,7 +205,8 @@ switch (error.code) {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 switch (error.code) {
-  case ConfigurationEditingErrorCode.ERROR_INVALID_CONFIGURATION: {
+  case ConfigurationEditingErrorCode.ERROR_INVALID_CONFIGURATION:
+  {
     nls.localize(
       "errorInvalidConfiguration",
       "Unable to write into settings. Correct errors/warnings in the file and try again."

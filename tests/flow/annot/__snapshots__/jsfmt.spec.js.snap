@@ -62,12 +62,14 @@ var zer : null = null;
 function foobar(n : ?number) : number | null | void { return n; }
 function barfoo(n : number | null | void) : ?number { return n; }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function foo(str: string, i: number): string {
+function foo(str: string, i: number): string
+{
   return str;
 }
 var bar: (str: number, i: number) => string = foo;
 
-var qux = function(str: string, i: number): number {
+var qux = function(str: string, i: number): number
+{
   return foo(str, i);
 };
 
@@ -97,7 +99,8 @@ type ObjType = { "bar-foo": string, "foo-bar": number };
 var test_obj: ObjType = { "bar-foo": "23" };
 
 // param type annos are strict UBs like var type annos
-function param_anno(n: number): void {
+function param_anno(n: number): void
+{
   n = "hey"; // error
 }
 
@@ -105,7 +108,8 @@ function param_anno(n: number): void {
 // this one cribbed from API.atlas.js
 function param_anno2(
   batchRequests: Array<{ method: string, path: string, params: ?Object }>
-): void {
+): void
+{
   // error below, since we're assigning elements to batchRequests
   // which lack a path property.
   // just assign result to new var instead of reassigning to param.
@@ -125,10 +129,12 @@ var toz: null = 3;
 
 var zer: null = null;
 
-function foobar(n: ?number): number | null | void {
+function foobar(n: ?number): number | null | void
+{
   return n;
 }
-function barfoo(n: number | null | void): ?number {
+function barfoo(n: number | null | void): ?number
+{
   return n;
 }
 
@@ -152,15 +158,18 @@ function foo() {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let myClassInstance: MyClass = null; // forward ref ok, null ~> class error
 
-function bar(): MyClass {
+function bar(): MyClass
+{
   return null; // forward ref ok, null ~> class error
 }
 
 class MyClass {} // looked up above
 
-function foo() {
+function foo()
+{
   let myClassInstance: MyClass = mk(); // ok (no confusion across scopes)
-  function mk() {
+  function mk()
+  {
     return new MyClass();
   }
 
@@ -219,11 +228,13 @@ function bar(y: MyObj): string {
 
 type MyObj = Object;
 
-function foo(x: { [key: string]: mixed }) {
+function foo(x: { [key: string]: mixed })
+{
   bar(x);
 }
 
-function bar(y: MyObj): string {
+function bar(y: MyObj): string
+{
   return y.foo;
 }
 
@@ -278,16 +289,20 @@ function insertMany<K, V>(
   merge: Merge<V>,
   vs: [K, V][],
   m: Map<K, V>
-): Map<K, V> {
-  function f([k, v]: [K, V], m: Map<K, V>): Map<K, V> {
+): Map<K, V>
+{
+  function f([k, v]: [K, V], m: Map<K, V>): Map<K, V>
+  {
     return m.insertWith(merge, k, v);
   }
   return foldr(f, m, vs);
 }
 
 class Foo<A> {
-  bar<B>() {
-    return function<C>(a: A, b: B, c: C): void {
+  bar<B>()
+  {
+    return function<C>(a: A, b: B, c: C): void
+    {
       ([a, b, c]: [A, B, C]);
     };
   }

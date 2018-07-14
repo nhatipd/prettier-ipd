@@ -162,7 +162,8 @@ class A {
 
 class B {
   x: number;
-  constructor() {
+  constructor()
+  {
     this.x; // OK
   }
 }
@@ -171,7 +172,8 @@ class C extends A {}
 
 class D extends A {
   y: number;
-  constructor() {
+  constructor()
+  {
     this.y; // error (no super call)
     this.x; // error (no super call)
   }
@@ -179,20 +181,23 @@ class D extends A {
 
 class E extends A {
   y: number;
-  constructor() {
+  constructor()
+  {
     super();
     this.y; // OK
     this.x; // OK
   }
 }
 
-function leak(f) {
+function leak(f)
+{
   f.y; // error
   f.x; // error
 }
 class F extends A {
   y: number;
-  constructor() {
+  constructor()
+  {
     leak(this); // error (no super call yet)
     super();
     this.y;
@@ -201,14 +206,16 @@ class F extends A {
 }
 
 class G extends A {
-  constructor(b) {
+  constructor(b)
+  {
     super.x; // error (no super call)
   }
 }
 
 class H extends A {
   y: number;
-  constructor() {
+  constructor()
+  {
     if (Math.random() < 0.5) super();
     else super();
     this.y; // OK
@@ -217,27 +224,31 @@ class H extends A {
 }
 
 class I_ {
-  constructor(leaked_this) {
+  constructor(leaked_this)
+  {
     leaked_this.foo();
   }
   foo() {}
 }
 class I extends I_ {
-  constructor() {
+  constructor()
+  {
     super(this); // error (no super call yet)
   }
 }
 
 class J__ {}
 class J_ extends J__ {
-  constructor(closure_leaking_this) {
+  constructor(closure_leaking_this)
+  {
     closure_leaking_this();
     super();
   }
   foo() {}
 }
 class J extends J_ {
-  constructor() {
+  constructor()
+  {
     super(() => this.foo()); // error (no super call yet)
     // The reason for this error is that super constructor could call the
     // closure and therefore access this before calling its own super
@@ -249,13 +260,15 @@ class J extends J_ {
 
 class K_ {
   closure_leaking_this: () => void;
-  constructor(closure_leaking_this) {
+  constructor(closure_leaking_this)
+  {
     this.closure_leaking_this = closure_leaking_this;
   }
   foo() {}
 }
 class K extends K_ {
-  constructor() {
+  constructor()
+  {
     super(() => {
       if (_this) _this.foo();
     }); // OK
@@ -269,12 +282,14 @@ class K extends K_ {
 // the constructor returns false (a non-object), but \`super()\` returns false,
 // which then similarly causes \`new L()\` to return an instance of \`L\`.
 class L_ {
-  constructor() {
+  constructor()
+  {
     return false;
   }
 }
 class L extends L_ {
-  constructor() {
+  constructor()
+  {
     let x: boolean = super();
     return x;
   }
@@ -285,12 +300,14 @@ class L extends L_ {
 // similarly, the converse is true: if the parent's constructor returns an
 // object, then the child does too.
 class M_ {
-  constructor() {
+  constructor()
+  {
     return { foo: "foo" };
   }
 }
 class M extends M_ {
-  constructor() {
+  constructor()
+  {
     return super();
   }
 }
@@ -300,13 +317,15 @@ class M extends M_ {
 // however! super() calls the parent constructor with the subclass as its \`this\`
 // value (essentially \`super.constructor.call(this)\`).
 class N_ {
-  constructor(): this {
+  constructor(): this
+  {
     let x = this;
     return x;
   }
 }
 class N extends N_ {
-  constructor() {
+  constructor()
+  {
     return super();
   }
 }
@@ -322,7 +341,8 @@ class D {
 module.exports = D;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class D {
-  foo(): number {
+  foo(): number
+  {
     return 0;
   }
 }
@@ -356,23 +376,27 @@ class B extends A {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class A {
   constructor(x: number) {}
-  static staticMethod(x: string): string {
+  static staticMethod(x: string): string
+  {
     return x;
   }
   f(x: string) {}
 }
 
 class B extends A {
-  constructor(x: string, y: number) {
+  constructor(x: string, y: number)
+  {
     super(x);
   }
 
-  static anotherStatic() {
+  static anotherStatic()
+  {
     (super.staticMethod("foo"): number); // error, string !~> number
     super.doesntExist(); // error, A doesn't have a doesntExist method
   }
 
-  g() {
+  g()
+  {
     super.f(0);
     return super.g;
   }
@@ -390,10 +414,12 @@ module.exports = C;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var D = require("./import");
 class C extends D {
-  constructor() {
+  constructor()
+  {
     return super();
   }
-  foo() {
+  foo()
+  {
     return super.foo();
   }
 }

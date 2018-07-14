@@ -51,13 +51,16 @@ if (m.bind(this)(x)) { }
 //    (including \`havoc\`) should be retained.
 
 class C {
-  m() {
+  m()
+  {
     return true;
   }
   a: 1;
 
-  n() {
-    if (this.m.bind(this)) {
+  n()
+  {
+    if (this.m.bind(this))
+    {
       this.a;
     }
   }
@@ -66,22 +69,26 @@ class C {
 declare var m: Function;
 const o = { a: 1 };
 
-if (m.bind(o)) {
+if (m.bind(o))
+{
   o.a;
 }
 
 class D {
   m: Function;
 
-  n() {
-    if (this.m({})) {
+  n()
+  {
+    if (this.m({}))
+    {
     }
   }
 }
 
 declare var m: Function;
 const x = "";
-if (m.bind(this)(x)) {
+if (m.bind(this)(x))
+{
 }
 
 `;
@@ -114,12 +121,15 @@ declare function f2(x: mixed): boolean %checks(Array.isArray(x));
 declare var cond: boolean;
 
 // Feature check:
-function foo(x: number | string | Array<string>): number {
+function foo(x: number | string | Array<string>): number
+{
   var f = cond ? f1 : f2;
 
-  if (f(x)) {
+  if (f(x))
+  {
     return x.length;
-  } else {
+  } else
+  {
     return 1;
   }
 }
@@ -152,13 +162,16 @@ declare function is_string(x: mixed): boolean %checks(typeof x === "string");
 declare function is_number(x: mixed): boolean %checks(typeof x === "number");
 
 // Feature check:
-function foo(x: string | Array<string>): string {
-  if (is_string(x)) {
+function foo(x: string | Array<string>): string
+{
+  if (is_string(x))
+  {
     // The use of \`is_string\` as a conditional check
     // should guarantee the narrowing of the type of \`x\`
     // to string.
     return x;
-  } else {
+  } else
+  {
     // Accordingly the negation of the above check
     // guarantees that \`x\` here is an Array<string>
     return x.join();
@@ -203,13 +216,15 @@ var n = r(s) || 1;
 (n: number);
 
 var x = "";
-if ((x = r(s) || 1)) {
+if ((x = r(s) || 1))
+{
   (x: number);
 }
 
 declare var dollars: mixed;
 
-function foo(x: mixed) {
+function foo(x: mixed)
+{
   return 1;
 }
 foo(dollars) || 0;
@@ -258,12 +273,15 @@ type Invitee = {
   fbid: number
 };
 
-function f(_this: { m: ?Meeting }): string {
-  if (!_this.m) {
+function f(_this: { m: ?Meeting }): string
+{
+  if (!_this.m)
+  {
     return "0";
   }
 
-  if (_this.m.es.some(a => a.fbid === 0)) {
+  if (_this.m.es.some(a => a.fbid === 0))
+  {
   }
   return "3";
 }
@@ -288,10 +306,13 @@ function foo(x: string | Array<string>): string {
 
 // The original first-order case
 
-function foo(x: string | Array<string>): string {
-  if (typeof x === "string") {
+function foo(x: string | Array<string>): string
+{
+  if (typeof x === "string")
+  {
     return x; // [ERROR] x: Array<string> doesn't match return type
-  } else {
+  } else
+  {
     return x.join(); // [ERROR] x: string doesn't have .join method
   }
 }
@@ -320,8 +341,10 @@ function foo(s: Array<string>): string {
 
 declare function pred<T>(x: T): boolean;
 
-function foo(s: Array<string>): string {
-  if (pred(s)) {
+function foo(s: Array<string>): string
+{
+  if (pred(s))
+  {
     return "1";
   }
   return 1;
@@ -357,12 +380,15 @@ function foo(s: Array<string>): string {
 
 declare function pred<T>(x: T): boolean;
 
-function foo(s: Array<string>): string {
-  if (1(s)) {
+function foo(s: Array<string>): string
+{
+  if (1(s))
+  {
     return "1";
   }
 
-  if ((pred + 1)("s")) {
+  if ((pred + 1)("s"))
+  {
     return "1";
   }
 
@@ -396,10 +422,13 @@ declare function is_number(x: mixed): boolean %checks(typeof x === "number");
 // Sanity check:
 // - Erroneous logic
 
-function bar(x: string | Array<string>): string {
-  if (is_number(x)) {
+function bar(x: string | Array<string>): string
+{
+  if (is_number(x))
+  {
     return x;
-  } else {
+  } else
+  {
     return x.join(); // error: both string and Array<string> can flow to x
   }
 }
@@ -453,13 +482,16 @@ function foo(x: string | Array<string>): string {
 // Sanity check:
 // - predicate functions cannot have bodies (can only be declarations)
 
-function pred(x: mixed): boolean %checks(typeof x === "string") {
+function pred(x: mixed): boolean %checks(typeof x === "string")
+{
   // error: cannot use pred type here
   return typeof x === "string";
 }
 
-function foo(x: string | Array<string>): string {
-  if (pred(x)) {
+function foo(x: string | Array<string>): string
+{
+  if (pred(x))
+  {
     return x;
   }
   return "1";

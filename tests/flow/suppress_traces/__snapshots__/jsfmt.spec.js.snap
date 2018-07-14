@@ -25,11 +25,13 @@ var a: string = foo('hi'); // error number ~> string
  */
 
 // $FlowFixMe - Error unused suppression
-function bar(): number {
+function bar(): number
+{
   return 5;
 }
 
-function foo(x: string) {
+function foo(x: string)
+{
   return bar();
 }
 
