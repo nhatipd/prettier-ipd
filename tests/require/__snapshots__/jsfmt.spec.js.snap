@@ -6,7 +6,8 @@ const { one, two, thee, four, five, six, seven, eight, nine, ten, eleven } = req
 
 const MyReallyExtrememlyLongModuleName = require('MyReallyExtrememlyLongModuleName');
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const {
+const
+{
   one,
   two,
   thee,
@@ -18,7 +19,8 @@ const {
   nine,
   ten
 } = require("./my-utils");
-const {
+const
+{
   one,
   two,
   thee,

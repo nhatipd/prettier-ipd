@@ -8,8 +8,14 @@ module.exports = {ParentFoo};
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-var ParentFoo = { foo: "bar" };
-module.exports = { ParentFoo };
+var ParentFoo =
+{
+  foo: "bar"
+};
+module.exports =
+{
+  ParentFoo
+};
 
 `;
 
@@ -45,7 +51,10 @@ var Parent = require("./Parent");
 
 // Hops through destructuring
 let ParentFoo;
-({ ParentFoo } = Parent);
+(
+{
+  ParentFoo
+} = Parent);
 ParentFoo; // Points to lval in line above this
 
 // Follows assignment on simple/"non-destructuring" patterns
@@ -81,11 +90,13 @@ class D extends C {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-class C {
+class C
+{
   override() {}
 }
 
-class D extends C {
+class D extends C
+{
   foo()
   {
     this.override();
@@ -114,8 +125,12 @@ let msg = "hello";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var React = require("react");
 
-class C extends React.Component {
-  props: { x: string };
+class C extends React.Component
+{
+  props:
+  {
+    x: string
+  };
 }
 
 let msg = "hello";

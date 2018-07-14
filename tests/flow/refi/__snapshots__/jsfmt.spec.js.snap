@@ -393,13 +393,25 @@ var tests =
 var tests = [
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     var y: string = x.p; // not ok
   },
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p != null)
     {
       var y: string = x.p; // ok
@@ -408,7 +420,13 @@ var tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p == null)
     {
     } else
@@ -419,14 +437,26 @@ var tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p == null) return;
     var y: string = x.p; // ok
   },
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (!(x.p != null))
     {
     } else
@@ -437,7 +467,13 @@ var tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p != null)
     {
       alert("");
@@ -447,7 +483,13 @@ var tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p != null)
     {
       x.p = null;
@@ -457,7 +499,13 @@ var tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p != null)
     {
     }
@@ -466,7 +514,13 @@ var tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p != null)
     {
     } else
@@ -477,19 +531,37 @@ var tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     var y: string = x.p != null ? x.p : ""; // ok
   },
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     var y: string = x.p || ""; // ok
   },
 
   function()
   {
-    var x: { p: string | string[] } = { p: ["xxx"] };
+    var x:
+    {
+      p: string | string[]
+    } =
+    {
+      p: ["xxx"]
+    };
     if (Array.isArray(x.p))
     {
       var y: string[] = x.p; // ok
@@ -501,7 +573,13 @@ var tests = [
 
   function()
   {
-    var x: { y: ?string } = { y: null };
+    var x:
+    {
+      y: ?string
+    } =
+    {
+      y: null
+    };
     if (!x.y)
     {
       x.y = "foo";
@@ -511,7 +589,13 @@ var tests = [
 
   function()
   {
-    var x: { y: ?string } = { y: null };
+    var x:
+    {
+      y: ?string
+    } =
+    {
+      y: null
+    };
     if (x.y)
     {
     } else
@@ -523,7 +607,13 @@ var tests = [
 
   function()
   {
-    var x: { y: ?string } = { y: null };
+    var x:
+    {
+      y: ?string
+    } =
+    {
+      y: null
+    };
     if (!x.y)
     {
       x.y = 123; // error
@@ -533,7 +623,13 @@ var tests = [
 
   function()
   {
-    var x: { y: ?string } = { y: null };
+    var x:
+    {
+      y: ?string
+    } =
+    {
+      y: null
+    };
     if (x.y)
     {
       x.y = "foo";
@@ -546,7 +642,13 @@ var tests = [
 
   function()
   {
-    var x: { y: string | number | boolean } = { y: false };
+    var x:
+    {
+      y: string | number | boolean
+    } =
+    {
+      y: false
+    };
     if (typeof x.y == "number")
     {
       x.y = "foo";
@@ -556,7 +658,13 @@ var tests = [
 
   function()
   {
-    var x: { y: string | number | boolean } = { y: false };
+    var x:
+    {
+      y: string | number | boolean
+    } =
+    {
+      y: false
+    };
     if (typeof x.y == "number")
     {
       x.y = "foo";
@@ -569,7 +677,13 @@ var tests = [
 
   function()
   {
-    var x: { y: ?string } = { y: null };
+    var x:
+    {
+      y: ?string
+    } =
+    {
+      y: null
+    };
     if (!x.y)
     {
       x.y = "foo";
@@ -583,7 +697,13 @@ var tests = [
 
   function()
   {
-    var x: { y: string | number | boolean } = { y: false };
+    var x:
+    {
+      y: string | number | boolean
+    } =
+    {
+      y: false
+    };
     if (typeof x.y == "number")
     {
       x.y = "foo";
@@ -599,7 +719,13 @@ var tests = [
 
   function()
   {
-    var x: { y: string | number | boolean } = { y: false };
+    var x:
+    {
+      y: string | number | boolean
+    } =
+    {
+      y: false
+    };
     if (typeof x.y == "number")
     {
       x.y = "foo";
@@ -615,7 +741,13 @@ var tests = [
 
   function()
   {
-    var x: { y: ?string } = { y: null };
+    var x:
+    {
+      y: ?string
+    } =
+    {
+      y: null
+    };
     var z: string = "foo";
     if (x.y)
     {
@@ -652,7 +784,13 @@ var tests = [
 
   function()
   {
-    let x: { foo: ?string } = { foo: null };
+    let x:
+    {
+      foo: ?string
+    } =
+    {
+      foo: null
+    };
     if (!x.foo)
     {
       if (false)
@@ -665,7 +803,13 @@ var tests = [
 
   function()
   {
-    let x: { foo: ?string } = { foo: null };
+    let x:
+    {
+      foo: ?string
+    } =
+    {
+      foo: null
+    };
     if (!x.foo)
     {
       while (false) {}
@@ -676,7 +820,13 @@ var tests = [
 
   function()
   {
-    let x: { foo: ?string } = { foo: null };
+    let x:
+    {
+      foo: ?string
+    } =
+    {
+      foo: null
+    };
     if (!x.foo)
     {
       for (var i = 0; i < 0; i++) {}
@@ -687,10 +837,19 @@ var tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p != null)
     {
-      var { p } = x; // TODO: annot checked against type of x
+      var
+      {
+        p
+      } = x; // TODO: annot checked against type of x
       (p: string); // ok
     }
   }
@@ -1160,7 +1319,13 @@ var null_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p != null)
     {
       var y: string = x.p; // ok
@@ -1169,7 +1334,19 @@ var null_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (x.p.q != null)
     {
       var y: string = x.p.q; // ok
@@ -1190,7 +1367,13 @@ var null_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p == null)
     {
     } else
@@ -1201,7 +1384,19 @@ var null_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (x.p.q == null)
     {
     } else
@@ -1222,7 +1417,13 @@ var null_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p !== null)
     {
       var y: string | void = x.p; // ok
@@ -1231,7 +1432,19 @@ var null_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (x.p.q !== null)
     {
       var y: string | void = x.p.q; // ok
@@ -1252,7 +1465,13 @@ var null_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p === null)
     {
     } else
@@ -1263,7 +1482,19 @@ var null_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (x.p.q === null)
     {
     } else
@@ -1274,7 +1505,8 @@ var null_tests = [
 ];
 
 // this.p op null
-class C {
+class C
+{
   p: ?string;
 
   ensure0(): string
@@ -1303,7 +1535,8 @@ class C {
 }
 
 // super.p op null
-class D extends C {
+class D extends C
+{
   ensure100(): string
   {
     if (super.p != null) return super.p;
@@ -1619,7 +1852,13 @@ var null_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (typeof x.p == "string")
     {
       var y: string = x.p; // ok
@@ -1628,7 +1867,19 @@ var null_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (typeof x.p.q == "string")
     {
       var y: string = x.p.q; // ok
@@ -1649,7 +1900,13 @@ var null_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (typeof x.p != "string")
     {
     } else
@@ -1660,7 +1917,19 @@ var null_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (typeof x.p.q != "string")
     {
     } else
@@ -1681,7 +1950,13 @@ var null_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (typeof x.p === "string")
     {
       var y: string = x.p; // ok
@@ -1690,7 +1965,19 @@ var null_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (typeof x.p.q === "string")
     {
       var y: string = x.p.q; // ok
@@ -1711,7 +1998,13 @@ var null_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (typeof x.p !== "string")
     {
     } else
@@ -1722,7 +2015,19 @@ var null_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (typeof x.p.q !== "string")
     {
     } else
@@ -1733,7 +2038,8 @@ var null_tests = [
 ];
 
 // typeof this.p op typename
-class A {
+class A
+{
   p: ?string;
 
   ensure0(): string
@@ -1863,7 +2169,13 @@ var undef_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p !== undefined && x.p !== null)
     {
       var y: string = x.p; // ok
@@ -1872,7 +2184,19 @@ var undef_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (x.p.q !== undefined && x.p.q !== null)
     {
       var y: string = x.p.q; // ok
@@ -1893,7 +2217,13 @@ var undef_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p === undefined || x.p === null)
     {
     } else
@@ -1904,7 +2234,19 @@ var undef_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (x.p.q === undefined || x.p.q === null)
     {
     } else
@@ -1915,7 +2257,8 @@ var undef_tests = [
 ];
 
 // this.p op undefined
-class A {
+class A
+{
   p: ?string;
 
   ensure0(): string
@@ -2033,7 +2376,13 @@ var void_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p !== void 0 && x.p !== null)
     {
       var y: string | void = x.p; // ok
@@ -2042,7 +2391,19 @@ var void_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (x.p.q !== void 0 && x.p.q !== null)
     {
       var y: string = x.p.q; // ok
@@ -2063,7 +2424,13 @@ var void_tests = [
 
   function()
   {
-    var x: { p: ?string } = { p: "xxx" };
+    var x:
+    {
+      p: ?string
+    } =
+    {
+      p: "xxx"
+    };
     if (x.p === void 0 || x.p === null)
     {
     } else
@@ -2074,7 +2441,19 @@ var void_tests = [
 
   function()
   {
-    var x: { p: { q: ?string } } = { p: { q: "xxx" } };
+    var x:
+    {
+      p:
+      {
+        q: ?string
+      }
+    } =
+    {
+      p:
+      {
+        q: "xxx"
+      }
+    };
     if (x.p.q === void 0 || x.p.q === null)
     {
     } else
@@ -2085,7 +2464,8 @@ var void_tests = [
 ];
 
 // this.p op void(...)
-class A {
+class A
+{
   p: ?string;
 
   ensure0(): string

@@ -17,8 +17,10 @@ export default {
 </template>
 
 <script lang="ts">
-export default {
-  computed: {
+export default
+{
+  computed:
+  {
     foo(): string
     {
       return "foo";
@@ -40,8 +42,10 @@ export default {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <script lang="tsx">
 import { VNode } from "vue";
-export default {
-  computed: {
+export default
+{
+  computed:
+  {
     foo(): string
     {
       return "foo";
@@ -127,10 +131,12 @@ p { font-size : 2em ; text-align : center ; }
 </template >
 
 <script>
-module.exports = {
+module.exports =
+{
   data: function()
   {
-    return {
+    return
+    {
       greeting: "Hello"
     };
   }

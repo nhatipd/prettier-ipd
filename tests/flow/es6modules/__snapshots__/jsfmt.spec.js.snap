@@ -46,11 +46,13 @@ module.exports = Test;
  * @flow
  */
 
-class Base {
+class Base
+{
   static baseProp: number;
 }
 
-class Test extends Base {
+class Test extends Base
+{
   static childProp: number;
 
   static staticNumber1(): number
@@ -95,7 +97,8 @@ module.exports = Object.freeze({
  * @flow
  */
 
-module.exports = Object.freeze({
+module.exports = Object.freeze(
+{
   numberValue1: 1
 });
 
@@ -120,7 +123,8 @@ module.exports = {
  * @flow
  */
 
-module.exports = {
+module.exports =
+{
   numberValue1: 1,
   numberValue2: 2,
   numberValue3: 3,
@@ -168,7 +172,8 @@ export default class { givesANum(): number { return 42; }};
  * @flow
  */
 
-export default class {
+export default class
+{
   givesANum(): number
   {
     return 42;
@@ -190,7 +195,8 @@ export default class { givesANum(): number { return 42; }};
  * @flow
  */
 
-export default class {
+export default class
+{
   givesANum(): number
   {
     return 42;
@@ -257,7 +263,8 @@ new Foo();
  * @flow
  */
 
-export default class Foo {
+export default class Foo
+{
   givesANum(): number
   {
     return 42;
@@ -284,7 +291,8 @@ export default class Foo { givesANum(): number { return 42; }};
  * @flow
  */
 
-export default class Foo {
+export default class Foo
+{
   givesANum(): number
   {
     return 42;
@@ -553,7 +561,8 @@ export function givesANumber(): number
 {
   return 42;
 }
-export class NumberGenerator {
+export class NumberGenerator
+{
   givesANumber(): number
   {
     return 42;
@@ -562,7 +571,13 @@ export class NumberGenerator {
 
 export var varDeclNumber1 = 1,
   varDeclNumber2 = 2;
-export var { destructuredObjNumber } = { destructuredObjNumber: 1 };
+export var
+{
+  destructuredObjNumber
+} =
+{
+  destructuredObjNumber: 1
+};
 export var [destructuredArrNumber] = [1];
 
 `;
@@ -607,7 +622,8 @@ export function givesANumber2(): number
 {
   return 42;
 }
-export class NumberGenerator2 {
+export class NumberGenerator2
+{
   givesANumber(): number
   {
     return 42;
@@ -616,7 +632,13 @@ export class NumberGenerator2 {
 
 export var varDeclNumber3 = 1,
   varDeclNumber4 = 2;
-export var { destructuredObjNumber2 } = { destructuredObjNumber2: 1 };
+export var
+{
+  destructuredObjNumber2
+} =
+{
+  destructuredObjNumber2: 1
+};
 export var [destructuredArrNumber2] = [1];
 
 `;
@@ -672,7 +694,8 @@ module.exports = {
  * @flow
  */
 
-module.exports = {
+module.exports =
+{
   numberValue: 42
 };
 

@@ -11,7 +11,8 @@ C.g(0);
 
 var x:number = C.x;
 C.x = 0;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   static f(x: number) {}
   static x: string;
 }

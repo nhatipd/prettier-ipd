@@ -9,7 +9,8 @@ class x {
   }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class x {
+class x
+{
   /**
    * Set of default settings to be applied to model fetch calls in DAO layer.
    */
@@ -52,14 +53,16 @@ let f = (/* ... */) => {};
 (function(/* ... */) {})(/* ... */);
 function f(/* ... */) {}
 
-const obj = {
+const obj =
+{
   f(/* ... */) {},
   f: (/* ... */) => {},
   f: function(/* ... */) {},
   f: function f(/* ... */) {}
 };
 
-class Foo {
+class Foo
+{
   f(/* ... */) {}
   f() /* ... */ {}
   f = (/* ... */) => {};

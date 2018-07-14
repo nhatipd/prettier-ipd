@@ -109,7 +109,10 @@ namespace TypeScript.WebTsc {
 /// <reference path='..\\..\\src\\compiler\\tsc.ts'/>
 
 namespace TypeScript.WebTsc {
-  declare var RealActiveXObject: { new (s: string): any };
+  declare var RealActiveXObject:
+  {
+    new (s: string): any;
+  };
 
   function getWScriptSystem()
   {
@@ -123,7 +126,8 @@ namespace TypeScript.WebTsc {
     {
       args[i] = WScript.Arguments.Item(i);
     }
-    return {
+    return
+    {
       args: args,
       newLine: "\\r\\n",
       write(s: string): void

@@ -6,7 +6,8 @@ class LocalStorage implements Storage {
   [key: string]: any;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class LocalStorage implements Storage {
+class LocalStorage implements Storage
+{
   [index: number]: string
   [key: string]: any
 }
@@ -23,16 +24,19 @@ interface MultiLine {
 
 interface InlineMultiple { x: string; y: string }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface Inline {
+interface Inline
+{
   x: string
 }
 
-interface MultiLine {
+interface MultiLine
+{
   x: string
   y: string
 }
 
-interface InlineMultiple {
+interface InlineMultiple
+{
   x: string
   y: string
 }
@@ -44,9 +48,14 @@ type A = {disabled?: boolean, error?: string}
 
 const foo: {aasdf?: string; asdf?: number; foob?: string; zzz?: string; yyy: string}  = {}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-type A = { disabled?: boolean; error?: string }
+type A =
+{
+  disabled?: boolean
+  error?: string
+}
 
-const foo: {
+const foo:
+{
   aasdf?: string
   asdf?: number
   foob?: string

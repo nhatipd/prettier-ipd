@@ -19,7 +19,8 @@ exports[`test.component.ts - typescript-verify 1`] = `
 })
 class     TestComponent {}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-@Component({
+@Component(
+{
   selector: "app-test",
   template: \`<ul>   <li>test</li>
   </ul>
@@ -58,7 +59,8 @@ exports[`test.component.ts - typescript-verify 2`] = `
 })
 class     TestComponent {}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-@Component({
+@Component(
+{
   selector: "app-test",
   template: \`<ul>   <li>test</li>
   </ul>

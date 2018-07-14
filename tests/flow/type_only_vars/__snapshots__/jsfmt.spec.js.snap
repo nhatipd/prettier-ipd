@@ -24,7 +24,8 @@ class Foo {}
 
 class Bar {}
 
-module.exports = {
+module.exports =
+{
   Foo: Foo,
   Bar: Bar
 };
@@ -58,7 +59,8 @@ var duck: string = "quack";
 import typeof A from "./A.js";
 import type { Foo, Bar as Baz } from "./A.js";
 
-type duck = {
+type duck =
+{
   quack: () => string
 };
 

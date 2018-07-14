@@ -46,7 +46,8 @@ declare function fn8(y?, ...z: number[]);
 declare function fn9(...q: {}[]);
 declare function fn10<T>(...q: T[]);
 
-declare class cls {
+declare class cls
+{
   constructor();
   method(): cls;
   static static(p): number;

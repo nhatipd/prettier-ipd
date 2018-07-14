@@ -4,17 +4,20 @@ exports[`private_fields.js - babylon-verify 1`] = `
 class A { #x; #y; }
 class B { #x = 0; #y = 1; }
 
-class C {
+class C
+{
   static #x;
   static #y = 1;
 }
 
-class D {
+class D
+{
   #x
   #y
 }
 
-class Point {
+class Point
+{
   #x = 1;
   #y = 2;
 
@@ -34,26 +37,31 @@ class Point {
   toString() { return \`Point<\${ this.#x },\${ this.#y }>\` }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class A {
+class A
+{
   #x;
   #y;
 }
-class B {
+class B
+{
   #x = 0;
   #y = 1;
 }
 
-class C {
+class C
+{
   static #x;
   static #y = 1;
 }
 
-class D {
+class D
+{
   #x;
   #y;
 }
 
-class Point {
+class Point
+{
   #x = 1;
   #y = 2;
 
@@ -98,17 +106,20 @@ exports[`private_fields.js - babylon-verify 2`] = `
 class A { #x; #y; }
 class B { #x = 0; #y = 1; }
 
-class C {
+class C
+{
   static #x;
   static #y = 1;
 }
 
-class D {
+class D
+{
   #x
   #y
 }
 
-class Point {
+class Point
+{
   #x = 1;
   #y = 2;
 
@@ -128,26 +139,31 @@ class Point {
   toString() { return \`Point<\${ this.#x },\${ this.#y }>\` }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class A {
+class A
+{
   #x
   #y
 }
-class B {
+class B
+{
   #x = 0
   #y = 1
 }
 
-class C {
+class C
+{
   static #x
   static #y = 1
 }
 
-class D {
+class D
+{
   #x
   #y
 }
 
-class Point {
+class Point
+{
   #x = 1
   #y = 2
 
@@ -197,7 +213,8 @@ class A {
     2;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class A {
+class A
+{
   #foobar =
     // comment to break
     1 +
@@ -216,7 +233,8 @@ class A {
     2;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class A {
+class A
+{
   #foobar =
     // comment to break
     1 +

@@ -40,10 +40,12 @@ interface IFoo
 }
 
 class C1 implements IFoo {} // error: property \`foo\` not found
-class C2 implements IFoo {
+class C2 implements IFoo
+{
   foo: number;
 } // error: number <~> string
-class C3 implements IFoo {
+class C3 implements IFoo
+{
   foo: string;
 } // ok
 
@@ -77,7 +79,8 @@ interface IPoly<T>
 {
   x: T;
 }
-class C8<T> implements IPoly<T> {
+class C8<T> implements IPoly<T>
+{
   x: T;
 }
 

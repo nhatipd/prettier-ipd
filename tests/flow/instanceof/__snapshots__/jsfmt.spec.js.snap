@@ -92,10 +92,12 @@ function foo1(x: Array<number> | number) {
 /* @flow */
 
 // x instancof t
-class X1 {
+class X1
+{
   foo: number;
 }
-class X2 {
+class X2
+{
   foo: string;
 }
 
@@ -118,10 +120,12 @@ function consumer2(b)
 }
 
 // x.y instanceof t
-class Y1 {
+class Y1
+{
   bar: X1;
 }
-class Y2 {
+class Y2
+{
   bar: X2;
 }
 
@@ -144,10 +148,12 @@ function consumer4(b)
 }
 
 // x.y.z instance of t
-class Z1 {
+class Z1
+{
   baz: Y1;
 }
-class Z2 {
+class Z2
+{
   baz: Y2;
 }
 
@@ -170,7 +176,8 @@ function consumer6(b)
 }
 
 // this instanceof t
-class C {
+class C
+{
   m()
   {
     if (this instanceof D) alert(this.s);
@@ -178,7 +185,8 @@ class C {
   }
 }
 
-class D extends C {
+class D extends C
+{
   s: string;
   constructor()
   {

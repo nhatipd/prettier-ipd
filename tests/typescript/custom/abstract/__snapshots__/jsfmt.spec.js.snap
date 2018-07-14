@@ -46,7 +46,8 @@ abstract class Foo {
     static abstract ['i'] = 6;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-abstract class Foo {
+abstract class Foo
+{
   private abstract a: 1;
   private abstract b: 2;
   static abstract c: 3;
@@ -71,7 +72,8 @@ abstract class Foo {
       2;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-abstract class Foo {
+abstract class Foo
+{
   private abstract foobar =
     // comment to break
     1 +

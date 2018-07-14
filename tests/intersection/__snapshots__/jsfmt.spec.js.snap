@@ -52,17 +52,22 @@ type DuplexStreamOptions = ReadableStreamOptions &
 export type ReallyBigSocketServer = ReallyBigSocketServerInterface &
   ReallyBigSocketServerStatics;
 
-type Props = {
+type Props =
+{
   propA: X
-} & {
+} &
+{
   propB: X
-} & {
+} &
+{
   propC: X
-} & {
+} &
+{
   propD: X
 };
 
-type Props = {
+type Props =
+{
   focusedChildren?: React.Children,
   onClick: () => void,
   overlayChildren?: React.Children,
@@ -70,30 +75,36 @@ type Props = {
   thumbnail: ImageSource
 } & FooterProps;
 
-type DuplexStreamOptions = ReadableStreamOptions & {
+type DuplexStreamOptions = ReadableStreamOptions &
+{
   allowHalfOpen?: boolean,
   readableObjectMode?: boolean
 };
 
-type DuplexStreamOptions = {
+type DuplexStreamOptions =
+{
   allowHalfOpen?: boolean,
   readableObjectMode?: boolean
-} & {
+} &
+{
   allowHalfOpen?: boolean,
   readableObjectMode?: boolean
 };
 
 type DuplexStreamOptions = ReadableStreamOptions &
-  WritableStreamOptions & {
+  WritableStreamOptions &
+  {
     allowHalfOpen?: boolean,
     readableObjectMode?: boolean
   };
 
 type DuplexStreamOptions = ReadableStreamOptions &
-  WritableStreamOptions & {
+  WritableStreamOptions &
+  {
     allowHalfOpen?: boolean,
     readableObjectMode?: boolean
-  } & {
+  } &
+  {
     allowHalfOpen?: boolean,
     readableObjectMode?: boolean
   };

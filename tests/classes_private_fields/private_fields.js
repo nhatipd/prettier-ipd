@@ -1,17 +1,20 @@
 class A { #x; #y; }
 class B { #x = 0; #y = 1; }
 
-class C {
+class C
+{
   static #x;
   static #y = 1;
 }
 
-class D {
+class D
+{
   #x
   #y
 }
 
-class Point {
+class Point
+{
   #x = 1;
   #y = 2;
 

@@ -38,17 +38,20 @@ class AngularComponent {
   @Input() myInput: string;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export class TestTextFileService {
+export class TestTextFileService
+{
   constructor(@ILifecycleService lifecycleService) {}
 }
 
 @commonEditorContribution
 export class TabCompletionController {}
 
-@Component({
+@Component(
+{
   selector: "angular-component"
 })
-class AngularComponent {
+class AngularComponent
+{
   @Input() myInput: string;
 }
 
@@ -98,43 +101,50 @@ class Something {
     abstract method(): Array<string>
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class Foo1 {
+class Foo1
+{
   @foo
   // comment
   async method() {}
 }
 
-class Foo2 {
+class Foo2
+{
   @foo
   // comment
   private method() {}
 }
 
-class Foo3 {
+class Foo3
+{
   @foo
   // comment
   *method() {}
 }
 
-class Foo4 {
+class Foo4
+{
   @foo
   // comment
   async *method() {}
 }
 
-class Something {
+class Something
+{
   @foo()
   // comment
   readonly property: Array<string>;
 }
 
-class Something {
+class Something
+{
   @foo()
   // comment
   abstract property: Array<string>;
 }
 
-class Something {
+class Something
+{
   @foo()
   // comment
   abstract method(): Array<string>;
@@ -199,7 +209,8 @@ class MyContainerComponent {
 @d4.baz()
 class Class1 {}
 
-class Class2 {
+class Class2
+{
   @d1
   @d2(foo)
   @d3.bar
@@ -216,7 +227,8 @@ class Class2 {
   method4() {}
 }
 
-class Class3 {
+class Class3
+{
   @d1 fieldA;
   @d2(foo) fieldB;
   @d3.bar fieldC;
@@ -226,7 +238,8 @@ class Class3 {
     @d1 private x: number,
     @d2(foo) private y: number,
     @d3("foo") private z: number,
-    @d4({
+    @d4(
+    {
       x: string
     })
     private a: string
@@ -236,12 +249,14 @@ class Class3 {
 @decorated
 class Foo {}
 
-class Bar {
+class Bar
+{
   @decorated
   method() {}
 }
 
-class MyContainerComponent {
+class MyContainerComponent
+{
   @ContentChildren(MyComponent)
   components: QueryListSomeBigName<MyComponentThat>;
 }
@@ -259,7 +274,8 @@ interface MyInterface {
 // invalid place but shouldn't be removed
 
 @hello()
-interface MyInterface {
+interface MyInterface
+{
   id: string;
 }
 

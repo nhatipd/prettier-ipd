@@ -65,7 +65,8 @@ interface TimerConstructor {
   new (interval: number, callback: (handler: Timer) => void): Timer;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface FooConstructor {
+interface FooConstructor
+{
   new (
     a: number,
     b: number,
@@ -78,7 +79,8 @@ interface FooConstructor {
   ): Foo;
 }
 
-interface BarConstructor {
+interface BarConstructor
+{
   new <A, B, C>(
     a: number,
     b: number,
@@ -91,7 +93,8 @@ interface BarConstructor {
   ): Foo;
 }
 
-type BazConstructor = {
+type BazConstructor =
+{
   new (
     a: number,
     b: number,
@@ -104,7 +107,8 @@ type BazConstructor = {
   ): Foo;
 };
 
-interface ConstructorBigGenerics {
+interface ConstructorBigGenerics
+{
   // comment
   new <
     AAAAAAAAAAAAAAAAAAAAAAAA,
@@ -122,12 +126,14 @@ interface ConstructorBigGenerics {
   ): Foo;
 }
 
-interface ConstructorInline {
+interface ConstructorInline
+{
   // https://github.com/prettier/prettier/issues/2163
   (i): any;
 }
 
-interface TimerConstructor {
+interface TimerConstructor
+{
   // Line-splitting comment
   new (interval: number, callback: (handler: Timer) => void): Timer;
 }

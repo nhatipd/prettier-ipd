@@ -92,7 +92,8 @@ function bar()
   return true;
 }
 
-class C {
+class C
+{
   qux() {}
 }
 
@@ -121,7 +122,10 @@ function goofy()
 
 function goofy2()
 {
-  var o = { x: 0 };
+  var o =
+  {
+    x: 0
+  };
   if (typeof o.x == "function")
   {
     o.x();
@@ -213,15 +217,18 @@ module.exports = "sigma";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @providesModule Sigma */
 
-class A {
+class A
+{
   a() {}
 }
 
-class B extends A {
+class B extends A
+{
   b() {}
 }
 
-class C extends B {
+class C extends B
+{
   c() {}
 }
 
@@ -252,7 +259,8 @@ function foo(x: A)
   }
 }
 
-class D {
+class D
+{
   d() {}
 }
 
@@ -284,11 +292,13 @@ function test(obj: BaseClass): string {
   return obj.baseProp;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class BaseClass {
+class BaseClass
+{
   baseProp: string;
 }
 
-class ChildClass extends BaseClass {
+class ChildClass extends BaseClass
+{
   childProp: string;
 }
 

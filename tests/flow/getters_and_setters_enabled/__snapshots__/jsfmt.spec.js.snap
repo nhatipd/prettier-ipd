@@ -66,7 +66,8 @@ foo.propOverriddenWithSetter = 123; // Error number ~> string
 
 var z: number = 123;
 
-class Foo {
+class Foo
+{
   get goodGetterNoAnnotation()
   {
     return 4;
@@ -326,7 +327,8 @@ class A {}
 class B extends A {}
 class C extends A {}
 
-var obj = {
+var obj =
+{
   get goodGetterNoAnnotation()
   {
     return 4;
@@ -475,7 +477,8 @@ class A {}
 class B extends A {}
 class C extends A {}
 
-type T = {
+type T =
+{
   get goodGetterWithAnnotation(): number,
   set goodSetterWithAnnotation(x: number): void,
 
@@ -549,8 +552,10 @@ const Example = React.createClass({
 
 import React from "react";
 
-const Example = React.createClass({
-  propTypes: {
+const Example = React.createClass(
+{
+  propTypes:
+  {
     get a()
     {
       return React.PropTypes.number.isRequired;
@@ -652,7 +657,8 @@ declare var a: A;
 declare var b: B;
 declare var c: C;
 
-class Base {
+class Base
+{
   x: B;
   +pos: B;
   -neg: B;
@@ -674,7 +680,8 @@ class Base {
   }
 }
 
-(class extends Base {
+(class extends Base
+{
   // error: getter incompatible with read/write property
   get x(): B
   {
@@ -682,12 +689,14 @@ class Base {
   }
 });
 
-(class extends Base {
+(class extends Base
+{
   // error: setter incompatible with read/write property
   set x(value: B): void {}
 });
 
-(class extends Base {
+(class extends Base
+{
   // ok: get/set co/contra with read/write property, resp.
   get x(): C
   {
@@ -696,12 +705,14 @@ class Base {
   set x(value: A): void {}
 });
 
-(class extends Base {
+(class extends Base
+{
   // error: setter incompatible with read-only property
   set pos(value: B): void {}
 });
 
-(class extends Base {
+(class extends Base
+{
   // ok: getter covariant with read-only property
   get pos(): C
   {
@@ -709,7 +720,8 @@ class Base {
   }
 });
 
-(class extends Base {
+(class extends Base
+{
   // error: getter incompatible with write-only property
   get neg(): B
   {
@@ -717,22 +729,26 @@ class Base {
   }
 });
 
-(class extends Base {
+(class extends Base
+{
   // ok: setter contravariant with write-only property
   set neg(value: A): void {}
 });
 
-(class extends Base {
+(class extends Base
+{
   // ok: read/write covariant with getter
   get: C;
 });
 
-(class extends Base {
+(class extends Base
+{
   // ok: read/write contravariant with setter
   set: A;
 });
 
-(class extends Base {
+(class extends Base
+{
   // ok: read/write invariant with get/set
   getset: B;
 });

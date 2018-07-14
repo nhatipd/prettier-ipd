@@ -52,7 +52,8 @@ export class VisTimelineComponent2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class MyContractSelectionWidget
   extends React.Component<void, MyContractSelectionWidgetPropsType, void>
-  implements SomethingLarge {
+  implements SomethingLarge
+{
   method() {}
 }
 
@@ -74,9 +75,11 @@ class Readable extends events.EventEmitter implements NodeJS_ReadableStream {}
 class InMemoryAppender extends log4javascript.Appender
   implements ICachedLogMessageProvider {}
 
-class Foo extends Immutable.Record({
+class Foo extends Immutable.Record(
+{
   ipaddress: ""
-}) {
+})
+{
   ipaddress: string;
 }
 
@@ -113,17 +116,20 @@ class A {
   m() {}
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class A {
+class A
+{
   // comment
 }
 
-class A {
+class A
+{
   // comment
 }
 
 class A {}
 
-class A {
+class A
+{
   m() {}
 }
 
@@ -151,11 +157,13 @@ class C {
   }
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   name /*comment*/() {}
 }
 
-({
+(
+{
   name /*comment*/() {}
 });
 
@@ -181,7 +189,8 @@ class B {
   "foo";
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class A {
+class A
+{
   foobar =
     // comment to break
     1 +
@@ -189,11 +198,13 @@ class A {
     2;
 }
 
-class B {
+class B
+{
   someInstanceProperty =
     this.props.foofoofoofoofoofoo && this.props.barbarbarbar;
 
-  someInstanceProperty2 = {
+  someInstanceProperty2 =
+  {
     foo: this.props.foofoofoofoofoofoo && this.props.barbarbarbar
   };
 

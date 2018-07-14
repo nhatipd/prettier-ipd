@@ -4,7 +4,10 @@ exports[`Bar.js - flow-verify 1`] = `
 var Bar = { x: 0 };
 module.exports = Bar;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var Bar = { x: 0 };
+var Bar =
+{
+  x: 0
+};
 module.exports = Bar;
 
 `;
@@ -64,7 +67,18 @@ let tests = [
   {
     let result = {};
     result.baz = false;
-    (copyProperties(result, { foo: "a" }, { bar: 123 }): {
+    (copyProperties(
+      result,
+
+      {
+        foo: "a"
+      },
+
+      {
+        bar: 123
+      }
+    ):
+    {
       foo: string,
       bar: number,
       baz: boolean
@@ -75,16 +89,32 @@ let tests = [
   function()
   {
     const copyProperties = require("copyProperties");
-    let x = { foo: "a" };
-    let y = { bar: 123 };
-    (copyProperties({}, x, y): { foo: string, bar: number });
+    let x =
+    {
+      foo: "a"
+    };
+    let y =
+    {
+      bar: 123
+    };
+    (copyProperties({}, x, y):
+    {
+      foo: string,
+      bar: number
+    });
   },
 
   // too few args
   function(copyProperties: Object$Assign)
   {
     copyProperties();
-    (copyProperties({ foo: "a" }): { foo: number }); // err, num !~> string
+    (copyProperties(
+    {
+      foo: "a"
+    }):
+    {
+      foo: number
+    }); // err, num !~> string
   },
 
   // passed as a function
@@ -212,16 +242,49 @@ let tests = [
   {
     let result = {};
     result.baz = false;
-    (mergeInto(result, { foo: "a" }, { bar: 123 }): void);
-    (result: { foo: string, bar: number, baz: boolean });
+    (mergeInto(
+      result,
+
+      {
+        foo: "a"
+      },
+
+      {
+        bar: 123
+      }
+    ): void);
+    (result:
+    {
+      foo: string,
+      bar: number,
+      baz: boolean
+    });
   },
 
   // module from lib
   function()
   {
     const mergeInto = require("mergeInto");
-    let result: { foo?: string, bar?: number, baz: boolean } = { baz: false };
-    (mergeInto(result, { foo: "a" }, { bar: 123 }): void);
+    let result:
+    {
+      foo?: string,
+      bar?: number,
+      baz: boolean
+    } =
+    {
+      baz: false
+    };
+    (mergeInto(
+      result,
+
+      {
+        foo: "a"
+      },
+
+      {
+        bar: 123
+      }
+    ): void);
   },
 
   // too few args
@@ -254,7 +317,8 @@ class Foo extends mixin(Bar) {
 var Bar = require("./Bar");
 var mixin = require("mixin");
 
-class Foo extends mixin(Bar) {
+class Foo extends mixin(Bar)
+{
   m()
   {
     var x: string = this.x;

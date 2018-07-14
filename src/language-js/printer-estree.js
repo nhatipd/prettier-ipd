@@ -356,6 +356,7 @@ function printPathNoParens(path, options, print, args) {
   }
 
   let parts = [];
+  // console.log(n.type);
   switch (n.type) {
     case "File":
       // Print @babel/parser's InterpreterDirective here so that
@@ -1111,12 +1112,6 @@ function printPathNoParens(path, options, print, args) {
     case "TSTypeLiteral": {
       const isTypeAnnotation = n.type === "ObjectTypeAnnotation";
       const parent = path.getParentNode(0);
-      const canBracketCurlyBreak =
-        parent !== null &&
-        (parent.type === "ClassDeclaration" ||
-        parent.type === "InterfaceDeclaration" ||
-        parent.type === "DeclareInterface" ||
-        parent.type === "DeclareClass");
       const shouldBreak =
         n.type === "TSInterfaceBody" ||
         (n.type === "ObjectPattern" &&
@@ -1225,7 +1220,7 @@ function printPathNoParens(path, options, print, args) {
         );
       } else {
         content = concat([
-          canBracketCurlyBreak ? hardline : "",
+          hardline,
           leftBrace,
           indent(
             concat([options.bracketSpacing ? line : softline, concat(props)])
@@ -2055,6 +2050,7 @@ function printPathNoParens(path, options, print, args) {
       }
 
       return concat([
+        hardline,
         "{",
         n.body.length > 0
           ? indent(
@@ -4210,7 +4206,6 @@ function printClass(path, options, print) {
     parts.push(" ");
   }
   parts.push(path.call(print, "body"));
-
   return parts;
 }
 

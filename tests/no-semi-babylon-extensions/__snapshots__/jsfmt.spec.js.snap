@@ -16,7 +16,8 @@ class A {
 a;
 ::b.c;
 
-class A {
+class A
+{
   a = b;
   in;
   c;
@@ -43,7 +44,8 @@ class A {
 a
 ;::b.c
 
-class A {
+class A
+{
   a = b;
   in
   c

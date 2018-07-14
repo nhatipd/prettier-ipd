@@ -32,7 +32,8 @@ class C {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function x<T>(x: T = 0) {}
 
-class C {
+class C
+{
   x<T>(x: T = 0) {}
 }
 
@@ -121,7 +122,10 @@ function optionalNullable8(x: {y?: ?number}) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function optionalNullable1(x: { y?: ?number })
+function optionalNullable1(x:
+{
+  y?: ?number
+})
 {
   if (x.y !== null && x.y !== undefined)
   {
@@ -129,7 +133,10 @@ function optionalNullable1(x: { y?: ?number })
   }
 }
 
-function optionalNullable2(x: { y?: ?number })
+function optionalNullable2(x:
+{
+  y?: ?number
+})
 {
   if (x.y !== undefined && x.y !== null)
   {
@@ -137,7 +144,10 @@ function optionalNullable2(x: { y?: ?number })
   }
 }
 
-function optionalNullable3(x: { y?: ?number })
+function optionalNullable3(x:
+{
+  y?: ?number
+})
 {
   if (!(x.y !== null && x.y !== undefined))
   {
@@ -145,7 +155,10 @@ function optionalNullable3(x: { y?: ?number })
   }
 }
 
-function optionalNullable4(x: { y?: ?number })
+function optionalNullable4(x:
+{
+  y?: ?number
+})
 {
   if (!(x.y !== undefined && x.y !== null))
   {
@@ -153,7 +166,10 @@ function optionalNullable4(x: { y?: ?number })
   }
 }
 
-function optionalNullable5(x: { y?: ?number })
+function optionalNullable5(x:
+{
+  y?: ?number
+})
 {
   if (x.y === null || x.y === undefined)
   {
@@ -161,7 +177,10 @@ function optionalNullable5(x: { y?: ?number })
   }
 }
 
-function optionalNullable6(x: { y?: ?number })
+function optionalNullable6(x:
+{
+  y?: ?number
+})
 {
   if (x.y === undefined || x.y === null)
   {
@@ -169,7 +188,10 @@ function optionalNullable6(x: { y?: ?number })
   }
 }
 
-function optionalNullable7(x: { y?: ?number })
+function optionalNullable7(x:
+{
+  y?: ?number
+})
 {
   if (!(x.y === null || x.y === undefined))
   {
@@ -177,7 +199,10 @@ function optionalNullable7(x: { y?: ?number })
   }
 }
 
-function optionalNullable8(x: { y?: ?number })
+function optionalNullable8(x:
+{
+  y?: ?number
+})
 {
   if (!(x.y === undefined || x.y === null))
   {
@@ -272,7 +297,10 @@ function foo(x?: string): string
   return x;
 }
 
-function bar(obj: { x?: string }): string
+function bar(obj:
+{
+  x?: string
+}): string
 {
   if (obj.x == null)
   {
@@ -308,7 +336,10 @@ function testOptionalNullableDefault(x?: ?string = "hi"): string
   return x;
 }
 
-function testOptionalNullableProperty(obj: { x?: ?string }): string
+function testOptionalNullableProperty(obj:
+{
+  x?: ?string
+}): string
 {
   if (obj.x == null)
   {

@@ -46,11 +46,13 @@ module.exports = Test;
  * @flow
  */
 
-class Base {
+class Base
+{
   static baseProp: number;
 }
 
-class Test extends Base {
+class Test extends Base
+{
   static childProp: number;
 
   static staticNumber1(): number
@@ -99,7 +101,8 @@ module.exports = {
  * @flow
  */
 
-module.exports = {
+module.exports =
+{
   numberValue1: 1,
   numberValue2: 2,
   numberValue3: 3,
@@ -568,7 +571,8 @@ module.exports = {
  * @flow
  */
 
-module.exports = {
+module.exports =
+{
   numberValue: 42
 };
 

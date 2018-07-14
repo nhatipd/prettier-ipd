@@ -68,7 +68,10 @@ g
   // Intentionally not passing \`basicFlags\` to \`XRegExp.union\` since any syntax
   // transformation resulting from those flags was already applied to \`left\` and
   // \`right\` when they were passed through the XRegExp constructor above.
-  XRegExp.union([left, right], "", { conjunction: "or" }).source
+  XRegExp.union([left, right], "",
+  {
+    conjunction: "or"
+  }).source
 })[^\${escapeChar}])+)+
 \`;
 
@@ -96,13 +99,15 @@ var x = {
   \`
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var o = {
+var o =
+{
   [\`key\`]: () => {
     // Comment
   }
 };
 
-var x = {
+var x =
+{
   y: () => Relay.QL\`
     query {
       \${foo},
@@ -135,12 +140,19 @@ module.exports = Relay.createContainer(
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 module.exports = Relay.createContainer(
   // ...
+
   {
-    fragments: {
-      nodes: ({ solution_type, time_frame }) => Relay.QL\`
+    fragments:
+    {
+      nodes: (
+      {
+        solution_type,
+        time_frame
+      }) => Relay.QL\`
         fragment on RelatedNode @relay(plural: true) {
           __typename
-          \${OptimalSolutionsSection.getFragment("node", {
+          \${OptimalSolutionsSection.getFragment("node",
+          {
             solution_type,
             time_frame
           })}
@@ -237,14 +249,16 @@ this._pipe.write(\`
     a
   \`;
 
-(): {
+():
+{
   someLong: boolean,
   t: boolean
 } => \`
   a
 \`;
 
-(): {
+():
+{
   someLong: boolean,
   t: boolean
 } =>

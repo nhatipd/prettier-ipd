@@ -10,7 +10,8 @@ class C<T> {
   b(x:T) {}
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C<T> {
+class C<T>
+{
   a<A>(x: T, a: A)
   {
     this.b(x); // ok
@@ -112,7 +113,8 @@ class H<T> {
 // the generated insttype has the correct tvars. Should behave the same for
 // classes, interfaces, and declared classes.
 
-class A<T> {
+class A<T>
+{
   x: T;
   constructor(x: T)
   {
@@ -124,7 +126,8 @@ class A<T> {
   }
 }
 
-class B<T> extends A<T> {
+class B<T> extends A<T>
+{
   m<T>(x: T): B<T>
   {
     return new B(x);
@@ -153,7 +156,8 @@ declare class F<T> extends E<T>
 
 // Bounds can refer to parent type params (until they are shadowed).
 
-class G<T> {
+class G<T>
+{
   x: T;
   constructor(x: T)
   {
@@ -172,7 +176,8 @@ g.m(true); // err, bool ~> number|string
 
 // Shadow bounds incompatible with parent
 
-class H<T> {
+class H<T>
+{
   x: T;
   m<T>(x: T)
   {

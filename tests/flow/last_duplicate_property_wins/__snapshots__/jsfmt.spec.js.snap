@@ -47,7 +47,8 @@ const o = {
 
 // Classes
 
-class C {
+class C
+{
   foo(): number
   {
     return 0;
@@ -79,7 +80,8 @@ class C {
 
 // Objects
 
-const o = {
+const o =
+{
   foo(): number
   {
     return 0;

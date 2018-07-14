@@ -6,7 +6,8 @@ const foo = {
   baz: props.baz
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const foo = {
+const foo =
+{
   bar: props.bar
     ? props.bar
     : noop,

@@ -35,14 +35,16 @@ export class Bar{}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var x = 100;
 
-@Hello({
+@Hello(
+{
   a: "a", // Comment is in the wrong place
   // test
   b: "2"
 })
 class X {}
 
-@NgModule({
+@NgModule(
+{
   // Imports.
   imports: [
     // Angular modules.
@@ -74,7 +76,8 @@ class Yo {
   async plip() {}
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class Yo {
+class Yo
+{
   @foo("hello")
   async plop() {}
 
@@ -107,7 +110,8 @@ import {observable} from "mobx";
 import { observable } from "mobx";
 
 @observer
-class OrderLine {
+class OrderLine
+{
   @observable price: number = 0;
   @observable amount: number = 1;
 
@@ -139,7 +143,8 @@ const dog = {
   legs: 4
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const dog = {
+const dog =
+{
   @readonly
   @nonenumerable
   @doubledValue
@@ -161,7 +166,10 @@ export class Home extends React.Component {}
 )
 export class MyApp extends React.Component {}
 
-@connect(state => ({ todos: state.todos }))
+@connect(state => (
+{
+  todos: state.todos
+}))
 export class Home extends React.Component {}
 
 `;

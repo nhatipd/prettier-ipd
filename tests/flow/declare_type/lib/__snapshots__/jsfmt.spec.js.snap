@@ -58,7 +58,8 @@ declare module "foo"
   declare type Bar = A;
   declare type Id<T> = T;
 
-  declare var exports: {
+  declare var exports:
+  {
     (a: number, b: number): number
   };
 }

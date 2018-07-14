@@ -7,7 +7,8 @@ class A {
 
 module.exports = A;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class A {
+class A
+{
   foo(x: number): void {}
 }
 
@@ -50,7 +51,8 @@ module.exports = C;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var B = require("./B");
 
-class C extends B {
+class C extends B
+{
   foo(x: string): void {}
 }
 
@@ -111,14 +113,16 @@ var w : Foo = z;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-type Foo = {
+type Foo =
+{
   a: string, // exists in TestClass
   b: string, // doesn't exist
   c?: ?string, // exists in TestClass, optional
   d?: number // doesn't exist
 };
 
-class TestClass {
+class TestClass
+{
   a: string;
   c: ?string;
 }
@@ -134,11 +138,13 @@ var y: Foo = x;
 y.b; // error, doesn't exist in TestClass
 y.d; // ok, it's optional
 
-class Test2Superclass {
+class Test2Superclass
+{
   a: number; // conflicts with cast to Foo
   c: ?number; // conflicts with cast to Foo
 }
-class Test2Class extends Test2Superclass {
+class Test2Class extends Test2Superclass
+{
   b: number; // conflicts with cast to Foo
 }
 
@@ -179,7 +185,8 @@ var _Alias = class Alias {
 var alias1: Alias = new _Alias(); // error: bad pun
 var alias2: Alias = _Alias.factory(); // error: bad pun
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var Bar = class Foo {
+var Bar = class Foo
+{
   static factory(): Foo
   {
     // OK: Foo is a type in this scope
@@ -204,7 +211,8 @@ var Anon = class {};
 var anon: Anon = new Anon();
 
 class Alias {}
-var _Alias = class Alias {
+var _Alias = class Alias
+{
   static factory(): Alias
   {
     return new Alias();
@@ -224,7 +232,8 @@ class Derived2 extends Derived1 {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const Base: any = class {};
 class Derived1 extends Base {}
-class Derived2 extends Derived1 {
+class Derived2 extends Derived1
+{
   m() {}
 }
 
@@ -262,16 +271,26 @@ declare var o: {p:number};
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-class C {
+class C
+{
   static p: string;
 }
 C.p = "hi";
 
 // Class static fields are compatible with object types
-(C: { p: string }); // ok
-(C: { p: number }); // errors, string ~> number & vice versa (unify)
+(C:
+{
+  p: string
+}); // ok
+(C:
+{
+  p: number
+}); // errors, string ~> number & vice versa (unify)
 
-declare var o: { p: number };
+declare var o:
+{
+  p: number
+};
 (o: Class<C>); // error, object type incompatible with class type
 
 `;

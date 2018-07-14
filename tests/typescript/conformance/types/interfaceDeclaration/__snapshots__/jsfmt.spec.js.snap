@@ -12,12 +12,14 @@ interface X {
 
 interface nil {}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface abstract {
+interface abstract
+{
   abstract(): void;
   concrete(): number;
 }
 
-interface X {
+interface X
+{
   x;
 }
 

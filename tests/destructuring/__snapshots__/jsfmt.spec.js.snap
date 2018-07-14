@@ -37,42 +37,87 @@ try {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const [one, two = null, three = null] = arr;
 a = ([s = 1]) => 1;
-const { children, ...props } = this.props;
-
-const {
-  user: { firstName, lastName }
+const
+{
+  children,
+  ...props
 } = this.props;
 
-const {
-  name: { first, last },
-  organisation: {
-    address: { street: orgStreetAddress, postcode: orgPostcode }
+const
+{
+  user:
+  {
+    firstName,
+    lastName
+  }
+} = this.props;
+
+const
+{
+  name:
+  {
+    first,
+    last
+  },
+  organisation:
+  {
+    address:
+    {
+      street: orgStreetAddress,
+      postcode: orgPostcode
+    }
   }
 } = user;
 
-function f({ data: { name } }) {}
+function f(
+{
+  data:
+  {
+    name
+  }
+}) {}
 
-const UserComponent = function({
-  name: { first, last },
-  organisation: {
-    address: { street: orgStreetAddress, postcode: orgPostcode }
+const UserComponent = function(
+{
+  name:
+  {
+    first,
+    last
+  },
+  organisation:
+  {
+    address:
+    {
+      street: orgStreetAddress,
+      postcode: orgPostcode
+    }
   }
 })
 {
   return;
 };
 
-const {
+const
+{
   a,
   b,
   c,
-  d: { e }
+  d:
+  {
+    e
+  }
 } = someObject;
 
 try
 {
   // code
-} catch ({ data: { message } })
+} catch (
+{
+  data:
+  {
+    message
+  }
+})
 {
   // code
 }
@@ -80,9 +125,14 @@ try
 try
 {
   // code
-} catch ({
-  data: {
-    message: { errors }
+} catch (
+{
+  data:
+  {
+    message:
+    {
+      errors
+    }
   }
 })
 {

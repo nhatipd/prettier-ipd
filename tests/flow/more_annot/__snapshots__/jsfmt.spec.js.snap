@@ -22,8 +22,15 @@ o3.w = o2;
 
 module.exports = o3;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var o1 = { x: 0, y: "" };
-var o2 = { z: o1 };
+var o1 =
+{
+  x: 0,
+  y: ""
+};
+var o2 =
+{
+  z: o1
+};
 
 var o3 = {};
 o3.w = o2;
@@ -48,7 +55,11 @@ function Foo()
 }
 Foo.prototype.m = function() {};
 
-var o1: { x: number, m(): void } = new Foo();
+var o1:
+{
+  x: number,
+  m(): void
+} = new Foo();
 
 var o2: Foo = new Foo();
 
@@ -60,11 +71,15 @@ class D extends C { }
 
 var d: { +m: () => void } = new D();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   m() {}
 }
 class D extends C {}
 
-var d: { +m: () => void } = new D();
+var d:
+{
+  +m: () => void
+} = new D();
 
 `;

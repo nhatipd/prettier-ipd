@@ -14,7 +14,8 @@ var z = class C4 {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var x = class C {};
 
-var y = {
+var y =
+{
   foo: class C2 {}
 };
 
@@ -136,35 +137,41 @@ class C6 extends Mix(Public, Public2) {
 
 type Constructable = new (...args: any[]) => object;
 
-class Private {
+class Private
+{
   constructor(...args: any[]) {}
   private p: string;
 }
 
-class Private2 {
+class Private2
+{
   constructor(...args: any[]) {}
   private p: string;
 }
 
-class Protected {
+class Protected
+{
   constructor(...args: any[]) {}
   protected p: string;
   protected static s: string;
 }
 
-class Protected2 {
+class Protected2
+{
   constructor(...args: any[]) {}
   protected p: string;
   protected static s: string;
 }
 
-class Public {
+class Public
+{
   constructor(...args: any[]) {}
   public p: string;
   public static s: string;
 }
 
-class Public2 {
+class Public2
+{
   constructor(...args: any[]) {}
   public p: string;
   public static s: string;
@@ -208,7 +215,8 @@ class C1 extends Mix(Private, Private2) {}
 class C2 extends Mix(Private, Protected) {}
 class C3 extends Mix(Private, Public) {}
 
-class C4 extends Mix(Protected, Protected2) {
+class C4 extends Mix(Protected, Protected2)
+{
   f(c4: C4, c5: C5, c6: C6)
   {
     c4.p;
@@ -223,7 +231,8 @@ class C4 extends Mix(Protected, Protected2) {
   }
 }
 
-class C5 extends Mix(Protected, Public) {
+class C5 extends Mix(Protected, Public)
+{
   f(c4: C4, c5: C5, c6: C6)
   {
     c4.p; // Error, not in class deriving from Protected2
@@ -238,7 +247,8 @@ class C5 extends Mix(Protected, Public) {
   }
 }
 
-class C6 extends Mix(Public, Public2) {
+class C6 extends Mix(Public, Public2)
+{
   f(c4: C4, c5: C5, c6: C6)
   {
     c4.p; // Error, not in class deriving from Protected2
@@ -321,11 +331,13 @@ class Thing3 extends Thing2 {
 
 type Constructor<T> = new (...args: any[]) => T;
 
-class Base {
+class Base
+{
   constructor(public x: number, public y: number) {}
 }
 
-class Derived extends Base {
+class Derived extends Base
+{
   constructor(x: number, y: number, public z: number)
   {
     super(x, y);
@@ -334,8 +346,12 @@ class Derived extends Base {
 
 const Printable = <T extends Constructor<Base>>(
   superClass: T
-): Constructor<Printable> & { message: string } & T =>
-  class extends superClass {
+): Constructor<Printable> &
+{
+  message: string;
+} & T =>
+  class extends superClass
+  {
     static message = "hello";
     print()
     {
@@ -347,7 +363,8 @@ function Tagged<T extends Constructor<{}>>(
   superClass: T
 ): Constructor<Tagged> & T
 {
-  class C extends superClass {
+  class C extends superClass
+  {
     _tag: string;
     constructor(...args: any[])
     {
@@ -377,7 +394,8 @@ function f2()
   thing.print();
 }
 
-class Thing3 extends Thing2 {
+class Thing3 extends Thing2
+{
   constructor(tag: string)
   {
     super(10, 20, 30);
@@ -459,11 +477,13 @@ const Timestamped = <CT extends Constructor<object>>(Base: CT) => {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 type Constructor<T> = new (...args: any[]) => T;
 
-class Base {
+class Base
+{
   constructor(public x: number, public y: number) {}
 }
 
-class Derived extends Base {
+class Derived extends Base
+{
   constructor(x: number, y: number, public z: number)
   {
     super(x, y);
@@ -471,7 +491,8 @@ class Derived extends Base {
 }
 
 const Printable = <T extends Constructor<Base>>(superClass: T) =>
-  class extends superClass {
+  class extends superClass
+  {
     static message = "hello";
     print()
     {
@@ -481,7 +502,8 @@ const Printable = <T extends Constructor<Base>>(superClass: T) =>
 
 function Tagged<T extends Constructor<{}>>(superClass: T)
 {
-  class C extends superClass {
+  class C extends superClass
+  {
     _tag: string;
     constructor(...args: any[])
     {
@@ -511,7 +533,8 @@ function f2()
   thing.print();
 }
 
-class Thing3 extends Thing2 {
+class Thing3 extends Thing2
+{
   constructor(tag: string)
   {
     super(10, 20, 30);
@@ -526,7 +549,8 @@ class Thing3 extends Thing2 {
 // Repro from #13805
 
 const Timestamped = <CT extends Constructor<object>>(Base: CT) => {
-  return class extends Base {
+  return class extends Base
+  {
     timestamp = new Date();
   };
 };
@@ -636,7 +660,8 @@ class C3 extends Mixed3 {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @declaration: true
 
-declare class C1 {
+declare class C1
+{
   public a: number;
   protected b: number;
   private c: number;
@@ -644,13 +669,15 @@ declare class C1 {
   constructor(n: number);
 }
 
-declare class M1 {
+declare class M1
+{
   constructor(...args: any[]);
   p: number;
   static p: number;
 }
 
-declare class M2 {
+declare class M2
+{
   constructor(...args: any[]);
   f(): number;
   static f(): number;
@@ -720,7 +747,8 @@ function f6()
   Mixed5.f();
 }
 
-class C2 extends Mixed1 {
+class C2 extends Mixed1
+{
   constructor()
   {
     super("hello");
@@ -730,7 +758,8 @@ class C2 extends Mixed1 {
   }
 }
 
-class C3 extends Mixed3 {
+class C3 extends Mixed3
+{
   constructor()
   {
     super(42);
@@ -761,7 +790,8 @@ function foo() {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // nested classes are not allowed
 
-class C {
+class C
+{
   x: string;
 }
 

@@ -56,7 +56,8 @@ function foo() {
   }
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const envSpecific = {
+const envSpecific =
+{
   domain: do
   {
     if (env === "production") "https://abc.mno.com/";
@@ -120,7 +121,11 @@ function foo()
 
 () => do
 {
-  var obj = { foo: "bar", bar: "foo" };
+  var obj =
+  {
+    foo: "bar",
+    bar: "foo"
+  };
   for (var key in obj)
   {
     obj[key];

@@ -12,15 +12,18 @@ class D<T> {
 class E<T> {
     constructor(public x = this) { }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   constructor(x = this) {}
 }
 
-class D<T> {
+class D<T>
+{
   constructor(x = this) {}
 }
 
-class E<T> {
+class E<T>
+{
   constructor(public x = this) {}
 }
 
@@ -47,7 +50,8 @@ class E<T extends Date> {
         var y = x;
     }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   constructor(x);
   constructor(x = 1)
   {
@@ -55,7 +59,8 @@ class C {
   }
 }
 
-class D<T> {
+class D<T>
+{
   constructor(x);
   constructor(x: T = null)
   {
@@ -63,7 +68,8 @@ class D<T> {
   }
 }
 
-class E<T extends Date> {
+class E<T extends Date>
+{
   constructor(x);
   constructor(x: T = null)
   {
@@ -94,7 +100,8 @@ class E<T extends Date> {
         var y = x;
     }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   constructor(x);
   constructor(public x: string = 1)
   {
@@ -102,7 +109,8 @@ class C {
   }
 }
 
-class D<T, U> {
+class D<T, U>
+{
   constructor(x: T, y: U);
   constructor(x: T = 1, public y: U = x)
   {
@@ -110,7 +118,8 @@ class D<T, U> {
   }
 }
 
-class E<T extends Date> {
+class E<T extends Date>
+{
   constructor(x);
   constructor(x: T = new Date())
   {
@@ -134,13 +143,15 @@ class D<T> {
     constructor() {
     }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   foo: string;
   constructor(x = 1);
   constructor() {}
 }
 
-class D<T> {
+class D<T>
+{
   foo: string;
   constructor(x = 1);
   constructor() {}
@@ -162,13 +173,15 @@ class D<T> {
     constructor() {
     }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   foo: string;
   constructor(x?, y?: any[]);
   constructor() {}
 }
 
-class D<T> {
+class D<T>
+{
   foo: string;
   constructor(x?, y?: any[]);
   constructor() {}
@@ -198,7 +211,8 @@ var r2 = d.x; // error
 var r3 = d.a; // error
 var r4 = d.z; // error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   y: string;
   constructor(private x: string, protected z: string) {}
 }
@@ -208,7 +222,8 @@ var r = c.y;
 var r2 = c.x; // error
 var r3 = c.z; // error
 
-class D<T> {
+class D<T>
+{
   y: T;
   constructor(a: T, private x: T, protected z: T) {}
 }
@@ -254,7 +269,8 @@ class F {
 var f: F;
 var r4 = f.y; // error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   y: number;
   constructor(y: number) {} // ok
 }
@@ -262,7 +278,8 @@ class C {
 var c: C;
 var r = c.y;
 
-class D {
+class D
+{
   y: number;
   constructor(public y: number) {}
 }
@@ -270,7 +287,8 @@ class D {
 var d: D;
 var r2 = d.y;
 
-class E {
+class E
+{
   y: number;
   constructor(private y: number) {}
 }
@@ -278,7 +296,8 @@ class E {
 var e: E;
 var r3 = e.y; // error
 
-class F {
+class F
+{
   y: number;
   constructor(protected y: number) {}
 }
@@ -296,7 +315,8 @@ class C {
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @declaration: true
 
-class C {
+class C
+{
   constructor(readonly x: number) {}
 }
 
@@ -344,14 +364,16 @@ class E extends D {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Tests that readonly parameter properties behave like regular readonly properties
 
-class A {
+class A
+{
   constructor(readonly x: number)
   {
     this.x = 0;
   }
 }
 
-class B extends A {
+class B extends A
+{
   constructor(x: number)
   {
     super(x);
@@ -360,7 +382,8 @@ class B extends A {
   }
 }
 
-class C extends A {
+class C extends A
+{
   // This is the usual behavior of readonly properties:
   // if one is redeclared in a base class, then it can be assigned to.
   constructor(readonly x: number)
@@ -370,7 +393,8 @@ class C extends A {
   }
 }
 
-class D {
+class D
+{
   constructor(private readonly x: number)
   {
     this.x = 0;
@@ -378,7 +402,8 @@ class D {
 }
 
 // Fails, can't redeclare readonly property
-class E extends D {
+class E extends D
+{
   constructor(readonly x: number)
   {
     super(x);
@@ -402,16 +427,19 @@ class F {
     constructor(private readonly x: number) {}
 }
 new F(1).x;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   constructor(readonly x: number) {}
 }
 new C(1).x = 2;
 
-class E {
+class E
+{
   constructor(public readonly x: number) {}
 }
 
-class F {
+class F
+{
   constructor(private readonly x: number) {}
 }
 new F(1).x;
@@ -423,7 +451,8 @@ class C {
     readonly readonly x: number;
     constructor(readonly readonly y: number) {}
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   readonly x: number;
   constructor(readonly y: number) {}
 }

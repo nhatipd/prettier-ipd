@@ -8,7 +8,8 @@ type Foo = {
   ) : void
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-type Foo = {
+type Foo =
+{
   method(
     arg: number, // I belong with baz
     qux: string
@@ -29,8 +30,14 @@ declare class X {
   static deserialize: () => mixed,
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-type T = { method: () => void };
-type T = { method(): void };
+type T =
+{
+  method: () => void
+};
+type T =
+{
+  method(): void
+};
 declare class X
 {
   method(): void;

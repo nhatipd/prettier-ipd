@@ -29,7 +29,8 @@ function Foo()
   this.x = 0; // constructs objects with property x
 }
 Foo.y = 0; // has static property y
-Foo.prototype = {
+Foo.prototype =
+{
   m()
   {
     return 0;

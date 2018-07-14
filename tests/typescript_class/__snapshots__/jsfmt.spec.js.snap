@@ -9,11 +9,13 @@ class foo {
   constructor(export a: number) {}
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class foo {
+class foo
+{
   constructor(static a: number) {}
 }
 
-class foo {
+class foo
+{
   constructor(export a: number) {}
 }
 
@@ -128,7 +130,8 @@ interface AudioBufferList {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class<T> implements Map<T> {}
 
-interface AudioBufferList {
+interface AudioBufferList
+{
   mBuffers: interop.Reference<any /*AudioBuffer*/>;
 }
 
@@ -147,15 +150,18 @@ export class Check {
   private static property = 'test';
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class X {
+class X
+{
   optionalMethod?() {}
 }
 
-interface Iterable<T> {
+interface Iterable<T>
+{
   export [Symbol.iterator](): Iterator<T>;
 }
 
-export class Check {
+export class Check
+{
   private static property = "test";
 }
 
@@ -167,7 +173,8 @@ class X {
   "a-prop"?: boolean;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class X {
+class X
+{
   private foo? = undefined;
   "a-prop"?: boolean;
 }
@@ -179,7 +186,8 @@ class User {
     "username": string;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class User {
+class User
+{
   "username": string;
 }
 

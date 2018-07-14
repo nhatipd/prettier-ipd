@@ -16,7 +16,8 @@ module.exports = {
  * @flow
  */
 
-module.exports = {
+module.exports =
+{
   numberValueA: 1,
   stringValueA: "someString"
 };
@@ -39,7 +40,8 @@ module.exports = {
  * @flow
  */
 
-module.exports = {
+module.exports =
+{
   numberValueB: 1,
   stringValueB: "someString"
 };

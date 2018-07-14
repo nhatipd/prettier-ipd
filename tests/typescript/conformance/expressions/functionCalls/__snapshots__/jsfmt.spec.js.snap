@@ -55,7 +55,8 @@ class D extends C {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @target: ES6
 
-interface X {
+interface X
+{
   foo(x: number, y: number, ...z: string[]);
 }
 
@@ -84,7 +85,8 @@ xa[1].foo(1, 2, ...a, "abc");
 
 (<Function>xa[1].foo)(...[1, 2, "abc"]);
 
-class C {
+class C
+{
   constructor(x: number, y: number, ...z: string[])
   {
     this.foo(x, y);
@@ -93,7 +95,8 @@ class C {
   foo(x: number, y: number, ...z: string[]) {}
 }
 
-class D extends C {
+class D extends C
+{
   constructor()
   {
     super(1, 2);

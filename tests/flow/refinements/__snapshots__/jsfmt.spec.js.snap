@@ -45,7 +45,8 @@ function foo(x: ?number)
   }
 }
 
-type Bar = {
+type Bar =
+{
   parent: ?Bar,
   doStuff: () => void
 };
@@ -92,12 +93,14 @@ type Node2 = {
 
 export type ASTNode = Node1 | Node2;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-type Node1 = {
+type Node1 =
+{
   kind: "Node1",
   prop1?: string
 };
 
-type Node2 = {
+type Node2 =
+{
   kind: "Node2",
   prop2?: string
 };
@@ -195,7 +198,18 @@ function baz(x: ?boolean)
 }
 
 let tests = [
-  function(x: { done: true, result: string } | { done: false })
+  function(
+    x:
+      |
+        {
+          done: true,
+          result: string
+        }
+      |
+        {
+          done: false
+        }
+  )
   {
     if (x.done === true)
     {
@@ -204,7 +218,18 @@ let tests = [
     return x.result; // error
   },
 
-  function(x: { done: true, result: string } | { done: false })
+  function(
+    x:
+      |
+        {
+          done: true,
+          result: string
+        }
+      |
+        {
+          done: false
+        }
+  )
   {
     if (true === x.done)
     {
@@ -239,7 +264,8 @@ function testLiteralProperty(a: A) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-type A = {
+type A =
+{
   b_c: ?string
 };
 
@@ -320,9 +346,22 @@ let tests = [
 /* @flow */
 
 type Type = Name | ListType | NonNullType;
-type Name = { kind: "Name", value: string, type: void };
-type ListType = { kind: "ListType", type: Type };
-type NonNullType = { kind: "NonNullType", type: Name | ListType | BadType };
+type Name =
+{
+  kind: "Name",
+  value: string,
+  type: void
+};
+type ListType =
+{
+  kind: "ListType",
+  type: Type
+};
+type NonNullType =
+{
+  kind: "NonNullType",
+  type: Name | ListType | BadType
+};
 type BadType = {};
 
 function getTypeASTName(typeAST: Type): string
@@ -332,7 +371,18 @@ function getTypeASTName(typeAST: Type): string
 }
 
 let tests = [
-  function(x: { done: true, result: string } | { done: false })
+  function(
+    x:
+      |
+        {
+          done: true,
+          result: string
+        }
+      |
+        {
+          done: false
+        }
+  )
   {
     if (x.done)
     {
@@ -341,7 +391,18 @@ let tests = [
     return x.result; // error
   },
 
-  function(x: { done: true, result: string } | { foo: string })
+  function(
+    x:
+      |
+        {
+          done: true,
+          result: string
+        }
+      |
+        {
+          foo: string
+        }
+  )
   {
     if (x.done)
     {
@@ -352,7 +413,17 @@ let tests = [
 
   function()
   {
-    type T = { foo: Object, bar: string } | { baz: string, quux: string };
+    type T =
+      |
+        {
+          foo: Object,
+          bar: string
+        }
+      |
+        {
+          baz: string,
+          quux: string
+        };
 
     function testAlwaysTruthyProp(t: T)
     {
@@ -449,7 +520,17 @@ let tests = [
     } // ok
   },
 
-  function(x: { y: "foo" } | { y: "bar" })
+  function(
+    x:
+      |
+        {
+          y: "foo"
+        }
+      |
+        {
+          y: "bar"
+        }
+  )
   {
     if (x.y == 123)
     {
@@ -518,7 +599,13 @@ let tests = [
 // @flow
 
 let tests = [
-  function(x: { y?: string }, z: () => string)
+  function(
+    x:
+    {
+      y?: string
+    },
+    z: () => string
+  )
   {
     if (x.y)
     {
@@ -557,7 +644,10 @@ function bar(x:Object) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function foo(x: { y?: () => void })
+function foo(x:
+{
+  y?: () => void
+})
 {
   x.y(); // error: could be undefined
   if (x.hasOwnProperty("y"))
@@ -673,7 +763,10 @@ function def_assign_setprop_nohavoc(obj: Obj, obj2: Obj2) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-type Obj = { p: number | string };
+type Obj =
+{
+  p: number | string
+};
 
 function f() {}
 
@@ -763,7 +856,10 @@ function def_assign_within_for(b: boolean, obj: Obj)
 
 // --- name-sensitive havoc ---
 
-type Obj2 = { q: number | string };
+type Obj2 =
+{
+  q: number | string
+};
 
 function def_assign_setprop_nohavoc(obj: Obj, obj2: Obj2)
 {
@@ -781,7 +877,10 @@ declare var BAZ: {stuff?: (x: number) => void} | void;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-declare var BAZ: { stuff?: (x: number) => void } | void;
+declare var BAZ:
+{
+  stuff?: (x: number) => void
+} | void;
 
 `;
 
@@ -851,7 +950,10 @@ function foo9() {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-function foo1(o: { x: number })
+function foo1(o:
+{
+  x: number
+})
 {
   if (o.p1)
   {
@@ -860,7 +962,10 @@ function foo1(o: { x: number })
   }
 }
 
-function foo2(o: { x: number })
+function foo2(o:
+{
+  x: number
+})
 {
   if (o.p2)
   {
@@ -869,12 +974,20 @@ function foo2(o: { x: number })
   }
 }
 
-function foo3(o: { x: number })
+function foo3(o:
+{
+  x: number
+})
 {
   o.p3.x; // usual error outside conditional
 }
 
-function foo4(o: $Exact<{ x: number }>)
+function foo4(
+  o: $Exact<
+  {
+    x: number
+  }>
+)
 {
   if (o.p4)
   {
@@ -923,7 +1036,10 @@ function foo7(o: mixed)
   } // ok
 }
 
-function foo8(o: { p: mixed })
+function foo8(o:
+{
+  p: mixed
+})
 {
   if (o.p && o.p.q)
   {
@@ -933,7 +1049,8 @@ function foo8(o: { p: mixed })
   }
 }
 
-type Foo9Expected = {
+type Foo9Expected =
+{
   foo: string
 };
 
@@ -1196,7 +1313,10 @@ function obj2(x: mixed)
 {
   if (typeof x === "object")
   {
-    (x: { [key: string]: mixed } | null);
+    (x:
+    {
+      [key: string]: mixed
+    } | null);
     if (x !== null)
     {
       (x["foo"]: string); // error, mixed
@@ -1589,7 +1709,10 @@ let tests = [
     }
   },
 
-  function(x: { foo: number }): 0
+  function(x:
+  {
+    foo: number
+  }): 0
   {
     if (x.foo === 0)
     {
@@ -1598,7 +1721,19 @@ let tests = [
     return x.foo; // error
   },
 
-  function(x: { kind: 0, foo: number } | { kind: 1, bar: number }): number
+  function(
+    x:
+      |
+        {
+          kind: 0,
+          foo: number
+        }
+      |
+        {
+          kind: 1,
+          bar: number
+        }
+  ): number
   {
     if (x.kind === 0)
     {
@@ -1609,7 +1744,13 @@ let tests = [
     }
   },
 
-  function(num: number, obj: { foo: number })
+  function(
+    num: number,
+    obj:
+    {
+      foo: number
+    }
+  )
   {
     if (num === obj.bar)
     {
@@ -1617,7 +1758,13 @@ let tests = [
     }
   },
 
-  function(num: number, obj: { [key: string]: number })
+  function(
+    num: number,
+    obj:
+    {
+      [key: string]: number
+    }
+  )
   {
     if (num === obj.bar)
     {
@@ -1759,7 +1906,13 @@ function c3(x: {[key: string]: ?string}, y: {z: string, a: string}): string {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function a(x: { [key: string]: ?string }, y: string): string
+function a(
+  x:
+  {
+    [key: string]: ?string
+  },
+  y: string
+): string
 {
   if (x[y])
   {
@@ -1768,7 +1921,16 @@ function a(x: { [key: string]: ?string }, y: string): string
   return "";
 }
 
-function b(x: { y: { [key: string]: ?string } }, z: string): string
+function b(
+  x:
+  {
+    y:
+    {
+      [key: string]: ?string
+    }
+  },
+  z: string
+): string
 {
   if (x.y[z])
   {
@@ -1777,7 +1939,16 @@ function b(x: { y: { [key: string]: ?string } }, z: string): string
   return "";
 }
 
-function c(x: { [key: string]: ?string }, y: { z: string }): string
+function c(
+  x:
+  {
+    [key: string]: ?string
+  },
+  y:
+  {
+    z: string
+  }
+): string
 {
   if (x[y.z])
   {
@@ -1786,7 +1957,19 @@ function c(x: { [key: string]: ?string }, y: { z: string }): string
   return "";
 }
 
-function d(x: { y: { [key: string]: ?string } }, a: { b: string }): string
+function d(
+  x:
+  {
+    y:
+    {
+      [key: string]: ?string
+    }
+  },
+  a:
+  {
+    b: string
+  }
+): string
 {
   if (x.y[a.b])
   {
@@ -1804,7 +1987,13 @@ function a_array(x: Array<?string>, y: number): string
   return "";
 }
 
-function b_array(x: { y: Array<?string> }, z: number): string
+function b_array(
+  x:
+  {
+    y: Array<?string>
+  },
+  z: number
+): string
 {
   if (x.y[z])
   {
@@ -1813,7 +2002,13 @@ function b_array(x: { y: Array<?string> }, z: number): string
   return "";
 }
 
-function c_array(x: Array<?string>, y: { z: number }): string
+function c_array(
+  x: Array<?string>,
+  y:
+  {
+    z: number
+  }
+): string
 {
   if (x[y.z])
   {
@@ -1822,7 +2017,16 @@ function c_array(x: Array<?string>, y: { z: number }): string
   return "";
 }
 
-function d_array(x: { y: Array<?string> }, a: { b: number }): string
+function d_array(
+  x:
+  {
+    y: Array<?string>
+  },
+  a:
+  {
+    b: number
+  }
+): string
 {
   if (x.y[a.b])
   {
@@ -1842,7 +2046,16 @@ function e_array(x: Array<?string>): string
 
 // --- name-sensitive havoc ---
 
-function c2(x: { [key: string]: ?string }, y: { z: string }): string
+function c2(
+  x:
+  {
+    [key: string]: ?string
+  },
+  y:
+  {
+    z: string
+  }
+): string
 {
   if (x[y.z])
   {
@@ -1852,7 +2065,17 @@ function c2(x: { [key: string]: ?string }, y: { z: string }): string
   return "";
 }
 
-function c3(x: { [key: string]: ?string }, y: { z: string, a: string }): string
+function c3(
+  x:
+  {
+    [key: string]: ?string
+  },
+  y:
+  {
+    z: string,
+    a: string
+  }
+): string
 {
   if (x[y.z])
   {
@@ -2253,7 +2476,10 @@ let tests = [
     }
   },
 
-  function(x: { foo: string }): "foo"
+  function(x:
+  {
+    foo: string
+  }): "foo"
   {
     if (x.foo === "foo")
     {
@@ -2263,7 +2489,17 @@ let tests = [
   },
 
   function(
-    x: { kind: "foo", foo: string } | { kind: "bar", bar: string }
+    x:
+      |
+        {
+          kind: "foo",
+          foo: string
+        }
+      |
+        {
+          kind: "bar",
+          bar: string
+        }
   ): string
   {
     if (x.kind === "foo")
@@ -2275,7 +2511,13 @@ let tests = [
     }
   },
 
-  function(str: string, obj: { foo: string })
+  function(
+    str: string,
+    obj:
+    {
+      foo: string
+    }
+  )
   {
     if (str === obj.bar)
     {
@@ -2283,7 +2525,13 @@ let tests = [
     }
   },
 
-  function(str: string, obj: { [key: string]: string })
+  function(
+    str: string,
+    obj:
+    {
+      [key: string]: string
+    }
+  )
   {
     if (str === obj.bar)
     {
@@ -2384,7 +2632,8 @@ class C extends A {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-class A {
+class A
+{
   prop: string;
   method(): string
   {
@@ -2392,7 +2641,8 @@ class A {
   }
 }
 
-class B {
+class B
+{
   test(): string
   {
     if (super.prop)
@@ -2404,7 +2654,8 @@ class B {
   }
 }
 
-class C extends A {
+class C extends A
+{
   test(): string
   {
     if (super.prop)
@@ -2810,8 +3061,16 @@ let tests = [
 // example 1
 
 type Type = Name | ListType;
-type Name = { kind: "Name", value: string };
-type ListType = { kind: "ListType", name: string };
+type Name =
+{
+  kind: "Name",
+  value: string
+};
+type ListType =
+{
+  kind: "ListType",
+  name: string
+};
 
 function getTypeASTName(typeAST: Type): string
 {
@@ -2837,10 +3096,28 @@ function foo(x: ASTNode)
 }
 
 // example 3
-type Apple = { kind: "Fruit", taste: "Bad" };
-type Orange = { kind: "Fruit", taste: "Good" };
-type Broccoli = { kind: "Veg", taste: "Bad", raw: "No" };
-type Carrot = { kind: "Veg", taste: "Good", raw: "Maybe" };
+type Apple =
+{
+  kind: "Fruit",
+  taste: "Bad"
+};
+type Orange =
+{
+  kind: "Fruit",
+  taste: "Good"
+};
+type Broccoli =
+{
+  kind: "Veg",
+  taste: "Bad",
+  raw: "No"
+};
+type Carrot =
+{
+  kind: "Veg",
+  taste: "Good",
+  raw: "Maybe"
+};
 
 type Breakfast = Apple | Orange | Broccoli | Carrot;
 
@@ -2866,8 +3143,16 @@ function qux(x: Breakfast)
 // example 4
 function list(n)
 {
-  if (n > 0) return { kind: "cons", next: list(n - 1) };
-  return { kind: "nil" };
+  if (n > 0)
+    return
+    {
+      kind: "cons",
+      next: list(n - 1)
+    };
+  return
+  {
+    kind: "nil"
+  };
 }
 function length(l)
 {
@@ -2885,10 +3170,27 @@ function check(n)
 }
 
 // example 5
-var EnumKind = { A: 1, B: 2, C: 3 };
-type A = { kind: 1, A: number };
-type B = { kind: 2, B: number };
-type C = { kind: 3, C: number };
+var EnumKind =
+{
+  A: 1,
+  B: 2,
+  C: 3
+};
+type A =
+{
+  kind: 1,
+  A: number
+};
+type B =
+{
+  kind: 2,
+  B: number
+};
+type C =
+{
+  kind: 3,
+  C: number
+};
 function kind(x: A | B | C): number
 {
   switch (x.kind) {
@@ -2900,11 +3202,22 @@ function kind(x: A | B | C): number
       return x.A; // error, x: C and property A not found in type C
   }
 }
-kind({ kind: EnumKind.A, A: 1 });
+kind(
+{
+  kind: EnumKind.A,
+  A: 1
+});
 
 // example 6
-type Citizen = { citizen: true };
-type NonCitizen = { citizen: false, nationality: string };
+type Citizen =
+{
+  citizen: true
+};
+type NonCitizen =
+{
+  citizen: false,
+  nationality: string
+};
 function nationality(x: Citizen | NonCitizen)
 {
   if (x.citizen) return "Shire";
@@ -2923,7 +3236,13 @@ let tests = [
   },
 
   // nested objects
-  function test8(x: { foo: { bar: 1 } })
+  function test8(x:
+  {
+    foo:
+    {
+      bar: 1
+    }
+  })
   {
     if (x.foo.bar === 1)
     {
@@ -2939,7 +3258,12 @@ let tests = [
     if (x.kind === null.toString())
     {
     } // error, method on null
-    if ({ kind: 1 }.kind === null.toString())
+    if (
+
+      {
+        kind: 1
+      }.kind === null.toString()
+    )
     {
     } // error, method on null
   },
@@ -3015,7 +3339,12 @@ let tests = [
   },
 
   // sentinel props become the RHS
-  function(x: { str: string, num: number, bool: boolean })
+  function(x:
+  {
+    str: string,
+    num: number,
+    bool: boolean
+  })
   {
     if (x.str === "str")
     {
@@ -3045,7 +3374,19 @@ let tests = [
   },
 
   // type mismatch
-  function(x: { foo: 123, y: string } | { foo: "foo", z: string })
+  function(
+    x:
+      |
+        {
+          foo: 123,
+          y: string
+        }
+      |
+        {
+          foo: "foo",
+          z: string
+        }
+  )
   {
     if (x.foo === 123)
     {
@@ -3068,7 +3409,19 @@ let tests = [
   },
 
   // type mismatch, but one is not a literal
-  function(x: { foo: number, y: string } | { foo: "foo", z: string })
+  function(
+    x:
+      |
+        {
+          foo: number,
+          y: string
+        }
+      |
+        {
+          foo: "foo",
+          z: string
+        }
+  )
   {
     if (x.foo === 123)
     {
@@ -3092,7 +3445,19 @@ let tests = [
   },
 
   // type mismatch, neither is a literal
-  function(x: { foo: number, y: string } | { foo: string, z: string })
+  function(
+    x:
+      |
+        {
+          foo: number,
+          y: string
+        }
+      |
+        {
+          foo: string,
+          z: string
+        }
+  )
   {
     if (x.foo === 123)
     {
@@ -3117,7 +3482,17 @@ let tests = [
 
   // type mismatch, neither is a literal, test is not a literal either
   function(
-    x: { foo: number, y: string } | { foo: string, z: string },
+    x:
+      |
+        {
+          foo: number,
+          y: string
+        }
+      |
+        {
+          foo: string,
+          z: string
+        },
     num: number
   )
   {
@@ -3129,7 +3504,19 @@ let tests = [
   },
 
   // null
-  function(x: { foo: null, y: string } | { foo: "foo", z: string })
+  function(
+    x:
+      |
+        {
+          foo: null,
+          y: string
+        }
+      |
+        {
+          foo: "foo",
+          z: string
+        }
+  )
   {
     if (x.foo === null)
     {
@@ -3152,7 +3539,19 @@ let tests = [
   },
 
   // void
-  function(x: { foo: void, y: string } | { foo: "foo", z: string })
+  function(
+    x:
+      |
+        {
+          foo: void,
+          y: string
+        }
+      |
+        {
+          foo: "foo",
+          z: string
+        }
+  )
   {
     if (x.foo === undefined)
     {
@@ -3206,12 +3605,14 @@ function handleStatus(status: Success | Error) {
 
 import { SUCCESS, ERROR } from "./constants";
 
-type Success = {
+type Success =
+{
   type: typeof SUCCESS,
   message: string
 };
 
-type Error = {
+type Error =
+{
   type: typeof ERROR,
   error: string
 };
@@ -3482,7 +3883,10 @@ function undef_var_rev(x: ?number)
   }
 }
 
-function undef_prop(x: { x: ?number })
+function undef_prop(x:
+{
+  x: ?number
+})
 {
   if (x.x !== null && x.x !== undefined)
   {
@@ -3490,7 +3894,10 @@ function undef_prop(x: { x: ?number })
   }
 }
 
-function undef_prop_rev(x: { x: ?number })
+function undef_prop_rev(x:
+{
+  x: ?number
+})
 {
   if (x.x === null || x.x === undefined)
   {
@@ -3518,7 +3925,10 @@ function undef_var_fail_rev(x: ?number)
   }
 }
 
-function undef_prop_fail(x: { x: ?number })
+function undef_prop_fail(x:
+{
+  x: ?number
+})
 {
   if (x.x !== undefined)
   {
@@ -3526,7 +3936,10 @@ function undef_prop_fail(x: { x: ?number })
   }
 }
 
-function undef_prop_fail_rev(x: { x: ?number })
+function undef_prop_fail_rev(x:
+{
+  x: ?number
+})
 {
   if (x.x === undefined)
   {
@@ -3744,7 +4157,10 @@ function void_var_rev(x: ?number)
   }
 }
 
-function void_pro(x: { x: ?number })
+function void_pro(x:
+{
+  x: ?number
+})
 {
   if (x.x !== null && x.x !== void 0)
   {
@@ -3752,7 +4168,10 @@ function void_pro(x: { x: ?number })
   }
 }
 
-function void_pro_rev(x: { x: ?number })
+function void_pro_rev(x:
+{
+  x: ?number
+})
 {
   if (x.x === null || x.x === void 0)
   {
@@ -3780,7 +4199,10 @@ function void_var_fail_rev(x: ?number)
   }
 }
 
-function void_pro_fail(x: { x: ?number })
+function void_pro_fail(x:
+{
+  x: ?number
+})
 {
   if (x.x !== void 0)
   {
@@ -3788,7 +4210,10 @@ function void_pro_fail(x: { x: ?number })
   }
 }
 
-function void_pro_fail_rev(x: { x: ?number })
+function void_pro_fail_rev(x:
+{
+  x: ?number
+})
 {
   if (x.x === void 0)
   {
@@ -3816,7 +4241,10 @@ function void_var_side_effect_rev(x: ?number)
   }
 }
 
-function void_prop_side_effect(x: { x: ?number })
+function void_prop_side_effect(x:
+{
+  x: ?number
+})
 {
   if (x.x !== null && x.x !== void (x.x * 1000))
   {
@@ -3824,7 +4252,10 @@ function void_prop_side_effect(x: { x: ?number })
   }
 }
 
-function void_prop_side_effect_rev(x: { x: ?number })
+function void_prop_side_effect_rev(x:
+{
+  x: ?number
+})
 {
   if (x.x === null || x.x === void (x.x * 1000))
   {

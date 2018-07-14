@@ -27,7 +27,8 @@ enum Enum {
   y = 2,
 }
 
-const {
+const
+{
   longKeySoThisWillGoOnMultipleLines,
   longKeySoThisWillGoOnMultipleLines2,
   longKeySoThisWillGoOnMultipleLines3,

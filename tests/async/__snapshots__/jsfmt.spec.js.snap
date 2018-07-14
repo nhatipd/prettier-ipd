@@ -17,7 +17,8 @@ async function* a()
   yield* b();
 }
 
-class X {
+class X
+{
   async *b()
   {
     yield* a();

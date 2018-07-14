@@ -62,14 +62,20 @@ module.exports = { C, E };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-class C {
+class C
+{
   x: C;
 }
-class E {
+class E
+{
   x: C;
 }
 
-module.exports = { C, E };
+module.exports =
+{
+  C,
+  E
+};
 
 `;
 
@@ -98,7 +104,11 @@ function bar()
 let X = foo();
 class F extends X {}
 class D extends F {}
-module.exports = { C, D };
+module.exports =
+{
+  C,
+  D
+};
 
 `;
 
@@ -135,7 +145,10 @@ export function foo(props: { x: number }) { }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-export function foo(props: { x: number }) {}
+export function foo(props:
+{
+  x: number
+}) {}
 
 `;
 
@@ -152,9 +165,15 @@ export function bar(props: { x: number }) {
 
 import { foo } from "./c1";
 
-export function bar(props: { x: number })
+export function bar(props:
 {
-  foo({ x: 0 });
+  x: number
+})
+{
+  foo(
+  {
+    x: 0
+  });
 }
 
 `;
@@ -170,7 +189,10 @@ bar({ x: 0 });
 
 import { bar } from "./c2";
 
-bar({ x: 0 });
+bar(
+{
+  x: 0
+});
 
 `;
 
@@ -214,7 +236,15 @@ export const LIFE = 42;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-export type Action = { type: "FOO" } | { type: "BAR" };
+export type Action =
+  |
+    {
+      type: "FOO"
+    }
+  |
+    {
+      type: "BAR"
+    };
 
 export const LIFE = 42;
 
@@ -238,7 +268,10 @@ import { LIFE } from './e1';
 import type { Action } from "./e1";
 
 const f = (): Action => {
-  return { type: "FOO" };
+  return
+  {
+    type: "FOO"
+  };
 };
 
 import { LIFE } from "./e1";
@@ -261,14 +294,25 @@ module.exports = { a, b, c };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-type T = { x: number };
-type S = { x: string };
+type T =
+{
+  x: number
+};
+type S =
+{
+  x: string
+};
 
 declare var a: T;
 declare var b: S;
 declare var c: T;
 
-module.exports = { a, b, c };
+module.exports =
+{
+  a,
+  b,
+  c
+};
 
 `;
 
@@ -280,8 +324,16 @@ var { a, b, c } = require('./f1');
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-var { a, b, c } = require("./f1");
-(c: { x: number });
+var
+{
+  a,
+  b,
+  c
+} = require("./f1");
+(c:
+{
+  x: number
+});
 
 `;
 
@@ -311,7 +363,10 @@ import { C } from "./g1";
 
 class D extends C {}
 
-module.exports = { D };
+module.exports =
+{
+  D
+};
 
 `;
 
@@ -363,7 +418,13 @@ module.exports = foo;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-const foo: { p: number } = { p: 0 };
+const foo:
+{
+  p: number
+} =
+{
+  p: 0
+};
 
 module.exports = foo;
 
@@ -393,7 +454,10 @@ module.exports = foo;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-const foo: { [string]: number } = {};
+const foo:
+{
+  [string]: number
+} = {};
 
 module.exports = foo;
 

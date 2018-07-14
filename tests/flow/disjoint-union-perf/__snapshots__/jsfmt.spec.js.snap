@@ -95,14 +95,16 @@ export type InferredType =
   | "string"
   | "error";
 
-export type Pos = {
+export type Pos =
+{
   firstLine: number,
   firstColumn: number,
   lastLine: number,
   lastColumn: number
 };
 
-export type TypedBinaryOpNode = {
+export type TypedBinaryOpNode =
+{
   exprNodeType: "binary_op",
   binaryOp: "plus" | "multiply" | "divide" | "minus",
   lhs: TypedNode,
@@ -112,7 +114,8 @@ export type TypedBinaryOpNode = {
   typed: true
 };
 
-export type TypedUnaryMinusNode = {
+export type TypedUnaryMinusNode =
+{
   exprNodeType: "unary_minus",
   op: TypedNode,
   pos: Pos,
@@ -120,7 +123,8 @@ export type TypedUnaryMinusNode = {
   typed: true
 };
 
-export type TypedNumberNode = {
+export type TypedNumberNode =
+{
   exprNodeType: "number",
   value: number,
   pos: Pos,
@@ -128,7 +132,8 @@ export type TypedNumberNode = {
   typed: true
 };
 
-export type TypedStringLiteralNode = {
+export type TypedStringLiteralNode =
+{
   exprNodeType: "string_literal",
   value: string,
   pos: Pos,
@@ -136,7 +141,8 @@ export type TypedStringLiteralNode = {
   typed: true
 };
 
-export type TypedVariableNode = {
+export type TypedVariableNode =
+{
   exprNodeType: "variable",
   name: string,
   pos: Pos,
@@ -144,7 +150,8 @@ export type TypedVariableNode = {
   typed: true
 };
 
-export type TypedFunctionInvocationNode = {
+export type TypedFunctionInvocationNode =
+{
   exprNodeType: "function_invocation",
   name: string,
   parameters: TypedNode[],
@@ -942,25 +949,29 @@ export const builders : {
 /**
  * @flow
  */
-export type Comment = {
+export type Comment =
+{
   loc: ?SourceLocation,
   value: string,
   leading: boolean,
   trailing: boolean
 };
 
-export type SourceLocation = {
+export type SourceLocation =
+{
   start: SourcePosition,
   end: SourcePosition,
   source: ?string
 };
 
-export type SourcePosition = {
+export type SourcePosition =
+{
   line: number,
   column: number
 };
 
-export type File = {
+export type File =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -969,7 +980,8 @@ export type File = {
   program: Program
 };
 
-export type Program = {
+export type Program =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1078,7 +1090,8 @@ export type Statement =
   | TryStatement
   | Declaration;
 
-export type EmptyStatement = {
+export type EmptyStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1086,7 +1099,8 @@ export type EmptyStatement = {
   type: "EmptyStatement"
 };
 
-export type BlockStatement = {
+export type BlockStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1095,7 +1109,8 @@ export type BlockStatement = {
   body: Statement[]
 };
 
-export type ExpressionStatement = {
+export type ExpressionStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1104,7 +1119,8 @@ export type ExpressionStatement = {
   expression: Expression
 };
 
-export type IfStatement = {
+export type IfStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1115,7 +1131,8 @@ export type IfStatement = {
   alternate: ?Statement
 };
 
-export type BreakStatement = {
+export type BreakStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1124,7 +1141,8 @@ export type BreakStatement = {
   label: ?Identifier
 };
 
-export type ContinueStatement = {
+export type ContinueStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1133,7 +1151,8 @@ export type ContinueStatement = {
   label: ?Identifier
 };
 
-export type ReturnStatement = {
+export type ReturnStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1142,7 +1161,8 @@ export type ReturnStatement = {
   argument: ?Expression
 };
 
-export type ThrowStatement = {
+export type ThrowStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1151,7 +1171,8 @@ export type ThrowStatement = {
   argument: ?Expression
 };
 
-export type WhileStatement = {
+export type WhileStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1161,7 +1182,8 @@ export type WhileStatement = {
   body: Statement
 };
 
-export type ForStatement = {
+export type ForStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1173,7 +1195,8 @@ export type ForStatement = {
   body: Statement
 };
 
-export type ForInStatement = {
+export type ForInStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1184,7 +1207,8 @@ export type ForInStatement = {
   body: Statement
 };
 
-export type TryStatement = {
+export type TryStatement =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1196,7 +1220,8 @@ export type TryStatement = {
   finalizer: ?BlockStatement
 };
 
-export type CatchClause = {
+export type CatchClause =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1224,7 +1249,8 @@ export type Expression =
   | ArrayExpression
   | ObjectExpreession;
 
-export type Identifier = {
+export type Identifier =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1233,17 +1259,23 @@ export type Identifier = {
   name: string
 };
 
-export type Literal = {
+export type Literal =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
   comments: ?Array<Comment>,
   type: "Literal",
   value: ?(string | boolean | number | RegExp),
-  regex: ?{ pattern: string, flags: string }
+  regex: ?
+  {
+    pattern: string,
+    flags: string
+  }
 };
 
-export type ThisExpression = {
+export type ThisExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1251,7 +1283,8 @@ export type ThisExpression = {
   type: "ThisExpression"
 };
 
-export type ArrayExpression = {
+export type ArrayExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1260,7 +1293,8 @@ export type ArrayExpression = {
   elements: Expression[]
 };
 
-export type ObjectExpreession = {
+export type ObjectExpreession =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1269,7 +1303,8 @@ export type ObjectExpreession = {
   properties: Property[]
 };
 
-export type Property = {
+export type Property =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1280,7 +1315,8 @@ export type Property = {
   value: Expression
 };
 
-export type FunctionExpression = {
+export type FunctionExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1291,7 +1327,8 @@ export type FunctionExpression = {
   body: BlockStatement
 };
 
-export type BinaryExpression = {
+export type BinaryExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1302,7 +1339,8 @@ export type BinaryExpression = {
   right: Expression
 };
 
-export type UnaryExpression = {
+export type UnaryExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1313,7 +1351,8 @@ export type UnaryExpression = {
   prefix: boolean
 };
 
-export type AssignmentExpression = {
+export type AssignmentExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1324,7 +1363,8 @@ export type AssignmentExpression = {
   right: Expression
 };
 
-export type UpdateExpression = {
+export type UpdateExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1335,7 +1375,8 @@ export type UpdateExpression = {
   prefix: boolean
 };
 
-export type LogicalExpression = {
+export type LogicalExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1346,7 +1387,8 @@ export type LogicalExpression = {
   right: Expression
 };
 
-export type ConditionalExpression = {
+export type ConditionalExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1357,7 +1399,8 @@ export type ConditionalExpression = {
   alternate: Expression
 };
 
-export type NewExpression = {
+export type NewExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1367,7 +1410,8 @@ export type NewExpression = {
   arguments: Expression[]
 };
 
-export type CallExpression = {
+export type CallExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1377,7 +1421,8 @@ export type CallExpression = {
   arguments: Expression[]
 };
 
-export type MemberExpression = {
+export type MemberExpression =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1393,7 +1438,8 @@ export type Pattern = Identifier;
 
 export type Declaration = VariableDeclaration | FunctionDeclaration;
 
-export type VariableDeclaration = {
+export type VariableDeclaration =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1403,7 +1449,8 @@ export type VariableDeclaration = {
   declarations: VariableDeclarator[]
 };
 
-export type FunctionDeclaration = {
+export type FunctionDeclaration =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1414,7 +1461,8 @@ export type FunctionDeclaration = {
   params: Pattern[]
 };
 
-export type VariableDeclarator = {
+export type VariableDeclarator =
+{
   source: ?string,
   start: SourcePosition,
   end: SourcePosition,
@@ -1426,7 +1474,8 @@ export type VariableDeclarator = {
 
 const a: any = null;
 
-export const builders: {
+export const builders:
+{
   emptyStatement(): EmptyStatement,
   blockStatement(body: Statement[]): BlockStatement,
   expressionStatement(expression: Expression): ExpressionStatement,
@@ -1465,7 +1514,11 @@ export const builders: {
   identifier(name: string): Identifier,
   literal(
     value: ?(string | boolean | number | RegExp),
-    regex?: { pattern: string, flags: string }
+    regex?:
+    {
+      pattern: string,
+      flags: string
+    }
   ): Literal,
   thisExpression(): ThisExpression,
   arrayExpression(elements: Expression[]): ArrayExpression,

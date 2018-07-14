@@ -25,19 +25,22 @@ ColorIdToNumber.XXX; // oops
 
 module.exports = { ColorId, ColorNumber };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var ColorId = {
+var ColorId =
+{
   RED: "R",
   GREEN: "G",
   BLUE: "B"
 };
 
-var ColorNumber = {
+var ColorNumber =
+{
   RED: "ff0000",
   GREEN: "00ff00",
   BLUE: "0000ff"
 };
 
-var ColorIdToNumber = {
+var ColorIdToNumber =
+{
   [ColorId.RED]: ColorNumber.RED,
   [ColorId.GREEN]: ColorNumber.GREEN,
   [ColorId.BLUE]: ColorNumber.BLUE
@@ -47,7 +50,11 @@ var ColorIdToNumber = {
 
 ColorIdToNumber.XXX; // oops
 
-module.exports = { ColorId, ColorNumber };
+module.exports =
+{
+  ColorId,
+  ColorNumber
+};
 
 `;
 
@@ -63,8 +70,13 @@ var ColorIdToNumber = {
 
 module.exports = ColorIdToNumber;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var { ColorId, ColorNumber } = require("./test");
-var ColorIdToNumber = {
+var
+{
+  ColorId,
+  ColorNumber
+} = require("./test");
+var ColorIdToNumber =
+{
   [ColorId.RED]: ColorNumber.RED,
   [ColorId.GREEN]: ColorNumber.GREEN,
   [ColorId.BLUE]: ColorNumber.BLUE
@@ -82,7 +94,10 @@ var ColorIdToNumber = require('./test2');
 
 (ColorIdToNumber[ColorId.BLUE]: 'ffffff'); // oops
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var { ColorId } = require("./test");
+var
+{
+  ColorId
+} = require("./test");
 var ColorIdToNumber = require("./test2");
 
 (ColorIdToNumber[ColorId.BLUE]: "ffffff"); // oops
@@ -107,7 +122,8 @@ module.exports = {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var hello = require("./test4");
 var dummy = require("./test");
-module.exports = {
+module.exports =
+{
   ...dummy,
   [hello]: "world",
   ...dummy
@@ -131,7 +147,8 @@ var x: string = obj['m'](); // error, number ~> string
 var arr = [function() { return this.length }];
 var y: string = arr[0](); // error: number ~> string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var obj = {
+var obj =
+{
   x: 0,
   m()
   {

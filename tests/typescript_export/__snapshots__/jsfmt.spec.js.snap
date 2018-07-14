@@ -14,7 +14,8 @@ export default interface Foo {
   readonly bar?: string;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export default interface Foo {
+export default interface Foo
+{
   readonly bar?: string;
 }
 

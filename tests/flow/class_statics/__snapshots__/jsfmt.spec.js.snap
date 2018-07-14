@@ -63,7 +63,8 @@ module.exports = {
   A: A, B: B, C: C, D: D, E: E
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class A {
+class A
+{
   static x: number;
   static y: string;
   static foo(x: number) {}
@@ -71,7 +72,8 @@ class A {
 }
 A.qux = function(x: string) {}; // error?
 
-class B extends A {
+class B extends A
+{
   static x: string; // error?
   static foo(x: string) {} // error?
   static main()
@@ -95,7 +97,8 @@ class B extends A {
   }
 }
 
-class C<X> {
+class C<X>
+{
   static x: X;
   static bar(x: X) {}
   static create(): C<*>
@@ -104,7 +107,8 @@ class C<X> {
   }
 }
 
-class D extends C<string> {
+class D extends C<string>
+{
   static main()
   {
     D.foo(0); // error?
@@ -117,7 +121,8 @@ var d: C<*> = D.create();
 (new A(): typeof A);
 (B: typeof A);
 
-class E {
+class E
+{
   static x: number;
   static foo(): string
   {
@@ -127,7 +132,8 @@ class E {
 }
 
 // note: above classdefs are sufficiently annotated to export
-module.exports = {
+module.exports =
+{
   A: A,
   B: B,
   C: C,

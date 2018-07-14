@@ -9,12 +9,25 @@ function bar(x: Error & {type:number}): number {
     return x.type;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function foo(x: $All<Error, { type: number }>): number
+function foo(
+  x: $All<
+    Error,
+
+    {
+      type: number
+    }
+  >
+): number
 {
   return x.type;
 }
 
-function bar(x: Error & { type: number }): number
+function bar(
+  x: Error &
+  {
+    type: number
+  }
+): number
 {
   return x.type;
 }
@@ -44,7 +57,10 @@ let y: ObjAssignT = { ...x }; // should be fine
 
 declare var x: ObjAssignT;
 
-let y: ObjAssignT = { ...x }; // should be fine
+let y: ObjAssignT =
+{
+  ...x
+}; // should be fine
 
 `;
 
@@ -82,7 +98,8 @@ function hasObjectMode_ok(options: DuplexStreamOptions): boolean {
  */
 
 type DuplexStreamOptions = ReadableStreamOptions &
-  WritableStreamOptions & {
+  WritableStreamOptions &
+  {
     allowHalfOpen?: boolean,
     readableObjectMode?: boolean,
     writableObjectMode?: boolean
@@ -233,7 +250,10 @@ declare var c: C;
 var d: D = c; // ok
 
 // dict type mismatch
-type E = { [key: string]: string };
+type E =
+{
+  [key: string]: string
+};
 var e: E = c; // error
 
 `;

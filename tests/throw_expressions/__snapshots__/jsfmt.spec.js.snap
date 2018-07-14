@@ -21,7 +21,8 @@ class Product {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function save(filename = throw new TypeError("Argument required")) {}
 
-lint(ast, {
+lint(ast,
+{
   with: () => throw new Error("avoid using 'with' statements.")
 });
 
@@ -37,7 +38,8 @@ function getEncoder(encoding)
           : throw new Error("Unsupported encoding");
 }
 
-class Product {
+class Product
+{
   get id()
   {
     return this._id;

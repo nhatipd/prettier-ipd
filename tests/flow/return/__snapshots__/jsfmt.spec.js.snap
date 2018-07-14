@@ -38,7 +38,8 @@ module.exports = C;
 //function fn(x:number) { return x; }
 //module.exports = fn;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   foo() {}
   bar()
   {

@@ -51,7 +51,10 @@ function foo()
 
 function bar()
 {
-  var x: ?{ bar(): void };
+  var x: ?
+  {
+    bar(): void
+  };
   if (x) x.bar();
 }
 

@@ -5,7 +5,8 @@ class Route {
   static +param: T;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class Route {
+class Route
+{
   static +param: T;
 }
 

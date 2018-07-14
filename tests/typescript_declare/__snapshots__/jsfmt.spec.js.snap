@@ -33,7 +33,8 @@ declare interface Dictionary<T> {
   [index: string]: T
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare interface Dictionary<T> {
+declare interface Dictionary<T>
+{
   [index: string]: T;
 }
 

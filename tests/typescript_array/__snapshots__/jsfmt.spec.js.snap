@@ -10,8 +10,10 @@ export class ViewTokensChangedEvent {
   }[];
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export class ViewTokensChangedEvent {
-  public readonly ranges: {
+export class ViewTokensChangedEvent
+{
+  public readonly ranges:
+  {
     /**
      * Start line number of range
      */

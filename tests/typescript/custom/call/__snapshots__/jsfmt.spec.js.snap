@@ -10,7 +10,8 @@ interface I {
 
 Promise.all<void>([]);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface I {
+interface I
+{
   ();
   (): void;
   <T, U>(arg: T);

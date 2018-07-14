@@ -5,7 +5,8 @@ class Foo {
   public readonly foo = 'string';
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class Foo {
+class Foo
+{
   public readonly foo = "string";
 }
 

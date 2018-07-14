@@ -44,7 +44,8 @@ module YYY4 {
 
 namespace Y3 {
   public namespace Module {
-    class A {
+    class A
+    {
       s: string;
     }
   }
@@ -52,7 +53,8 @@ namespace Y3 {
   // Apparently this parses :P
   export private public protected static readonly abstract async enum X {}
 
-  interface x {
+  interface x
+  {
     export private static readonly [x: any]: any;
   }
 }
@@ -66,7 +68,8 @@ namespace Y4 {
 
 namespace YY3 {
   private namespace Module {
-    class A {
+    class A
+    {
       s: string;
     }
   }
@@ -81,7 +84,8 @@ namespace YY4 {
 
 namespace YYY3 {
   static namespace Module {
-    class A {
+    class A
+    {
       s: string;
     }
   }

@@ -26,7 +26,13 @@ function foo(b): A<any>
 function bar(): A<*>
 {
   // error, * can't be {} and {x: string} at the same time
-  return (new A(): A<{}>) || (new A(): A<{ x: string }>);
+  return (
+    (new A(): A<{}>) ||
+    (new A(): A<
+    {
+      x: string
+    }>)
+  );
 }
 
 `;
@@ -59,7 +65,8 @@ class Base {}
 class Middle extends Base {}
 class Child extends Middle {}
 
-class C<T: Middle> {
+class C<T: Middle>
+{
   meth(a: T): T
   {
     return a;
@@ -102,7 +109,8 @@ unbox(bool);
 // naive unification causes combinatorial explosion here,
 // effectively hangs
 
-declare type Box<T> = {
+declare type Box<T> =
+{
   map1<U>(f: (x: T) => U): Box<U>,
   map2<U>(f: (x: T) => U): Box<U>,
   map3<U>(f: (x: T) => U): Box<U>,
@@ -138,7 +146,8 @@ var foo = new Foo(0);
 var x:string = foo.x;
 var z:Foo<number> = Q.bar(foo,"");
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class Foo<T> {
+class Foo<T>
+{
   x: T;
   constructor(x: T)
   {
@@ -151,11 +160,13 @@ function bar<S>(foo: Foo<S>, y: S): Foo<S>
   return new Foo(y);
 }
 
-var P = {
+var P =
+{
   bar: bar
 };
 
-declare var Q: {
+declare var Q:
+{
   bar<S>(foo: Foo<S>, y: S): Foo<S>
 };
 
@@ -179,7 +190,8 @@ class D extends C {
   qux<X>(x: X): X { return x; } // OK (generalization)
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   foo<X>(x: X): X
   {
     return x;
@@ -197,7 +209,8 @@ class C {
     return x;
   }
 }
-class D extends C {
+class D extends C
+{
   foo(x: number): number
   {
     return x;

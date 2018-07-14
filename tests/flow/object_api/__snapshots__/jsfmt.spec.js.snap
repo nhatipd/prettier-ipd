@@ -6,7 +6,10 @@ exports[`a.js - flow-verify 1`] = `
 module.exports = { a() {} };~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-module.exports = { a() {} };
+module.exports =
+{
+  a() {}
+};
 
 `;
 
@@ -21,7 +24,14 @@ module.exports = b;
 /* @flow */
 
 var a = require("./a");
-var b = Object.assign({ bar() {}, ...{} }, a);
+var b = Object.assign(
+
+  {
+    bar() {},
+    ...{}
+  },
+  a
+);
 b.a(); // works here
 module.exports = b;
 
@@ -59,6 +69,7 @@ module.exports = export_;
 
 var export_ = Object.assign(
   {},
+
   {
     foo: function(param)
     {
@@ -67,7 +78,11 @@ var export_ = Object.assign(
   }
 );
 
-var decl_export_: { foo: any, bar: any } = Object.assign({}, export_);
+var decl_export_:
+{
+  foo: any,
+  bar: any
+} = Object.assign({}, export_);
 
 let anyObj: Object = {};
 Object.assign(anyObj, anyObj); // makes sure this terminates
@@ -97,7 +112,8 @@ declare var o: O;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-class C {
+class C
+{
   foo: string;
 }
 
@@ -108,10 +124,16 @@ class C {
 (Object.create(new C()): C);
 
 // error, object literals don't structurally match instances
-({ foo: "foo" }: C);
+(
+{
+  foo: "foo"
+}: C);
 
 // error, object types don't structurally match instances
-type O = { foo: string };
+type O =
+{
+  foo: string
+};
 declare var o: O;
 (o: C);
 
@@ -181,7 +203,11 @@ class Bar extends Foo {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-var sealed = { one: "one", two: "two" };
+var sealed =
+{
+  one: "one",
+  two: "two"
+};
 (Object.keys(sealed): Array<"one" | "two">);
 (Object.keys(sealed): void); // error, Array<string>
 
@@ -190,7 +216,10 @@ Object.keys(unsealed).forEach(k => {
   (k: number); // error: string ~> number
 });
 
-var dict: { [k: number]: string } = {};
+var dict:
+{
+  [k: number]: string
+} = {};
 Object.keys(dict).forEach(k => {
   (k: number); // error: string ~> number
 });
@@ -198,14 +227,16 @@ Object.keys(dict).forEach(k => {
 var any: Object = {};
 (Object.keys(any): Array<number>); // error, Array<string>
 
-class Foo {
+class Foo
+{
   prop: string;
   foo() {}
 }
 // constructor and foo not enumerable
 (Object.keys(new Foo()): Array<"error">); // error: prop ~> error
 
-class Bar extends Foo {
+class Bar extends Foo
+{
   bar_prop: string;
   bar() {}
 }
@@ -409,16 +440,30 @@ function takesAnObject(x: Object) {}
 
 class Foo {}
 
-var a = { foo: "bar" };
-var b = { foo: "bar", ...{} };
-var c = {
+var a =
+{
+  foo: "bar"
+};
+var b =
+{
+  foo: "bar",
+  ...{}
+};
+var c =
+{
   foo: "bar",
   toString: function(): number
   {
     return 123;
   }
 };
-var d: { [key: string]: string } = { foo: "bar" };
+var d:
+{
+  [key: string]: string
+} =
+{
+  foo: "bar"
+};
 var x = new Date();
 var y = new Foo();
 

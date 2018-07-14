@@ -16,7 +16,8 @@ class B extends A {
   }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class A {
+class A
+{
   x: number;
   _x: string;
   __x: number;
@@ -28,7 +29,8 @@ class A {
   }
 }
 
-class B extends A {
+class B extends A
+{
   foo()
   {
     var x: number = this.x;

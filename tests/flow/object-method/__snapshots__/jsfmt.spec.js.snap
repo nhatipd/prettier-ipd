@@ -49,7 +49,8 @@ module.exports = id(
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const id = require("./id");
 
-export type ObjectType = {
+export type ObjectType =
+{
   +m: () => void
 };
 
@@ -88,12 +89,14 @@ function f()
   return this.p;
 }
 
-var a = {
+var a =
+{
   p: 0,
   f
 };
 
-var b = {
+var b =
+{
   f
 };
 
@@ -132,16 +135,25 @@ function foo()
 function bar(f: () => void)
 {
   f(); // passing global object as \`this\`
-  ({ f }.f()); // passing container object as \`this\`
+  (
+  {
+    f
+  }.f()); // passing container object as \`this\`
 }
 
 bar(foo); // error, since \`this\` is used non-trivially in \`foo\`
 
-function qux(o: { f: () => void })
+function qux(o:
+{
+  f: () => void
+})
 {
   o.f(); // passing o as \`this\`
 }
 
-qux({ f: foo }); // error, since \`this\` is used non-trivially in \`foo\`
+qux(
+{
+  f: foo
+}); // error, since \`this\` is used non-trivially in \`foo\`
 
 `;

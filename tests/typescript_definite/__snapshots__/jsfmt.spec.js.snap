@@ -9,7 +9,8 @@ const x!: string
 
 var y!: MyComponent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class MyComponent {
+class MyComponent
+{
   ngModel!: ng.INgModelController;
 }
 

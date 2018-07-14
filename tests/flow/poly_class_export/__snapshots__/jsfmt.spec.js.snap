@@ -11,7 +11,8 @@ module.exports = A;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-class A<T> {
+class A<T>
+{
   x: T;
 }
 
@@ -36,7 +37,8 @@ module.exports = new B();
 
 let A = require("./A");
 
-class B extends A<string> {
+class B extends A<string>
+{
   constructor()
   {
     super();
@@ -68,7 +70,8 @@ export function f(x: Foo) {
 // This test exports a function whose return type is the class's \`this\` type.
 // It should be inferred (no annotation required).
 
-class Foo {
+class Foo
+{
   foo(): this
   {
     return this;

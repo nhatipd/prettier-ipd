@@ -65,7 +65,8 @@ var a = x<number>();
 var b = x<string>("hello");
 var c = x<object>("hello");
 
-class C {
+class C
+{
   foo: string;
 }
 var c = x<C>(x);

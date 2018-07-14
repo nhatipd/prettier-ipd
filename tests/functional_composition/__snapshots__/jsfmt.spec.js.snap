@@ -73,7 +73,8 @@ this.a.b.c.compose(sortBy(x => x), flatten);
 someObj.someMethod(this.field.compose(a, b));
 
 // filter out Super
-class A extends B {
+class A extends B
+{
   compose()
   {
     super.compose(sortBy(x => x), flatten);
@@ -235,12 +236,24 @@ var getStateCode = R.composeK(
   get("address"),
   get("user")
 );
-getStateCode({ user: { address: { state: "ny" } } }); //=> Maybe.Just("NY")
+getStateCode(
+{
+  user:
+  {
+    address:
+    {
+      state: "ny"
+    }
+  }
+}); //=> Maybe.Just("NY")
 getStateCode({}); //=> Maybe.Nothing()
 
-var db = {
-  users: {
-    JOE: {
+var db =
+{
+  users:
+  {
+    JOE:
+    {
       name: "Joe",
       followers: ["STEVE", "SUZY"]
     }

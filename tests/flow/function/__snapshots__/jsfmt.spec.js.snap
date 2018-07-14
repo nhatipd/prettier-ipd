@@ -101,7 +101,10 @@ function test2(): number
 (test2.apply(""): number);
 
 // callable objects
-function test3(x: { (a: string, b: string): void })
+function test3(x:
+{
+  (a: string, b: string): void
+})
 {
   x.apply(x, ["foo", "bar"]); // ok
   x.apply(x, ["foo", 123]); // error, number !~> string
@@ -150,7 +153,10 @@ let tests = [
   },
 
   // callable objects
-  function(x: { (a: string, b: string): void })
+  function(x:
+  {
+    (a: string, b: string): void
+  })
   {
     let y = x.bind(x, "foo");
     y("bar"); // ok
@@ -158,13 +164,20 @@ let tests = [
   },
 
   // non-callable objects
-  function(x: { a: string })
+  function(x:
+  {
+    a: string
+  })
   {
     x.bind(x, "foo"); // error
   },
 
   // callable objects with overridden \`bind\` method
-  function(x: { (a: string, b: string): void, bind(a: string): void })
+  function(x:
+  {
+    (a: string, b: string): void,
+    bind(a: string): void
+  })
   {
     (x.bind("foo"): void); // ok
     (x.bind(123): void); // error, number !~> string
@@ -260,7 +273,10 @@ function test2(): number
 (test2.call(""): number);
 
 // callable objects
-function test3(x: { (a: string, b: string): void })
+function test3(x:
+{
+  (a: string, b: string): void
+})
 {
   x.call(x, "foo", "bar"); // ok
   x.call(x, "foo", 123); // error, number !~> string
@@ -361,8 +377,14 @@ function good(x: Function, MyThing: Function): number
   x["foo"] = 456;
   x();
   <MyThing />;
-  var { ...something } = x;
-  Object.assign(x, { hi: "there" });
+  var
+  {
+    ...something
+  } = x;
+  Object.assign(x,
+  {
+    hi: "there"
+  });
   Object.keys(x);
   return x.bar + x["bar"] + x.lala();
 }
@@ -539,7 +561,12 @@ function rest_union(...xs: [1, 2] | Array<number>): number
   return xs[0];
 }
 
-function rest_intersection(...xs: { x: number } & [1, 2]): number
+function rest_intersection(
+  ...xs:
+  {
+    x: number
+  } & [1, 2]
+): number
 {
   // OK
   return xs[0] + xs.x;
@@ -628,7 +655,12 @@ type rest_alias = (...xs: Rest) => void; // Ok
 
 type rest_union = (...xs: [1, 2] | Array<number>) => number; // OK
 
-type rest_intersection = (...xs: { x: number } & [1, 2]) => number; // OK
+type rest_intersection = (
+  ...xs:
+  {
+    x: number
+  } & [1, 2]
+) => number; // OK
 
 type empty_rest = <T: Array<mixed>>(...xs: T) => T; // OK
 (f: empty_rest) => (f(): empty); // Error Array ~> empty

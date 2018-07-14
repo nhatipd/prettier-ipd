@@ -30,7 +30,8 @@ class A {
   method(a /*: T */, b /*: T */) /*: T */ {}
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class A {
+class A
+{
   x /*: string */;
 
   method(a /*: T */, b /*: T */) /*: T */ {}
@@ -70,16 +71,19 @@ type Props = {
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // (DispatchProps & StateProps); WHY DON'T YOU WORK FLOW!!!!!!!!!
-type Props = {
+type Props =
+{
   isPlaying: boolean
 };
 
-type Props = {
+type Props =
+{
   // (DispatchProps & StateProps); WHY DON'T YOU WORK FLOW!!!!!!!!!
   isPlaying: boolean
 };
 
-type Props = {
+type Props =
+{
   // (DispatchProps & StateProps); WHY DON'T YOU WORK FLOW!!!!!!!!!
   isPlaying: boolean
 };

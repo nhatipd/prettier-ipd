@@ -24,19 +24,24 @@ var c = new B.a.C();
 
 namespace B {
   export import a = A;
-  export class D extends a.C {
+  export class D extends a.C
+  {
     id: number;
   }
 }
 
 namespace A {
-  export class C {
+  export class C
+  {
     name: string;
   }
   export import b = B;
 }
 
-var c: { name: string };
+var c:
+{
+  name: string;
+};
 var c = new B.a.C();
 
 `;
@@ -114,11 +119,13 @@ var p: M.D.Point;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 namespace A {
   export var x = "hello world";
-  export class Point {
+  export class Point
+  {
     constructor(public x: number, public y: number) {}
   }
   export namespace B {
-    export interface Id {
+    export interface Id
+    {
       name: string;
     }
   }
@@ -129,8 +136,15 @@ namespace C {
 }
 
 var a: string = C.a.x;
-var b: { x: number; y: number } = new C.a.Point(0, 0);
-var c: { name: string };
+var b:
+{
+  x: number;
+  y: number;
+} = new C.a.Point(0, 0);
+var c:
+{
+  name: string;
+};
 var c: C.a.B.Id;
 
 namespace X {
@@ -140,7 +154,8 @@ namespace X {
   }
 
   export namespace Y {
-    export class Point {
+    export class Point
+    {
       constructor(public x: number, public y: number) {}
     }
   }
@@ -152,16 +167,22 @@ namespace Z {
 }
 
 var m: number = Z.y();
-var n: { x: number; y: number } = new Z.y.Point(0, 0);
+var n:
+{
+  x: number;
+  y: number;
+} = new Z.y.Point(0, 0);
 
 namespace K {
-  export class L {
+  export class L
+  {
     constructor(public name: string) {}
   }
 
   export namespace L {
     export var y = 12;
-    export interface Point {
+    export interface Point
+    {
       x: number;
       y: number;
     }
@@ -172,10 +193,17 @@ namespace M {
   export import D = K.L;
 }
 
-var o: { name: string };
+var o:
+{
+  name: string;
+};
 var o = new M.D("Hello");
 
-var p: { x: number; y: number };
+var p:
+{
+  x: number;
+  y: number;
+};
 var p: M.D.Point;
 
 `;
@@ -234,7 +262,8 @@ var p: funlias.Point;
 var p: fundule.Point;
 var p: { x: number; y: number; };~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 namespace moduleA {
-  export class Point {
+  export class Point
+  {
     constructor(public x: number, public y: number) {}
   }
 }
@@ -243,44 +272,71 @@ import alias = moduleA;
 
 var p: alias.Point;
 var p: moduleA.Point;
-var p: { x: number; y: number };
+var p:
+{
+  x: number;
+  y: number;
+};
 
-class clodule {
+class clodule
+{
   name: string;
 }
 
 namespace clodule {
-  export interface Point {
+  export interface Point
+  {
     x: number;
     y: number;
   }
-  var Point: Point = { x: 0, y: 0 };
+  var Point: Point =
+  {
+    x: 0,
+    y: 0
+  };
 }
 
 import clolias = clodule;
 
 var p: clolias.Point;
 var p: clodule.Point;
-var p: { x: number; y: number };
+var p:
+{
+  x: number;
+  y: number;
+};
 
 function fundule()
 {
-  return { x: 0, y: 0 };
+  return
+  {
+    x: 0,
+    y: 0
+  };
 }
 
 namespace fundule {
-  export interface Point {
+  export interface Point
+  {
     x: number;
     y: number;
   }
-  var Point: Point = { x: 0, y: 0 };
+  var Point: Point =
+  {
+    x: 0,
+    y: 0
+  };
 }
 
 import funlias = fundule;
 
 var p: funlias.Point;
 var p: fundule.Point;
-var p: { x: number; y: number };
+var p:
+{
+  x: number;
+  y: number;
+};
 
 `;
 
@@ -315,7 +371,8 @@ var V = 12;
 
 import v = V;
 
-class C {
+class C
+{
   name: string;
 }
 
@@ -328,7 +385,8 @@ enum E {
 
 import e = E;
 
-interface I {
+interface I
+{
   id: number;
 }
 
@@ -373,27 +431,38 @@ module Z {
 // all errors imported modules conflict with local variables
 
 namespace A {
-  export var Point = { x: 0, y: 0 };
-  export interface Point {
+  export var Point =
+  {
+    x: 0,
+    y: 0
+  };
+  export interface Point
+  {
     x: number;
     y: number;
   }
 }
 
 namespace B {
-  var A = { x: 0, y: 0 };
+  var A =
+  {
+    x: 0,
+    y: 0
+  };
   import Point = A;
 }
 
 namespace X {
   export namespace Y {
-    export interface Point {
+    export interface Point
+    {
       x: number;
       y: number;
     }
   }
 
-  export class Y {
+  export class Y
+  {
     name: string;
   }
 }

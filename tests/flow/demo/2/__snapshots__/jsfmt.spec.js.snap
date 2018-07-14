@@ -23,7 +23,8 @@ module.exports = A;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @providesModule Demo */
 
-class A {
+class A
+{
   x: number; // instance field declaration
   constructor(x)
   {

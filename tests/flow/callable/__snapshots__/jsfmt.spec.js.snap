@@ -12,7 +12,8 @@ function f(x) {
 
 (f: F);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-type F = {
+type F =
+{
   (x: string): number,
   p?: string
 };
@@ -53,7 +54,10 @@ var x = Boolean(4);
 function foo(fn: (value: any) => boolean) {}
 foo(Boolean);
 
-var dict: { [k: string]: any } = {};
+var dict:
+{
+  [k: string]: any
+} = {};
 dict(); // error, callable signature not found
 
 interface ICall
@@ -64,7 +68,8 @@ declare var icall: ICall;
 icall(0); // error, number ~> string
 icall.call(null, 0); // error, number ~> string
 
-type Callable = {
+type Callable =
+{
   (x: string): void
 };
 

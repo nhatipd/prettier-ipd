@@ -31,7 +31,8 @@ export function aPrettyLongFunctionE(aRatherLongParameterName: Array<{
 interface RelayProps
 {
   articles:
-    | Array<{
+    | Array<
+      {
         __id: string
       } | null>
     | null
@@ -41,7 +42,8 @@ interface RelayProps
 
 interface RelayProps
 {
-  articles: Array<{
+  articles: Array<
+  {
     __id: string
   } | null> | null | void;
 }
@@ -68,7 +70,8 @@ export function aPrettyLongFunctionD(
 export function aShortFn(aShortParmName: MyType | null): string[] {}
 
 export function aPrettyLongFunctionE(
-  aRatherLongParameterName: Array<{
+  aRatherLongParameterName: Array<
+  {
     __id: string
   } | null> | null | void
 ): string[] {}

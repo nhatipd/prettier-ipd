@@ -31,7 +31,8 @@ let [x, y] = [1, 2];
  * \`this.returnsATuple()\` is; thus, we never evaluate \`b\` and so type-at-pos
  * returns EmptyT.
  */
-export const X = {
+export const X =
+{
   returnsATuple: function(): [number, number]
   {
     return [1, 2];
@@ -76,22 +77,26 @@ const d = {
 //   foo(): void {}
 // }
 
-const a = {
+const a =
+{
   bar(): void {}
 };
 
-const b = {
+const b =
+{
   bar: function(): void {}
 };
 
-const c = {
+const c =
+{
   m<T>(x: T): T
   {
     return x;
   }
 };
 
-const d = {
+const d =
+{
   m: function<T>(x: T): T
   {
     return x;
@@ -150,8 +155,14 @@ type F<X> = C<void>;
 var fn: F<number> = new C();
 fn;
 
-type O<X> = { x: X };
-var on: O<number> = { x: 0 };
+type O<X> =
+{
+  x: X
+};
+var on: O<number> =
+{
+  x: 0
+};
 on;
 
 type Mono = C<void>;
@@ -191,7 +202,10 @@ let tests = [
   function()
   {
     let x = {};
-    Object.defineProperty(x, "foo", { value: "" });
+    Object.defineProperty(x, "foo",
+    {
+      value: ""
+    });
   }
 ];
 
@@ -223,7 +237,10 @@ function foo(x?: string)
 
 foo();
 
-function bar(obj: { x?: string })
+function bar(obj:
+{
+  x?: string
+})
 {
   return obj.x;
 }

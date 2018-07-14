@@ -23,7 +23,8 @@ export default class {
 
 import type T from "T";
 
-export default class {
+export default class
+{
   p: T;
 
   constructor()
@@ -51,7 +52,8 @@ class B extends A {
 
 import A from "A";
 
-class B extends A {
+class B extends A
+{
   p: string; // OK, string ~> any
 }
 

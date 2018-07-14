@@ -18,7 +18,10 @@ const TodoList = ({ todos }) => (
   </div>
 );
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const UsersList = ({ users }) => (
+const UsersList = (
+{
+  users
+}) => (
   <section>
     <h2>Users list</h2>
     <ul>
@@ -29,7 +32,10 @@ const UsersList = ({ users }) => (
   </section>
 );
 
-const TodoList = ({ todos }) => (
+const TodoList = (
+{
+  todos
+}) => (
   <div className="TodoList">
     <ul>
       {_.map(todos, (todo, i) => (
@@ -89,7 +95,8 @@ exports[`attr-comments.js - flow-verify 1`] = `
   propArrowWithBreak={
     // comment
     arg =>
-      fn({
+      fn(
+      {
         makeItBreak
       })
   }
@@ -99,7 +106,10 @@ exports[`attr-comments.js - flow-verify 1`] = `
   }
   propObj={
     // comment
-    { key: val }
+
+    {
+      key: val
+    }
   }
   propTemplate={
     // comment
@@ -512,7 +522,8 @@ exports[`expression.js - flow-verify 1`] = `
 </Component>;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <View
-  style={{
+  style={
+  {
     someVeryLongStyle1: "true",
     someVeryLongStyle2: "true",
     someVeryLongStyle3: "true",
@@ -522,6 +533,7 @@ exports[`expression.js - flow-verify 1`] = `
 
 <View
   style={[
+
     {
       someVeryLongStyle1: "true",
       someVeryLongStyle2: "true",
@@ -605,7 +617,8 @@ exports[`expression.js - flow-verify 1`] = `
     key: "possible_key_1" | "possible_key_2" | "possible_key_3",
     value: string | Immutable.List<string>
   ) => {
-    this.setState({
+    this.setState(
+    {
       updatedTask: this.state.updatedTask.set(key, value)
     });
   }}
@@ -640,7 +653,8 @@ exports[`expression.js - flow-verify 1`] = `
     key: "possible_key_1" | "possible_key_2" | "possible_key_3",
     value: string | Immutable.List<string>
   ) => {
-    this.setState({
+    this.setState(
+    {
       updatedTask: this.state.updatedTask.set(key, value)
     });
   }}
@@ -833,6 +847,7 @@ const tabs = [
 ];
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const tabs = [
+
   {
     title: "General Info",
     content: (
@@ -904,7 +919,14 @@ a = [
   />
 ];
 
-<div {...(foo || foo === null ? { foo } : null)} />;
+<div
+  {...(foo || foo === null
+    ?
+      {
+        foo
+      }
+    : null)}
+/>;
 
 `;
 
@@ -1008,14 +1030,16 @@ const BreakingFunction = function()
   );
 };
 
-class NonBreakingClass extends React.component {
+class NonBreakingClass extends React.component
+{
   render()
   {
     return <div />;
   }
 }
 
-class BreakingClass extends React.component {
+class BreakingClass extends React.component
+{
   render()
   {
     return (
@@ -1049,7 +1073,8 @@ const Labels = {
   ),
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const Labels = {
+const Labels =
+{
   label1: <fbt>Label 1</fbt>,
 
   label2: <fbt>Label 2</fbt>,

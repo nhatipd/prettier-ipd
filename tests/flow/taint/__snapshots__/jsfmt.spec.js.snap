@@ -116,7 +116,10 @@ let tests = [
   // getting a property
   function()
   {
-    let obj: Object = { foo: "foo" };
+    let obj: Object =
+    {
+      foo: "foo"
+    };
     (obj.foo: $Tainted<string>); // ok
   },
 
@@ -167,15 +170,33 @@ function foo(x: $Tainted<string>, o: Object)
   // Error
   o.f(x);
 }
-function foo1(x: $Tainted<string>, o: { f: (y: $Tainted<string>) => void })
+function foo1(
+  x: $Tainted<string>,
+  o:
+  {
+    f: (y: $Tainted<string>) => void
+  }
+)
 {
   o.f(x);
 }
-function foo2(o1: Object, o2: { t: $Tainted<string> })
+function foo2(
+  o1: Object,
+  o2:
+  {
+    t: $Tainted<string>
+  }
+)
 {
   o1.f(o2.t);
 }
-function foo3<T>(x: $Tainted<T>, o: { f: (y: $Tainted<T>) => void })
+function foo3<T>(
+  x: $Tainted<T>,
+  o:
+  {
+    f: (y: $Tainted<T>) => void
+  }
+)
 {
   o.f(x);
 }
@@ -184,11 +205,24 @@ function f_foo1(x: $Tainted<string>, f: Function)
   // Error
   f(x);
 }
-function f_foo2(f1: Function, o: { t: $Tainted<string> })
+function f_foo2(
+  f1: Function,
+  o:
+  {
+    t: $Tainted<string>
+  }
+)
 {
   f1(o.t);
 }
-function f_foo3(f1: Function, o1: Object, o2: { t: $Tainted<string> })
+function f_foo3(
+  f1: Function,
+  o1: Object,
+  o2:
+  {
+    t: $Tainted<string>
+  }
+)
 {
   f1(o1)(o2.t);
 }
@@ -291,7 +325,8 @@ class A {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-class A {
+class A
+{
   f(x: $Tainted<FakeLocation>)
   {
     fakeDocument.location = x; // error
@@ -353,7 +388,8 @@ class A {
  *
  * @flow
  */
-class A {
+class A
+{
   f(tainted: $Tainted<string>)
   {
     // This shouldn't give a warning (both are tainted)
@@ -379,7 +415,8 @@ class A {
  *
  * @flow
  */
-class A {
+class A
+{
   f(tainted: $Tainted<string>)
   {
     // This *should* give a warning.
@@ -407,7 +444,8 @@ class A {
  *
  * @flow
  */
-class A {
+class A
+{
   f(tainted: $Tainted<string>)
   {
     // The Tainted annotation should still flow.
@@ -495,17 +533,33 @@ function foo(x: $Tainted<number>)
   var should_fail: number = x * 42;
 }
 // Should cause an error.
-function foo1(x: $Tainted<{ f: number }>)
+function foo1(
+  x: $Tainted<
+  {
+    f: number
+  }>
+)
 {
   var ok: number = x.f;
 }
 // Should cause an error.
-function foo2(o: { f(y: number): number }, t: $Tainted<number>)
+function foo2(
+  o:
+  {
+    f(y: number): number
+  },
+  t: $Tainted<number>
+)
 {
   return o.f(t);
 }
 
-function foo3(x: $Tainted<{ f: number }>)
+function foo3(
+  x: $Tainted<
+  {
+    f: number
+  }>
+)
 {
   var also_tainted: $Tainted<number> = x.f;
 }

@@ -42,17 +42,25 @@ type D = { [key: string]: number };
 
 // used in ObjAssign.js
 //
-type ObjAssignT = { foo: string } & { bar: string };
+type ObjAssignT =
+{
+  foo: string
+} &
+{
+  bar: string
+};
 
 // used in pred.js
 //
-type ReadableStreamOptions = {
+type ReadableStreamOptions =
+{
   highWaterMark?: number,
   encoding?: ?string,
   objectMode?: boolean
 };
 
-type WritableStreamOptions = {
+type WritableStreamOptions =
+{
   highWaterMark?: number,
   decodeString?: boolean,
   objectMode?: boolean
@@ -60,15 +68,41 @@ type WritableStreamOptions = {
 
 // used in test_fun.js
 //
-type ObjA = { foo: number, bar: string };
-type ObjB = { baz: boolean };
+type ObjA =
+{
+  foo: number,
+  bar: string
+};
+type ObjB =
+{
+  baz: boolean
+};
 
 // used in test_obj.js
 //
-type A = { a: string } & { b: string };
-type B = { a: string, b: string };
+type A =
+{
+  a: string
+} &
+{
+  b: string
+};
+type B =
+{
+  a: string,
+  b: string
+};
 
-type C = { [key: string]: number } & { [key: string]: number };
-type D = { [key: string]: number };
+type C =
+{
+  [key: string]: number
+} &
+{
+  [key: string]: number
+};
+type D =
+{
+  [key: string]: number
+};
 
 `;

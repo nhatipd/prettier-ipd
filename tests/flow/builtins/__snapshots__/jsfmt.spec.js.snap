@@ -61,7 +61,8 @@ class Foo<T> {
 
 module.exports = Foo;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class Foo<T> {
+class Foo<T>
+{
   x: T;
   self(): Foo<T>
   {

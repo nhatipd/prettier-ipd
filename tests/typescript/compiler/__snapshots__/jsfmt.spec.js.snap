@@ -6,7 +6,8 @@ class C {
     "bar"() { }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   foo();
   bar() {}
 }
@@ -22,11 +23,13 @@ interface Q extends P { // Check assignability here. Any is assignable to {}
     p: any;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface P {
+interface P
+{
   p: {};
 }
 
-interface Q extends P {
+interface Q extends P
+{
   // Check assignability here. Any is assignable to {}
   p: any;
 }
@@ -68,7 +71,8 @@ var b = (<any>new a);
 var b = (<any>new a.b);
 var b = (<any>new a).b
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-﻿class a {
+﻿class a
+{
   static b: any;
 }
 
@@ -126,7 +130,8 @@ var ar = <any[]>null;
 
 var f = <(res: number) => void>null;
 
-declare class Point {
+declare class Point
+{
   x: number;
   y: number;
   add(dx: number, dy: number): Point;
@@ -134,7 +139,8 @@ declare class Point {
   constructor(x: number, y: number);
 }
 
-var p_cast = <Point>{
+var p_cast = <Point>
+{
   x: 0,
   y: 0,
   add: function(dx, dy)
@@ -170,17 +176,20 @@ values = values2;
 // Regression test for #1002
 // Before fix this code would cause infinite loop
 
-interface IObservable<T> {
+interface IObservable<T>
+{
   n: IObservable<T[]>; // Needed, must be T[]
 }
 
 // Needed
 interface ISubject<T> extends IObservable<T> {}
 
-interface Foo {
+interface Foo
+{
   x;
 }
-interface Bar {
+interface Bar
+{
   y;
 }
 
@@ -207,7 +216,8 @@ interface i2 {
     foo: (/**param help*/b: number) => string;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface i2 {
+interface i2
+{
   foo: (/**param help*/ b: number) => string;
 }
 
@@ -349,7 +359,8 @@ interface Foo {
     bar: number = 5;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface Foo {
+interface Foo
+{
   bar: number = 5;
 }
 
@@ -380,7 +391,8 @@ declare module "foo" {
 declare module "foo" {
   export var before: C;
 
-  export default class C {
+  export default class C
+  {
     method(): C;
   }
 
@@ -405,7 +417,8 @@ interface C {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // overloading on arity not allowed
-interface C {
+interface C
+{
   f<T>(): string;
   f<T, U>(): string;
 
@@ -450,7 +463,8 @@ namespace global {
 
 function foo(global: number) {}
 
-let obj = {
+let obj =
+{
   global: "123"
 };
 
@@ -466,11 +480,13 @@ class C {
     [x = 0]: string
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // These used to be indexers, now they are computed properties
-interface I {
+interface I
+{
   [x = ""]: string;
 }
 
-class C {
+class C
+{
   [x = 0]: string;
 }
 
@@ -499,21 +515,27 @@ const shouldFail: { important: boolean } = output.x.children;
 // Repro from #13351
 
 type Meta<T, A> = {
-  [P in keyof T]: {
+  [P in keyof T]:
+  {
     value: T[P];
     also: A;
     readonly children: Meta<T[P], A>;
   }
 };
 
-interface Input {
+interface Input
+{
   x: string;
   y: number;
 }
 
 declare const output: Meta<Input, boolean>;
 
-const shouldFail: { important: boolean } = output.x.children;
+const shouldFail:
+{
+  important: boolean;
+} =
+  output.x.children;
 
 `;
 
@@ -521,7 +543,8 @@ exports[`modifiersOnInterfaceIndexSignature1.ts - typescript-verify 1`] = `
 interface I {
   public [a: string]: number;
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface I {
+interface I
+{
   public [a: string]: number;
 }
 
@@ -778,24 +801,39 @@ namespace glo_M1_public {
 declare module "glo_M2_public" {
   export function f1();
   export class c1 {}
-  export var v1: { new (): c1 };
+  export var v1:
+  {
+    new (): c1;
+  };
   export var v2: c1;
 }
 
 declare module "use_glo_M1_public" {
   import use_glo_M1_public = glo_M1_public;
-  export var use_glo_M1_public_v1_public: { new (): use_glo_M1_public.c1 };
+  export var use_glo_M1_public_v1_public:
+  {
+    new (): use_glo_M1_public.c1;
+  };
   export var use_glo_M1_public_v2_public: typeof use_glo_M1_public;
   export var use_glo_M1_public_v3_public: () => use_glo_M1_public.c1;
-  var use_glo_M1_public_v1_private: { new (): use_glo_M1_public.c1 };
+  var use_glo_M1_public_v1_private:
+  {
+    new (): use_glo_M1_public.c1;
+  };
   var use_glo_M1_public_v2_private: typeof use_glo_M1_public;
   var use_glo_M1_public_v3_private: () => use_glo_M1_public.c1;
 
   import use_glo_M2_public = require("glo_M2_public");
-  export var use_glo_M2_public_v1_public: { new (): use_glo_M2_public.c1 };
+  export var use_glo_M2_public_v1_public:
+  {
+    new (): use_glo_M2_public.c1;
+  };
   export var use_glo_M2_public_v2_public: typeof use_glo_M2_public;
   export var use_glo_M2_public_v3_public: () => use_glo_M2_public.c1;
-  var use_glo_M2_public_v1_private: { new (): use_glo_M2_public.c1 };
+  var use_glo_M2_public_v1_private:
+  {
+    new (): use_glo_M2_public.c1;
+  };
   var use_glo_M2_public_v2_private: typeof use_glo_M2_public;
   var use_glo_M2_public_v3_private: () => use_glo_M2_public.c1;
 

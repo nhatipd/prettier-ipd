@@ -9,12 +9,14 @@ this.foo.get("bar")!.doThings().more();
 
 foo!.bar().baz().what();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const {
+const
+{
   somePropThatHasAReallyLongName,
   anotherPropThatHasALongName
 } = this.props.imReallySureAboutThis!;
 
-const {
+const
+{
   somePropThatHasAReallyLongName,
   anotherPropThatHasALongName
 } = this.props.imReallySureAboutThis!.anotherObject;

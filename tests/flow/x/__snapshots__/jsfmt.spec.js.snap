@@ -51,7 +51,8 @@ module.exports = XControllerURIBuilder;
  */
 
 // ...
-class XControllerURIBuilder {
+class XControllerURIBuilder
+{
   // ...
   getURI()
   {

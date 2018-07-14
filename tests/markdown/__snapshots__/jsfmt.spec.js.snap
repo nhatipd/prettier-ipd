@@ -1350,7 +1350,9 @@ $ yarn add --dev eslint-config-prettier
 
 \`\`\`json
 {
-  "extends": ["prettier"]
+  "extends": [
+    "prettier"
+  ]
 }
 \`\`\`
 
@@ -1375,7 +1377,10 @@ and add this config to your \`package.json\`:
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,json,css}": ["prettier --write", "git add"]
+    "*.{js,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
 \`\`\`
@@ -1431,7 +1436,10 @@ const prettier = require("prettier");
 provided to override the defaults.
 
 \`\`\`js
-prettier.format("foo ( );", { semi: false });
+prettier.format("foo ( );",
+{
+  semi: false
+});
 // -> "foo()"
 \`\`\`
 
@@ -1451,7 +1459,10 @@ The \`cursorOffset\` option should be provided, to specify where the cursor is.
 This option cannot be used with \`rangeStart\` and \`rangeEnd\`.
 
 \`\`\`js
-prettier.formatWithCursor(" 1", { cursorOffset: 2 });
+prettier.formatWithCursor(" 1",
+{
+  cursorOffset: 2
+});
 // -> { formatted: '1;\\n', cursorOffset: 1 }
 \`\`\`
 
@@ -1500,8 +1511,15 @@ function. The function signature of the parser function is:
 Prettier's built-in parsers are exposed as properties on the \`parsers\` argument.
 
 \`\`\`js
-prettier.format("lodash ( )", {
-  parser(text, { babylon })
+prettier.format("lodash ( )",
+{
+  parser(
+    text,
+
+    {
+      babylon
+    }
+  )
   {
     const ast = babylon(text);
     ast.program.body[0].expression.callee.name = "_";
@@ -1786,14 +1804,12 @@ JSON:
 \`\`\`json
 {
   "semi": false,
-  "overrides": [
-    {
-      "files": "*.test.js",
-      "options": {
-        "semi": true
-      }
+  "overrides": [{
+    "files": "*.test.js",
+    "options": {
+      "semi": true
     }
-  ]
+  }]
 }
 \`\`\`
 
@@ -1815,12 +1831,10 @@ To get prettier to format its own \`.prettierrc\` file, you can do:
 
 \`\`\`json
 {
-  "overrides": [
-    {
-      "files": ".prettierrc",
-      "options": { "parser": "json" }
-    }
-  ]
+  "overrides": [{
+    "files": ".prettierrc",
+    "options": { "parser": "json" }
+  }]
 }
 \`\`\`
 
@@ -3322,7 +3336,9 @@ $ yarn add --dev eslint-config-prettier
 
 \`\`\`json
 {
-  "extends": ["prettier"]
+  "extends": [
+    "prettier"
+  ]
 }
 \`\`\`
 
@@ -3347,7 +3363,10 @@ and add this config to your \`package.json\`:
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,json,css}": ["prettier --write", "git add"]
+    "*.{js,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
 \`\`\`
@@ -3403,7 +3422,10 @@ const prettier = require('prettier');
 provided to override the defaults.
 
 \`\`\`js
-prettier.format('foo ( );', { semi: false });
+prettier.format('foo ( );',
+{
+  semi: false
+});
 // -> "foo()"
 \`\`\`
 
@@ -3423,7 +3445,10 @@ The \`cursorOffset\` option should be provided, to specify where the cursor is.
 This option cannot be used with \`rangeStart\` and \`rangeEnd\`.
 
 \`\`\`js
-prettier.formatWithCursor(' 1', { cursorOffset: 2 });
+prettier.formatWithCursor(' 1',
+{
+  cursorOffset: 2
+});
 // -> { formatted: '1;\\n', cursorOffset: 1 }
 \`\`\`
 
@@ -3472,8 +3497,15 @@ function. The function signature of the parser function is:
 Prettier's built-in parsers are exposed as properties on the \`parsers\` argument.
 
 \`\`\`js
-prettier.format('lodash ( )', {
-  parser(text, { babylon })
+prettier.format('lodash ( )',
+{
+  parser(
+    text,
+
+    {
+      babylon
+    }
+  )
   {
     const ast = babylon(text);
     ast.program.body[0].expression.callee.name = '_';
@@ -3758,14 +3790,12 @@ JSON:
 \`\`\`json
 {
   "semi": false,
-  "overrides": [
-    {
-      "files": "*.test.js",
-      "options": {
-        "semi": true
-      }
+  "overrides": [{
+    "files": "*.test.js",
+    "options": {
+      "semi": true
     }
-  ]
+  }]
 }
 \`\`\`
 
@@ -3787,12 +3817,10 @@ To get prettier to format its own \`.prettierrc\` file, you can do:
 
 \`\`\`json
 {
-  "overrides": [
-    {
-      "files": ".prettierrc",
-      "options": { "parser": "json" }
-    }
-  ]
+  "overrides": [{
+    "files": ".prettierrc",
+    "options": { "parser": "json" }
+  }]
 }
 \`\`\`
 
@@ -4241,13 +4269,13 @@ This is a paragraph.
 - Green
 - Blue
 
++ Red
++ Green
++ Blue
+
 * Red
 * Green
 * Blue
-
-- Red
-- Green
-- Blue
 \`\`\`
 
 1.  Buy flour and salt
@@ -4255,9 +4283,9 @@ This is a paragraph.
 1.  Bake
 
 \`\`\`markdown
-1.  Buy flour and salt
-1.  Mix together with water
-1.  Bake
+1. Buy flour and salt
+1. Mix together with water
+1. Bake
 \`\`\`
 
 Paragraph:
@@ -4629,13 +4657,13 @@ This is a paragraph.
 - Green
 - Blue
 
++ Red
++ Green
++ Blue
+
 * Red
 * Green
 * Blue
-
-- Red
-- Green
-- Blue
 \`\`\`
 
 1.  Buy flour and salt
@@ -4643,9 +4671,9 @@ This is a paragraph.
 1.  Bake
 
 \`\`\`markdown
-1.  Buy flour and salt
-1.  Mix together with water
-1.  Bake
+1. Buy flour and salt
+1. Mix together with water
+1. Bake
 \`\`\`
 
 Paragraph:

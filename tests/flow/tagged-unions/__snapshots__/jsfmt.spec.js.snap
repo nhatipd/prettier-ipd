@@ -35,12 +35,14 @@ function bar(x: Bar): string {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-class Foo {
+class Foo
+{
   type: "foo";
   foo: string;
 }
 
-class Bar {
+class Bar
+{
   type: "bar";
   bar: string;
 }
@@ -121,7 +123,8 @@ declare interface ISystemData extends IDataBase
 
 declare type IData = IUserData | ISystemData;
 
-const data: IData = {
+const data: IData =
+{
   id: "",
   name: "",
   kind: "system"
@@ -182,7 +185,8 @@ declare interface ISystemData extends IDataBase
 
 declare type IData = IUserData | ISystemData;
 
-const data: IData = {
+const data: IData =
+{
   id: "",
   name: "",
   kind: "system"
@@ -229,18 +233,21 @@ if (data.kind === "user") {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-type DataBase = {
+type DataBase =
+{
   id: string,
   name: string
 };
 
-type UserData = {
+type UserData =
+{
   id: string,
   name: string,
   kind: "user"
 };
 
-type SystemData = {
+type SystemData =
+{
   id: string,
   name: string,
   kind: "system"
@@ -248,7 +255,8 @@ type SystemData = {
 
 declare type Data = UserData | SystemData;
 
-const data: Data = {
+const data: Data =
+{
   id: "",
   name: "",
   kind: "system"
@@ -295,18 +303,21 @@ if (data.kind === "system") {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-type DataBase = {
+type DataBase =
+{
   id: string,
   name: string
 };
 
-type UserData = {
+type UserData =
+{
   id: string,
   name: string,
   kind: "user"
 };
 
-type SystemData = {
+type SystemData =
+{
   id: string,
   name: string,
   kind: "system"
@@ -314,7 +325,8 @@ type SystemData = {
 
 declare type Data = UserData | SystemData;
 
-const data: Data = {
+const data: Data =
+{
   id: "",
   name: "",
   kind: "system"

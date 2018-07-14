@@ -50,7 +50,8 @@ if (m.bind(this)(x)) { }
 //    are currently not supported.) The original behavior
 //    (including \`havoc\`) should be retained.
 
-class C {
+class C
+{
   m()
   {
     return true;
@@ -67,14 +68,18 @@ class C {
 }
 
 declare var m: Function;
-const o = { a: 1 };
+const o =
+{
+  a: 1
+};
 
 if (m.bind(o))
 {
   o.a;
 }
 
-class D {
+class D
+{
   m: Function;
 
   n()
@@ -264,16 +269,21 @@ function f(_this: { m: ?Meeting }): string {
 // Sanity check:
 // - preserving \`havoc\` semantics
 
-type Meeting = {
+type Meeting =
+{
   organizer: ?Invitee,
   es: Array<Invitee>
 };
 
-type Invitee = {
+type Invitee =
+{
   fbid: number
 };
 
-function f(_this: { m: ?Meeting }): string
+function f(_this:
+{
+  m: ?Meeting
+}): string
 {
   if (!_this.m)
   {

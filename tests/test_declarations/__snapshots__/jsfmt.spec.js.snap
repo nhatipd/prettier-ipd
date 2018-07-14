@@ -280,7 +280,8 @@ describe.each\`
   \${11}        | \${1}     | \${222}
   \${1 - 1}     | \${2 + 2} | \${3333}
   \${2 + 1 + 2} | \${1111}  | \${3}
-\`("$a + $b", ({ a, b, expected }) => {
+\`("$a + $b", (
+{ a, b, expected }) => {
   test(\`returns \${expected}\`, () => {
     expect(a + b).toBe(expected);
   });
@@ -378,7 +379,8 @@ describe.each\`
   \${11}        | \${1}     | \${222}
   \${1 - 1}     | \${2 + 2} | \${3333}
   \${2 + 1 + 2} | \${1111}  | \${3}
-\`("$a + $b", ({ a, b, expected }) => {
+\`("$a + $b", (
+{ a, b, expected }) => {
   test(\`returns \${expected}\`, () => {
     expect(a + b).toBe(expected);
   });

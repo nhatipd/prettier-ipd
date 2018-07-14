@@ -124,7 +124,12 @@ interface E {
 declare class A
 {
   one: boolean;
-  two: { three: string } | number;
+  two:
+    |
+      {
+        three: string
+      }
+    | number;
 }
 
 // NOTE: Flow and Babylon both fail to apply ASI here
@@ -137,7 +142,12 @@ declare class A
 declare interface C
 {
   one: boolean;
-  two: { three: string } | number;
+  two:
+    |
+      {
+        three: string
+      }
+    | number;
 }
 
 // NOTE: Flow and Babylon both fail to apply ASI here
@@ -150,7 +160,12 @@ declare interface C
 interface E
 {
   one: boolean;
-  two: { three: string } | number;
+  two:
+    |
+      {
+        three: string
+      }
+    | number;
 }
 
 // NOTE: Flow and Babylon both fail to apply ASI here
@@ -205,7 +220,12 @@ interface E {
 declare class A
 {
   one: boolean;
-  two: { three: string } | number;
+  two:
+    |
+      {
+        three: string
+      }
+    | number;
 }
 
 // NOTE: Flow and Babylon both fail to apply ASI here
@@ -218,7 +238,12 @@ declare class A
 declare interface C
 {
   one: boolean;
-  two: { three: string } | number;
+  two:
+    |
+      {
+        three: string
+      }
+    | number;
 }
 
 // NOTE: Flow and Babylon both fail to apply ASI here
@@ -231,7 +256,12 @@ declare interface C
 interface E
 {
   one: boolean;
-  two: { three: string } | number;
+  two:
+    |
+      {
+        three: string
+      }
+    | number;
 }
 
 // NOTE: Flow and Babylon both fail to apply ASI here
@@ -286,7 +316,12 @@ interface E {
 declare class A
 {
   one: boolean;
-  two: { three: string } | number;
+  two:
+    |
+      {
+        three: string
+      }
+    | number;
 }
 
 // NOTE: Flow and Babylon both fail to apply ASI here
@@ -299,7 +334,12 @@ declare class A
 declare interface C
 {
   one: boolean;
-  two: { three: string } | number;
+  two:
+    |
+      {
+        three: string
+      }
+    | number;
 }
 
 // NOTE: Flow and Babylon both fail to apply ASI here
@@ -312,7 +352,12 @@ declare interface C
 interface E
 {
   one: boolean;
-  two: { three: string } | number;
+  two:
+    |
+      {
+        three: string
+      }
+    | number;
 }
 
 // NOTE: Flow and Babylon both fail to apply ASI here
@@ -571,9 +616,15 @@ x
 x
 ;(() => {})()
 x
-;({ a: 1 }.entries())
+;(
+{
+  a: 1
+}.entries())
 x
-;({ a: 1 }.entries())
+;(
+{
+  a: 1
+}.entries())
 x
 ;<Hello />
 x
@@ -596,19 +647,23 @@ class X {}
 //   x(){}
 // }
 
-class C {
+class C
+{
   get; // The semicolon *is* necessary
   x() {}
 }
-class C {
+class C
+{
   get = () => {} // The semicolon is *not* necessary
   x() {}
 }
-class C {
+class C
+{
   set; // The semicolon *is* necessary
   x() {}
 }
-class C {
+class C
+{
   set = () => {} // The semicolon is *not* necessary
   x() {}
 }
@@ -617,7 +672,8 @@ class C {
 
 if (true) (() => {})()
 
-class A {
+class A
+{
   a = 0;
   [b]() {}
 
@@ -656,16 +712,20 @@ class A {
 }
 
 // being first/last shouldn't break things
-class G {
+class G
+{
   x = 1
 }
-class G {
+class G
+{
   x() {}
 }
-class G {
+class G
+{
   *x() {}
 }
-class G {
+class G
+{
   [x] = 1
 }
 
@@ -915,9 +975,15 @@ x;
 x;
 (() => {})();
 x;
-({ a: 1 }.entries());
+(
+{
+  a: 1
+}.entries());
 x;
-({ a: 1 }.entries());
+(
+{
+  a: 1
+}.entries());
 x;
 <Hello />;
 x;
@@ -940,19 +1006,23 @@ class X {}
 //   x(){}
 // }
 
-class C {
+class C
+{
   get; // The semicolon *is* necessary
   x() {}
 }
-class C {
+class C
+{
   get = () => {}; // The semicolon is *not* necessary
   x() {}
 }
-class C {
+class C
+{
   set; // The semicolon *is* necessary
   x() {}
 }
-class C {
+class C
+{
   set = () => {}; // The semicolon is *not* necessary
   x() {}
 }
@@ -961,7 +1031,8 @@ class C {
 
 if (true) (() => {})();
 
-class A {
+class A
+{
   a = 0;
   [b]() {}
 
@@ -1000,16 +1071,20 @@ class A {
 }
 
 // being first/last shouldn't break things
-class G {
+class G
+{
   x = 1;
 }
-class G {
+class G
+{
   x() {}
 }
-class G {
+class G
+{
   *x() {}
 }
-class G {
+class G
+{
   [x] = 1;
 }
 
@@ -1259,9 +1334,15 @@ x
 x
 ;(() => {})()
 x
-;({ a: 1 }.entries())
+;(
+{
+  a: 1
+}.entries())
 x
-;({ a: 1 }.entries())
+;(
+{
+  a: 1
+}.entries())
 x
 ;<Hello />
 x
@@ -1284,19 +1365,23 @@ class X {}
 //   x(){}
 // }
 
-class C {
+class C
+{
   get; // The semicolon *is* necessary
   x() {}
 }
-class C {
+class C
+{
   get = () => {} // The semicolon is *not* necessary
   x() {}
 }
-class C {
+class C
+{
   set; // The semicolon *is* necessary
   x() {}
 }
-class C {
+class C
+{
   set = () => {} // The semicolon is *not* necessary
   x() {}
 }
@@ -1305,7 +1390,8 @@ class C {
 
 if (true) (() => {})()
 
-class A {
+class A
+{
   a = 0;
   [b]() {}
 
@@ -1344,16 +1430,20 @@ class A {
 }
 
 // being first/last shouldn't break things
-class G {
+class G
+{
   x = 1
 }
-class G {
+class G
+{
   x() {}
 }
-class G {
+class G
+{
   *x() {}
 }
-class G {
+class G
+{
   [x] = 1
 }
 

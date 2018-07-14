@@ -17,19 +17,23 @@ type B = {
     'string': "B";
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface I {
+interface I
+{
   string: "I";
 }
 
-type T = {
+type T =
+{
   string: "T";
 };
 
-interface A {
+interface A
+{
   string: "A";
 }
 
-type B = {
+type B =
+{
   string: "B";
 };
 
@@ -44,11 +48,13 @@ type T = {
     [Symbol.toStringTag]: "T";
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface I {
+interface I
+{
   [Symbol.toStringTag]: "I";
 }
 
-type T = {
+type T =
+{
   [Symbol.toStringTag]: "T";
 };
 

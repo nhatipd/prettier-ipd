@@ -10,13 +10,19 @@ module.exports = { C, E };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-class C {
+class C
+{
   x: C;
 }
-class E extends C {
+class E extends C
+{
   x: C;
 }
 
-module.exports = { C, E };
+module.exports =
+{
+  C,
+  E
+};
 
 `;

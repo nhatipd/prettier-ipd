@@ -1,23 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CLI --stdin-filepath works with --config-precedence cli-override (stdout) 1`] = `
-"let x: keyof Y = foo<typeof X>()
-"
-`;
+exports[`CLI --stdin-filepath works with --config-precedence cli-override (stdout) 1`] = `""`;
 
 exports[`CLI --stdin-filepath works with --config-precedence cli-override (write) 1`] = `Array []`;
 
-exports[`CLI --stdin-filepath works with --config-precedence file-override (stdout) 1`] = `
-"let x: keyof Y = foo<typeof X>();
-"
-`;
+exports[`CLI --stdin-filepath works with --config-precedence file-override (stdout) 1`] = `""`;
 
 exports[`CLI --stdin-filepath works with --config-precedence file-override (write) 1`] = `Array []`;
 
-exports[`CLI --stdin-filepath works with --config-precedence prefer-file (stdout) 1`] = `
-"let x: keyof Y = foo<typeof X>();
-"
-`;
+exports[`CLI --stdin-filepath works with --config-precedence prefer-file (stdout) 1`] = `""`;
 
 exports[`CLI --stdin-filepath works with --config-precedence prefer-file (write) 1`] = `Array []`;
 
@@ -56,7 +47,8 @@ exports[`CLI overrides gets ignored when config exists with --config-precedence 
 }
 \\"use strict\\";
 
-module.exports = {
+module.exports =
+{
         tabWidth: 8
 };
 "
@@ -73,7 +65,8 @@ exports[`CLI overrides take lower precedence with --config-precedence file-overr
 }
 \\"use strict\\";
 
-module.exports = {
+module.exports =
+{
         tabWidth: 8
 };
 "
@@ -125,7 +118,8 @@ function js()
 }
 \\"use strict\\";
 
-module.exports = {
+module.exports =
+{
         tabWidth: 8
 };
 function noConfigJs()
@@ -211,7 +205,8 @@ function js()
 }
 \\"use strict\\";
 
-module.exports = {
+module.exports =
+{
         tabWidth: 8
 };
 function noConfigJs()

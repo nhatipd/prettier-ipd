@@ -9,11 +9,13 @@ let a = {
    "a" /* comment */: () => 1
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-let a = {
+let a =
+{
   a /* comment */: () => 1
 };
 
-let a = {
+let a =
+{
   a /* comment */: () => 1
 };
 
@@ -38,23 +40,35 @@ o = {
   (({ id: type }: any): CreativeConcept)
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-o = {
+o =
+{
   name:
     // Comment A
     // Comment B
-    (({ id: type }: any): CreativeConcept)
+    ((
+    {
+      id: type
+    }: any): CreativeConcept)
 };
 
-o = {
+o =
+{
   // Comment A
   name:
     // Comment B
-    (({ id: type }: any): CreativeConcept)
+    ((
+    {
+      id: type
+    }: any): CreativeConcept)
 };
 
-o = {
+o =
+{
   // Comment B // Comment A
-  name: (({ id: type }: any): CreativeConcept)
+  name: ((
+  {
+    id: type
+  }: any): CreativeConcept)
 };
 
 `;

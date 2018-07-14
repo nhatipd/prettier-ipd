@@ -51,7 +51,10 @@ let tests = [
   function(document: Document)
   {
     const event = document.createEvent("CustomEvent");
-    event.initCustomEvent("butts", true, false, { nice: 42 });
+    event.initCustomEvent("butts", true, false,
+    {
+      nice: 42
+    });
   }
 ];
 
@@ -118,13 +121,29 @@ let tests = [
     element.scrollIntoView();
     element.scrollIntoView(false);
     element.scrollIntoView({});
-    element.scrollIntoView({ behavior: "smooth", block: "end" });
-    element.scrollIntoView({ block: "end" });
-    element.scrollIntoView({ behavior: "smooth" });
+    element.scrollIntoView(
+    {
+      behavior: "smooth",
+      block: "end"
+    });
+    element.scrollIntoView(
+    {
+      block: "end"
+    });
+    element.scrollIntoView(
+    {
+      behavior: "smooth"
+    });
 
     // fails
-    element.scrollIntoView({ behavior: "invalid" });
-    element.scrollIntoView({ block: "invalid" });
+    element.scrollIntoView(
+    {
+      behavior: "invalid"
+    });
+    element.scrollIntoView(
+    {
+      block: "invalid"
+    });
     element.scrollIntoView(1);
   }
 ];
@@ -182,13 +201,29 @@ let tests = [
     element.scrollIntoView();
     element.scrollIntoView(false);
     element.scrollIntoView({});
-    element.scrollIntoView({ behavior: "smooth", block: "end" });
-    element.scrollIntoView({ block: "end" });
-    element.scrollIntoView({ behavior: "smooth" });
+    element.scrollIntoView(
+    {
+      behavior: "smooth",
+      block: "end"
+    });
+    element.scrollIntoView(
+    {
+      block: "end"
+    });
+    element.scrollIntoView(
+    {
+      behavior: "smooth"
+    });
 
     // fails
-    element.scrollIntoView({ behavior: "invalid" });
-    element.scrollIntoView({ block: "invalid" });
+    element.scrollIntoView(
+    {
+      behavior: "invalid"
+    });
+    element.scrollIntoView(
+    {
+      block: "invalid"
+    });
     element.scrollIntoView(1);
   }
 ];
@@ -422,18 +457,24 @@ let tests = [
   // should work with Object.create()
   function()
   {
-    document.registerElement("custom-element", {
-      prototype: Object.create(HTMLElement.prototype, {
-        createdCallback: {
+    document.registerElement("custom-element",
+    {
+      prototype: Object.create(HTMLElement.prototype,
+      {
+        createdCallback:
+        {
           value: function createdCallback() {}
         },
-        attachedCallback: {
+        attachedCallback:
+        {
           value: function attachedCallback() {}
         },
-        detachedCallback: {
+        detachedCallback:
+        {
           value: function detachedCallback() {}
         },
-        attributeChangedCallback: {
+        attributeChangedCallback:
+        {
           value: function attributeChangedCallback(
             attributeLocalName,
             oldAttributeValue,
@@ -447,8 +488,10 @@ let tests = [
   // or with Object.assign()
   function()
   {
-    document.registerElement("custom-element", {
-      prototype: Object.assign(Object.create(HTMLElement.prototype), {
+    document.registerElement("custom-element",
+    {
+      prototype: Object.assign(Object.create(HTMLElement.prototype),
+      {
         createdCallback() {},
         attachedCallback() {},
         detachedCallback() {},
@@ -464,8 +507,10 @@ let tests = [
   // should complain about invalid callback parameters
   function()
   {
-    document.registerElement("custom-element", {
-      prototype: {
+    document.registerElement("custom-element",
+    {
+      prototype:
+      {
         attributeChangedCallback(
           localName: string,
           oldVal: string, // Error: This might be null
@@ -886,10 +931,12 @@ let tests = [
       node => NodeFilter.FILTER_ACCEPT
     ); // valid
     document.createNodeIterator(document.body, -1, node => "accept"); // invalid
-    document.createNodeIterator(document.body, -1, {
+    document.createNodeIterator(document.body, -1,
+    {
       acceptNode: node => NodeFilter.FILTER_ACCEPT
     }); // valid
-    document.createNodeIterator(document.body, -1, {
+    document.createNodeIterator(document.body, -1,
+    {
       acceptNode: node => "accept"
     }); // invalid
     document.createNodeIterator(document.body, -1, {}); // invalid
@@ -902,10 +949,12 @@ let tests = [
       node => NodeFilter.FILTER_ACCEPT
     ); // valid
     document.createTreeWalker(document.body, -1, node => "accept"); // invalid
-    document.createTreeWalker(document.body, -1, {
+    document.createTreeWalker(document.body, -1,
+    {
       acceptNode: node => NodeFilter.FILTER_ACCEPT
     }); // valid
-    document.createTreeWalker(document.body, -1, {
+    document.createTreeWalker(document.body, -1,
+    {
       acceptNode: node => "accept"
     }); // invalid
     document.createTreeWalker(document.body, -1, {}); // invalid

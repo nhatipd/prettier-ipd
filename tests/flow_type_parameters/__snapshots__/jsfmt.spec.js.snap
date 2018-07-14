@@ -5,7 +5,8 @@ class X {
 	a: B<> = SuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class X {
+class X
+{
   a: B<> = SuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong;
 }
 

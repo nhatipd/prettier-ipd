@@ -33,7 +33,8 @@ export class Environment2 extends GenericEnvironment<
   DifferentType2,
   DifferentType3,
   DifferentType4
-> {
+>
+{
   m() {}
 }
 

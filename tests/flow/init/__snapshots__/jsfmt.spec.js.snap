@@ -646,7 +646,11 @@ function for_post_init(b)
 // local use of annotated var in for-in is ok
 function for_in_scoped_init()
 {
-  for (var p in { a: 1, b: 2 })
+  for (var p in
+  {
+    a: 1,
+    b: 2
+  })
   {
     var x: number = 0;
     var y: number = x;
@@ -657,7 +661,11 @@ function for_in_scoped_init()
 function for_in_pre_init()
 {
   var y: number = x; // error
-  for (var p in { a: 1, b: 2 })
+  for (var p in
+  {
+    a: 1,
+    b: 2
+  })
   {
     var x: number = 0;
   }
@@ -666,7 +674,11 @@ function for_in_pre_init()
 // ...and after
 function for_in_post_init()
 {
-  for (var p in { a: 1, b: 2 })
+  for (var p in
+  {
+    a: 1,
+    b: 2
+  })
   {
     var x: number = 0;
   }
@@ -1056,7 +1068,13 @@ exports[`nullable-init.js - flow-verify 1`] = `
 var o: {x: ?number} = { x: null };
 var a: Array<?number> = [null,null];
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var o: { x: ?number } = { x: null };
+var o:
+{
+  x: ?number
+} =
+{
+  x: null
+};
 var a: Array<?number> = [null, null];
 
 `;

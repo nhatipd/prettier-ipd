@@ -37,14 +37,16 @@ class C5 {
 
 new C5().m = new C5().m - 42;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C1 {
+class C1
+{
   m() {}
   m() {}
 }
 
 new C1().m();
 
-class C2 {
+class C2
+{
   get m()
   {
     return 42;
@@ -54,14 +56,16 @@ class C2 {
 
 new C2().m();
 
-class C3 {
+class C3
+{
   set m(x) {}
   m() {}
 }
 
 new C3().m();
 
-class C4 {
+class C4
+{
   get m()
   {
     return 42;
@@ -71,7 +75,8 @@ class C4 {
 
 new C4().m = new C4().m - 42;
 
-class C5 {
+class C5
+{
   m() {}
   get m()
   {

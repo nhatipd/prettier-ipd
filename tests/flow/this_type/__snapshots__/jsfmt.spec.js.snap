@@ -13,7 +13,8 @@ const Thing = class Thing {
 /* @flow */
 // issue #1191
 
-const Thing = class Thing {
+const Thing = class Thing
+{
   zark()
   {
     this.x = 123; // error: property not found (must be declared)
@@ -80,7 +81,8 @@ class Misc {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Counterexample with contravariant this type
 
-class C {
+class C
+{
   next: this; // error (see below for exploit): \`this\` should only appear in
   // covariant positions
 }
@@ -91,23 +93,38 @@ var d = new D();
 (d: C).next = new C();
 (d.next: D); // sneaky
 
-class A {
+class A
+{
   foo<X: this>(that: X) {} // error: can't hide contravariance using a bound
 }
 
-class B extends A {
+class B extends A
+{
   foo<Y: this>(that: Y) {} // error (see above, catches hidden override)
 }
 
 // covariance checks on this type in invariant positions
 
-class Invariant {
-  out_object(): { _: this }
+class Invariant
+{
+  out_object():
   {
-    return { _: this };
+    _: this
   }
-  in_object(_: { _: this }) {}
-  inout_object: { _: this };
+  {
+    return
+    {
+      _: this
+    };
+  }
+  in_object(_:
+  {
+    _: this
+  }) {}
+  inout_object:
+  {
+    _: this
+  };
 
   out_array(): Array<this>
   {
@@ -119,7 +136,8 @@ class Invariant {
 
 // covariance checks on this type as type args
 
-class Misc {
+class Misc
+{
   // Set<X> has invariant X
   out_set(): Set<this>
   {
@@ -162,7 +180,8 @@ export class A2<X> {
 
 export class A3<X> extends A2<X> {}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export class A1 {
+export class A1
+{
   foo(): this
   {
     return this;
@@ -173,7 +192,8 @@ export class A1 {
   }
 }
 
-export class A2<X> {
+export class A2<X>
+{
   foo(): this
   {
     return this;
@@ -202,18 +222,21 @@ class ImplicitNumber extends Implicit { arg: number; }
 
 (new ImplicitNumber().val: string) // error: number ~> string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class Generic<X> {
+class Generic<X>
+{
   clone(): Generic<X>
   {
     return this;
   }
 }
 
-class Implicit<X> {
+class Implicit<X>
+{
   arg: X;
   val: X;
 }
-class ImplicitNumber extends Implicit {
+class ImplicitNumber extends Implicit
+{
   arg: number;
 }
 
@@ -251,7 +274,8 @@ import { A1 } from "./export";
 import type { A2 } from "./export";
 import { A3 } from "./export";
 
-class B1 extends A1 {
+class B1 extends A1
+{
   foo(): B1
   {
     return new B1();
@@ -260,7 +284,8 @@ class B1 extends A1 {
 
 (new B1().bar(): B1); // OK
 
-class B3<X> extends A3<X> {
+class B3<X> extends A3<X>
+{
   foo(): B3<X>
   {
     return new B3();
@@ -294,7 +319,8 @@ interface J
 {
   f(): J;
 }
-class C {
+class C
+{
   xs: Array<C>;
   f(): C
   {
@@ -328,7 +354,8 @@ class C {
 (new DoublyLinkedList().next(): DoublyLinkedList);
 
 var MiniImmutable = require("mini-immutable");
-class C {
+class C
+{
   map: MiniImmutable.OrderedMap<number, string>;
   update()
   {
@@ -346,7 +373,8 @@ class A {
   qux(): this { return this.bar(); } // OK (don't cascade errors)
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class A {
+class A
+{
   foo()
   {
     return this;
@@ -385,7 +413,8 @@ class B extends A { } // inherits statics method too, with \`this\` bound to the
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // supporting \`this\` type in statics
 
-class A {
+class A
+{
   static make(): this
   {
     // factory method, whose return type \`this\` (still)
@@ -479,7 +508,8 @@ class InheritOverride2 extends Override2 { }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Examples without \`this\` types (compare with examples below)
 
-class Base {
+class Base
+{
   foo()
   {
     return this;
@@ -501,7 +531,8 @@ class Base {
 
 class Inherit extends Base {}
 
-class Override extends Base {
+class Override extends Base
+{
   foo()
   {
     return this;
@@ -531,7 +562,8 @@ class InheritOverride extends Override {}
 
 // Examples with \`this\` types (compare with examples above)
 
-class Base2 {
+class Base2
+{
   foo(): this
   {
     return this;
@@ -556,7 +588,8 @@ class Base2 {
 
 class Inherit2 extends Base2 {}
 
-class Override2 extends Base2 {
+class Override2 extends Base2
+{
   foo(): this
   {
     return this;

@@ -128,16 +128,20 @@ undefined ===
     var x = 4;
   };
 
-class Base {
+class Base
+{
   private x;
 }
-class AnotherClass {
+class AnotherClass
+{
   private y;
 }
-class Derived1 extends Base {
+class Derived1 extends Base
+{
   private m;
 }
-class Derived2 extends Base {
+class Derived2 extends Base
+{
   private n;
 }
 function f8()
@@ -422,10 +426,12 @@ var n = (function()
 // ignoring return statements with no expressions.
 // A compile - time error occurs if no return statement expression has a type that is a supertype of each of the others.
 // FunctionExpression with no return type annotation with multiple return statements with subtype relation between returns
-class Base {
+class Base
+{
   private m;
 }
-class Derived extends Base {
+class Derived extends Base
+{
   private q;
 }
 var b: Base;
@@ -465,10 +471,20 @@ function opt1(n = 4)
 }
 
 // Function signature with optional parameter, no type annotation and initializer has initializer's widened type
-function opt2(n = { x: null, y: undefined })
+function opt2(
+  n =
+  {
+    x: null,
+    y: undefined
+  }
+)
 {
   var m = n;
-  var m: { x: any; y: any };
+  var m:
+  {
+    x: any;
+    y: any;
+  };
 }
 
 // Function signature with initializer referencing other parameter to the left
@@ -487,10 +503,12 @@ function f6(): number
   return;
 }
 
-class Derived2 extends Base {
+class Derived2 extends Base
+{
   private r: string;
 }
-class AnotherClass {
+class AnotherClass
+{
   private x;
 }
 // if f is a contextually typed function expression, the inferred return type is the union type
@@ -694,7 +712,8 @@ function defaultArgFunction(
 ) {}
 function defaultArgArrow(a = () => () => b, b = 3) {}
 
-class C {
+class C
+{
   constructor(a = b, b = 1) {}
   method(a = b, b = 1) {}
 }

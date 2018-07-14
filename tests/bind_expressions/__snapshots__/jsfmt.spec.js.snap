@@ -58,7 +58,8 @@ class X {
     return true;
   }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class X {
+class X
+{
   constructor()
   {
     this.testLongNameMethodAndSomethingElseLallala =
@@ -83,7 +84,8 @@ class X {
     return true;
   }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class X {
+class X
+{
   constructor()
   {
     this.testLongNameMethodAndSomethingElseLallala =
@@ -188,7 +190,8 @@ class X {
     return true;
   }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class X {
+class X
+{
   constructor()
   {
     this.shortMethod = ::this.shortMethod;
@@ -212,7 +215,8 @@ class X {
     return true;
   }
 }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class X {
+class X
+{
   constructor()
   {
     this.shortMethod = ::this.shortMethod

@@ -40,14 +40,33 @@ var { [key]: val2 } = { key: "val" };
 var { ["key"]: val3, ...spread } = { key: "val" };
 (spread.key: void); // error (gasp!) in general we don't know if a computed prop should be excluded from spread
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var { ["key"]: val1 } = { key: "val" };
+var
+{
+  ["key"]: val1
+} =
+{
+  key: "val"
+};
 (val1: void); // error: string ~> void
 
 var key: string = "key";
-var { [key]: val2 } = { key: "val" };
+var
+{
+  [key]: val2
+} =
+{
+  key: "val"
+};
 (val2: void); // ok (gasp!) by existing StrT -> ElemT rule
 
-var { ["key"]: val3, ...spread } = { key: "val" };
+var
+{
+  ["key"]: val3,
+  ...spread
+} =
+{
+  key: "val"
+};
 (spread.key: void); // error (gasp!) in general we don't know if a computed prop should be excluded from spread
 
 `;
@@ -138,7 +157,24 @@ function default_expr_scope({a, b = a}) {}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function obj_prop_fun({ p: { q = 0 } = { q: true } } = { p: { q: "" } })
+function obj_prop_fun(
+
+  {
+    p:
+    {
+      q = 0
+    } =
+    {
+      q: true
+    }
+  } =
+  {
+    p:
+    {
+      q: ""
+    }
+  }
+)
 {
   // errors:
   // * number  ~> void, from default on _.p.q
@@ -149,12 +185,38 @@ function obj_prop_fun({ p: { q = 0 } = { q: true } } = { p: { q: "" } })
 }
 obj_prop_fun(); // ok
 obj_prop_fun({}); // ok
-obj_prop_fun({ p: {} }); // ok
-obj_prop_fun({ p: { q: null } }); // ok, provides add'l lower bound
-
-function obj_prop_var(o = { p: { q: "" } })
+obj_prop_fun(
 {
-  var { p: { q = 0 } = { q: true } } = o;
+  p: {}
+}); // ok
+obj_prop_fun(
+{
+  p:
+  {
+    q: null
+  }
+}); // ok, provides add'l lower bound
+
+function obj_prop_var(
+  o =
+  {
+    p:
+    {
+      q: ""
+    }
+  }
+)
+{
+  var
+  {
+    p:
+    {
+      q = 0
+    } =
+    {
+      q: true
+    }
+  } = o;
   // errors:
   // * number  ~> void, from default on o.p.q
   // * boolean ~> void, from default on o.p
@@ -164,10 +226,39 @@ function obj_prop_var(o = { p: { q: "" } })
 }
 obj_prop_var(); // ok
 obj_prop_var({}); // ok
-obj_prop_var({ p: {} }); // ok
-obj_prop_var({ p: { q: null } }); // ok, provides add'l lower bound
+obj_prop_var(
+{
+  p: {}
+}); // ok
+obj_prop_var(
+{
+  p:
+  {
+    q: null
+  }
+}); // ok, provides add'l lower bound
 
-function obj_rest({ p: { q, ...o } = { q: 0, r: 0 } } = { p: { q: 0, r: "" } })
+function obj_rest(
+
+  {
+    p:
+    {
+      q,
+      ...o
+    } =
+    {
+      q: 0,
+      r: 0
+    }
+  } =
+  {
+    p:
+    {
+      q: 0,
+      r: ""
+    }
+  }
+)
 {
   // errors:
   // * number  ~> void, from default on _.p
@@ -177,15 +268,28 @@ function obj_rest({ p: { q, ...o } = { q: 0, r: 0 } } = { p: { q: 0, r: "" } })
 }
 obj_rest(); // ok
 obj_rest({}); // ok
-obj_rest({ p: {} }); // ok
-obj_rest({ p: { q: 0, r: null } });
+obj_rest(
+{
+  p: {}
+}); // ok
+obj_rest(
+{
+  p:
+  {
+    q: 0,
+    r: null
+  }
+});
 
 function obj_prop_annot(
+
   {
     p = true // error: boolean ~> string
-  }: {
+  }:
+  {
     p: string
-  } = {
+  } =
+  {
     p: 0 // error: number ~> string
   }
 )
@@ -193,38 +297,132 @@ function obj_prop_annot(
   (p: void); // error: string ~> void
 }
 
-var {
+var
+{
   p = true // error: boolean ~> string
-}: {
+}:
+{
   p: string
-} = {
+} =
+{
   p: 0 // error: number ~> string
 };
 (p: void); // error: string ~> void
 
-function obj_prop_err({ x: { y } } = null) {} // error: property \`x\` cannot be accessed on null
-function obj_rest_err({ ...o } = 0) {} // error: expected object instead of number
+function obj_prop_err(
+
+  {
+    x:
+    {
+      y
+    }
+  } = null
+) {} // error: property \`x\` cannot be accessed on null
+function obj_rest_err(
+
+  {
+    ...o
+  } = 0
+) {} // error: expected object instead of number
 function arr_elem_err([x] = null) {} // error: element 0 cannot be accessed on null
 function arr_rest_err([...a] = null) {} // error: expected array instead of null
 
-function gen<T>(x: T, { p = x }: { p: T }): T
+function gen<T>(
+  x: T,
+
+  {
+    p = x
+  }:
+  {
+    p: T
+  }
+): T
 {
   return p;
 }
 
 // Default values in destructuring unwrap optional types
-obj_prop_fun(({}: { p?: { q?: null } })); // ok
-obj_prop_var(({}: { p?: { q?: null } })); // ok
+obj_prop_fun(
+  ({}:
+  {
+    p?:
+    {
+      q?: null
+    }
+  })
+); // ok
+obj_prop_var(
+  ({}:
+  {
+    p?:
+    {
+      q?: null
+    }
+  })
+); // ok
 
 // union-like upper bounds preserved through destructuring
-function obj_prop_opt({ p }: { p?: string } = { p: 0 }) {}
-function obj_prop_maybe({ p }: { p: ?string } = { p: 0 }) {}
-function obj_prop_union({ p }: { p: number | string } = { p: true }) {}
+function obj_prop_opt(
+
+  {
+    p
+  }:
+  {
+    p?: string
+  } =
+  {
+    p: 0
+  }
+) {}
+function obj_prop_maybe(
+
+  {
+    p
+  }:
+  {
+    p: ?string
+  } =
+  {
+    p: 0
+  }
+) {}
+function obj_prop_union(
+
+  {
+    p
+  }:
+  {
+    p: number | string
+  } =
+  {
+    p: true
+  }
+) {}
 
 // TODO: union-of-objects upper bounds preserved through destructuring
-function obj_prop_union2({ p }: { p: number } | { p: string } = { p: true }) {}
+function obj_prop_union2(
 
-function default_expr_scope({ a, b = a }) {}
+  {
+    p
+  }:
+    |
+      {
+        p: number
+      }
+    |
+      {
+        p: string
+      } =
+  {
+    p: true
+  }
+) {}
+
+function default_expr_scope(
+{
+  a,
+  b = a
+}) {}
 
 `;
 
@@ -304,68 +502,184 @@ var cp2_err: string = others.childprop2; // Error: number ~> string
 declare var a: string;
 declare var b: string;
 declare var c: string;
-[{ a1: a, b }, c] = [{ a1: 0, b: 1 }, 2];
+[
 
-var { m } = { m: 0 };
-({ m } = { m: m });
+  {
+    a1: a,
+    b
+  },
+  c
+] = [
+
+  {
+    a1: 0,
+    b: 1
+  },
+  2
+];
+
+var
+{
+  m
+} =
+{
+  m: 0
+};
+(
+{
+  m
+} =
+{
+  m: m
+});
 
 var obj;
-({ n: obj.x } = { n: 3 });
+(
+{
+  n: obj.x
+} =
+{
+  n: 3
+});
 [obj.x] = ["foo"];
 
-function foo({ p, z: [r] })
+function foo(
+{
+  p,
+  z: [r]
+})
 {
   a = p;
   b = z;
   c = r;
 }
-foo({ p: 0, z: [1, 2] });
+foo(
+{
+  p: 0,
+  z: [1, 2]
+});
 
 [a, , b, ...c] = [0, 1, true, 3];
 
-function bar({ x, ...z })
+function bar(
 {
-  var o: { x: string, y: number } = z;
+  x,
+  ...z
+})
+{
+  var o:
+  {
+    x: string,
+    y: number
+  } = z;
 }
-bar({ x: "", y: 0 });
+bar(
+{
+  x: "",
+  y: 0
+});
 
-var spread = { y: "" };
-var extend: { x: number, y: string, z: boolean } = { x: 0, ...spread };
+var spread =
+{
+  y: ""
+};
+var extend:
+{
+  x: number,
+  y: string,
+  z: boolean
+} =
+{
+  x: 0,
+  ...spread
+};
 
-function qux(_: { a: number }) {}
-qux({ a: "" });
-function corge({ b }: { b: string }) {}
-corge({ b: 0 });
+function qux(_:
+{
+  a: number
+}) {}
+qux(
+{
+  a: ""
+});
+function corge(
+{
+  b
+}:
+{
+  b: string
+}) {}
+corge(
+{
+  b: 0
+});
 
-var { n }: { n: number } = { n: "" };
+var
+{
+  n
+}:
+{
+  n: number
+} =
+{
+  n: ""
+};
 
 function test()
 {
-  var { foo } = { bar: 123 }; // error on foo
-  var { bar, baz } = { bar: 123 }; // error on baz
+  var
+  {
+    foo
+  } =
+  {
+    bar: 123
+  }; // error on foo
+  var
+  {
+    bar,
+    baz
+  } =
+  {
+    bar: 123
+  }; // error on baz
 }
 
 function test()
 {
-  var x = { foo: "abc", bar: 123 };
-  var { foo, ...rest } = x;
+  var x =
+  {
+    foo: "abc",
+    bar: 123
+  };
+  var
+  {
+    foo,
+    ...rest
+  } = x;
   (x.baz: string); // error, baz doesn't exist
   (rest.baz: string); // no error, rest is unsealed
 }
 
 module.exports = corge;
 
-class Base {
+class Base
+{
   baseprop1: number;
   baseprop2: number;
 }
 
-class Child extends Base {
+class Child extends Base
+{
   childprop1: number;
   childprop2: number;
 }
 
-var { baseprop1, childprop1, ...others } = new Child();
+var
+{
+  baseprop1,
+  childprop1,
+  ...others
+} = new Child();
 
 var bp1: number = baseprop1;
 var bp1_err: string = baseprop1; // Error: number ~> string
@@ -384,7 +698,10 @@ var x;
 ({x} = null); // error, property \`x\` can not be accessed on \`null\`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var x;
-({ x } = null); // error, property \`x\` can not be accessed on \`null\`
+(
+{
+  x
+} = null); // error, property \`x\` can not be accessed on \`null\`
 
 `;
 
@@ -423,9 +740,21 @@ function arr_rest_pattern<X>([ _, ...a ] : ArrRest<X>) { // a: [X]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-function obj_pattern<X>({ prop }: { prop: X }) {} // prop: X
-type Prop<X> = { prop: X };
-function obj_pattern2<X>({ prop }: Prop<X>) {} // prop: X
+function obj_pattern<X>(
+{
+  prop
+}:
+{
+  prop: X
+}) {} // prop: X
+type Prop<X> =
+{
+  prop: X
+};
+function obj_pattern2<X>(
+{
+  prop
+}: Prop<X>) {} // prop: X
 
 function arr_pattern<X>([elem]: X[]) {} // elem: X
 type Elem<X> = X[];
@@ -437,13 +766,29 @@ function tup_pattern2<X>([proj]: Proj<X>) {} // proj: X
 
 function rest_pattern<X>(...r: X[]) {} // r: X[]
 
-function obj_rest_pattern<X>({ _, ...o }: { _: any, x: X })
+function obj_rest_pattern<X>(
+{
+  _,
+  ...o
+}:
+{
+  _: any,
+  x: X
+})
 {
   // o: { x: X }
   o.x;
 }
-type ObjRest<X> = { _: any, x: X };
-function obj_rest_pattern<X>({ _, ...o }: ObjRest<X>)
+type ObjRest<X> =
+{
+  _: any,
+  x: X
+};
+function obj_rest_pattern<X>(
+{
+  _,
+  ...o
+}: ObjRest<X>)
 {
   // o: { x: X }
   o.x;
@@ -504,7 +849,10 @@ foo = (i: number) => {
 // Also make sure that the following doesn't loop
 
 declare var o;
-var { x: o } = o;
+var
+{
+  x: o
+} = o;
 
 `;
 
@@ -542,10 +890,22 @@ var { "key": val } = { key: "val" };
 var { "with-dash": with_dash } = { "with-dash": "motivating example" };
 (with_dash: "motivating example"); // ok
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var { key: val } = { key: "val" };
+var
+{
+  key: val
+} =
+{
+  key: "val"
+};
 (val: void); // error: string ~> void
 
-var { "with-dash": with_dash } = { "with-dash": "motivating example" };
+var
+{
+  "with-dash": with_dash
+} =
+{
+  "with-dash": "motivating example"
+};
 (with_dash: "motivating example"); // ok
 
 `;
@@ -563,8 +923,15 @@ function bar() {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-var { x } = {
-  x: { foo: "foo" }
+var
+{
+  x
+} =
+{
+  x:
+  {
+    foo: "foo"
+  }
 };
 
 function bar()

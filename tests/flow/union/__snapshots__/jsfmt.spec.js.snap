@@ -47,17 +47,20 @@ export class ModOp extends BinaryExpression<ArithmeticExpression, ArithmeticExpr
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-export type Select = {
+export type Select =
+{
   expression: ArithmeticExpression,
   alias: ?string
 };
 
-export class Query {
+export class Query
+{
   _select: Array<Select> = [];
 
   select(expr: ArithmeticExpression): this
   {
-    this._select.push({
+    this._select.push(
+    {
       expression: expr,
       alias: ""
     });
@@ -115,7 +118,8 @@ class C {
     }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class C {
+class C
+{
   x: ?number | string;
   constructor()
   {
@@ -138,7 +142,8 @@ class D {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class C {}
 
-class D {
+class D
+{
   content: string | C;
   copyContent(content: C): string | C
   {
@@ -169,17 +174,59 @@ var l: Array<T> = [
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-type T = { type: "a", a: number } | { type: "b", b: string };
+type T =
+  |
+    {
+      type: "a",
+      a: number
+    }
+  |
+    {
+      type: "b",
+      b: string
+    };
 
 var l: Array<T> = [
-  { type: "a", a: 1 },
-  { type: "a", a: 2 },
-  { type: "a", a: 3 },
-  { type: "a", a: 4 },
-  { type: "b", b: "monkey" },
-  { type: "b", b: "gorilla" },
-  { type: "b", b: "giraffe" },
-  { type: "b", b: "penguin" }
+
+  {
+    type: "a",
+    a: 1
+  },
+
+  {
+    type: "a",
+    a: 2
+  },
+
+  {
+    type: "a",
+    a: 3
+  },
+
+  {
+    type: "a",
+    a: 4
+  },
+
+  {
+    type: "b",
+    b: "monkey"
+  },
+
+  {
+    type: "b",
+    b: "gorilla"
+  },
+
+  {
+    type: "b",
+    b: "giraffe"
+  },
+
+  {
+    type: "b",
+    b: "penguin"
+  }
 ];
 
 `;
@@ -291,7 +338,8 @@ class Tag_ {
     }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class Tag {
+class Tag
+{
   constructor()
   {
     var a1: Array<Tag | string> = [];
@@ -300,7 +348,8 @@ class Tag {
 }
 
 type Node = Tag_ | string;
-class Tag_ {
+class Tag_
+{
   constructor()
   {
     var a1: Array<Node> = [new Tag_()];
@@ -397,15 +446,18 @@ const u3 : union2 = {
  * @flow
  */
 
-type t1 = {
+type t1 =
+{
   p1: number
 };
 
-type t2 = {
+type t2 =
+{
   p2: number
 };
 
-type t3 = {
+type t3 =
+{
   p3: number
 };
 
@@ -413,16 +465,19 @@ type intersected = t1 & t2;
 type union = intersected | t3;
 type union2 = t3 | intersected;
 
-const u1: union = {
+const u1: union =
+{
   p3: 3
 };
 
-const u2: union = {
+const u2: union =
+{
   p1: 1,
   p2: 2
 };
 
-const u3: union2 = {
+const u3: union2 =
+{
   p1: 1,
   p2: 2
 };
@@ -5610,7 +5665,8 @@ type Data = {
  */
 "use strict";
 
-class SecurityCheckupTypedLogger {
+class SecurityCheckupTypedLogger
+{
   _data: Data;
 
   setError(value: ErrorCode)
@@ -10632,7 +10688,8 @@ type ErrorCode =
   | 4998
   | 4999;
 
-type Data = {
+type Data =
+{
   error?: ErrorCode
 };
 

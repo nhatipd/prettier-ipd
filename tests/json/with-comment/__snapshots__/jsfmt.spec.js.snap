@@ -3,28 +3,40 @@
 exports[`block-comment.json - json-verify 1`] = `
 {/*comment*/"K":"V"}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ /*comment*/ "K": "V" }
+
+{
+  /*comment*/ "K": "V"
+}
 
 `;
 
 exports[`block-comment.json - json-verify 2`] = `
 {/*comment*/"K":"V"}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ /*comment*/ "K": "V" }
+
+{
+  /*comment*/ "K": "V"
+}
 
 `;
 
 exports[`block-comment.json - json5-verify 1`] = `
 {/*comment*/"K":"V"}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ /*comment*/ K: "V" }
+
+{
+  /*comment*/ K: "V"
+}
 
 `;
 
 exports[`block-comment.json - json5-verify 2`] = `
 {/*comment*/"K":"V"}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ /*comment*/ K: "V" }
+
+{
+  /*comment*/ K: "V",
+}
 
 `;
 
@@ -34,6 +46,7 @@ exports[`line-comment.json - json-verify 1`] = `
   "K":"V"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 {
   //comment
   "K": "V"
@@ -47,6 +60,7 @@ exports[`line-comment.json - json-verify 2`] = `
   "K":"V"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 {
   //comment
   "K": "V"
@@ -60,6 +74,7 @@ exports[`line-comment.json - json5-verify 1`] = `
   "K":"V"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 {
   //comment
   K: "V"
@@ -73,6 +88,7 @@ exports[`line-comment.json - json5-verify 2`] = `
   "K":"V"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 {
   //comment
   K: "V",
@@ -85,7 +101,8 @@ exports[`top-block-comment.json - json-verify 1`] = `
   "foo": "bar"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/* comment */ {
+/* comment */
+{
   "foo": "bar"
 }
 
@@ -96,7 +113,8 @@ exports[`top-block-comment.json - json-verify 2`] = `
   "foo": "bar"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/* comment */ {
+/* comment */
+{
   "foo": "bar"
 }
 
@@ -107,7 +125,8 @@ exports[`top-block-comment.json - json5-verify 1`] = `
   "foo": "bar"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/* comment */ {
+/* comment */
+{
   foo: "bar"
 }
 
@@ -118,7 +137,8 @@ exports[`top-block-comment.json - json5-verify 2`] = `
   "foo": "bar"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/* comment */ {
+/* comment */
+{
   foo: "bar",
 }
 
@@ -133,6 +153,7 @@ exports[`top-line-comment.json - json-verify 1`] = `
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // comment 1
 // comment 2
+
 {
   "foo": "bar"
 }
@@ -148,6 +169,7 @@ exports[`top-line-comment.json - json-verify 2`] = `
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // comment 1
 // comment 2
+
 {
   "foo": "bar"
 }
@@ -163,6 +185,7 @@ exports[`top-line-comment.json - json5-verify 1`] = `
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // comment 1
 // comment 2
+
 {
   foo: "bar"
 }
@@ -178,6 +201,7 @@ exports[`top-line-comment.json - json5-verify 2`] = `
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // comment 1
 // comment 2
+
 {
   foo: "bar",
 }

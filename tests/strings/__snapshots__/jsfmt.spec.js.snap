@@ -244,6 +244,7 @@ pipe.write(
 // https://github.com/prettier/prettier/issues/1662#issue-230406820
 const content = \`
 const env = \${JSON.stringify(
+
   {
     assetsRootUrl: env.assetsRootUrl,
     env: env.env,
@@ -259,7 +260,8 @@ const env = \${JSON.stringify(
 
 // https://github.com/prettier/prettier/issues/821#issue-210557749
 f(
-  \`\${{
+  \`\${
+  {
     a: 4,
     b: 9
   }}\`
@@ -281,7 +283,14 @@ const makeBody = (store, assets, html) =>
         )};\`
       ]}
       content={[
-        { id: "app-container", dangerouslySetInnerHTML: { __html: html } }
+
+        {
+          id: "app-container",
+          dangerouslySetInnerHTML:
+          {
+            __html: html
+          }
+        }
       ]}
     />
   )}\`;
@@ -432,6 +441,7 @@ pipe.write(
 // https://github.com/prettier/prettier/issues/1662#issue-230406820
 const content = \`
 const env = \${JSON.stringify(
+
   {
     assetsRootUrl: env.assetsRootUrl,
     env: env.env,
@@ -447,7 +457,8 @@ const env = \${JSON.stringify(
 
 // https://github.com/prettier/prettier/issues/821#issue-210557749
 f(
-  \`\${{
+  \`\${
+  {
     a: 4,
     b: 9,
   }}\`,
@@ -469,7 +480,14 @@ const makeBody = (store, assets, html) =>
         )};\`,
       ]}
       content={[
-        { id: "app-container", dangerouslySetInnerHTML: { __html: html } },
+
+        {
+          id: "app-container",
+          dangerouslySetInnerHTML:
+          {
+            __html: html,
+          },
+        },
       ]}
     />,
   )}\`;

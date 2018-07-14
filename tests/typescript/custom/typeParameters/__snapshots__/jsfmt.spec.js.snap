@@ -15,7 +15,8 @@ interface Interface {
     >(): V;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface Interface {
+interface Interface
+{
   <
     Voila,
     InViewHumbleVaudevillianVeteran,

@@ -10,7 +10,8 @@ abstract class AbstractRule {
     filterFailures() {}
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-abstract class AbstractRule {
+abstract class AbstractRule
+{
   /**
    * @deprecated
    * Failures will be filtered based on \`tslint:disable\` comments by tslint.
@@ -73,17 +74,20 @@ export type WrappedFormUtils = {
   }): (node: React.ReactNode) => React.ReactNode;
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function x({
+function x(
+{
   x,
   y
-}: {
+}:
+{
   // Hello world.
   x: string;
   // Yoyo.
   y: string;
 }) {}
 
-export interface ApplicationEventData {
+export interface ApplicationEventData
+{
   registerBroadcastReceiver(
     onReceiveCallback: (
       context: any /* android.content.Context */,
@@ -92,10 +96,12 @@ export interface ApplicationEventData {
   ): void;
 }
 
-export type WrappedFormUtils = {
+export type WrappedFormUtils =
+{
   getFieldDecorator(
     id: string,
-    options?: {
+    options?:
+    {
       /** 子节点的值的属性，如 Checkbox 的是 'checked' */
       valuePropName?: string;
       /** 子节点的初始值，类型、可选值均由子节点决定 */
@@ -213,7 +219,8 @@ export class Point {
 
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export class Point {
+export class Point
+{
   /**
    * Does something.
    */

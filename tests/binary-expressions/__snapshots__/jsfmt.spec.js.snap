@@ -33,7 +33,8 @@ function f()
       entity &&
       entity.isInstallAvailable() &&
       !entity.isQueue() &&
-      entity.isDisabled() && {
+      entity.isDisabled() &&
+      {
         id: entity.id
       }
   );
@@ -270,7 +271,8 @@ const obj = {
   loaded: true
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-prevState = prevState || {
+prevState = prevState ||
+{
   catalogs: [],
   loadState: LOADED,
   opened: false,
@@ -279,7 +281,8 @@ prevState = prevState || {
 };
 
 prevState = prevState ||
-  defaultState || {
+  defaultState ||
+  {
     catalogs: [],
     loadState: LOADED,
     opened: false,
@@ -289,7 +292,8 @@ prevState = prevState ||
 
 prevState =
   prevState ||
-  (defaultState && {
+  (defaultState &&
+  {
     catalogs: [],
     loadState: LOADED,
     opened: false,
@@ -298,7 +302,8 @@ prevState =
   });
 
 prevState = prevState ||
-  (useDefault && defaultState) || {
+  (useDefault && defaultState) ||
+  {
     catalogs: [],
     loadState: LOADED,
     opened: false,
@@ -307,6 +312,7 @@ prevState = prevState ||
   };
 
 this.steps = steps || [
+
   {
     name: "mock-module",
     path: "/nux/mock-module"
@@ -316,6 +322,7 @@ this.steps = steps || [
 this.steps =
   steps ||
   (checkStep && [
+
     {
       name: "mock-module",
       path: "/nux/mock-module"
@@ -323,6 +330,7 @@ this.steps =
   ]);
 
 this.steps = (steps && checkStep) || [
+
   {
     name: "mock-module",
     path: "/nux/mock-module"
@@ -333,7 +341,8 @@ const create = () => {
   const result = doSomething();
   return (
     shouldReturn &&
-    result.ok && {
+    result.ok &&
+    {
       status: "ok",
       createdAt: result.createdAt,
       updatedAt: result.updatedAt
@@ -344,7 +353,8 @@ const create = () => {
 const create = () => {
   const result = doSomething();
   return (
-    (shouldReturn && result.ok && result) || {
+    (shouldReturn && result.ok && result) ||
+    {
       status: "ok",
       createdAt: result.createdAt,
       updatedAt: result.updatedAt
@@ -352,13 +362,16 @@ const create = () => {
   );
 };
 
-const obj = {
+const obj =
+{
   state: shouldHaveState &&
-    stateIsOK && {
+    stateIsOK &&
+    {
       loadState: LOADED,
       opened: false
     },
-  loadNext: (stateIsOK && hasNext) || {
+  loadNext: (stateIsOK && hasNext) ||
+  {
     skipNext: true
   },
   loaded: true
@@ -418,7 +431,8 @@ exports[`jsx_parent.js - flow-verify 1`] = `
 <div
   style={
     !isJellyfishEnabled &&
-    diffUpdateMessageInput && {
+    diffUpdateMessageInput &&
+    {
       fontSize: 14,
       color: "#fff"
     }

@@ -11,9 +11,15 @@ const Component2 = ({
   <Text>Test</Text>
 );
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const Component1 = ({ props }) => <Text>Test</Text>;
+const Component1 = (
+{
+  props
+}) => <Text>Test</Text>;
 
-const Component2 = ({ props }) => <Text>Test</Text>;
+const Component2 = (
+{
+  props
+}) => <Text>Test</Text>;
 
 `;
 
@@ -43,7 +49,10 @@ a = () => ({}.x);
 exports[`method.js - babylon-verify 1`] = `
 a = { f() {} }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-a = { f() {} };
+a =
+{
+  f() {}
+};
 
 `;
 
@@ -73,7 +82,10 @@ group(
     line,
     ")"
   ]),
-  { shouldBreak: true }
+
+  {
+    shouldBreak: true
+  }
 );
 
 `;
@@ -103,7 +115,8 @@ const blablah =
   "adlfasdklfkldsklfakldsfkladsfkadsfladsfa" +
   "dflkadfkladsfklkadlfkladlfkadklfjadlfdfdaf";
 
-const k = {
+const k =
+{
   blablah:
     "aldkfkladfskladklsfkladklfkaldfadfkdaf" +
     "adlfasdklfkldsklfakldsfkladsfkadsfladsfa" +
@@ -113,7 +126,8 @@ const k = {
 somethingThatsAReallyLongPropName =
   this.props.cardType === AwesomizerCardEnum.SEEFIRST;
 
-const o = {
+const o =
+{
   somethingThatsAReallyLongPropName:
     this.props.cardType === AwesomizerCardEnum.SEEFIRST
 };

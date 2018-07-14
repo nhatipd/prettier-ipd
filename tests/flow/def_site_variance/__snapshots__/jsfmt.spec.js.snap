@@ -33,7 +33,8 @@ class PropVariance<+Out,-In> {
   con_dict2: {-[k:string]: In}; // ok
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class Variance<+Out, -In> {
+class Variance<+Out, -In>
+{
   foo(x: Out): Out
   {
     return x;
@@ -53,7 +54,8 @@ function subtyping(v1: Variance<A, B>, v2: Variance<B, A>)
   (v2: Variance<A, B>); // OK for both targs (B ~> A)
 }
 
-class PropVariance<+Out, -In> {
+class PropVariance<+Out, -In>
+{
   inv1: Out; // error
   inv2: In; // error
   -co1: Out; // error
@@ -61,12 +63,30 @@ class PropVariance<+Out, -In> {
   +con1: Out; // ok
   +con2: In; // error
 
-  inv_dict1: { [k: string]: Out }; // error
-  inv_dict2: { [k: string]: In }; // error
-  co_dict1: { +[k: string]: Out }; // ok
-  co_dict2: { +[k: string]: In }; // error
-  con_dict1: { -[k: string]: Out }; // error
-  con_dict2: { -[k: string]: In }; // ok
+  inv_dict1:
+  {
+    [k: string]: Out
+  }; // error
+  inv_dict2:
+  {
+    [k: string]: In
+  }; // error
+  co_dict1:
+  {
+    +[k: string]: Out
+  }; // ok
+  co_dict2:
+  {
+    +[k: string]: In
+  }; // error
+  con_dict1:
+  {
+    -[k: string]: Out
+  }; // error
+  con_dict2:
+  {
+    -[k: string]: In
+  }; // ok
 }
 
 `;

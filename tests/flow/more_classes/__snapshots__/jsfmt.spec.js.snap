@@ -26,7 +26,8 @@ module.exports = Bar;
 
 var Qux = require("Qux");
 
-class Bar {
+class Bar
+{
   y: number;
   self: Bar;
   constructor(y: number)
@@ -79,7 +80,8 @@ module.exports = Foo;
 var Bar = require("Bar");
 var Qux = require("Qux");
 
-class Foo extends Qux {
+class Foo extends Qux
+{
   x: string;
   constructor(x: string)
   {
@@ -121,7 +123,8 @@ module.exports = Qux;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @providesModule Qux */
 
-class Qux {
+class Qux
+{
   w: number;
 
   qux()
