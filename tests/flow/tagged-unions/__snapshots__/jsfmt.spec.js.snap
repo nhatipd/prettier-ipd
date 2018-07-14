@@ -103,16 +103,19 @@ if (data.kind === "user") {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-declare interface IDataBase {
+declare interface IDataBase
+{
   id: string;
   name: string;
 }
 
-declare interface IUserData extends IDataBase {
+declare interface IUserData extends IDataBase
+{
   kind: "user";
 }
 
-declare interface ISystemData extends IDataBase {
+declare interface ISystemData extends IDataBase
+{
   kind: "system";
 }
 
@@ -161,16 +164,19 @@ if (data.kind === "system") {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-declare interface IDataBase {
+declare interface IDataBase
+{
   id: string;
   name: string;
 }
 
-declare interface IUserData extends IDataBase {
+declare interface IUserData extends IDataBase
+{
   kind: "user";
 }
 
-declare interface ISystemData extends IDataBase {
+declare interface ISystemData extends IDataBase
+{
   kind: "system";
 }
 

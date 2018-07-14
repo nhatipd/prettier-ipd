@@ -206,7 +206,8 @@ foo.propOverriddenWithSetter = 123; // Error number ~> string
 
 var z: number = 123;
 
-declare class Foo {
+declare class Foo
+{
   get goodGetterWithAnnotation(): number;
   set goodSetterWithAnnotation(x: number): void;
 

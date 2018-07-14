@@ -1111,6 +1111,12 @@ function printPathNoParens(path, options, print, args) {
     case "TSTypeLiteral": {
       const isTypeAnnotation = n.type === "ObjectTypeAnnotation";
       const parent = path.getParentNode(0);
+      const canBracketCurlyBreak =
+        parent !== null &&
+        (parent.type === "ClassDeclaration" ||
+        parent.type === "InterfaceDeclaration" ||
+        parent.type === "DeclareInterface" ||
+        parent.type === "DeclareClass");
       const shouldBreak =
         n.type === "TSInterfaceBody" ||
         (n.type === "ObjectPattern" &&
@@ -1219,6 +1225,7 @@ function printPathNoParens(path, options, print, args) {
         );
       } else {
         content = concat([
+          canBracketCurlyBreak ? hardline : "",
           leftBrace,
           indent(
             concat([options.bracketSpacing ? line : softline, concat(props)])

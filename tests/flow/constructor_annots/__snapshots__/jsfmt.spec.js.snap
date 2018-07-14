@@ -41,10 +41,12 @@ Foo.prototype = {
 exports.Foo = Foo;
 
 // so you want to type Foo, by declaring it as a class
-interface IFooPrototype {
+interface IFooPrototype
+{
   m: () => number;
 }
-interface IFoo extends IFooPrototype {
+interface IFoo extends IFooPrototype
+{
   x: boolean; // error, should have declared x: number instead
   static(): void;
   constructor(): void;

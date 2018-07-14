@@ -126,11 +126,13 @@ type MySubobject = { y: number } & MyObject; // no error
 
 // arity error in interface extends
 
-interface MyInterface<T> {
+interface MyInterface<T>
+{
   x: T;
 }
 
-interface MySubinterface extends MyInterface {
+interface MySubinterface extends MyInterface
+{
   // no error
   y: number;
 }

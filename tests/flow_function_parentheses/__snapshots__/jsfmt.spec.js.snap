@@ -123,15 +123,24 @@ type T = { method: a => void };
 
 type T = { method(a): void };
 
-declare class X { method(a): void }
+declare class X
+{
+  method(a): void;
+}
 
 declare function f(a): void;
 
 var f: a => void;
 
-interface F { m(string): number }
+interface F
+{
+  m(string): number;
+}
 
-interface F { m: string => number }
+interface F
+{
+  m: string => number;
+}
 
 function f(o: { f: string => void }) {}
 
@@ -151,7 +160,8 @@ class X {
   ) {}
 }
 
-interface F {
+interface F
+{
   ideConnectionFactoryLongLongLong: child_process$ChildProcess => FlowIDEConnection;
 }
 
@@ -246,15 +256,24 @@ type T = { method: a => void };
 
 type T = { method(a): void };
 
-declare class X { method(a): void }
+declare class X
+{
+  method(a): void;
+}
 
 declare function f(a): void;
 
 var f: a => void;
 
-interface F { m(string): number }
+interface F
+{
+  m(string): number;
+}
 
-interface F { m: string => number }
+interface F
+{
+  m: string => number;
+}
 
 function f(o: { f: string => void }) {}
 
@@ -274,7 +293,8 @@ class X {
   ) {}
 }
 
-interface F {
+interface F
+{
   ideConnectionFactoryLongLongLong: child_process$ChildProcess => FlowIDEConnection;
 }
 
@@ -369,15 +389,24 @@ type T = { method: (a) => void };
 
 type T = { method(a): void };
 
-declare class X { method(a): void }
+declare class X
+{
+  method(a): void;
+}
 
 declare function f(a): void;
 
 var f: (a) => void;
 
-interface F { m(string): number }
+interface F
+{
+  m(string): number;
+}
 
-interface F { m: (string) => number }
+interface F
+{
+  m: (string) => number;
+}
 
 function f(o: { f: (string) => void }) {}
 
@@ -397,7 +426,8 @@ class X {
   ) {}
 }
 
-interface F {
+interface F
+{
   ideConnectionFactoryLongLongLong: (child_process$ChildProcess) => FlowIDEConnection;
 }
 

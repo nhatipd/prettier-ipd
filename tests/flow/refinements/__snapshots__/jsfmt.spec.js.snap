@@ -479,7 +479,8 @@ function foo2(x: ?Class<Foo>): string {
   return x && new x().foo || "";
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class Foo {
+declare class Foo
+{
   foo: string;
 }
 

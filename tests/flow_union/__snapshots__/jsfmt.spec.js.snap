@@ -28,7 +28,8 @@ export function aPrettyLongFunctionE(aRatherLongParameterName: Array<{
   __id: string,
 } | null> | null | void): string[] {}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface RelayProps {
+interface RelayProps
+{
   articles:
     | Array<{
         __id: string
@@ -38,7 +39,8 @@ interface RelayProps {
     | 1;
 }
 
-interface RelayProps {
+interface RelayProps
+{
   articles: Array<{
     __id: string
   } | null> | null | void;

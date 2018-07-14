@@ -77,7 +77,8 @@ d.x = ""; // error, string ~/~ number (but property x is found)
 
 module.exports = D;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class D {
+declare class D
+{
   constructor(): { x: number }; // OK
   y: any;
 }

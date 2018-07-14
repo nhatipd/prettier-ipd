@@ -48,7 +48,8 @@ foo(
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-declare class Bar<K> {
+declare class Bar<K>
+{
   update<K_>(updater: (value: this) => Bar<K_>): Bar<K_>;
 }
 
@@ -84,12 +85,14 @@ outer.set(ImmBox(inner));
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @flow
 
-declare class ImmBox<T> {
+declare class ImmBox<T>
+{
   static <U>(x: any): ImmBox<U>;
   static (x: any): any;
 }
 
-declare class Box<T> {
+declare class Box<T>
+{
   constructor(x: T): void;
   set(value: T): void;
   get(): T;

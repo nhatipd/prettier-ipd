@@ -91,7 +91,8 @@ async function f() {
   }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare interface File {
+declare interface File
+{
   readLine(): Promise<string>;
   close(): void;
   EOF: boolean;

@@ -320,11 +320,13 @@ declare function doStuff(x: $Tainted<any>): void;
 declare var fakeDocument: FakeDocument;
 declare var fakeLocation: FakeLocation;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class FakeLocation {
+declare class FakeLocation
+{
   assign(url: string): void;
 }
 
-declare class FakeDocument {
+declare class FakeDocument
+{
   location: FakeLocation;
 }
 

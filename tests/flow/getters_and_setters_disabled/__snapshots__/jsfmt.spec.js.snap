@@ -60,7 +60,8 @@ type T = {
   c: 10
 };
 
-declare class Foo {
+declare class Foo
+{
   get a(): number;
   set b(x: number): void;
   c: 10;

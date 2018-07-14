@@ -1414,7 +1414,8 @@ function foo(c: C<number>) {
 
 // annotations
 
-declare class C<X> {
+declare class C<X>
+{
   get(): X;
 }
 
@@ -1462,7 +1463,8 @@ function foo<X>(target: EventTarget)
   target.addEventListener("click", e => {});
 }
 
-declare class EventTarget {
+declare class EventTarget
+{
   addEventListener(type: "foo", listener: KeyboardEventHandler): void;
   addEventListener(type: string, listener: EventHandler): void;
 }
@@ -1562,7 +1564,8 @@ new C().m(f());
 
 // method overloads
 
-declare class C {
+declare class C
+{
   m(x: number): void;
   m(x: string): void;
 }
@@ -1599,7 +1602,8 @@ function m<X>()
   return new D();
 }
 
-declare class D {
+declare class D
+{
   constructor(_: void): void;
   constructor(_: null): void;
 }
@@ -1797,7 +1801,8 @@ declare class D extends C {
 
 // scaling test for full type resolution
 
-declare class C {
+declare class C
+{
   addListener(event: string, listener: Function): C;
   emit(event: string, ...args: Array<any>): boolean;
   listeners(event: string): Array<Function>;
@@ -1809,7 +1814,8 @@ declare class C {
   setMaxListeners(n: number): void;
 }
 
-declare class D extends C {
+declare class D extends C
+{
   listen(
     port: number,
     hostname?: string,
@@ -1896,7 +1902,8 @@ declare var y: T;
 
 (foo(y): T);
 
-declare class Record {
+declare class Record
+{
   set(x: "foo", y: number): void;
   set(x: "bar", y: string): void;
 }
@@ -2010,7 +2017,8 @@ class C {
 
 type Row = { x: string };
 
-declare class D<T> {
+declare class D<T>
+{
   reduce(
     callbackfn: (previousValue: T, currentValue: T) => T,
     initialValue: void
@@ -2102,11 +2110,13 @@ function foo(): ImmutableMap<string, boolean> {
 
 interface SomeIterator<T> {}
 
-interface SomeIterable<T> {
+interface SomeIterable<T>
+{
   it(): SomeIterator<T>;
 }
 
-declare class SomeMap<K, V> {
+declare class SomeMap<K, V>
+{
   it(): SomeIterator<[K, V]>;
   set(k: K, v: V): void;
 }

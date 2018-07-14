@@ -121,7 +121,8 @@ interface E {
 //     | number
 // }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class A {
+declare class A
+{
   one: boolean;
   two: { three: string } | number;
 }
@@ -133,7 +134,8 @@ declare class A {
 //     | number
 // }
 
-declare interface C {
+declare interface C
+{
   one: boolean;
   two: { three: string } | number;
 }
@@ -145,7 +147,8 @@ declare interface C {
 //     | number
 // }
 
-interface E {
+interface E
+{
   one: boolean;
   two: { three: string } | number;
 }
@@ -199,7 +202,8 @@ interface E {
 //     | number
 // }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class A {
+declare class A
+{
   one: boolean;
   two: { three: string } | number;
 }
@@ -211,7 +215,8 @@ declare class A {
 //     | number
 // }
 
-declare interface C {
+declare interface C
+{
   one: boolean;
   two: { three: string } | number;
 }
@@ -223,7 +228,8 @@ declare interface C {
 //     | number
 // }
 
-interface E {
+interface E
+{
   one: boolean;
   two: { three: string } | number;
 }
@@ -277,7 +283,8 @@ interface E {
 //     | number
 // }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class A {
+declare class A
+{
   one: boolean;
   two: { three: string } | number;
 }
@@ -289,7 +296,8 @@ declare class A {
 //     | number
 // }
 
-declare interface C {
+declare interface C
+{
   one: boolean;
   two: { three: string } | number;
 }
@@ -301,7 +309,8 @@ declare interface C {
 //     | number
 // }
 
-interface E {
+interface E
+{
   one: boolean;
   two: { three: string } | number;
 }

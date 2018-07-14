@@ -56,7 +56,8 @@ foo(Boolean);
 var dict: { [k: string]: any } = {};
 dict(); // error, callable signature not found
 
-interface ICall {
+interface ICall
+{
   (x: string): void;
 }
 declare var icall: ICall;
