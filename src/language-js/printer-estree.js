@@ -1209,6 +1209,7 @@ function printPathNoParens(path, options, print, args) {
 
         content = group(
           concat([
+            hardline,
             leftBrace,
             comments.printDanglingComments(path, options),
             softline,
