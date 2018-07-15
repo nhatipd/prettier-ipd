@@ -75,8 +75,7 @@ class Readable extends events.EventEmitter implements NodeJS_ReadableStream {}
 class InMemoryAppender extends log4javascript.Appender
   implements ICachedLogMessageProvider {}
 
-class Foo extends Immutable.Record(
-{
+class Foo extends Immutable.Record({
   ipaddress: ""
 })
 {
@@ -162,8 +161,7 @@ class C
   name /*comment*/() {}
 }
 
-(
-{
+({
   name /*comment*/() {}
 });
 
@@ -203,8 +201,7 @@ class B
   someInstanceProperty =
     this.props.foofoofoofoofoofoo && this.props.barbarbarbar;
 
-  someInstanceProperty2 =
-  {
+  someInstanceProperty2 = {
     foo: this.props.foofoofoofoofoofoo && this.props.barbarbarbar
   };
 

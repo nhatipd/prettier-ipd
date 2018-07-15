@@ -80,8 +80,7 @@ class C
 
 // Objects
 
-const o =
-{
+const o = {
   foo(): number
   {
     return 0;

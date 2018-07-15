@@ -21,8 +21,7 @@ export class Environment2 extends GenericEnvironment<
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export interface Environment1
-  extends GenericEnvironment<SomeType, AnotherType, YetAnotherType>
-{
+  extends GenericEnvironment<SomeType, AnotherType, YetAnotherType> {
   m(): void;
 }
 export class Environment2 extends GenericEnvironment<
@@ -47,10 +46,7 @@ declare module X {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 declare module X
 {
-  declare interface Y
-  {
-    x: number;
-  }
+  declare interface Y { x: number }
 }
 
 `;

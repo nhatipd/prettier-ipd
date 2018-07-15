@@ -48,36 +48,19 @@ function B()
 var a: A = new B(); // OK (returns new A)
 
 // type applications should be applied before deciding if object-like
-type C<T> =
-{
-  x: T
-};
+type C<T> = { x: T };
 function makeC<T>(x: T): C<T>
 {
-  return
-  {
-    x
-  };
+  return { x };
 }
 (new makeC("x"): C<string>); // normally you wouldn't use \`new\`, but you can
 
 // unions should be split before deciding if object-like
-function makeUnion():
-  | number
-  |
-    {
-      x: string
-    }
+function makeUnion(): number | { x: string }
 {
-  return
-  {
-    x: "x"
-  };
+  return { x: "x" };
 }
-(new makeUnion():
-{
-  x: string
-}); // error: \`number\` returns {}, missing prop x
+(new makeUnion(): { x: string }); // error: \`number\` returns {}, missing prop x
 
 `;
 
@@ -94,12 +77,8 @@ d.x = ""; // error, string ~/~ number (but property x is found)
 
 module.exports = D;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class D
-{
-  constructor():
-  {
-    x: number
-  }; // OK
+declare class D {
+  constructor(): { x: number }; // OK
   y: any;
 }
 

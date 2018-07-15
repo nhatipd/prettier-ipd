@@ -19,10 +19,6 @@ class E extends C
   x: C;
 }
 
-module.exports =
-{
-  C,
-  E
-};
+module.exports = { C, E };
 
 `;

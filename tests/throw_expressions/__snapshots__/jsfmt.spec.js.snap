@@ -21,8 +21,7 @@ class Product {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function save(filename = throw new TypeError("Argument required")) {}
 
-lint(ast,
-{
+lint(ast, {
   with: () => throw new Error("avoid using 'with' statements.")
 });
 

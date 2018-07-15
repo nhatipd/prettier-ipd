@@ -64,19 +64,12 @@ var x2: number = "".match(/pattern/)[0];
 var x3: string = "".replace(/pattern/, "...");
 var x4: number = "".split(/pattern/)[0];
 
-declare class C
-{
+declare class C {
   foo(x: number): number;
   foo(x: string): string;
 
-  bar(x:
-  {
-    a: number
-  }): number;
-  bar(x:
-  {
-    a: string
-  }): string;
+  bar(x: { a: number }): number;
+  bar(x: { a: string }): string;
 }
 
 var a = new C();
@@ -85,26 +78,11 @@ a.foo(0); // ok
 a.foo("hey"); // ok
 a.foo(true); // error, function cannot be called on intersection type
 
-a.bar(
-{
-  a: 0
-}); // ok
-a.bar(
-{
-  a: "hey"
-}); // ok
-a.bar(
-{
-  a: true
-}); // error, function cannot be called on intersection type
+a.bar({ a: 0 }); // ok
+a.bar({ a: "hey" }); // ok
+a.bar({ a: true }); // error, function cannot be called on intersection type
 
-declare var x:
-{
-  a: boolean
-} &
-{
-  b: string
-};
+declare var x: { a: boolean } & { b: string };
 
 a.bar(x); // error with nested intersection info (outer for bar, inner for x)
 
@@ -152,8 +130,7 @@ var foo = new Foo;
 (foo.bar('hmm'): number); // OK
 (foo.bar('hmmm'): number); // error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class Foo
-{
+declare class Foo {
   bar(x: "hmm"): number;
   bar(x: string): string;
 }
@@ -205,10 +182,7 @@ g(x_g); // ok
 // optional
 declare function h(x: void): void;
 declare function h(x: string): void;
-declare var x_h:
-{
-  p?: string
-};
+declare var x_h: { p?: string };
 h(x_h.p); // ok
 
 `;

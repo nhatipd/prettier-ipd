@@ -12,8 +12,7 @@ var X = {
   }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var X =
-{
+var X = {
   perform: function<
     A,
     B,
@@ -40,8 +39,7 @@ var X = {
   }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var X =
-{
+var X = {
   perform: function<
     A,
     B,
@@ -78,14 +76,8 @@ exports[`interface.js - flow-verify 1`] = `
 interface A { 'C': string; }
 interface B { "D": boolean; }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface A
-{
-  C: string;
-}
-interface B
-{
-  D: boolean;
-}
+interface A { C: string }
+interface B { D: boolean }
 
 `;
 
@@ -93,14 +85,8 @@ exports[`interface.js - flow-verify 2`] = `
 interface A { 'C': string; }
 interface B { "D": boolean; }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface A
-{
-  C: string;
-}
-interface B
-{
-  D: boolean;
-}
+interface A { C: string }
+interface B { D: boolean }
 
 `;
 
@@ -118,8 +104,7 @@ function foo(): Promise<?boolean> {}
 function formatEntireFile(
   fileVersion: FileVersion,
   range: atom$Range
-): Promise<?
-{
+): Promise<?{
   newCursor?: number,
   formatted: string
 }> {}
@@ -142,8 +127,7 @@ function foo(): Promise<?boolean> {}
 function formatEntireFile(
   fileVersion: FileVersion,
   range: atom$Range,
-): Promise<?
-{
+): Promise<?{
   newCursor?: number,
   formatted: string,
 }> {}
@@ -161,8 +145,7 @@ type State = {
   shouldValidate: boolean,
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-type State =
-{
+type State = {
   errors: Immutable.Map<
     Ahohohhohohohohohohohohohohooh,
     Fbt | Immutable.Map<ErrorIndex, Fbt>
@@ -181,8 +164,7 @@ type State = {
   shouldValidate: boolean,
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-type State =
-{
+type State = {
   errors: Immutable.Map<
     Ahohohhohohohohohohohohohohooh,
     Fbt | Immutable.Map<ErrorIndex, Fbt>,
@@ -199,11 +181,7 @@ type H = { 'A': string, "B": number };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 type F = <T>(T) => T;
 type G = <A, B>(A) => B;
-type H =
-{
-  A: string,
-  B: number
-};
+type H = { A: string, B: number };
 
 `;
 
@@ -214,11 +192,7 @@ type H = { 'A': string, "B": number };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 type F = <T>(T) => T;
 type G = <A, B>(A) => B;
-type H =
-{
-  A: string,
-  B: number,
-};
+type H = { A: string, B: number };
 
 `;
 
@@ -229,17 +203,8 @@ type Foo = Promise<
 >;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 type Foo = Promise<
-  |
-    {
-      ok: true,
-      bar: string,
-      baz: SomeOtherLongType
-    }
-  |
-    {
-      ok: false,
-      bar: SomeOtherLongType
-    }
+  | { ok: true, bar: string, baz: SomeOtherLongType }
+  | { ok: false, bar: SomeOtherLongType }
 >;
 
 `;
@@ -251,17 +216,8 @@ type Foo = Promise<
 >;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 type Foo = Promise<
-  |
-    {
-      ok: true,
-      bar: string,
-      baz: SomeOtherLongType,
-    }
-  |
-    {
-      ok: false,
-      bar: SomeOtherLongType,
-    },
+  | { ok: true, bar: string, baz: SomeOtherLongType }
+  | { ok: false, bar: SomeOtherLongType },
 >;
 
 `;

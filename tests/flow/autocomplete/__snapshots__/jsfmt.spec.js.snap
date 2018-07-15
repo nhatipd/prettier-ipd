@@ -32,12 +32,6 @@ exports[`unknown.js - flow-verify 1`] = `
 module.exports = { x: { y: "" } };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // @noflow
-module.exports =
-{
-  x:
-  {
-    y: ""
-  }
-};
+module.exports = { x: { y: "" } };
 
 `;

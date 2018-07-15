@@ -107,24 +107,12 @@ class B extends A
 
 class Invariant
 {
-  out_object():
+  out_object(): { _: this }
   {
-    _: this
+    return { _: this };
   }
-  {
-    return
-    {
-      _: this
-    };
-  }
-  in_object(_:
-  {
-    _: this
-  }) {}
-  inout_object:
-  {
-    _: this
-  };
+  in_object(_: { _: this }) {}
+  inout_object: { _: this };
 
   out_array(): Array<this>
   {
@@ -311,14 +299,8 @@ class C {
 function foo(c: C): I { return c; }
 function bar(c: C): J { return c; }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-interface I
-{
-  xs: Array<this>;
-}
-interface J
-{
-  f(): J;
-}
+interface I { xs: Array<this> }
+interface J { f(): J }
 class C
 {
   xs: Array<C>;

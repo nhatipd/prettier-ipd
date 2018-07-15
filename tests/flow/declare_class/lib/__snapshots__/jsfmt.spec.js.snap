@@ -11,16 +11,13 @@ declare class D extends _module.C {
   foo(): string;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class _C
-{
+declare class _C {
   foo(): number;
 }
-declare var _module:
-{
+declare var _module: {
   C: Class<_C>
 };
-declare class D extends _module.C
-{
+declare class D extends _module.C {
   foo(): string;
 }
 

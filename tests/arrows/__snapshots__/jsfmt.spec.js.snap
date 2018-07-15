@@ -252,8 +252,7 @@ fooooooooooooooooooooooooooooooooooooooooooooooooooo(action => next =>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Seq(typeDef.interface.groups).forEach(group =>
   Seq(group.members).forEach((member, memberName) =>
-    markdownDoc(member.doc,
-    {
+    markdownDoc(member.doc, {
       typePath: typePath.concat(memberName.slice(1)),
       signatures: member.signatures
     })
@@ -284,8 +283,7 @@ function render()
     <View>
       <Image
         onProgress={e =>
-          this.setState(
-          {
+          this.setState({
             progress: Math.round(
               (100 * e.nativeEvent.loaded) / e.nativeEvent.total
             )
@@ -302,8 +300,7 @@ function render()
     <View>
       <Image
         onProgress={e =>
-          this.setState(
-          {
+          this.setState({
             progress: Math.round(
               (100 * e.nativeEvent.loaded) / e.nativeEvent.total
             )
@@ -320,8 +317,7 @@ function render()
     <View>
       <Image
         onProgress={e =>
-          this.setState(
-          {
+          this.setState({
             progress: Math.round(
               (100 * e.nativeEvent.loaded) / e.nativeEvent.total
             )
@@ -339,10 +335,7 @@ jest.mock(
     {
       findMatchingTests(pattern)
       {
-        return
-        {
-          paths: []
-        };
+        return { paths: [] };
       }
     }
 );
@@ -437,8 +430,7 @@ fooooooooooooooooooooooooooooooooooooooooooooooooooo(action => next =>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Seq(typeDef.interface.groups).forEach((group) =>
   Seq(group.members).forEach((member, memberName) =>
-    markdownDoc(member.doc,
-    {
+    markdownDoc(member.doc, {
       typePath: typePath.concat(memberName.slice(1)),
       signatures: member.signatures
     })
@@ -469,8 +461,7 @@ function render()
     <View>
       <Image
         onProgress={(e) =>
-          this.setState(
-          {
+          this.setState({
             progress: Math.round(
               (100 * e.nativeEvent.loaded) / e.nativeEvent.total
             )
@@ -487,8 +478,7 @@ function render()
     <View>
       <Image
         onProgress={(e) =>
-          this.setState(
-          {
+          this.setState({
             progress: Math.round(
               (100 * e.nativeEvent.loaded) / e.nativeEvent.total
             )
@@ -505,8 +495,7 @@ function render()
     <View>
       <Image
         onProgress={(e) =>
-          this.setState(
-          {
+          this.setState({
             progress: Math.round(
               (100 * e.nativeEvent.loaded) / e.nativeEvent.total
             )
@@ -524,10 +513,7 @@ jest.mock(
     {
       findMatchingTests(pattern)
       {
-        return
-        {
-          paths: []
-        };
+        return { paths: [] };
       }
     }
 );
@@ -772,8 +758,7 @@ const foo = () => {
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const foo = () => {
-  expect(arg1, arg2, arg3).toEqual(
-  {
+  expect(arg1, arg2, arg3).toEqual({
     message: "test",
     messageType: "SMS",
     status: "Unknown",
@@ -789,8 +774,7 @@ const foo = () => {
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const foo = () => {
-  expect(arg1, arg2, arg3).toEqual(
-  {
+  expect(arg1, arg2, arg3).toEqual({
     message: "test",
     messageType: "SMS",
     status: "Unknown",

@@ -62,11 +62,9 @@ exports[`multi-line.json - json-verify 1`] = `
 {"key1":[true,false,null],"key2":{"key3":[1,2,"3",
 1e10,1e-3]}}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   "key1": [true, false, null],
-  "key2":
-  {
+  "key2": {
     "key3": [1, 2, "3", 1e10, 1e-3]
   }
 }
@@ -77,11 +75,9 @@ exports[`multi-line.json - json-verify 2`] = `
 {"key1":[true,false,null],"key2":{"key3":[1,2,"3",
 1e10,1e-3]}}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   "key1": [true, false, null],
-  "key2":
-  {
+  "key2": {
     "key3": [1, 2, "3", 1e10, 1e-3]
   }
 }
@@ -92,11 +88,9 @@ exports[`multi-line.json - json5-verify 1`] = `
 {"key1":[true,false,null],"key2":{"key3":[1,2,"3",
 1e10,1e-3]}}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   key1: [true, false, null],
-  key2:
-  {
+  key2: {
     key3: [1, 2, "3", 1e10, 1e-3]
   }
 }
@@ -107,11 +101,9 @@ exports[`multi-line.json - json5-verify 2`] = `
 {"key1":[true,false,null],"key2":{"key3":[1,2,"3",
 1e10,1e-3]}}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   key1: [true, false, null],
-  key2:
-  {
+  key2: {
     key3: [1, 2, "3", 1e10, 1e-3],
   },
 }
@@ -388,17 +380,13 @@ exports[`pass1.json - json-verify 1`] = `
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [
   "JSON Test Pattern pass1",
-
-  {
-    "object with 1 member": ["array with 1 element"]
-  },
+  { "object with 1 member": ["array with 1 element"] },
   {},
   [],
   -42,
   true,
   false,
   null,
-
   {
     "integer": 1234567890,
     "real": -9876.54321,
@@ -511,17 +499,13 @@ exports[`pass1.json - json-verify 2`] = `
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [
   "JSON Test Pattern pass1",
-
-  {
-    "object with 1 member": ["array with 1 element"]
-  },
+  { "object with 1 member": ["array with 1 element"] },
   {},
   [],
   -42,
   true,
   false,
   null,
-
   {
     "integer": 1234567890,
     "real": -9876.54321,
@@ -634,17 +618,13 @@ exports[`pass1.json - json5-verify 1`] = `
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [
   "JSON Test Pattern pass1",
-
-  {
-    "object with 1 member": ["array with 1 element"]
-  },
+  { "object with 1 member": ["array with 1 element"] },
   {},
   [],
   -42,
   true,
   false,
   null,
-
   {
     integer: 1234567890,
     real: -9876.54321,
@@ -757,17 +737,13 @@ exports[`pass1.json - json5-verify 2`] = `
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [
   "JSON Test Pattern pass1",
-
-  {
-    "object with 1 member": ["array with 1 element"],
-  },
+  { "object with 1 member": ["array with 1 element"] },
   {},
   [],
   -42,
   true,
   false,
   null,
-
   {
     integer: 1234567890,
     real: -9876.54321,
@@ -869,7 +845,6 @@ exports[`propertyKey.json - json-verify 1`] = `
     a: 123
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   "a": 123
 }
@@ -881,7 +856,6 @@ exports[`propertyKey.json - json-verify 2`] = `
     a: 123
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   "a": 123
 }
@@ -893,7 +867,6 @@ exports[`propertyKey.json - json5-verify 1`] = `
     a: 123
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   a: 123
 }
@@ -905,7 +878,6 @@ exports[`propertyKey.json - json5-verify 2`] = `
     a: 123
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   a: 123,
 }
@@ -937,56 +909,28 @@ exports[`single-line.json - json-stringify-verify 1`] = `
 exports[`single-line.json - json-verify 1`] = `
 {"key1":[true,false,null],"key2":{"key3":[1,2,"3",1e10,1e-3]}}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-{
-  "key1": [true, false, null],
-  "key2":
-  {
-    "key3": [1, 2, "3", 1e10, 1e-3]
-  }
-}
+{ "key1": [true, false, null], "key2": { "key3": [1, 2, "3", 1e10, 1e-3] } }
 
 `;
 
 exports[`single-line.json - json-verify 2`] = `
 {"key1":[true,false,null],"key2":{"key3":[1,2,"3",1e10,1e-3]}}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-{
-  "key1": [true, false, null],
-  "key2":
-  {
-    "key3": [1, 2, "3", 1e10, 1e-3]
-  }
-}
+{ "key1": [true, false, null], "key2": { "key3": [1, 2, "3", 1e10, 1e-3] } }
 
 `;
 
 exports[`single-line.json - json5-verify 1`] = `
 {"key1":[true,false,null],"key2":{"key3":[1,2,"3",1e10,1e-3]}}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-{
-  key1: [true, false, null],
-  key2:
-  {
-    key3: [1, 2, "3", 1e10, 1e-3]
-  }
-}
+{ key1: [true, false, null], key2: { key3: [1, 2, "3", 1e10, 1e-3] } }
 
 `;
 
 exports[`single-line.json - json5-verify 2`] = `
 {"key1":[true,false,null],"key2":{"key3":[1,2,"3",1e10,1e-3]}}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-{
-  key1: [true, false, null],
-  key2:
-  {
-    key3: [1, 2, "3", 1e10, 1e-3],
-  },
-}
+{ key1: [true, false, null], key2: { key3: [1, 2, "3", 1e10, 1e-3] } }
 
 `;
 
@@ -1082,7 +1026,6 @@ exports[`trailingComma.notjson - json-verify 1`] = `
   "k3": "v3"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   "k1": "v1",
   "k2": "v2",
@@ -1098,7 +1041,6 @@ exports[`trailingComma.notjson - json-verify 2`] = `
   "k3": "v3"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   "k1": "v1",
   "k2": "v2",
@@ -1114,7 +1056,6 @@ exports[`trailingComma.notjson - json5-verify 1`] = `
   "k3": "v3"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   k1: "v1",
   k2: "v2",
@@ -1130,7 +1071,6 @@ exports[`trailingComma.notjson - json5-verify 2`] = `
   "k3": "v3"
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 {
   k1: "v1",
   k2: "v2",

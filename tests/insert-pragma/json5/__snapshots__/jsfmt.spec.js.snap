@@ -7,10 +7,7 @@ exports[`with-pragma.json5 - json5-verify 1`] = `
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** @format */
 
-
-{
-  hello: "world"
-}
+{ hello: "world" }
 
 `;
 
@@ -19,9 +16,6 @@ exports[`without-pragma.json5 - json5-verify 1`] = `
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /** @format */
 
-
-{
-  hello: "world"
-}
+{ hello: "world" }
 
 `;

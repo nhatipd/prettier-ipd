@@ -232,8 +232,7 @@ const X = (props: {
 }) =>
   <A />;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function StatelessFunctionalComponent(
-{
+function StatelessFunctionalComponent({
   isActive,
   onFiltersUpdated,
   onSelect,
@@ -247,8 +246,7 @@ function StatelessFunctionalComponent(
   return <div />;
 }
 
-function StatelessFunctionalComponent(
-{
+function StatelessFunctionalComponent({
   isActive = true,
   onFiltersUpdated = () => null,
   onSelect = () => null,
@@ -263,7 +261,6 @@ function StatelessFunctionalComponent(
 }
 
 function StatelessFunctionalComponent(
-
   {
     isActive,
     onFiltersUpdated = () => null,
@@ -273,8 +270,7 @@ function StatelessFunctionalComponent(
     searchFilters = null,
     title = "",
     items = []
-  } =
-  {
+  } = {
     isActive: true
   }
 )
@@ -282,8 +278,7 @@ function StatelessFunctionalComponent(
   return <div />;
 }
 
-function StatelessFunctionalComponent(
-{
+function StatelessFunctionalComponent({
   isActive,
   onFiltersUpdated,
   onSelect,
@@ -297,8 +292,7 @@ function StatelessFunctionalComponent(
   return <div />;
 }
 
-const StatelessFunctionalComponent = (
-{
+const StatelessFunctionalComponent = ({
   isActive,
   onFiltersUpdated,
   onSelect,
@@ -307,8 +301,7 @@ const StatelessFunctionalComponent = (
   searchFilters,
   title,
   items
-}:
-{
+}: {
   isActive: number,
   onFiltersUpdated: number,
   onSelect: number,
@@ -323,8 +316,7 @@ const StatelessFunctionalComponent = (
 
 class C
 {
-  StatelessFunctionalComponent(
-  {
+  StatelessFunctionalComponent({
     isActive,
     onFiltersUpdated,
     onSelect,
@@ -339,8 +331,7 @@ class C
   }
 }
 
-type T = (
-{
+type T = ({
   isActive: number,
   onFiltersUpdated: number,
   onSelect: number,
@@ -351,9 +342,6 @@ type T = (
   items: number
 }) => void;
 
-const X = (props:
-{
-  a: boolean
-}) => <A />;
+const X = (props: { a: boolean }) => <A />;
 
 `;

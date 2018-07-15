@@ -240,7 +240,6 @@ differentArgTypes(
 moreArgTypes(
   [1, 2, 3],
 
-
   {
     name: "Hello World",
     age: 29
@@ -250,11 +249,7 @@ moreArgTypes(
     // Hello world
 
     // Hello world again
-
-    {
-      name: "Hello World",
-      age: 34
-    },
+    { name: "Hello World", age: 34 },
 
     oneThing + anotherThing
 
@@ -264,11 +259,7 @@ moreArgTypes(
 
 evenMoreArgTypes(
   doSomething(
-
-    {
-      name: "Hello World",
-      age: 34
-    },
+    { name: "Hello World", age: 34 },
 
     true
   ),
@@ -316,7 +307,6 @@ doSomething.apply(
 doAnotherThing(
   "node",
 
-
   {
     solution_type,
     time_frame
@@ -327,7 +317,6 @@ stuff.doThing(
   someStuff,
 
   -1,
-
   {
     accept: node => doSomething(node)
   }
@@ -338,7 +327,6 @@ doThing(
 
   // This is important
   true,
-
   {
     decline: creditCard => takeMoney(creditCard)
   }
@@ -349,30 +337,18 @@ func(
     thing();
   },
 
-
-  {
-    yes: true,
-    no: 5
-  }
+  { yes: true, no: 5 }
 );
 
 doSomething(
-
-  {
-    tomorrow: maybe,
-    today: never[always]
-  },
+  { tomorrow: maybe, today: never[always] },
 
   1337,
 
   /* Comment */
 
   // This is important
-
-  {
-    helloWorld,
-    someImportantStuff
-  }
+  { helloWorld, someImportantStuff }
 );
 
 `;
@@ -506,10 +482,7 @@ const sel = this.connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 fooBar
   .doSomething("Hello World")
-  .doAnotherThing("Foo",
-  {
-    foo: bar
-  })
+  .doAnotherThing("Foo", { foo: bar })
 
   // App configuration.
   .doOneMoreThing(config)
@@ -521,10 +494,7 @@ bigDeal
   .doSomething("Hello World")
 
   // Hello world
-  .doAnotherThing("Foo",
-  {
-    foo: bar
-  })
+  .doAnotherThing("Foo", { foo: bar })
 
   // App configuration.
   .doOneMoreThing(config)
@@ -536,10 +506,7 @@ foo.bar.baz
   .doSomething("Hello World")
 
   // Hello world
-  .foo.bar.doAnotherThing("Foo",
-  {
-    foo: bar
-  })
+  .foo.bar.doAnotherThing("Foo", { foo: bar })
 
   .doOneMoreThing(config)
   .bar.run(() => console.log("Bar"));
@@ -549,10 +516,7 @@ foo.bar.baz
   // Hello world
   .doSomething("Hello World")
 
-  .doAnotherThing("Foo",
-  {
-    foo: bar
-  }) // Run this
+  .doAnotherThing("Foo", { foo: bar }) // Run this
   .run(() => console.log("Bar")); // Do this
 
 helloWorld

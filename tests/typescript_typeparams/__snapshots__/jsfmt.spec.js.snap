@@ -332,10 +332,7 @@ export const forwardS = R.curry(
     prop: string,
     reducer: ReducerFunction<V, T>,
     value: V,
-    state:
-    {
-      [name: string]: T;
-    }
+    state: { [name: string]: T }
   ) => R.assoc(prop, reducer(value, state[prop]), state)
 );
 
@@ -347,10 +344,7 @@ export const forwardS = R.curry(
     prop: string,
     reducer: ReducerFunction<V, T>,
     value: V,
-    state:
-    {
-      [name: string]: T;
-    }
+    state: { [name: string]: T }
   ) => R.assoc(prop, reducer(value, state[prop]), state)
 );
 
@@ -362,10 +356,7 @@ export const RedBox = styled.div<{foo: string}>\`
   \${props => props.foo}
 \`;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export const RedBox = styled.div<
-{
-  foo: string;
-}>\`
+export const RedBox = styled.div<{ foo: string }>\`
   background: red;
   \${props => props.foo};
 \`;

@@ -100,15 +100,12 @@ true
       g={123412341234}
     />;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(
-{
+({
   processors: [
-    require("autoprefixer",
-    {
+    require("autoprefixer", {
       browsers: ["> 1%", "last 2 versions", "ie >= 11", "Firefox ESR"]
     }),
-    require("postcss-url")(
-    {
+    require("postcss-url")({
       url: url =>
         url.startsWith("/") || /^[a-z]+:/.test(url) ? url : \`/static/\${url}\`
     })
@@ -116,8 +113,7 @@ true
 });
 
 true ? (
-  test(
-  {
+  test({
     a: 1
   })
 ) : (
@@ -207,8 +203,7 @@ var listener = DOM.listen(
   "click",
   sigil,
   (event: JavelinEvent): void =>
-    BanzaiLogger.log(config,
-    {
+    BanzaiLogger.log(config, {
       ...logData,
       ...DataStore.get(event.getNode(sigil))
     })
@@ -217,7 +212,6 @@ var listener = DOM.listen(
 a(
   SomethingVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong,
   [
-
     {
       SomethingVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong: 1
     }
@@ -225,7 +219,6 @@ a(
 );
 
 exports.examples = [
-
   {
     render: withGraphQLQuery("node(1234567890){image{uri}}", function(
       container,
@@ -237,8 +230,7 @@ exports.examples = [
           <InlineBlock>
             <img
               src={data[1234567890].image.uri}
-              style={
-              {
+              style={{
                 position: "absolute",
                 top: "0",
                 left: "0",
@@ -387,8 +379,7 @@ export const log = y => {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const formatData = pipe(
   zip,
-  map(([ref, data]) => (
-  {
+  map(([ref, data]) => ({
     nodeId: ref.nodeId.toString(),
     ...attributeFromDataValue(ref.attributeId, data)
   })),
@@ -397,8 +388,7 @@ const formatData = pipe(
   values
 );
 
-export const setProp = y => (
-{
+export const setProp = y => ({
   ...y,
   a: "very, very, very long very, very long text"
 });

@@ -80,8 +80,7 @@ module.exports = {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-module.exports =
-{
+module.exports = {
   iTakeAString: function(name: string): number
   {
     return 42;

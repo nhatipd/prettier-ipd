@@ -707,10 +707,7 @@ async function foo(x: boolean)
 {
   if (x)
   {
-    return
-    {
-      bar: "baz"
-    };
+    return { bar: "baz" };
   } else
   {
     return null;

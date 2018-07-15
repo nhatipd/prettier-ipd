@@ -3,12 +3,6 @@
 exports[`maybe_return.js - flow-verify 1`] = `
 function getScaledData({x}): ?{foo: number} {}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function getScaledData(
-{
-  x
-}): ?
-{
-  foo: number
-} {}
+function getScaledData({ x }): ?{ foo: number } {}
 
 `;

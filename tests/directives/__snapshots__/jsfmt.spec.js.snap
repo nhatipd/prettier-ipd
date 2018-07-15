@@ -161,33 +161,21 @@ function fn()
 function f()
 {
   "ngInject";
-  Object.assign(this,
-  {
-    $log,
-    $uibModal
-  });
+  Object.assign(this, { $log, $uibModal });
 }
 
 function f()
 {
   "ngInject";
 
-  Object.assign(this,
-  {
-    $log,
-    $uibModal
-  });
+  Object.assign(this, { $log, $uibModal });
 }
 
 function f()
 {
   "ngInject";
 
-  Object.assign(this,
-  {
-    $log,
-    $uibModal
-  });
+  Object.assign(this, { $log, $uibModal });
 }
 
 `;

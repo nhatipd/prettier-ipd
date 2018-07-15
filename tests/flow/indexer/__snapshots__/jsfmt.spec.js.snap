@@ -44,97 +44,49 @@ function foo7(): {[key: string]: number; foo: number} {
 // No indexer should be fine
 function foo0(): {}
 {
-  return
-  {
-    foo: "bar"
-  };
+  return { foo: "bar" };
 }
 
 // Matching indexer should be fine
-function foo1():
+function foo1(): { [key: string]: string }
 {
-  [key: string]: string
-}
-{
-  return
-  {
-    foo: "bar"
-  };
+  return { foo: "bar" };
 }
 
 // Indexer with different key type is an error when it matches
-function foo2():
+function foo2(): { [key: number]: string }
 {
-  [key: number]: string
-}
-{
-  return
-  {
-    foo: "bar"
-  };
+  return { foo: "bar" };
 }
 
 // Matching indexer with different value type is an error
-function foo3():
+function foo3(): { [key: string]: number }
 {
-  [key: string]: number
-}
-{
-  return
-  {
-    foo: "bar"
-  };
+  return { foo: "bar" };
 }
 
 // Indexer with different key type and different value type is twice an error
-function foo4():
+function foo4(): { [key: number]: number }
 {
-  [key: number]: number
-}
-{
-  return
-  {
-    foo: "bar"
-  };
+  return { foo: "bar" };
 }
 
 // If key exists in object type then indexer is not matched
-function foo5():
+function foo5(): { [key: string]: number, foo: string }
 {
-  [key: string]: number,
-  foo: string
-}
-{
-  return
-  {
-    foo: "bar"
-  };
+  return { foo: "bar" };
 }
 
 // If key exists in object type then indexer is not matched
-function foo6():
+function foo6(): { [key: number]: number, foo: string }
 {
-  [key: number]: number,
-  foo: string
-}
-{
-  return
-  {
-    foo: "bar"
-  };
+  return { foo: "bar" };
 }
 
 // Should still complain about mistyped properties
-function foo7():
+function foo7(): { [key: string]: number, foo: number }
 {
-  [key: string]: number,
-  foo: number
-}
-{
-  return
-  {
-    foo: "bar"
-  };
+  return { foo: "bar" };
 }
 
 `;
@@ -156,8 +108,7 @@ let tests = [
 let tests = [
   function()
   {
-    ({}:
-    {
+    ({}: {
       [k1: string]: string,
       [k2: number]: number // error: not supported (yet)
     });

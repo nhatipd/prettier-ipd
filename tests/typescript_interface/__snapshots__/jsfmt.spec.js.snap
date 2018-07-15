@@ -246,8 +246,7 @@ export interface Edge {
 interface Test { one: string, two: any[] }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 declare module "selenium-webdriver" {
-  export const until:
-  {
+  export const until: {
     ableToSwitchToFrame(frame: number | WebElement | By): Condition<boolean>;
     alertIsPresent(): Condition<Alert>;
   };
@@ -256,8 +255,7 @@ declare module "selenium-webdriver" {
 export interface Edge
 {
   cursor: {};
-  node:
-  {
+  node: {
     id: {};
   };
 }
@@ -288,8 +286,7 @@ export interface Edge {
 interface Test { one: string, two: any[] }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 declare module "selenium-webdriver" {
-  export const until:
-  {
+  export const until: {
     ableToSwitchToFrame(frame: number | WebElement | By): Condition<boolean>
     alertIsPresent(): Condition<Alert>
   }
@@ -298,8 +295,7 @@ declare module "selenium-webdriver" {
 export interface Edge
 {
   cursor: {}
-  node:
-  {
+  node: {
     id: {}
   }
 }

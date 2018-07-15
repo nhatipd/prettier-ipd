@@ -139,8 +139,7 @@ declare class Point
   constructor(x: number, y: number);
 }
 
-var p_cast = <Point>
-{
+var p_cast = <Point>{
   x: 0,
   y: 0,
   add: function(dx, dy)
@@ -463,8 +462,7 @@ namespace global {
 
 function foo(global: number) {}
 
-let obj =
-{
+let obj = {
   global: "123"
 };
 
@@ -515,8 +513,7 @@ const shouldFail: { important: boolean } = output.x.children;
 // Repro from #13351
 
 type Meta<T, A> = {
-  [P in keyof T]:
-  {
+  [P in keyof T]: {
     value: T[P];
     also: A;
     readonly children: Meta<T[P], A>;
@@ -531,11 +528,7 @@ interface Input
 
 declare const output: Meta<Input, boolean>;
 
-const shouldFail:
-{
-  important: boolean;
-} =
-  output.x.children;
+const shouldFail: { important: boolean } = output.x.children;
 
 `;
 
@@ -801,39 +794,24 @@ namespace glo_M1_public {
 declare module "glo_M2_public" {
   export function f1();
   export class c1 {}
-  export var v1:
-  {
-    new (): c1;
-  };
+  export var v1: { new (): c1 };
   export var v2: c1;
 }
 
 declare module "use_glo_M1_public" {
   import use_glo_M1_public = glo_M1_public;
-  export var use_glo_M1_public_v1_public:
-  {
-    new (): use_glo_M1_public.c1;
-  };
+  export var use_glo_M1_public_v1_public: { new (): use_glo_M1_public.c1 };
   export var use_glo_M1_public_v2_public: typeof use_glo_M1_public;
   export var use_glo_M1_public_v3_public: () => use_glo_M1_public.c1;
-  var use_glo_M1_public_v1_private:
-  {
-    new (): use_glo_M1_public.c1;
-  };
+  var use_glo_M1_public_v1_private: { new (): use_glo_M1_public.c1 };
   var use_glo_M1_public_v2_private: typeof use_glo_M1_public;
   var use_glo_M1_public_v3_private: () => use_glo_M1_public.c1;
 
   import use_glo_M2_public = require("glo_M2_public");
-  export var use_glo_M2_public_v1_public:
-  {
-    new (): use_glo_M2_public.c1;
-  };
+  export var use_glo_M2_public_v1_public: { new (): use_glo_M2_public.c1 };
   export var use_glo_M2_public_v2_public: typeof use_glo_M2_public;
   export var use_glo_M2_public_v3_public: () => use_glo_M2_public.c1;
-  var use_glo_M2_public_v1_private:
-  {
-    new (): use_glo_M2_public.c1;
-  };
+  var use_glo_M2_public_v1_private: { new (): use_glo_M2_public.c1 };
   var use_glo_M2_public_v2_private: typeof use_glo_M2_public;
   var use_glo_M2_public_v3_private: () => use_glo_M2_public.c1;
 

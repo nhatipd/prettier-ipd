@@ -74,12 +74,10 @@ export type WrappedFormUtils = {
   }): (node: React.ReactNode) => React.ReactNode;
 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function x(
-{
+function x({
   x,
   y
-}:
-{
+}: {
   // Hello world.
   x: string;
   // Yoyo.
@@ -96,12 +94,10 @@ export interface ApplicationEventData
   ): void;
 }
 
-export type WrappedFormUtils =
-{
+export type WrappedFormUtils = {
   getFieldDecorator(
     id: string,
-    options?:
-    {
+    options?: {
       /** 子节点的值的属性，如 Checkbox 的是 'checked' */
       valuePropName?: string;
       /** 子节点的初始值，类型、可选值均由子节点决定 */

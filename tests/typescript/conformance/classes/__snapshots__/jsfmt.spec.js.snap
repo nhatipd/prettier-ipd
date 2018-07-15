@@ -14,8 +14,7 @@ var z = class C4 {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var x = class C {};
 
-var y =
-{
+var y = {
   foo: class C2 {}
 };
 
@@ -346,10 +345,7 @@ class Derived extends Base
 
 const Printable = <T extends Constructor<Base>>(
   superClass: T
-): Constructor<Printable> &
-{
-  message: string;
-} & T =>
+): Constructor<Printable> & { message: string } & T =>
   class extends superClass
   {
     static message = "hello";

@@ -18,8 +18,7 @@ var lengthTest4: IHasLength = true; // bool doesn't have length
  * @flow
  */
 
-interface IHasLength
-{
+interface IHasLength {
   length: number;
 }
 
@@ -64,18 +63,15 @@ class ClassWithXString
   x: string;
 }
 
-interface IHasXString
-{
+interface IHasXString {
   x: string;
 }
 
-interface IHasXNumber
-{
+interface IHasXNumber {
   x: number;
 }
 
-interface IHasYString
-{
+interface IHasYString {
   y: string;
 }
 
@@ -111,34 +107,21 @@ function propTest6(y: {[key: string]: number}) {
  * @flow
  */
 
-interface IHasXString
-{
+interface IHasXString {
   x: string;
 }
 
-var propTest1: IHasXString =
-{
-  x: "hello"
-};
-var propTest2: IHasXString =
-{
-  x: 123
-}; // Error string != number
+var propTest1: IHasXString = { x: "hello" };
+var propTest2: IHasXString = { x: 123 }; // Error string != number
 var propTest3: IHasXString = {}; // Property not found
 var propTest4: IHasXString = ({}: Object);
 
-function propTest5(y:
-{
-  [key: string]: string
-})
+function propTest5(y: { [key: string]: string })
 {
   (y: IHasXString); // OK
 }
 
-function propTest6(y:
-{
-  [key: string]: number
-})
+function propTest6(y: { [key: string]: number })
 {
   (y: IHasXString); // error: string != number
 }
@@ -161,23 +144,15 @@ var test3: HasOptional = { a: "hello", b: true }; // Error: boolean ~> number
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-interface HasOptional
-{
+interface HasOptional {
   a: string;
   b?: number;
 }
 
-var test1: HasOptional =
-{
-  a: "hello"
-};
+var test1: HasOptional = { a: "hello" };
 
 var test2: HasOptional = {}; // Error: missing property a
 
-var test3: HasOptional =
-{
-  a: "hello",
-  b: true
-}; // Error: boolean ~> number
+var test3: HasOptional = { a: "hello", b: true }; // Error: boolean ~> number
 
 `;

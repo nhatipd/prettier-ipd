@@ -137,8 +137,7 @@ function a()
   }
 }
 
-const response =
-{
+const response = {
   // prettier-ignore
   '_text': 'Turn on the lights',
   intent: "lights"

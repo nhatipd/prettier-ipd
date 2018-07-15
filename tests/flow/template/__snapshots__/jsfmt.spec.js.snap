@@ -40,10 +40,7 @@ let tests = [
 (\`baz\`: number); // error
 
 \`foo \${123} bar\`; // ok, number can be appended to string
-\`foo \${
-{
-  bar: 123
-}} baz\`; // error, object can't be appended
+\`foo \${{ bar: 123 }} baz\`; // error, object can't be appended
 
 let tests = [
   function(x: string)

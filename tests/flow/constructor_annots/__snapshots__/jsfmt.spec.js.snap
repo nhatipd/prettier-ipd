@@ -29,8 +29,7 @@ function Foo()
   this.x = 0; // constructs objects with property x
 }
 Foo.y = 0; // has static property y
-Foo.prototype =
-{
+Foo.prototype = {
   m()
   {
     return 0;
@@ -42,12 +41,10 @@ Foo.prototype =
 exports.Foo = Foo;
 
 // so you want to type Foo, by declaring it as a class
-interface IFooPrototype
-{
+interface IFooPrototype {
   m: () => number;
 }
-interface IFoo extends IFooPrototype
-{
+interface IFoo extends IFooPrototype {
   x: boolean; // error, should have declared x: number instead
   static(): void;
   constructor(): void;

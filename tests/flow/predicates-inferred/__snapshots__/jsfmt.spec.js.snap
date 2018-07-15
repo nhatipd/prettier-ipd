@@ -125,10 +125,7 @@ function dotAccess(head, create) {
 // @flow
 
 declare var key: string;
-declare var obj:
-{
-  page: ?Object
-};
+declare var obj: { page: ?Object };
 
 if (dotAccess(obj))
 {
@@ -302,10 +299,7 @@ function foo(x: string | Array<string>): string
 }
 
 // Same as above but refining an offset
-function bar(z:
-{
-  f: string | Array<string>
-}): string
+function bar(z: { f: string | Array<string> }): string
 {
   if (is_string(z.f))
   {

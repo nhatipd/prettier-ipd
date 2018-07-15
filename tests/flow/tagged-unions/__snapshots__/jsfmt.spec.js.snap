@@ -105,26 +105,22 @@ if (data.kind === "user") {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-declare interface IDataBase
-{
+declare interface IDataBase {
   id: string;
   name: string;
 }
 
-declare interface IUserData extends IDataBase
-{
+declare interface IUserData extends IDataBase {
   kind: "user";
 }
 
-declare interface ISystemData extends IDataBase
-{
+declare interface ISystemData extends IDataBase {
   kind: "system";
 }
 
 declare type IData = IUserData | ISystemData;
 
-const data: IData =
-{
+const data: IData = {
   id: "",
   name: "",
   kind: "system"
@@ -167,26 +163,22 @@ if (data.kind === "system") {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-declare interface IDataBase
-{
+declare interface IDataBase {
   id: string;
   name: string;
 }
 
-declare interface IUserData extends IDataBase
-{
+declare interface IUserData extends IDataBase {
   kind: "user";
 }
 
-declare interface ISystemData extends IDataBase
-{
+declare interface ISystemData extends IDataBase {
   kind: "system";
 }
 
 declare type IData = IUserData | ISystemData;
 
-const data: IData =
-{
+const data: IData = {
   id: "",
   name: "",
   kind: "system"
@@ -233,21 +225,18 @@ if (data.kind === "user") {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-type DataBase =
-{
+type DataBase = {
   id: string,
   name: string
 };
 
-type UserData =
-{
+type UserData = {
   id: string,
   name: string,
   kind: "user"
 };
 
-type SystemData =
-{
+type SystemData = {
   id: string,
   name: string,
   kind: "system"
@@ -255,8 +244,7 @@ type SystemData =
 
 declare type Data = UserData | SystemData;
 
-const data: Data =
-{
+const data: Data = {
   id: "",
   name: "",
   kind: "system"
@@ -303,21 +291,18 @@ if (data.kind === "system") {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-type DataBase =
-{
+type DataBase = {
   id: string,
   name: string
 };
 
-type UserData =
-{
+type UserData = {
   id: string,
   name: string,
   kind: "user"
 };
 
-type SystemData =
-{
+type SystemData = {
   id: string,
   name: string,
   kind: "system"
@@ -325,8 +310,7 @@ type SystemData =
 
 declare type Data = UserData | SystemData;
 
-const data: Data =
-{
+const data: Data = {
   id: "",
   name: "",
   kind: "system"

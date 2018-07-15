@@ -12,8 +12,7 @@ export class ViewTokensChangedEvent {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export class ViewTokensChangedEvent
 {
-  public readonly ranges:
-  {
+  public readonly ranges: {
     /**
      * Start line number of range
      */

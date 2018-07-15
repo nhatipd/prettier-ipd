@@ -23,7 +23,6 @@ export interface ShopQueryResult
   menus: Menu[];
   openingDays: number[];
   closingDays: [
-
     {
       from: string;
       to: string;

@@ -46,8 +46,7 @@ export class TestTextFileService
 @commonEditorContribution
 export class TabCompletionController {}
 
-@Component(
-{
+@Component({
   selector: "angular-component"
 })
 class AngularComponent
@@ -238,8 +237,7 @@ class Class3
     @d1 private x: number,
     @d2(foo) private y: number,
     @d3("foo") private z: number,
-    @d4(
-    {
+    @d4({
       x: string
     })
     private a: string

@@ -53,8 +53,7 @@ let f = (/* ... */) => {};
 (function(/* ... */) {})(/* ... */);
 function f(/* ... */) {}
 
-const obj =
-{
+const obj = {
   f(/* ... */) {},
   f: (/* ... */) => {},
   f: function(/* ... */) {},

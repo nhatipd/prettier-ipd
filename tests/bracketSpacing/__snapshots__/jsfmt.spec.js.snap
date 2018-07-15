@@ -22,18 +22,8 @@ exports[`object.js - flow-verify 1`] = `
 const obj1 = {a:1, b:2, c:3}
 const obj2 = { a:1, b:2, c:3 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const obj1 =
-{
-  a: 1,
-  b: 2,
-  c: 3
-};
-const obj2 =
-{
-  a: 1,
-  b: 2,
-  c: 3
-};
+const obj1 = { a: 1, b: 2, c: 3 };
+const obj2 = { a: 1, b: 2, c: 3 };
 
 `;
 
@@ -41,17 +31,7 @@ exports[`object.js - flow-verify 2`] = `
 const obj1 = {a:1, b:2, c:3}
 const obj2 = { a:1, b:2, c:3 };
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const obj1 =
-{
-  a: 1,
-  b: 2,
-  c: 3
-};
-const obj2 =
-{
-  a: 1,
-  b: 2,
-  c: 3
-};
+const obj1 = {a: 1, b: 2, c: 3};
+const obj2 = {a: 1, b: 2, c: 3};
 
 `;

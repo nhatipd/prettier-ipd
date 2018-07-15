@@ -42,8 +42,7 @@ class X {
   }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function onDidInsertSuggestion(
-{
+function onDidInsertSuggestion({
   editor,
   triggerPosition,
   re
@@ -51,8 +50,7 @@ function onDidInsertSuggestion(
 
 class X
 {
-  async onDidInsertSuggestion(
-  {
+  async onDidInsertSuggestion({
     editor,
     triggerPosition,
     suggestion

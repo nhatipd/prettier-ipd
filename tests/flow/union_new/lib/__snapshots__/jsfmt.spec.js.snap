@@ -30,13 +30,11 @@ declare class Rows {
     ): X;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class Set<T>
-{
+declare class Set<T> {
   add(x: any): Set<T>;
 }
 
-declare class Row
-{
+declare class Row {
   reduce_row(
     callbackfn: (previousValue: number, currentValue: number) => number,
     initialValue: void
@@ -47,8 +45,7 @@ declare class Row
   ): U;
 }
 
-declare class Rows
-{
+declare class Rows {
   reduce_rows<X>(
     callbackfn: (previousValue: X, currentValue: Row) => X,
     initialValue: X

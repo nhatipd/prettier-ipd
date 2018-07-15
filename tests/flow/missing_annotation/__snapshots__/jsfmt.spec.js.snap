@@ -93,8 +93,7 @@ module.exports = Foo, Bar;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-var Foo =
-{
+var Foo = {
   a: function(arg)
   {
     // missing arg annotation
@@ -104,8 +103,7 @@ var Foo =
   b: function(arg)
   {
     // missing arg annotation
-    return
-    {
+    return {
       bar: arg
     };
   },
@@ -113,21 +111,18 @@ var Foo =
   c: function(arg: string)
   {
     // no return annotation required
-    return
-    {
+    return {
       bar: arg
     };
   },
 
   d: function(
     arg: string
-  ):
-  {
+  ): {
     bar: string
   }
   {
-    return
-    {
+    return {
       bar: arg
     };
   },
@@ -155,8 +150,7 @@ var Foo =
   }
 };
 
-var Bar =
-{
+var Bar = {
   a: Foo.a("Foo"), // no annotation required
 
   // object property types are inferred, so make sure that this doesn't cause

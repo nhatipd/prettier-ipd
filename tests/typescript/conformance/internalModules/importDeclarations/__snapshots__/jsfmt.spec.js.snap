@@ -38,10 +38,7 @@ namespace A {
   export import b = B;
 }
 
-var c:
-{
-  name: string;
-};
+var c: { name: string };
 var c = new B.a.C();
 
 `;
@@ -136,15 +133,8 @@ namespace C {
 }
 
 var a: string = C.a.x;
-var b:
-{
-  x: number;
-  y: number;
-} = new C.a.Point(0, 0);
-var c:
-{
-  name: string;
-};
+var b: { x: number; y: number } = new C.a.Point(0, 0);
+var c: { name: string };
 var c: C.a.B.Id;
 
 namespace X {
@@ -167,11 +157,7 @@ namespace Z {
 }
 
 var m: number = Z.y();
-var n:
-{
-  x: number;
-  y: number;
-} = new Z.y.Point(0, 0);
+var n: { x: number; y: number } = new Z.y.Point(0, 0);
 
 namespace K {
   export class L
@@ -193,17 +179,10 @@ namespace M {
   export import D = K.L;
 }
 
-var o:
-{
-  name: string;
-};
+var o: { name: string };
 var o = new M.D("Hello");
 
-var p:
-{
-  x: number;
-  y: number;
-};
+var p: { x: number; y: number };
 var p: M.D.Point;
 
 `;
@@ -272,11 +251,7 @@ import alias = moduleA;
 
 var p: alias.Point;
 var p: moduleA.Point;
-var p:
-{
-  x: number;
-  y: number;
-};
+var p: { x: number; y: number };
 
 class clodule
 {
@@ -289,30 +264,18 @@ namespace clodule {
     x: number;
     y: number;
   }
-  var Point: Point =
-  {
-    x: 0,
-    y: 0
-  };
+  var Point: Point = { x: 0, y: 0 };
 }
 
 import clolias = clodule;
 
 var p: clolias.Point;
 var p: clodule.Point;
-var p:
-{
-  x: number;
-  y: number;
-};
+var p: { x: number; y: number };
 
 function fundule()
 {
-  return
-  {
-    x: 0,
-    y: 0
-  };
+  return { x: 0, y: 0 };
 }
 
 namespace fundule {
@@ -321,22 +284,14 @@ namespace fundule {
     x: number;
     y: number;
   }
-  var Point: Point =
-  {
-    x: 0,
-    y: 0
-  };
+  var Point: Point = { x: 0, y: 0 };
 }
 
 import funlias = fundule;
 
 var p: funlias.Point;
 var p: fundule.Point;
-var p:
-{
-  x: number;
-  y: number;
-};
+var p: { x: number; y: number };
 
 `;
 
@@ -431,11 +386,7 @@ module Z {
 // all errors imported modules conflict with local variables
 
 namespace A {
-  export var Point =
-  {
-    x: 0,
-    y: 0
-  };
+  export var Point = { x: 0, y: 0 };
   export interface Point
   {
     x: number;
@@ -444,11 +395,7 @@ namespace A {
 }
 
 namespace B {
-  var A =
-  {
-    x: 0,
-    y: 0
-  };
+  var A = { x: 0, y: 0 };
   import Point = A;
 }
 

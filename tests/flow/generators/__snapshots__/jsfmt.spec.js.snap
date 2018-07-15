@@ -689,10 +689,7 @@ function *d(x: void | string): Generator<void, void, void> {
   (x: string); // ok
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function* a(x:
-{
-  a: void | string
-}): Generator<void, void, void>
+function* a(x: { a: void | string }): Generator<void, void, void>
 {
   if (!x.a) return;
   (x.a: string); // ok
@@ -710,10 +707,7 @@ function* b(x: void | string): Generator<void, void, void>
 
 declare function fn(): Generator<void, void, void>;
 
-function* c(x:
-{
-  a: void | string
-}): Generator<void, void, void>
+function* c(x: { a: void | string }): Generator<void, void, void>
 {
   const gen = fn();
   if (!x.a) return;

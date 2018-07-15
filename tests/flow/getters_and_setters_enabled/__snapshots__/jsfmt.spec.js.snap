@@ -207,8 +207,7 @@ foo.propOverriddenWithSetter = 123; // Error number ~> string
 
 var z: number = 123;
 
-declare class Foo
-{
+declare class Foo {
   get goodGetterWithAnnotation(): number;
   set goodSetterWithAnnotation(x: number): void;
 
@@ -327,8 +326,7 @@ class A {}
 class B extends A {}
 class C extends A {}
 
-var obj =
-{
+var obj = {
   get goodGetterNoAnnotation()
   {
     return 4;
@@ -477,8 +475,7 @@ class A {}
 class B extends A {}
 class C extends A {}
 
-type T =
-{
+type T = {
   get goodGetterWithAnnotation(): number,
   set goodSetterWithAnnotation(x: number): void,
 
@@ -552,10 +549,8 @@ const Example = React.createClass({
 
 import React from "react";
 
-const Example = React.createClass(
-{
-  propTypes:
-  {
+const Example = React.createClass({
+  propTypes: {
     get a()
     {
       return React.PropTypes.number.isRequired;

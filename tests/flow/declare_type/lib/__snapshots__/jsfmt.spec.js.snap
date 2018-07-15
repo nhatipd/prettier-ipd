@@ -47,8 +47,7 @@ declare module 'foo' {
 
 declare module "foo"
 {
-  declare class A
-  {
+  declare class A {
     toz: number;
   }
 
@@ -58,8 +57,7 @@ declare module "foo"
   declare type Bar = A;
   declare type Id<T> = T;
 
-  declare var exports:
-  {
+  declare var exports: {
     (a: number, b: number): number
   };
 }

@@ -440,8 +440,7 @@ gql\`
   # and has a blank line in the middle
 
   \${FRIENDS_FRAGMENT}
-  \${generateFragment(
-  {
+  \${generateFragment({
     totally: "a good idea"
   })}
 
@@ -524,10 +523,7 @@ graphql.experimental\`
 { markReadNotification(data: $input ) { notification {seenState} } }
 \`;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const
-{
-  graphql
-} = require("react-relay");
+const { graphql } = require("react-relay");
 
 graphql\`
   mutation MarkReadNotificationMutation($input: MarkReadNotificationData!) {

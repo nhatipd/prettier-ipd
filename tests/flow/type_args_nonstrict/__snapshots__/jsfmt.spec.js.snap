@@ -116,32 +116,23 @@ var c2: MyClass2 = new MyClass2(0, ""); // no error
 
 // no arity error in type annotation using polymorphic type alias
 
-type MyObject<T> =
-{
+type MyObject<T> = {
   x: T
 };
 
-var o: MyObject =
-{
-  x: 0
-}; // no error
+var o: MyObject = { x: 0 }; // no error
 
 // arity error in type alias rhs
 
-type MySubobject =
-{
-  y: number
-} & MyObject; // no error
+type MySubobject = { y: number } & MyObject; // no error
 
 // arity error in interface extends
 
-interface MyInterface<T>
-{
+interface MyInterface<T> {
   x: T;
 }
 
-interface MySubinterface extends MyInterface
-{
+interface MySubinterface extends MyInterface {
   // no error
   y: number;
 }

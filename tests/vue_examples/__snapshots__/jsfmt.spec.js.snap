@@ -81,15 +81,12 @@ import eventHub from "../eventhub";
 
 const Store = gl.issueBoards.BoardsStore;
 
-export default
-{
+export default {
   name: "BoardsIssueCard",
-  components:
-  {
+  components: {
     "issue-card-inner": gl.issueBoards.IssueCardInner
   },
-  props:
-  {
+  props: {
     list: Object,
     issue: Object,
     issueLinkBase: String,
@@ -99,14 +96,12 @@ export default
   },
   data()
   {
-    return
-    {
+    return {
       showDetail: false,
       detailIssue: Store.detail
     };
   },
-  computed:
-  {
+  computed: {
     issueDetailVisible()
     {
       return (
@@ -114,8 +109,7 @@ export default
       );
     }
   },
-  methods:
-  {
+  methods: {
     mouseDown()
     {
       this.showDetail = true;
@@ -246,15 +240,12 @@ import eventHub from "../eventhub";
 
 const Store = gl.issueBoards.BoardsStore;
 
-export default
-{
+export default {
   name: "BoardsIssueCard",
-  components:
-  {
+  components: {
     "issue-card-inner": gl.issueBoards.IssueCardInner,
   },
-  props:
-  {
+  props: {
     list: Object,
     issue: Object,
     issueLinkBase: String,
@@ -264,14 +255,12 @@ export default
   },
   data()
   {
-    return
-    {
+    return {
       showDetail: false,
       detailIssue: Store.detail,
     };
   },
-  computed:
-  {
+  computed: {
     issueDetailVisible()
     {
       return (
@@ -279,8 +268,7 @@ export default
       );
     },
   },
-  methods:
-  {
+  methods: {
     mouseDown()
     {
       this.showDetail = true;

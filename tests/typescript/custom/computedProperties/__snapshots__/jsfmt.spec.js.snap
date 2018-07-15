@@ -22,8 +22,7 @@ interface I
   string: "I";
 }
 
-type T =
-{
+type T = {
   string: "T";
 };
 
@@ -32,8 +31,7 @@ interface A
   string: "A";
 }
 
-type B =
-{
+type B = {
   string: "B";
 };
 
@@ -53,8 +51,7 @@ interface I
   [Symbol.toStringTag]: "I";
 }
 
-type T =
-{
+type T = {
   [Symbol.toStringTag]: "T";
 };
 

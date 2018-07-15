@@ -44,8 +44,7 @@ function parseCounter(line: string): number
 
 function parseGroup(
   lines: Array<string>
-):
-{
+): {
   counter: number,
   begin: number,
   end: number,
@@ -54,25 +53,17 @@ function parseGroup(
 {
   var counter = parseCounter(lines[0]);
   var timeframe = parseTimeframe(lines[1]);
-  return
-  {
+  return {
     counter,
     ...timeframe,
     text: lines[2]
   };
 }
 
-function parseTimeframe(
-  line: string
-):
-{
-  begin: number,
-  end: number
-}
+function parseTimeframe(line: string): { begin: number, end: number }
 {
   var timestamps = line.split("-->");
-  return
-  {
+  return {
     begin: parseTimestamp(timestamps[0].trim()),
     end: parseTimestamp(timestamps[1].trim())
   };
@@ -97,19 +88,10 @@ foo({foo: 42});
 
 function foo(o)
 {
-  bar(
-  {
-    ...o
-  });
+  bar({ ...o });
 }
-function bar(_:
-{
-  foo: number
-}) {}
-foo(
-{
-  foo: 42
-});
+function bar(_: { foo: number }) {}
+foo({ foo: 42 });
 
 `;
 
@@ -132,16 +114,9 @@ var s = {
 };
 var t: boolean = s.y; // error, string or number
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var p =
-{
-  y: ""
-};
-var q =
-{
-  z: ""
-};
-var o =
-{
+var p = { y: "" };
+var q = { z: "" };
+var o = {
   x: 5,
   ...p,
   ...q
@@ -150,12 +125,8 @@ var y: number = o.y;
 var z: number = o.z;
 
 // test conflicting keys (they get unioned)
-var r =
-{
-  y: 123
-};
-var s =
-{
+var r = { y: 123 };
+var s = {
   ...p,
   ...r
 };
@@ -206,10 +177,7 @@ function test(
 /* @flow */
 
 declare function map<Tv, TNext>(
-  obj:
-  {
-    [key: string]: Tv
-  },
+  obj: { [key: string]: Tv },
   iterator: (obj: Tv) => TNext
 ): Array<TNext>;
 
@@ -220,23 +188,13 @@ declare function map<Tv, TNext>(
  * result is a new object.
  */
 function test(
-  x:
-  {
-    kind: ?string
-  },
-  kinds:
-  {
-    [key: string]: string
-  }
-): Array<
-{
-  kind: ?string
-}>
+  x: { kind: ?string },
+  kinds: { [key: string]: string }
+): Array<{ kind: ?string }>
 {
   return map(kinds, value => {
     (value: string); // OK
-    return
-    {
+    return {
       ...x,
       kind: value
     };
@@ -267,54 +225,27 @@ for (var i = 0; i < 10; i++) {
 }
 (q: {foo: string});
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var o =
-{
+var o = {
   foo: "bar"
 };
-o =
-{
-  ...o
-};
-(o:
-{
-  foo: string
-});
+o = { ...o };
+(o: { foo: string });
 
-var p =
-{
+var p = {
   foo: "bar"
 };
-(p:
-{
-  foo: string,
-  abc: string
-}); // error, p doesn't have \`abc\` yet
-p =
-{
-  ...p,
-  abc: "def"
-};
-(p:
-{
-  foo: string,
-  abc: string
-});
+(p: { foo: string, abc: string }); // error, p doesn't have \`abc\` yet
+p = { ...p, abc: "def" };
+(p: { foo: string, abc: string });
 
-var q =
-{
+var q = {
   foo: "bar"
 };
 for (var i = 0; i < 10; i++)
 {
-  q =
-  {
-    ...q
-  };
+  q = { ...q };
 }
-(q:
-{
-  foo: string
-});
+(q: { foo: string });
 
 `;
 
@@ -333,14 +264,8 @@ let tests = [
 let tests = [
   function(x: Object)
   {
-    (
-    {
-      ...x
-    }: Object);
-    (
-    {
-      ...x
-    }: void); // error, Object
+    ({ ...x }: Object);
+    ({ ...x }: void); // error, Object
   }
 ];
 

@@ -52,11 +52,7 @@ function SomeComponent(props)
   );
 }
 
-const TestComponent = (
-{
-  children,
-  ...props
-}) => (
+const TestComponent = ({ children, ...props }) => (
   <div
     css={\`
       color: white;

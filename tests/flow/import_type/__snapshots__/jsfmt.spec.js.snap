@@ -136,14 +136,12 @@ export function givesAFoo3Obj(): AliasFoo3 {
  * @flow
  */
 
-export type AliasFoo3 =
-{
+export type AliasFoo3 = {
   givesANum(): number
 };
 export function givesAFoo3Obj(): AliasFoo3
 {
-  return
-  {
+  return {
     givesANum(): number
     {
       return 42;

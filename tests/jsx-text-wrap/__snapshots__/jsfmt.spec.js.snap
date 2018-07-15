@@ -510,12 +510,7 @@ x = (
 
 function DiffOverview(props)
 {
-  const
-  {
-    source,
-    target,
-    since
-  } = props;
+  const { source, target, since } = props;
   return (
     <div>
       <div className="alert alert-info">

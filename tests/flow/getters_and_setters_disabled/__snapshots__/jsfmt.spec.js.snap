@@ -37,8 +37,7 @@ class Bar {
  * @flow
  */
 
-var f =
-{
+var f = {
   get a()
   {
     return 4;
@@ -55,15 +54,13 @@ var f =
   set ["d"](x: number) {}
 };
 
-type T =
-{
+type T = {
   get a(): number,
   set b(x: number): void,
   c: 10
 };
 
-declare class Foo
-{
+declare class Foo {
   get a(): number;
   set b(x: number): void;
   c: 10;

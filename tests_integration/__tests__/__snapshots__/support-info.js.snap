@@ -543,10 +543,8 @@ exports[`API getSupportInfo() with version 1.8.2 -> undefined 1`] = `
 exports[`CLI --support-info (stderr) 1`] = `""`;
 
 exports[`CLI --support-info (stdout) 1`] = `
-"
-{
+"{
   \\"languages\\": [
-
     {
       \\"aceMode\\": \\"javascript\\",
       \\"aliases\\": [\\"js\\", \\"node\\"],
@@ -585,14 +583,12 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"type\\": \\"programming\\",
       \\"vscodeLanguageIds\\": [\\"javascript\\"]
     },
-
     {
       \\"extensions\\": [\\".js.flow\\"],
       \\"name\\": \\"Flow\\",
       \\"parsers\\": [\\"babylon\\", \\"flow\\"],
       \\"since\\": \\"0.0.0\\"
     },
-
     {
       \\"aceMode\\": \\"javascript\\",
       \\"codemirrorMimeType\\": \\"text/jsx\\",
@@ -609,7 +605,6 @@ exports[`CLI --support-info (stdout) 1`] = `
     }
   ],
   \\"options\\": [
-
     {
       \\"category\\": \\"Common\\",
       \\"default\\": true,
@@ -620,7 +615,6 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"since\\": \\"0.0.0\\",
       \\"type\\": \\"boolean\\"
     },
-
     {
       \\"category\\": \\"JavaScript\\",
       \\"default\\": false,
@@ -630,20 +624,11 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"since\\": \\"0.17.0\\",
       \\"type\\": \\"boolean\\"
     },
-
     {
       \\"category\\": \\"Global\\",
       \\"choices\\": [
-
-        {
-          \\"description\\": \\"Flow\\",
-          \\"value\\": \\"flow\\"
-        },
-
-        {
-          \\"description\\": \\"JavaScript\\",
-          \\"value\\": \\"babylon\\"
-        }
+        { \\"description\\": \\"Flow\\", \\"value\\": \\"flow\\" },
+        { \\"description\\": \\"JavaScript\\", \\"value\\": \\"babylon\\" }
       ],
       \\"default\\": \\"babylon\\",
       \\"description\\": \\"Which parser to use.\\",
@@ -652,23 +637,16 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"since\\": \\"0.0.10\\",
       \\"type\\": \\"choice\\"
     },
-
     {
       \\"category\\": \\"Global\\",
       \\"default\\": 80,
       \\"description\\": \\"The line length where Prettier will try wrap.\\",
       \\"name\\": \\"printWidth\\",
       \\"pluginDefaults\\": {},
-      \\"range\\":
-      {
-        \\"end\\": null,
-        \\"start\\": 0,
-        \\"step\\": 1
-      },
+      \\"range\\": { \\"end\\": null, \\"start\\": 0, \\"step\\": 1 },
       \\"since\\": \\"0.0.0\\",
       \\"type\\": \\"int\\"
     },
-
     {
       \\"category\\": \\"JavaScript\\",
       \\"default\\": true,
@@ -680,7 +658,6 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"since\\": \\"1.0.0\\",
       \\"type\\": \\"boolean\\"
     },
-
     {
       \\"category\\": \\"Common\\",
       \\"default\\": false,
@@ -690,37 +667,24 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"since\\": \\"0.0.0\\",
       \\"type\\": \\"boolean\\"
     },
-
     {
       \\"category\\": \\"Global\\",
       \\"default\\": 2,
       \\"description\\": \\"Number of spaces per indentation level.\\",
       \\"name\\": \\"tabWidth\\",
       \\"pluginDefaults\\": {},
-      \\"range\\":
-      {
-        \\"end\\": null,
-        \\"start\\": 0,
-        \\"step\\": 1
-      },
+      \\"range\\": { \\"end\\": null, \\"start\\": 0, \\"step\\": 1 },
       \\"type\\": \\"int\\"
     },
-
     {
       \\"category\\": \\"JavaScript\\",
       \\"choices\\": [
-
-        {
-          \\"description\\": \\"No trailing commas.\\",
-          \\"value\\": \\"none\\"
-        },
-
+        { \\"description\\": \\"No trailing commas.\\", \\"value\\": \\"none\\" },
         {
           \\"description\\":
             \\"Trailing commas where valid in ES5 (objects, arrays, etc.)\\",
           \\"value\\": \\"es5\\"
         },
-
         {
           \\"description\\":
             \\"Trailing commas wherever possible (including function arguments).\\",
@@ -734,7 +698,6 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"since\\": \\"0.0.0\\",
       \\"type\\": \\"choice\\"
     },
-
     {
       \\"category\\": \\"Global\\",
       \\"default\\": false,

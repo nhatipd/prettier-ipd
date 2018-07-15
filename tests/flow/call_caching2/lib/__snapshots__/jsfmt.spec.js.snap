@@ -15,8 +15,7 @@ declare class Iterable<S> {
 
 declare class Array<T> {}
 
-declare class Iterable<S>
-{
+declare class Iterable<S> {
   static <V, Iter: Iterable<V>>(iter: Iter): Iter;
   static <T>(iter: Array<T>): Iterable<T>;
   size: number;

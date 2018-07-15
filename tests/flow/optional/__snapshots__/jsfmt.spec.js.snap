@@ -122,10 +122,7 @@ function optionalNullable8(x: {y?: ?number}) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /* @flow */
 
-function optionalNullable1(x:
-{
-  y?: ?number
-})
+function optionalNullable1(x: { y?: ?number })
 {
   if (x.y !== null && x.y !== undefined)
   {
@@ -133,10 +130,7 @@ function optionalNullable1(x:
   }
 }
 
-function optionalNullable2(x:
-{
-  y?: ?number
-})
+function optionalNullable2(x: { y?: ?number })
 {
   if (x.y !== undefined && x.y !== null)
   {
@@ -144,10 +138,7 @@ function optionalNullable2(x:
   }
 }
 
-function optionalNullable3(x:
-{
-  y?: ?number
-})
+function optionalNullable3(x: { y?: ?number })
 {
   if (!(x.y !== null && x.y !== undefined))
   {
@@ -155,10 +146,7 @@ function optionalNullable3(x:
   }
 }
 
-function optionalNullable4(x:
-{
-  y?: ?number
-})
+function optionalNullable4(x: { y?: ?number })
 {
   if (!(x.y !== undefined && x.y !== null))
   {
@@ -166,10 +154,7 @@ function optionalNullable4(x:
   }
 }
 
-function optionalNullable5(x:
-{
-  y?: ?number
-})
+function optionalNullable5(x: { y?: ?number })
 {
   if (x.y === null || x.y === undefined)
   {
@@ -177,10 +162,7 @@ function optionalNullable5(x:
   }
 }
 
-function optionalNullable6(x:
-{
-  y?: ?number
-})
+function optionalNullable6(x: { y?: ?number })
 {
   if (x.y === undefined || x.y === null)
   {
@@ -188,10 +170,7 @@ function optionalNullable6(x:
   }
 }
 
-function optionalNullable7(x:
-{
-  y?: ?number
-})
+function optionalNullable7(x: { y?: ?number })
 {
   if (!(x.y === null || x.y === undefined))
   {
@@ -199,10 +178,7 @@ function optionalNullable7(x:
   }
 }
 
-function optionalNullable8(x:
-{
-  y?: ?number
-})
+function optionalNullable8(x: { y?: ?number })
 {
   if (!(x.y === undefined || x.y === null))
   {
@@ -297,10 +273,7 @@ function foo(x?: string): string
   return x;
 }
 
-function bar(obj:
-{
-  x?: string
-}): string
+function bar(obj: { x?: string }): string
 {
   if (obj.x == null)
   {
@@ -336,10 +309,7 @@ function testOptionalNullableDefault(x?: ?string = "hi"): string
   return x;
 }
 
-function testOptionalNullableProperty(obj:
-{
-  x?: ?string
-}): string
+function testOptionalNullableProperty(obj: { x?: ?string }): string
 {
   if (obj.x == null)
   {
@@ -365,8 +335,7 @@ declare class I<V> {
 var i:I<number> = new I();
 var j:I<number> = i.map(id => id);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class I<V>
-{
+declare class I<V> {
   map<M>(mapper: (value?: V) => M): I<M>;
 }
 var i: I<number> = new I();

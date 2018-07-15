@@ -81,7 +81,6 @@ function genericPrint(path, options, printPath, args) {
   const node = path.getValue();
   let needsParens = false;
   const linesWithoutParens = printPathNoParens(path, options, printPath, args);
-
   if (!node || isEmpty(linesWithoutParens)) {
     return linesWithoutParens;
   }
@@ -356,7 +355,6 @@ function printPathNoParens(path, options, print, args) {
   }
 
   let parts = [];
-  // console.log(n.type);
   switch (n.type) {
     case "File":
       // Print @babel/parser's InterpreterDirective here so that
@@ -960,7 +958,6 @@ function printPathNoParens(path, options, print, args) {
         parent.type !== "ArrowFunctionExpression" ? hardline : "",
         "{"
       );
-
       // Babel 6
       if (hasDirectives) {
         path.each(childPath => {
@@ -1189,6 +1186,7 @@ function printPathNoParens(path, options, print, args) {
           separatorParts.shift();
         }
         if (isNextLineEmpty(options.originalText, prop.node, options)) {
+          
           separatorParts.push(hardline);
         }
         return result;
@@ -1220,7 +1218,7 @@ function printPathNoParens(path, options, print, args) {
         );
       } else {
         content = concat([
-          hardline,
+          n.type === "TSInterfaceBody" ? hardline : "",
           leftBrace,
           indent(
             concat([options.bracketSpacing ? line : softline, concat(props)])
@@ -2048,9 +2046,10 @@ function printPathNoParens(path, options, print, args) {
       if (!n.comments && n.body.length === 0) {
         return "{}";
       }
-
+      const parent = path.getParentNode(0);
+      const parentType = parent !== null ? parent.type : null;
       return concat([
-        hardline,
+        parentType !== "ArrayExpression" ? hardline : "",
         "{",
         n.body.length > 0
           ? indent(

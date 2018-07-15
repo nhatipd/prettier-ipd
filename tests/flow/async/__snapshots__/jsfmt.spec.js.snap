@@ -122,10 +122,7 @@ class C
 
 // async function props
 
-var obj =
-{
-  f: async () => await 1
-};
+var obj = { f: async () => await 1 };
 var objf: () => Promise<number> = obj.f;
 
 `;
@@ -207,30 +204,15 @@ var et = async function<T>(a: T) {};
 
 var n = new async function() {}();
 
-var o =
-{
-  async m() {}
-};
-var ot =
-{
-  async m<T>(a: T) {}
-};
-var oz =
-{
-  async async() {}
-};
+var o = { async m() {} };
+var ot = { async m<T>(a: T) {} };
+var oz = { async async() {} };
 
-var x =
-{
-  async: 5
-};
+var x = { async: 5 };
 console.log(x.async);
 
 var async = 3;
-var y =
-{
-  async
-};
+var y = { async };
 
 `;
 
@@ -560,38 +542,29 @@ var n = new async function()
   await 1;
 }();
 
-var o =
-{
+var o = {
   async m()
   {
     await 1;
   }
 };
-var ot =
-{
+var ot = {
   async m<T>(a: T)
   {
     await 1;
   }
 };
-var oz =
-{
+var oz = {
   async async(async)
   {
     await async;
   }
 };
 
-var x =
-{
-  await: 5
-};
+var x = { await: 5 };
 console.log(x.await);
 
 var await = 3;
-var y =
-{
-  await
-};
+var y = { await };
 
 `;

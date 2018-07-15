@@ -93,8 +93,7 @@ interface BarConstructor
   ): Foo;
 }
 
-type BazConstructor =
-{
+type BazConstructor = {
   new (
     a: number,
     b: number,

@@ -9,10 +9,7 @@ interface I {
     new (x: number): number;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var x:
-{
-  y: new <T, U>() => [T, U];
-};
+var x: { y: new <T, U>() => [T, U] };
 
 interface I
 {
