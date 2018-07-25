@@ -64,7 +64,8 @@ function bar(x: MyOwnBooleanLOL): false
   if (x)
   {
     return x;
-  } else
+  }
+  else
   {
     return !x;
   }
@@ -79,7 +80,8 @@ function alwaysFalsy(x: boolean): false
   if (x)
   {
     return !x;
-  } else
+  }
+  else
   {
     return x;
   }

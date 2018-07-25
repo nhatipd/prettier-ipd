@@ -141,13 +141,13 @@ class GeneratorExamples
 
   *stmt_next(): Generator<void, void, number>
   {
-    var a = yield;
+    var a = yield
     if (a)
     {
       (a: number); // ok
     }
 
-    var b = yield;
+    var b = yield
     if (b)
     {
       (b: string); // error: number ~> string
@@ -166,18 +166,20 @@ class GeneratorExamples
 
   *infer_stmt()
   {
-    var x: boolean = yield 0; // error: number ~> boolean
+    var x: boolean = yield 0 // error: number ~> boolean
     return "";
   }
 
   *widen_next()
   {
-    var x = yield 0;
+    var x = yield 0
     if (typeof x === "number")
     {
-    } else if (typeof x === "boolean")
+    }
+    else if (typeof x === "boolean")
     {
-    } else
+    }
+    else
     {
       (x: string); // ok, sherlock
     }
@@ -216,7 +218,7 @@ class GeneratorExamples
       return "";
     }
 
-    var x: number = yield* inner(); // error: string ~> number
+    var x: number = yield* inner() // error: string ~> number
   }
 
   // only generators can make use of a value passed to next
@@ -232,7 +234,7 @@ class GeneratorExamples
 
   *delegate_return_iterable(xs: Array<number>)
   {
-    var x: void = yield* xs; // ok: Iterator has no yield value
+    var x: void = yield* xs // ok: Iterator has no yield value
   }
 
   *generic_yield<Y>(y: Y): Generator<Y, void, void>
@@ -261,9 +263,11 @@ for (var x of examples.infer_stmt())
 var infer_stmt_next = examples.infer_stmt().next(0).value; // error: number ~> boolean
 if (typeof infer_stmt_next === "undefined")
 {
-} else if (typeof infer_stmt_next === "number")
+}
+else if (typeof infer_stmt_next === "number")
 {
-} else
+}
+else
 {
   (infer_stmt_next: boolean); // error: string ~> boolean
 }
@@ -276,9 +280,11 @@ for (var x of examples.widen_yield())
 {
   if (typeof x === "number")
   {
-  } else if (typeof x === "boolean")
+  }
+  else if (typeof x === "boolean")
   {
-  } else
+  }
+  else
   {
     (x: string); // ok, sherlock
   }
@@ -328,7 +334,7 @@ class GeneratorExamples<X>
 {
   *infer_stmt()
   {
-    var x: boolean = yield 0; // error: number ~> boolean
+    var x: boolean = yield 0 // error: number ~> boolean
     return "";
   }
 }
@@ -344,9 +350,11 @@ var infer_stmt_next = examples.infer_stmt().next(0).value; // error: number ~> b
 
 if (typeof infer_stmt_next === "undefined")
 {
-} else if (typeof infer_stmt_next === "number")
+}
+else if (typeof infer_stmt_next === "number")
 {
-} else
+}
+else
 {
   (infer_stmt_next: boolean); // error: string ~> boolean
 }
@@ -527,9 +535,11 @@ for (var x of infer_stmt())
 var infer_stmt_next = infer_stmt().next(0).value; // error: number ~> boolean
 if (typeof infer_stmt_next === "undefined")
 {
-} else if (typeof infer_stmt_next === "number")
+}
+else if (typeof infer_stmt_next === "number")
 {
-} else
+}
+else
 {
   (infer_stmt_next: boolean); // error: string ~> boolean
 }
@@ -539,9 +549,11 @@ function* widen_next()
   var x = yield 0;
   if (typeof x === "number")
   {
-  } else if (typeof x === "boolean")
+  }
+  else if (typeof x === "boolean")
   {
-  } else
+  }
+  else
   {
     (x: string); // ok, sherlock
   }
@@ -560,9 +572,11 @@ for (var x of widen_yield())
 {
   if (typeof x === "number")
   {
-  } else if (typeof x === "boolean")
+  }
+  else if (typeof x === "boolean")
   {
-  } else
+  }
+  else
   {
     (x: string); // ok, sherlock
   }
@@ -643,7 +657,8 @@ function* multiple_return(b)
   if (b)
   {
     return 0;
-  } else
+  }
+  else
   {
     return "foo";
   }

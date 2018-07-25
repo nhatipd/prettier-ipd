@@ -122,7 +122,7 @@ let tests = [
 
   function()
   {
-    const y = 123;
+    const y = 123
     y++; // error, can't update const
     y--; // error, can't update const
   },

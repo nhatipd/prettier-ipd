@@ -96,9 +96,9 @@ var App = React.createClass({
 
   render: function()
   {
-    var x = this.props.x;
-    var y = this.props.y;
-    var z = this.state.z;
+    var x = this.props.x
+    var y = this.props.y
+    var z = this.state.z
 
     //this.state;
 

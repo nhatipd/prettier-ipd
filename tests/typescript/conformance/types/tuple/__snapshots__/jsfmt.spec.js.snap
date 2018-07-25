@@ -234,7 +234,7 @@ var foo: () => [any] = function bar() {
 //@noImplicitAny: true
 var foo: () => [any] = function bar()
 {
-  let intermediate = bar();
+  let intermediate = bar()
   intermediate = [""];
   return [undefined];
 };
@@ -297,7 +297,7 @@ var foo = function bar() {
 //@noImplicitAny: true
 var foo = function bar()
 {
-  let intermediate: [string];
+  let intermediate: [string]
   return (intermediate = [undefined]);
 };
 

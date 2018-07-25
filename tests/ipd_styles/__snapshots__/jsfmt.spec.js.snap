@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arrow_function.ts - typescript-verify 1`] = `
+class A {
+    public doSomething() {
+        const Test = () => {
+            // Do something here
+        }
+    }
+
+    private doPrivate = () => {
+        const x = 1
+    }
+    
+    public doPublic = () => {
+        const y = 2
+    }
+
+    private priv: string
+    public publ : string
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class A
+{
+  public doSomething()
+  {
+    const Test = () => {
+      // Do something here
+    }
+  }
+
+  private doPrivate = () => {
+    const x = 1;
+  }
+
+  public doPublic = () => {
+    const y = 2;
+  }
+
+  private priv: string;
+  public publ: string;
+}
+
+`;
+
+exports[`else.ts - typescript-verify 1`] = `
+class test {
+    private testJ = () => {
+        
+        const something = true;
+        
+        if(something){ const x = 'do this'}
+        
+        else if(!something) { const y= 'else if'}
+        else { const z ='whatever'}
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class test
+{
+  private testJ = () => {
+    const something = true;
+
+    if (something)
+    {
+      const x = "do this";
+    }
+    else if (!something)
+    {
+      const y = "else if";
+    }
+    else
+    {
+      const z = "whatever";
+    }
+  }
+}
+
+`;

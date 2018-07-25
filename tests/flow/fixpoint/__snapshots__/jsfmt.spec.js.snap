@@ -53,7 +53,7 @@ function fix(fold)
   {
     return fold(function(x)
     {
-      var eta = delta(delta);
+      var eta = delta(delta)
       return eta(x);
     });
   };

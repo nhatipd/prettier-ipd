@@ -66,7 +66,7 @@ let tests = [
   function()
   {
     true.toString();
-    let x: boolean = false;
+    let x: boolean = false
     x.toString();
     new Boolean(true).toString();
   },
@@ -141,20 +141,20 @@ let tests = [
   // good constructors
   function()
   {
-    let w = new Map();
-    let x = new Map(null);
-    let y = new Map([["foo", 123]]);
-    let z = new Map(generator());
-    let a: Map<string, number> = new Map();
-    let b: Map<string, number> = new Map([["foo", 123]]);
-    let c: Map<string, number> = new Map(generator());
+    let w = new Map()
+    let x = new Map(null)
+    let y = new Map([["foo", 123]])
+    let z = new Map(generator())
+    let a: Map<string, number> = new Map()
+    let b: Map<string, number> = new Map([["foo", 123]])
+    let c: Map<string, number> = new Map(generator())
   },
 
   // bad constructors
   function()
   {
-    let x = new Map(["foo", 123]); // error
-    let y: Map<number, string> = new Map([["foo", 123]]); // error
+    let x = new Map(["foo", 123]) // error
+    let y: Map<number, string> = new Map([["foo", 123]]) // error
   },
 
   // get()

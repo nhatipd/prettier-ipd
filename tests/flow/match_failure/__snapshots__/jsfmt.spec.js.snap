@@ -28,7 +28,8 @@ function area(shape: Shape): number
   {
     // TODO: this should be an error
     return shape.width * shape.height;
-  } else if (shape.type === "circle")
+  }
+  else if (shape.type === "circle")
   {
     return Math.PI * Math.pow(shape.radius, 2);
   }
@@ -60,7 +61,8 @@ function stringifyBinary(binary: Binary): string
   if (binary === 0)
   {
     return "zero";
-  } else if (binary === 2)
+  }
+  else if (binary === 2)
   {
     // oops
     return "one";

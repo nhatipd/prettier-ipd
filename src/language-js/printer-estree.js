@@ -84,7 +84,6 @@ function genericPrint(path, options, printPath, args) {
   if (!node || isEmpty(linesWithoutParens)) {
     return linesWithoutParens;
   }
-
   const decorators = [];
   if (
     node.decorators &&
@@ -1018,7 +1017,6 @@ function printPathNoParens(path, options, print, args) {
           comments.printDanglingComments(path, options, /* sameIndent */ true)
         );
       }
-
       parts.push(semi);
 
       return concat(parts);
@@ -1473,6 +1471,10 @@ function printPathNoParens(path, options, print, args) {
         parentNode.type === "ForInStatement" ||
         parentNode.type === "ForOfStatement" ||
         parentNode.type === "ForAwaitStatement";
+      
+      const grandPa = path.getParentNode(1);
+      const isGrandParentFunction =
+        grandPa && grandPa.type === "FunctionExpression";
 
       const hasValue = n.declarations.some(decl => decl.init);
 
@@ -1499,7 +1501,9 @@ function printPathNoParens(path, options, print, args) {
         )
       ];
 
-      if (!(isParentForLoop && parentNode.body !== n)) {
+      if (
+        !((isParentForLoop || isGrandParentFunction) && parentNode.body !== n)
+      ) {
         parts.push(semi);
       }
 
@@ -1561,6 +1565,7 @@ function printPathNoParens(path, options, print, args) {
         }
 
         parts.push(
+          hardline,
           "else",
           group(
             adjustClause(
@@ -2091,7 +2096,9 @@ function printPathNoParens(path, options, print, args) {
       }
       parts.push(printOptionalToken(path));
       parts.push(printTypeAnnotation(path, options, print));
+      let valueType = null;
       if (n.value) {
+        valueType = n.value.type;
         parts.push(
           " =",
           printAssignmentRight(
@@ -2103,7 +2110,9 @@ function printPathNoParens(path, options, print, args) {
         );
       }
 
-      parts.push(semi);
+      if (valueType !== "ArrowFunctionExpression") {
+        parts.push(semi);
+      }
 
       return group(concat(parts));
     }

@@ -316,12 +316,14 @@ func(
   fourth,
   fifth,
   aReallyLongArgumentsListToForceItToBreak,
+
   {
     // comment
   }
 );
 
-func({
+func(
+{
   // comment
 });
 
@@ -499,7 +501,8 @@ func(
   yes,
   {}
 );
-func(one, two, three, four, five, six, seven, eig, is, this, too, long, yes, {
+func(one, two, three, four, five, six, seven, eig, is, this, too, long, yes,
+{
   // Comments
 });
 

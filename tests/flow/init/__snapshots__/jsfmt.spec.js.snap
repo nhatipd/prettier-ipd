@@ -416,7 +416,8 @@ function if_else_partial_init(b)
   if (b)
   {
     var x: number = 0;
-  } else
+  }
+  else
   {
     var y: number = x; // error
   }
@@ -448,7 +449,8 @@ function if_post_init(b)
   if (b)
   {
     var x: number = 0;
-  } else
+  }
+  else
   {
     var x: number = 1;
   }
@@ -473,7 +475,8 @@ function if_post_init(b)
   if (b)
   {
     x = 0;
-  } else
+  }
+  else
   {
     x = 1;
   }
@@ -911,7 +914,8 @@ function if_post_init(b)
   if (b)
   {
     x = 0;
-  } else
+  }
+  else
   {
     x = 1;
   }

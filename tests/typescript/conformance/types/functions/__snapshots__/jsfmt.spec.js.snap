@@ -100,7 +100,8 @@ var f4 = function()
   if (true)
   {
     return [""];
-  } else
+  }
+  else
   {
     return [1];
   }
@@ -125,7 +126,7 @@ undefined ===
   function(): number
   {
     throw undefined;
-    var x = 4;
+    var x = 4
   };
 
 class Base
@@ -353,7 +354,7 @@ var a: any = function f()
 // FunctionExpression f with no return type annotation and indirectly references f in its body returns any
 var a: any = function f()
 {
-  var x = f;
+  var x = f
   return x;
 };
 

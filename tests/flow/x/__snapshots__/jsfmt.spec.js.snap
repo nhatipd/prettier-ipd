@@ -57,7 +57,7 @@ class XControllerURIBuilder
   getURI()
   {
     // ...
-    var tokenRegex = new RegExp(/^\\{(\\?)?(.+?)\\}$/);
+    var tokenRegex = new RegExp(/^\\{(\\?)?(.+?)\\}$/)
     // ...
   }
 }

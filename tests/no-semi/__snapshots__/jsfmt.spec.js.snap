@@ -691,6 +691,7 @@ if (true)
   while (false)
 
 if (true) 1
+
 else 2
 for (;;);
 for (x of y);
@@ -947,7 +948,7 @@ class C
 }
 class C
 {
-  get = () => {}; // The semicolon is *not* necessary
+  get = () => {} // The semicolon is *not* necessary
   x() {}
 }
 class C
@@ -957,7 +958,7 @@ class C
 }
 class C
 {
-  set = () => {}; // The semicolon is *not* necessary
+  set = () => {} // The semicolon is *not* necessary
   x() {}
 }
 
@@ -1044,6 +1045,7 @@ if (true)
   while (false);
 
 if (true) 1;
+
 else 2;
 for (;;);
 for (x of y);
@@ -1397,6 +1399,7 @@ if (true)
   while (false)
 
 if (true) 1
+
 else 2
 for (;;);
 for (x of y);

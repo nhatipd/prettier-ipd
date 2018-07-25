@@ -224,6 +224,7 @@ class H extends A
   constructor()
   {
     if (Math.random() < 0.5) super();
+
     else super();
     this.y; // OK
     this.x; // OK
@@ -285,7 +286,7 @@ class K extends K_
     super(() => {
       if (_this) _this.foo();
     }); // OK
-    var _this = this;
+    var _this = this
     this.closure_leaking_this();
   }
 }
@@ -305,7 +306,7 @@ class L extends L_
 {
   constructor()
   {
-    let x: boolean = super();
+    let x: boolean = super()
     return x;
   }
 }
@@ -337,7 +338,7 @@ class N_
 {
   constructor(): this
   {
-    let x = this;
+    let x = this
     return x;
   }
 }

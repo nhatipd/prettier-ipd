@@ -550,7 +550,7 @@ class Foo
 
   constructor()
   {
-    var someVar = "asdf";
+    var someVar = "asdf"
   }
 }
 

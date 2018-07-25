@@ -108,7 +108,7 @@ let tests = [
   // setting a property
   function(x: $Tainted<string>, y: string)
   {
-    let obj: Object = {};
+    let obj: Object = {}
     obj.foo = x; // error, taint ~> any
     obj[y] = x; // error, taint ~> any
   },
@@ -116,17 +116,17 @@ let tests = [
   // getting a property
   function()
   {
-    let obj: Object = { foo: "foo" };
+    let obj: Object = { foo: "foo" }
     (obj.foo: $Tainted<string>); // ok
   },
 
   // calling a method
   function(x: $Tainted<string>)
   {
-    let obj: Object = {};
+    let obj: Object = {}
     obj.foo(x); // error, taint ~> any
 
-    let foo = obj.foo;
+    let foo = obj.foo
     foo(x); // error, taint ~> any
   }
 ];
@@ -268,7 +268,7 @@ let tests = [
   // calling \`any\` returns \`any\`
   function(x: any, y: $Tainted<string>)
   {
-    let z = x();
+    let z = x()
     z(y);
   }
 ];
@@ -357,7 +357,7 @@ class A
   f(tainted: $Tainted<string>)
   {
     // This shouldn't give a warning (both are tainted)
-    var also_tainted: $Tainted<string> = tainted;
+    var also_tainted: $Tainted<string> = tainted
   }
 }
 
@@ -413,9 +413,9 @@ class A
   f(tainted: $Tainted<string>)
   {
     // The Tainted annotation should still flow.
-    var safe = tainted;
+    var safe = tainted
     // This should give a warning.
-    var loc: string = safe;
+    var loc: string = safe
   }
 }
 

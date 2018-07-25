@@ -39,7 +39,7 @@ export const X = {
 
   test: function()
   {
-    let [a, b] = this.returnsATuple();
+    let [a, b] = this.returnsATuple()
   }
 };
 
@@ -190,7 +190,7 @@ let tests = [
 let tests = [
   function()
   {
-    let x = {};
+    let x = {}
     Object.defineProperty(x, "foo", { value: "" });
   }
 ];

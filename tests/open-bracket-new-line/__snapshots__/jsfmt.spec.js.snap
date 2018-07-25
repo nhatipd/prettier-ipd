@@ -50,7 +50,7 @@ class A
 
   private test()
   {
-    let c = 1;
+    let c = 1
     return 19;
   }
 }

@@ -266,7 +266,7 @@ const E = React.createClass({
   },
   mm()
   {
-    var props: { m(): void } = { m: this.m };
+    var props: { m(): void } = { m: this.m }
     props.m(); // OK: this.m is autobound, so \`this.foo\` will always be found
   }
 });
@@ -753,7 +753,7 @@ class Foo extends React.Component
 {
   render()
   {
-    const Cmp = Math.random() < 0.5 ? "div" : Bar;
+    const Cmp = Math.random() < 0.5 ? "div" : Bar
     return <Cmp />;
   }
 }
@@ -802,7 +802,7 @@ class Foo extends React.Component
 {
   render()
   {
-    const Cmp = Math.random() < 0.5 ? "div" : Bar;
+    const Cmp = Math.random() < 0.5 ? "div" : Bar
     return <Cmp />;
   }
 }
@@ -1684,7 +1684,8 @@ var Example = React.createClass({
     if (typeof this.props.prop === "string")
     {
       return <div>{this.props.prop}</div>;
-    } else
+    }
+    else
     {
       return <div>{this.props.prop.toFixed(2)}</div>;
     }

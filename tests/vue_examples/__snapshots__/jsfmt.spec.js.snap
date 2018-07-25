@@ -129,7 +129,8 @@ export default {
         if (Store.detail.issue && Store.detail.issue.id === this.issue.id)
         {
           eventHub.$emit("clearDetailIssue");
-        } else
+        }
+        else
         {
           eventHub.$emit("newDetailIssue", this.issue);
           Store.detail.list = this.list;
@@ -288,7 +289,8 @@ export default {
         if (Store.detail.issue && Store.detail.issue.id === this.issue.id)
         {
           eventHub.$emit("clearDetailIssue");
-        } else
+        }
+        else
         {
           eventHub.$emit("newDetailIssue", this.issue);
           Store.detail.list = this.list;

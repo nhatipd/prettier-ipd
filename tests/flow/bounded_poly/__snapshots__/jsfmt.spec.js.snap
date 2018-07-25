@@ -58,8 +58,8 @@ class C<T: number>
   }
   qux<U: T>(x: U): T
   {
-    var _ = x * 1; // OK, since T: number and U: T implies U: number
-    var y: string = x; // error
+    var _ = x * 1 // OK, since T: number and U: T implies U: number
+    var y: string = x // error
     return x; // OK, since U: T
   }
 }

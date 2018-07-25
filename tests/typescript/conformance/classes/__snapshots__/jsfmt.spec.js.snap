@@ -351,7 +351,7 @@ const Printable = <T extends Constructor<Base>>(
     static message = "hello";
     print()
     {
-      const output = this.x + "," + this.y;
+      const output = this.x + "," + this.y
     }
   };
 
@@ -492,7 +492,7 @@ const Printable = <T extends Constructor<Base>>(superClass: T) =>
     static message = "hello";
     print()
     {
-      const output = this.x + "," + this.y;
+      const output = this.x + "," + this.y
     }
   };
 

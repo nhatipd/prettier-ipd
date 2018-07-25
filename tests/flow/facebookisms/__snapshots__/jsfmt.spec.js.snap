@@ -62,7 +62,7 @@ let tests = [
   // annotation
   function(copyProperties: Object$Assign)
   {
-    let result = {};
+    let result = {}
     result.baz = false;
     (copyProperties(result, { foo: "a" }, { bar: 123 }): {
       foo: string,
@@ -74,9 +74,9 @@ let tests = [
   // module from lib
   function()
   {
-    const copyProperties = require("copyProperties");
-    let x = { foo: "a" };
-    let y = { bar: 123 };
+    const copyProperties = require("copyProperties")
+    let x = { foo: "a" }
+    let y = { bar: 123 }
     (copyProperties({}, x, y): { foo: string, bar: number });
   },
 
@@ -118,13 +118,13 @@ let tests = [
 let tests = [
   function()
   {
-    let x: ?string = null;
+    let x: ?string = null
     invariant(x, "truthy only"); // error, forgot to require invariant
   },
 
   function(invariant: Function)
   {
-    let x: ?string = null;
+    let x: ?string = null
     invariant(x);
     (x: string);
   }
@@ -210,7 +210,7 @@ let tests = [
   // annotation
   function(mergeInto: $Facebookism$MergeInto)
   {
-    let result = {};
+    let result = {}
     result.baz = false;
     (mergeInto(result, { foo: "a" }, { bar: 123 }): void);
     (result: { foo: string, bar: number, baz: boolean });
@@ -219,8 +219,8 @@ let tests = [
   // module from lib
   function()
   {
-    const mergeInto = require("mergeInto");
-    let result: { foo?: string, bar?: number, baz: boolean } = { baz: false };
+    const mergeInto = require("mergeInto")
+    let result: { foo?: string, bar?: number, baz: boolean } = { baz: false }
     (mergeInto(result, { foo: "a" }, { bar: 123 }): void);
   },
 
@@ -258,7 +258,7 @@ class Foo extends mixin(Bar)
 {
   m()
   {
-    var x: string = this.x;
+    var x: string = this.x
     this.y = "";
   }
 }

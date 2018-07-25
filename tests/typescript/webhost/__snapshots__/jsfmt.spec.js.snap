@@ -147,7 +147,8 @@ namespace TypeScript.WebTsc {
           {
             fileStream.Charset = encoding;
             fileStream.LoadFromFile(fileName);
-          } else
+          }
+          else
           {
             // Load file and read the first two bytes into a string with no interpretation
             fileStream.Charset = "x-ansi";
@@ -175,7 +176,7 @@ namespace TypeScript.WebTsc {
       },
       writeFile(fileName: string, data: string): boolean
       {
-        const f = fso.CreateTextFile(fileName, true);
+        const f = fso.CreateTextFile(fileName, true)
         f.Write(data);
         f.Close();
         return true;
