@@ -6,7 +6,13 @@ class A {
         const Test = () => {
             // Do something here
         }
+        const getNodeKey = ({ node, treeIndex }) => treeIndex
+const {a,b} = c
     }
+private aProp = (a) => (a+1) 
+private bProp = (a) => (a+1);
+private cProp = (a) => a
+private dProp = (a) => { return a}
 
     private doPrivate = () => {
         const x = 1
@@ -18,8 +24,7 @@ class A {
 
     private priv: string
     public publ : string
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class A
 {
   public doSomething()
@@ -27,6 +32,14 @@ class A
     const Test = () => {
       // Do something here
     }
+    const getNodeKey = ({ node, treeIndex }) => treeIndex;
+    const { a, b } = c;
+  }
+  private aProp = a => a + 1;
+  private bProp = a => a + 1;
+  private cProp = a => a;
+  private dProp = a => {
+    return a;
   }
 
   private doPrivate = () => {
@@ -54,8 +67,7 @@ class test {
         else if(!something) { const y= 'else if'}
         else { const z ='whatever'}
     }
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class test
 {
   private testJ = () => {

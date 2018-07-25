@@ -1184,7 +1184,6 @@ function printPathNoParens(path, options, print, args) {
           separatorParts.shift();
         }
         if (isNextLineEmpty(options.originalText, prop.node, options)) {
-          
           separatorParts.push(hardline);
         }
         return result;
@@ -1471,10 +1470,14 @@ function printPathNoParens(path, options, print, args) {
         parentNode.type === "ForInStatement" ||
         parentNode.type === "ForOfStatement" ||
         parentNode.type === "ForAwaitStatement";
-      
       const grandPa = path.getParentNode(1);
       const isGrandParentFunction =
-        grandPa && grandPa.type === "FunctionExpression";
+        grandPa &&
+        grandPa.type === "FunctionExpression" &&
+        options.originalText
+          .slice(n.range[0], n.range[1])
+          .trim()
+          .endsWith("}");
 
       const hasValue = n.declarations.some(decl => decl.init);
 
@@ -2110,7 +2113,11 @@ function printPathNoParens(path, options, print, args) {
         );
       }
 
-      if (valueType !== "ArrowFunctionExpression") {
+      const isTextEndWithBracket = options.originalText
+        .slice(n.range[0], n.range[1])
+        .trim()
+        .endsWith("}");
+      if (valueType !== "ArrowFunctionExpression" || !isTextEndWithBracket) {
         parts.push(semi);
       }
 
